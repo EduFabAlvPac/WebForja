@@ -1,0 +1,288 @@
+'use client'
+
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronRight, ChevronLeft, Download, CheckCircle2 } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Progress } from '@/components/ui/progress'
+
+interface Question {
+  id: number
+  question: string
+  dimension: string
+  options: { value: number; label: string }[]
+}
+
+const QUIZ_QUESTIONS: Question[] = [
+  {
+    id: 1,
+    dimension: 'Estrategia Digital',
+    question: '¿Tu empresa tiene una estrategia digital definida y documentada?',
+    options: [
+      { value: 0, label: 'No tenemos estrategia digital' },
+      { value: 1, label: 'Estamos empezando a definirla' },
+      { value: 2, label: 'Tenemos estrategia pero no está documentada' },
+      { value: 3, label: 'Tenemos estrategia documentada' },
+      { value: 4, label: 'Estrategia digital integrada con plan de negocio' }
+    ]
+  },
+  {
+    id: 2,
+    dimension: 'Tecnología',
+    question: '¿Cómo evalúas la infraestructura tecnológica de tu empresa?',
+    options: [
+      { value: 0, label: 'Sistemas obsoletos o inexistentes' },
+      { value: 1, label: 'Tecnología básica y desactualizada' },
+      { value: 2, label: 'Sistemas funcionales pero con limitaciones' },
+      { value: 3, label: 'Infraestructura moderna y escalable' },
+      { value: 4, label: 'Cloud-native con arquitectura moderna' }
+    ]
+  },
+  {
+    id: 3,
+    dimension: 'Procesos',
+    question: '¿Qué tan documentados y optimizados están tus procesos de negocio?',
+    options: [
+      { value: 0, label: 'Procesos no documentados ni estandarizados' },
+      { value: 1, label: 'Algunos procesos documentados básicamente' },
+      { value: 2, label: 'Procesos documentados pero no optimizados' },
+      { value: 3, label: 'Procesos optimizados con mejora continua' },
+      { value: 4, label: 'Procesos digitalizados y automatizados' }
+    ]
+  },
+  {
+    id: 4,
+    dimension: 'Cultura Digital',
+    question: '¿Cómo describirías la cultura digital en tu organización?',
+    options: [
+      { value: 0, label: 'Resistencia al cambio y poco uso de tecnología' },
+      { value: 1, label: 'Baja adopción de herramientas digitales' },
+      { value: 2, label: 'Adopción moderada, falta capacitación' },
+      { value: 3, label: 'Cultura abierta al cambio digital' },
+      { value: 4, label: 'Cultura de innovación y transformación digital' }
+    ]
+  },
+  {
+    id: 5,
+    dimension: 'Datos y Analítica',
+    question: '¿Cómo utilizas los datos para tomar decisiones?',
+    options: [
+      { value: 0, label: 'Decisiones basadas en intuición' },
+      { value: 1, label: 'Reportes básicos manuales' },
+      { value: 2, label: 'Algunos dashboards con datos históricos' },
+      { value: 3, label: 'Analítica avanzada en tiempo real' },
+      { value: 4, label: 'Predictive analytics y Machine Learning' }
+    ]
+  }
+]
+
+export default function RayosXEmpresarial() {
+  const [currentStep, setCurrentStep] = useState(0)
+  const [answers, setAnswers] = useState<Record<number, number>>({})
+  const [showResults, setShowResults] = useState(false)
+
+  const totalQuestions = QUIZ_QUESTIONS.length
+  const progress = (Object.keys(answers).length / totalQuestions) * 100
+  const currentQuestion = QUIZ_QUESTIONS[currentStep]
+
+  const handleAnswer = (questionId: number, value: number) => {
+    setAnswers(prev => ({ ...prev, [questionId]: value }))
+  }
+
+  const canProceed = answers[currentQuestion.id] !== undefined
+
+  const handleNext = () => {
+    if (currentStep < totalQuestions - 1) {
+      setCurrentStep(prev => prev + 1)
+    } else if (canProceed) {
+      calculateResults()
+    }
+  }
+
+  const handlePrev = () => {
+    if (currentStep > 0) {
+      setCurrentStep(prev => prev - 1)
+    }
+  }
+
+  const calculateResults = () => {
+    setShowResults(true)
+  }
+
+  const totalScore = Object.values(answers).reduce((sum, val) => sum + val, 0)
+  const maxScore = totalQuestions * 4
+  const scorePercentage = (totalScore / maxScore) * 100
+
+  const getMaturityLevel = () => {
+    if (scorePercentage < 20) return { level: 'Inicial', color: 'text-red-600', desc: 'Tu empresa está en las primeras etapas de madurez digital' }
+    if (scorePercentage < 40) return { level: 'Emergente', color: 'text-orange-600', desc: 'Hay bases digitales pero mucho por mejorar' }
+    if (scorePercentage < 60) return { level: 'Intermedio', color: 'text-yellow-600', desc: 'Buen progreso digital con oportunidades de optimización' }
+    if (scorePercentage < 80) return { level: 'Avanzado', color: 'text-blue-600', desc: 'Madurez digital sólida con capacidad de innovación' }
+    return { level: 'Líder Digital', color: 'text-green-600', desc: 'Excelencia en madurez digital y transformación' }
+  }
+
+  const maturity = getMaturityLevel()
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-brand-navy to-brand-purple py-20 pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
+      <div className="container-custom max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-card shadow-2xl p-8 md:p-12"
+        >
+          {!showResults ? (
+            <>
+              {/* Header */}
+              <div className="mb-8">
+                <h1 className="text-h2-mobile md:text-h2-desktop mb-4">
+                  Rayos X <span className="text-brand-orange">Empresarial</span>
+                </h1>
+                <p className="text-gray-600 mb-6">
+                  Descubre el nivel de madurez digital de tu empresa en solo 5 minutos
+                </p>
+                
+                {/* Progress Bar */}
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm text-gray-600">
+                    <span>Progreso: {Object.keys(answers).length} de {totalQuestions} preguntas</span>
+                    <span>{Math.round(progress)}%</span>
+                  </div>
+                  <Progress value={progress} className="h-2" />
+                </div>
+              </div>
+
+              {/* Question */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentStep}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-8"
+                >
+                  <div className="mb-6">
+                    <span className="inline-block px-3 py-1 bg-brand-turquoise/10 text-brand-turquoise rounded-full text-sm font-semibold mb-4">
+                      {currentQuestion.dimension}
+                    </span>
+                    <h2 className="text-2xl font-bold mb-6">
+                      {currentQuestion.question}
+                    </h2>
+                  </div>
+
+                  <div className="space-y-3">
+                    {currentQuestion.options.map((option) => (
+                      <button
+                        key={option.value}
+                        onClick={() => handleAnswer(currentQuestion.id, option.value)}
+                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                          answers[currentQuestion.id] === option.value
+                            ? 'border-brand-orange bg-brand-orange/5'
+                            : 'border-gray-200 hover:border-brand-orange/50'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span>{option.label}</span>
+                          {answers[currentQuestion.id] === option.value && (
+                            <CheckCircle2 className="h-5 w-5 text-brand-orange" />
+                          )}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation */}
+              <div className="flex justify-between">
+                <Button
+                  variant="outline"
+                  onClick={handlePrev}
+                  disabled={currentStep === 0}
+                >
+                  <ChevronLeft className="mr-2 h-4 w-4" />
+                  Anterior
+                </Button>
+                
+                <Button
+                  onClick={handleNext}
+                  disabled={!canProceed}
+                  className="bg-brand-orange hover:bg-brand-orange-dark"
+                >
+                  {currentStep < totalQuestions - 1 ? (
+                    <>
+                      Siguiente
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </>
+                  ) : (
+                    <>
+                      Ver Resultados
+                      <Download className="ml-2 h-4 w-4" />
+                    </>
+                  )}
+                </Button>
+              </div>
+            </>
+          ) : (
+            /* Results */
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center"
+            >
+              <div className="mb-8">
+                <h2 className="text-h2-mobile md:text-h2-desktop mb-4">
+                  Resultados de tu <span className="text-brand-orange">Diagnóstico</span>
+                </h2>
+              </div>
+
+              <div className="bg-gray-50 rounded-card p-8 mb-8">
+                <div className="mb-6">
+                  <div className="text-6xl font-bold mb-2 text-brand-orange">
+                    {Math.round(scorePercentage)}%
+                  </div>
+                  <p className="text-xl text-gray-600">Nivel de Madurez Digital</p>
+                </div>
+
+                <div className={`text-3xl font-bold mb-2 ${maturity.color}`}>
+                  {maturity.level}
+                </div>
+                <p className="text-gray-600">{maturity.desc}</p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <h3 className="font-bold text-xl mb-4">Próximos Pasos Recomendados:</h3>
+                <ul className="text-left space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span>Agenda una consulta gratuita con nuestro equipo</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span>Descarga tu reporte detallado en PDF</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span>Conoce la Metodología FORJA personalizada para ti</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="flex-1 bg-brand-orange hover:bg-brand-orange-dark">
+                  <Download className="mr-2 h-5 w-5" />
+                  Descargar Reporte PDF
+                </Button>
+                <Button size="lg" variant="outline" className="flex-1" asChild>
+                  <a href="/contacto">Agendar Consulta Gratuita</a>
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </motion.div>
+      </div>
+    </div>
+  )
+}
+

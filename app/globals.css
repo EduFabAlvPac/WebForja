@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 213 24% 27%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 24% 27%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 24% 27%;
+    --primary: 20 91% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 187 71% 58%;
+    --secondary-foreground: 213 24% 27%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 260 44% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 20 91% 59%;
+    --radius: 0.5rem;
+    
+    /* Spacing Scale */
+    --spacing-xs: 0.5rem;    /* 8px */
+    --spacing-sm: 1rem;      /* 16px */
+    --spacing-md: 1.5rem;    /* 24px */
+    --spacing-lg: 3rem;      /* 48px */
+    --spacing-xl: 4rem;      /* 64px */
+    --spacing-xxl: 6rem;     /* 96px */
+    
+    /* Container */
+    --container-max-width: 1280px;
+    --container-padding: 1.5rem;
+    
+    /* Header */
+    --header-height-mobile: 70px;
+    --header-height-desktop: 90px;
+    
+    /* Transitions */
+    --transition-fast: 200ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+    
+    /* Z-index Scale */
+    --z-header: 1000;
+    --z-mega-menu: 999;
+    --z-modal: 2000;
+    --z-whatsapp-float: 1500;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-white text-brand-navy font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply max-w-[1280px] mx-auto px-6 md:px-8 lg:px-12;
+  }
+  
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Gradient Backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, #2B3E5C 0%, #7E57C2 100%);
+  }
+  
+  .gradient-cta {
+    background: linear-gradient(135deg, #4DD0E1 0%, #7E57C2 100%);
+  }
+}
+
+@layer utilities {
+  /* Animation Delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+
