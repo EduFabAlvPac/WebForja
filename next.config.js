@@ -5,8 +5,11 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
-    domains: ['cdn.sanity.io', 'images.unsplash.com', 'media.giphy.com', 'cdn.pixabay.com', 'pixabay.com'],
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
@@ -24,7 +27,6 @@ const nextConfig = {
         hostname: 'pixabay.com',
       },
     ],
-    unoptimized: true,
   },
   compress: true,
   swcMinify: true,
