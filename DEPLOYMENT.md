@@ -272,6 +272,29 @@ jobs:
 
 ---
 
+## 🔍 Verificación de Despliegue en GitHub
+
+Para confirmar que tu proyecto se ha desplegado correctamente en Vercel directamente desde la interfaz de GitHub:
+
+### 1. Estado del Commit (Puntos de Color)
+En la página principal de tu repositorio en GitHub o en la pestaña de "Commits":
+- 🟡 **Punto Amarillo:** El despliegue o build está en progreso.
+- 🟢 **Check Verde:** El despliegue fue exitoso y tu sitio está en vivo.
+- 🔴 **Cruz Roja:** Hubo un error en el build o despliegue.
+
+Haz clic en el icono para ver detalles ("Details") que te llevarán directamente a los logs de Vercel.
+
+### 2. Sección "Environments"
+En la barra lateral derecha de la página principal de tu repositorio:
+- Busca la sección **"Environments"**.
+- Verás un enlace que dice `Production` o `Preview`.
+- Si está en verde y dice "Active", tu versión actual está funcionando.
+
+### 3. Pestaña "Deployments" (Opcional)
+Si tu repositorio tiene esta pestaña activada, verás un historial cronológico de cada vez que Vercel ha publicado tu sitio.
+
+---
+
 ## 🐛 Troubleshooting en Producción
 
 ### Error 500
