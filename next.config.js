@@ -27,7 +27,6 @@ const nextConfig = {
         hostname: 'pixabay.com',
       },
     ],
-    unoptimized: true,
   },
   compress: true,
   swcMinify: true,

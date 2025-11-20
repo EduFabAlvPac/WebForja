@@ -19,6 +19,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://forjadigital.co'),
   title: 'Forja Digital - AE | Transformación Digital y Arquitectura Empresarial',
   description: 'Consultora líder en transformación digital y arquitectura empresarial para PYMEs en Colombia y Latinoamérica. Metodología FORJA probada.',
   keywords: 'transformación digital, arquitectura empresarial, consultoría digital, Colombia, PYMEs, FORJA',

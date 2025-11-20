@@ -1,17 +1,28 @@
 import { NextResponse } from 'next/server'
+import { z } from 'zod'
+
+const contactSchema = z.object({
+  nombre: z.string().min(2, 'El nombre es requerido'),
+  email: z.string().email('Email inválido'),
+  telefono: z.string().optional(),
+  empresa: z.string().optional(),
+  servicio: z.string().optional(),
+  mensaje: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
+})
 
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { nombre, email, telefono, empresa, servicio, mensaje } = body
+    const validation = contactSchema.safeParse(body)
 
-    // Validación básica
-    if (!nombre || !email || !mensaje) {
+    if (!validation.success) {
       return NextResponse.json(
-        { error: 'Faltan campos requeridos' },
+        { error: 'Datos inválidos', details: validation.error.errors },
         { status: 400 }
       )
     }
+
+    const { nombre, email, telefono, empresa, servicio, mensaje } = validation.data
 
     // TODO: Integrar con servicio de email (SendGrid, Resend, etc.)
     console.log('Nuevo contacto:', { nombre, email, telefono, empresa, servicio, mensaje })

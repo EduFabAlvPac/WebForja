@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { z } from 'zod'
 
 interface Answer {
   questionId: number
@@ -6,16 +7,27 @@ interface Answer {
   dimension: string
 }
 
-interface RayosXRequest {
-  answers: Record<number, number>
-  email?: string
-  nombre?: string
-}
+const rayosXSchema = z.object({
+  answers: z.record(z.number()),
+  email: z.string().email('Email inválido').optional().or(z.literal('')),
+  nombre: z.string().optional(),
+})
+
+type RayosXRequest = z.infer<typeof rayosXSchema>
 
 export async function POST(request: Request) {
   try {
-    const body: RayosXRequest = await request.json()
-    const { answers, email, nombre } = body
+    const body = await request.json()
+    const validation = rayosXSchema.safeParse(body)
+
+    if (!validation.success) {
+       return NextResponse.json(
+        { error: 'Datos inválidos', details: validation.error.errors },
+        { status: 400 }
+      )
+    }
+
+    const { answers, email, nombre } = validation.data
 
     if (!answers || Object.keys(answers).length === 0) {
       return NextResponse.json(

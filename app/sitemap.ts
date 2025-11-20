@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://forjadigital.co' // TODO: Actualizar con URL real
+  const baseUrl = 'https://forjadigital.co'
 
   return [
     {

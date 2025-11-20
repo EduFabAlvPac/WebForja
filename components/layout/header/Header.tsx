@@ -38,7 +38,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center">
             <Image
-              src="/logos/LOGO COLOR.jpg"
+              src="/logos/logo-color.jpg"
               alt="Forja Digital AE"
               width={260}
               height={87}
