@@ -81,7 +81,7 @@ export function CookieConsent() {
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                   Utilizamos cookies propias y de terceros para mejorar nuestros servicios, 
                   personalizar el contenido y analizar el tráfico del sitio. Al hacer clic en 
-                  "Aceptar", acepta el uso de cookies.{' '}
+                  &quot;Aceptar&quot;, acepta el uso de cookies.{' '}
                   <Link 
                     href="/politica-cookies" 
                     className="text-brand-orange hover:text-brand-orange-dark font-semibold underline"

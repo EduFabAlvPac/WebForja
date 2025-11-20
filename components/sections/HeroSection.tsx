@@ -129,10 +129,13 @@ export function HeroSection() {
           className="absolute inset-0"
         >
           {slide.isGif ? (
-            <img
+            <Image
               src={slide.backgroundImage}
               alt={slide.backgroundAlt}
-              className="w-full h-full object-cover"
+              fill
+              unoptimized
+              className="object-cover"
+              priority
             />
           ) : (
             <Image

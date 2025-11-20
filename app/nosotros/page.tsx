@@ -500,7 +500,7 @@ export default function NosotrosPage() {
             </div>
 
             <div className="text-3xl font-bold text-brand-orange italic">
-              "Una empresa a la vez. Un resultado a la vez. Un gigante a la vez."
+              &quot;Una empresa a la vez. Un resultado a la vez. Un gigante a la vez.&quot;
             </div>
           </motion.div>
         </div>
