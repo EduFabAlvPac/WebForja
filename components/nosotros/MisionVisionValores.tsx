@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { Target, Sparkles, Star, Search, HeartHandshake, BarChart3, Lightbulb, GraduationCap, Globe } from 'lucide-react'
@@ -223,8 +223,8 @@ export function MisionVisionValores() {
         >
           <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-brand-turquoise/20">
             <p className="text-xl md:text-2xl font-bold text-brand-navy italic">
-              "Estos principios no son solo palabras en una página.<br />
-              Son el <span className="text-brand-orange">ADN</span> de cada proyecto que entregamos."
+              &quot;Estos principios no son solo palabras en una página.<br />
+              Son el <span className="text-brand-orange">ADN</span> de cada proyecto que entregamos.&quot;
             </p>
           </div>
         </motion.div>

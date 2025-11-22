@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { Target, Hammer, BarChart3, HeartHandshake, Globe, DollarSign, Check, X } from 'lucide-react'
@@ -277,8 +277,8 @@ export function DiferenciadoresSection() {
           >
             <div className="bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy rounded-2xl p-8 md:p-10 shadow-2xl">
               <p className="text-2xl md:text-3xl font-bold text-white italic leading-relaxed">
-                "Si buscas el camino fácil, no somos tu opción.<br />
-                Si buscas <span className="text-brand-orange">resultados reales</span>, bienvenido a FORJA."
+                &quot;Si buscas el camino fácil, no somos tu opción.<br />
+                Si buscas <span className="text-brand-orange">resultados reales</span>, bienvenido a FORJA.&quot;
               </p>
             </div>
           </motion.div>
