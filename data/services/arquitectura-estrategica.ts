@@ -8,6 +8,8 @@ export const arquitecturaEstrategicaData: ServicePageData = {
     subtitle: 'El Blueprint de tu Transformación Digital',
     description: 'Diseñamos la arquitectura integral que alinea tu estrategia de negocio con capacidades tecnológicas, procesos optimizados y una estructura organizacional preparada para escalar.',
     category: 'estrategia-transformacion',
+    backgroundImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
+    backgroundAlt: 'Equipo de profesionales planificando estrategia empresarial con documentos y laptop en una oficina moderna',
     breadcrumbs: [
       { label: 'Inicio', href: '/' },
       { label: 'Servicios', href: '/servicios' },
