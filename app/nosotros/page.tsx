@@ -34,7 +34,7 @@ export default function NosotrosPage() {
               priority
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/70 via-brand-purple/60 to-brand-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/50 via-brand-purple/40 to-brand-navy/50" />
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">

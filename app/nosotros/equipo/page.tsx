@@ -30,7 +30,7 @@ export default function EquipoPage() {
               priority
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/70 to-white/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/50 to-white/60" />
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <motion.div
