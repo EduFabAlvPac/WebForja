@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { 
@@ -11,8 +12,27 @@ export default function EquipoPage() {
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section - Simple y Elegante */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <motion.div
+            className="w-full h-full"
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.05 }}
+            transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+              alt="Equipo profesional de FORJA Digital trabajando en colaboración"
+              fill
+              className="object-cover"
+              quality={90}
+              priority
+            />
+          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95" />
+        </div>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

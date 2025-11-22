@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Lightbulb, Smartphone, Check, Target } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -49,7 +50,25 @@ export default function EstrategiaTransformacionPage() {
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/path-to-grid-pattern.svg')] opacity-5" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <motion.div
+            className="w-full h-full"
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.05 }}
+            transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+              alt="Equipo colaborando en estrategia de transformación empresarial"
+              fill
+              className="object-cover"
+              quality={90}
+              priority
+            />
+          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-purple/80 to-brand-navy/90" />
+        </div>
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

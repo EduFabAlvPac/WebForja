@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Clock } from 'lucide-react'
 import { HistoriaSection } from '@/components/nosotros/HistoriaSection'
@@ -12,9 +13,24 @@ export default function HistoriaPage() {
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-12 md:py-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <motion.div
+            className="w-full h-full"
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.05 }}
+            transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
+              alt="Historia de FORJA Digital - Equipo fundador en sesión de planificación estratégica"
+              fill
+              className="object-cover"
+              quality={90}
+              priority
+            />
+          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/85 via-brand-purple/75 to-brand-navy/85" />
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
