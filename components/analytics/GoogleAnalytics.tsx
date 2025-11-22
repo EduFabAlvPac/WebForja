@@ -1,7 +1,7 @@
 'use client'
 
 import Script from 'next/script'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { trackPageView } from '@/lib/analytics'
 
@@ -10,9 +10,9 @@ interface GoogleAnalyticsProps {
 }
 
 /**
- * Componente para inicializar Google Analytics 4
+ * Componente interno que usa useSearchParams
  */
-export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
+function AnalyticsTracker() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -24,6 +24,14 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
     }
   }, [pathname, searchParams])
 
+  return null
+}
+
+/**
+ * Componente para inicializar Google Analytics 4
+ */
+export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
+
   // No renderizar en desarrollo si no hay GA ID
   if (!gaId || process.env.NODE_ENV === 'development') {
     return null
@@ -31,6 +39,9 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <AnalyticsTracker />
+      </Suspense>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
