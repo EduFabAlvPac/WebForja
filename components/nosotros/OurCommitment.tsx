@@ -58,7 +58,7 @@ export function OurCommitment() {
             transition={{ delay: 0.1 }}
             className="text-xl md:text-2xl text-gray-700 leading-relaxed"
           >
-            Cuando decides trabajar con FORJA, no contratas un "proveedor".{' '}
+            Cuando decides trabajar con FORJA, no contratas un &quot;proveedor&quot;.{' '}
             <strong className="text-brand-orange">Ganas un socio estratégico</strong> comprometido con tu éxito.
           </motion.p>
         </div>
@@ -111,7 +111,7 @@ export function OurCommitment() {
             <div className="relative z-10">
               <Sparkles className="w-12 h-12 text-brand-orange mb-6" />
               <blockquote className="text-2xl md:text-3xl font-bold text-white leading-relaxed italic mb-6">
-                "No prometemos milagros. Prometemos <span className="text-brand-orange">método, rigor</span> y compromiso con <span className="text-brand-turquoise">resultados reales</span>."
+                &quot;No prometemos milagros. Prometemos <span className="text-brand-orange">método, rigor</span> y compromiso con <span className="text-brand-turquoise">resultados reales</span>.&quot;
               </blockquote>
               <p className="text-lg text-white/80 font-semibold">
                 - Equipo FORJA

@@ -205,7 +205,7 @@ declare global {
   }
 }
 
-export default {
+const analytics = {
   trackEvent,
   trackPageView,
   trackCTAClick,
@@ -216,5 +216,7 @@ export default {
   trackCaseStudyClick,
   trackContactClick,
 }
+
+export default analytics
 
 
