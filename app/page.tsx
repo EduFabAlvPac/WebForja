@@ -1,40 +1,31 @@
 import { HeroSection } from '@/components/sections/HeroSection'
+import { PainPointsSection } from '@/components/sections/PainPointsSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { MetodologiaSection } from '@/components/sections/MetodologiaSection'
-import Link from 'next/link'
+import { CaseStudiesSection } from '@/components/sections/CaseStudiesSection'
+import { CTASection } from '@/components/sections/CTASection'
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <ServicesSection />
-      <MetodologiaSection />
-      
-      {/* CTA Section */}
-      <section className="section-padding gradient-cta">
-        <div className="container-custom text-center">
-          <h2 className="text-h2-mobile md:text-h2-desktop text-white mb-6">
-            ¿Listo para Transformar tu Empresa?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Descubre el nivel de madurez digital de tu organización con nuestro diagnóstico gratuito
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/rayos-x-empresarial"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-purple font-semibold rounded-button hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
-            >
-              🔍 Rayos X Empresarial Gratuito
-            </Link>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-orange text-white font-semibold rounded-button hover:bg-brand-orange-dark transition-all transform hover:scale-105 shadow-lg"
-            >
-              Habla con un Forjador
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div id="hero">
+        <HeroSection />
+      </div>
+      <div id="pain-points">
+        <PainPointsSection />
+      </div>
+      <div id="services">
+        <ServicesSection />
+      </div>
+      <div id="metodologia">
+        <MetodologiaSection />
+      </div>
+      <div id="case-studies">
+        <CaseStudiesSection />
+      </div>
+      <div id="cta">
+        <CTASection />
+      </div>
     </>
   )
 }

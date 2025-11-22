@@ -1,21 +1,74 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle, X } from 'lucide-react'
+import config from '@/lib/config'
+import { useSectionInView } from '@/lib/hooks/useSectionInView'
+import { trackCTAClick } from '@/lib/analytics'
+
+interface ContextualMessage {
+  text: string
+  whatsappMessage: string
+}
 
 export function WhatsAppFloat() {
   const [isExpanded, setIsExpanded] = useState(false)
-  const whatsappNumber = '573001234567' // TODO: Reemplazar con número real de Forja Digital
+  const [contextMessage, setContextMessage] = useState<ContextualMessage>({
+    text: '¿En qué puedo ayudarte hoy?',
+    whatsappMessage: 'Hola, me interesa conocer más sobre Forja Digital',
+  })
+  
+  const whatsappNumber = config.contact.whatsapp
 
-  const messages = {
-    home: 'Hola, me interesa conocer más sobre Forja Digital',
-    servicios: 'Hola, me interesa conocer sus servicios de transformación digital',
-    industrias: 'Hola, me gustaría información sobre soluciones para mi industria',
-  }
+  // Detectar sección visible
+  const activeSection = useSectionInView(
+    ['hero', 'pain-points', 'services', 'metodologia', 'case-studies', 'cta'],
+    { threshold: 0.3 }
+  )
+
+  // Actualizar mensaje según la sección
+  useEffect(() => {
+    const messages: Record<string, ContextualMessage> = {
+      'hero': {
+        text: '¿Tienes dudas sobre el Rayos-X? Te ayudo 👋',
+        whatsappMessage: 'Hola, me interesa conocer más sobre el Rayos-X Empresarial',
+      },
+      'pain-points': {
+        text: '¿Te identificas con estos problemas? Hablemos',
+        whatsappMessage: 'Hola, me identifico con los problemas mencionados. Quiero conocer más sobre sus soluciones',
+      },
+      'services': {
+        text: '¿Quieres saber cuál servicio es ideal para ti?',
+        whatsappMessage: 'Hola, me gustaría información sobre qué servicio es mejor para mi empresa',
+      },
+      'metodologia': {
+        text: '¿Preguntas sobre cómo funciona FORJA?',
+        whatsappMessage: 'Hola, tengo preguntas sobre la metodología FORJA',
+      },
+      'case-studies': {
+        text: '¿Quieres resultados como estos? Conversemos',
+        whatsappMessage: 'Hola, me interesan los casos de éxito. Quiero saber cómo pueden ayudarme',
+      },
+      'cta': {
+        text: '¿Listo para empezar? Agenda tu sesión',
+        whatsappMessage: 'Hola, quiero agendar una sesión estratégica',
+      },
+    }
+
+    if (activeSection && messages[activeSection]) {
+      setContextMessage(messages[activeSection])
+    } else {
+      setContextMessage({
+        text: '¿En qué puedo ayudarte hoy?',
+        whatsappMessage: 'Hola, me interesa conocer más sobre Forja Digital',
+      })
+    }
+  }, [activeSection])
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(messages.home)
+    trackCTAClick('whatsapp', activeSection || 'unknown', `https://wa.me/${whatsappNumber}`)
+    const message = encodeURIComponent(contextMessage.whatsappMessage)
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank')
   }
 
@@ -41,9 +94,9 @@ export function WhatsAppFloat() {
             >
               <X className="h-4 w-4" />
             </button>
-            <p className="text-sm font-semibold mb-2">¿Necesitas ayuda?</p>
+            <p className="text-sm font-semibold mb-2">{contextMessage.text}</p>
             <p className="text-xs text-gray-600 mb-3">
-              Chatea con nosotros en WhatsApp y descubre cómo transformar tu negocio
+              Chatea con nosotros en WhatsApp. Respuesta rápida garantizada.
             </p>
             <button
               onClick={handleWhatsAppClick}

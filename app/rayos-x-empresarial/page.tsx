@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, ChevronLeft, Download, CheckCircle2 } from 'lucide-react'
+import { ChevronRight, ChevronLeft, Download, CheckCircle2, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import { api } from '@/lib/api/client'
 
 interface Question {
   id: number
@@ -80,6 +81,12 @@ export default function RayosXEmpresarial() {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const [showResults, setShowResults] = useState(false)
+  const [showEmailForm, setShowEmailForm] = useState(false)
+  const [email, setEmail] = useState('')
+  const [nombre, setNombre] = useState('')
+  const [empresa, setEmpresa] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [emailSent, setEmailSent] = useState(false)
 
   const totalQuestions = QUIZ_QUESTIONS.length
   const progress = (Object.keys(answers).length / totalQuestions) * 100
@@ -95,7 +102,7 @@ export default function RayosXEmpresarial() {
     if (currentStep < totalQuestions - 1) {
       setCurrentStep(prev => prev + 1)
     } else if (canProceed) {
-      calculateResults()
+      setShowEmailForm(true)
     }
   }
 
@@ -105,8 +112,28 @@ export default function RayosXEmpresarial() {
     }
   }
 
-  const calculateResults = () => {
-    setShowResults(true)
+  const calculateResults = async () => {
+    setIsSubmitting(true)
+    
+    try {
+      const response = await api.post('/api/rayos-x', {
+        answers,
+        email: email || undefined,
+        nombre: nombre || undefined,
+        empresa: empresa || undefined,
+      })
+      
+      setShowResults(true)
+      if (email && nombre) {
+        setEmailSent(true)
+      }
+    } catch (error) {
+      console.error('Error al calcular resultados:', error)
+      // Mostrar resultados de todas formas
+      setShowResults(true)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const totalScore = Object.values(answers).reduce((sum, val) => sum + val, 0)
@@ -195,42 +222,141 @@ export default function RayosXEmpresarial() {
               </AnimatePresence>
 
               {/* Navigation */}
-              <div className="flex justify-between">
-                <Button
-                  variant="outline"
-                  onClick={handlePrev}
-                  disabled={currentStep === 0}
+              {!showEmailForm ? (
+                <div className="flex justify-between">
+                  <Button
+                    variant="outline"
+                    onClick={handlePrev}
+                    disabled={currentStep === 0}
+                  >
+                    <ChevronLeft className="mr-2 h-4 w-4" />
+                    Anterior
+                  </Button>
+                  
+                  <Button
+                    onClick={handleNext}
+                    disabled={!canProceed}
+                    className="bg-brand-orange hover:bg-brand-orange-dark"
+                  >
+                    {currentStep < totalQuestions - 1 ? (
+                      <>
+                        Siguiente
+                        <ChevronRight className="ml-2 h-4 w-4" />
+                      </>
+                    ) : (
+                      <>
+                        Ver Resultados
+                        <Download className="ml-2 h-4 w-4" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+              ) : (
+                /* Email Form */
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="space-y-6"
                 >
-                  <ChevronLeft className="mr-2 h-4 w-4" />
-                  Anterior
-                </Button>
-                
-                <Button
-                  onClick={handleNext}
-                  disabled={!canProceed}
-                  className="bg-brand-orange hover:bg-brand-orange-dark"
-                >
-                  {currentStep < totalQuestions - 1 ? (
-                    <>
-                      Siguiente
-                      <ChevronRight className="ml-2 h-4 w-4" />
-                    </>
-                  ) : (
-                    <>
-                      Ver Resultados
-                      <Download className="ml-2 h-4 w-4" />
-                    </>
-                  )}
-                </Button>
-              </div>
+                  <div className="text-center mb-6">
+                    <Mail className="w-12 h-12 text-brand-orange mx-auto mb-4" />
+                    <h2 className="text-2xl font-bold mb-2">
+                      ¿Quieres recibir tus resultados por email?
+                    </h2>
+                    <p className="text-gray-600">
+                      Opcional: Ingresa tus datos para recibir un reporte detallado
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="nombre" className="block text-sm font-medium mb-2">
+                        Nombre
+                      </label>
+                      <input
+                        id="nombre"
+                        type="text"
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                        placeholder="Tu nombre"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email-input" className="block text-sm font-medium mb-2">
+                        Email
+                      </label>
+                      <input
+                        id="email-input"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                        placeholder="tu@email.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="empresa" className="block text-sm font-medium mb-2">
+                        Empresa (opcional)
+                      </label>
+                      <input
+                        id="empresa"
+                        type="text"
+                        value={empresa}
+                        onChange={(e) => setEmpresa(e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                        placeholder="Tu empresa"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <Button
+                      variant="outline"
+                      onClick={() => setShowEmailForm(false)}
+                      className="flex-1"
+                    >
+                      Volver
+                    </Button>
+                    <Button
+                      onClick={calculateResults}
+                      disabled={isSubmitting}
+                      className="flex-1 bg-brand-orange hover:bg-brand-orange-dark"
+                    >
+                      {isSubmitting ? 'Procesando...' : 'Ver Resultados'}
+                    </Button>
+                  </div>
+
+                  <button
+                    onClick={calculateResults}
+                    className="w-full text-center text-sm text-gray-500 hover:text-gray-700 mt-4"
+                  >
+                    Omitir y ver resultados sin email
+                  </button>
+                </motion.div>
+              )}
             </>
-          ) : (
+          ) : showResults ? (
             /* Results */
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center"
             >
+              {emailSent && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <div className="text-left">
+                    <h3 className="font-semibold text-green-900">¡Email enviado!</h3>
+                    <p className="text-sm text-green-700 mt-1">
+                      Revisa tu bandeja de entrada para ver el reporte detallado.
+                    </p>
+                  </div>
+                </div>
+              )}
+
               <div className="mb-8">
                 <h2 className="text-h2-mobile md:text-h2-desktop mb-4">
                   Resultados de tu <span className="text-brand-orange">Diagnóstico</span>
@@ -279,7 +405,7 @@ export default function RayosXEmpresarial() {
                 </Button>
               </div>
             </motion.div>
-          )}
+          ) : null}
         </motion.div>
       </div>
     </div>

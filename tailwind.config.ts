@@ -20,6 +20,11 @@ const config: Config = {
     'text-red-500',
     'text-teal-500',
     'text-violet-500',
+    // Border colors para Pain Points cards
+    'hover:border-brand-coral',
+    'hover:border-brand-orange',
+    'hover:border-brand-purple',
+    'hover:border-brand-turquoise',
   ],
   theme: {
     container: {

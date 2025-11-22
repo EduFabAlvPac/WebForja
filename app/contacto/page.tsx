@@ -1,13 +1,39 @@
-import { Metadata } from 'next'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
-import { ScrollReveal } from '@/components/animations/ScrollReveal'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Contacto | Forja Digital - AE',
-  description: 'Contáctanos para iniciar tu transformación digital. Estamos en Bogotá, Colombia.',
-}
+import { Metadata } from 'next'
+import { Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
+import { ScrollReveal } from '@/components/animations/ScrollReveal'
+import { useForm } from '@/lib/hooks/useForm'
+import { ContactFormData, validateContactForm } from '@/lib/validations/contact'
+import { api } from '@/lib/api/client'
+import config from '@/lib/config'
 
 export default function ContactoPage() {
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    submitSuccess,
+    submitError,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useForm<ContactFormData>({
+    initialValues: {
+      nombre: '',
+      email: '',
+      telefono: '',
+      empresa: '',
+      servicio: '',
+      mensaje: '',
+    },
+    validate: validateContactForm,
+    onSubmit: async (data) => {
+      await api.post('/api/contact', data)
+    },
+  })
+
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section */}
@@ -30,42 +56,111 @@ export default function ContactoPage() {
             <ScrollReveal>
               <div className="bg-white rounded-card shadow-card p-8">
                 <h2 className="text-2xl font-bold mb-6">Envíanos un Mensaje</h2>
-                <form className="space-y-6">
+                
+                {submitSuccess && (
+                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-green-900">¡Mensaje enviado exitosamente!</h3>
+                      <p className="text-sm text-green-700 mt-1">
+                        Gracias por contactarnos. Te responderemos pronto.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {submitError && (
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+                    <AlertCircle className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-red-900">Error al enviar</h3>
+                      <p className="text-sm text-red-700 mt-1">{submitError}</p>
+                    </div>
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">Nombre *</label>
+                      <label htmlFor="nombre" className="block text-sm font-medium mb-2">
+                        Nombre *
+                      </label>
                       <input
+                        id="nombre"
+                        name="nombre"
                         type="text"
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                        value={values.nombre}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={`w-full px-4 py-3 border rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent ${
+                          errors.nombre && touched.nombre ? 'border-red-500' : 'border-gray-300'
+                        }`}
                         placeholder="Juan Pérez"
+                        aria-invalid={errors.nombre && touched.nombre ? 'true' : 'false'}
+                        aria-describedby={errors.nombre && touched.nombre ? 'nombre-error' : undefined}
                       />
+                      {errors.nombre && touched.nombre && (
+                        <p id="nombre-error" className="mt-1 text-sm text-red-600">{errors.nombre}</p>
+                      )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Email *</label>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                        Email *
+                      </label>
                       <input
+                        id="email"
+                        name="email"
                         type="email"
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={`w-full px-4 py-3 border rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent ${
+                          errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
+                        }`}
                         placeholder="juan@empresa.com"
+                        aria-invalid={errors.email && touched.email ? 'true' : 'false'}
+                        aria-describedby={errors.email && touched.email ? 'email-error' : undefined}
                       />
+                      {errors.email && touched.email && (
+                        <p id="email-error" className="mt-1 text-sm text-red-600">{errors.email}</p>
+                      )}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">Teléfono *</label>
+                      <label htmlFor="telefono" className="block text-sm font-medium mb-2">
+                        Teléfono
+                      </label>
                       <input
+                        id="telefono"
+                        name="telefono"
                         type="tel"
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                        value={values.telefono}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={`w-full px-4 py-3 border rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent ${
+                          errors.telefono && touched.telefono ? 'border-red-500' : 'border-gray-300'
+                        }`}
                         placeholder="+57 300 123 4567"
+                        aria-invalid={errors.telefono && touched.telefono ? 'true' : 'false'}
+                        aria-describedby={errors.telefono && touched.telefono ? 'telefono-error' : undefined}
                       />
+                      {errors.telefono && touched.telefono && (
+                        <p id="telefono-error" className="mt-1 text-sm text-red-600">{errors.telefono}</p>
+                      )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Empresa</label>
+                      <label htmlFor="empresa" className="block text-sm font-medium mb-2">
+                        Empresa
+                      </label>
                       <input
+                        id="empresa"
+                        name="empresa"
                         type="text"
+                        value={values.empresa}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         className="w-full px-4 py-3 border border-gray-300 rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent"
                         placeholder="Mi Empresa S.A.S."
                       />
@@ -73,33 +168,56 @@ export default function ContactoPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Servicio de Interés</label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent">
-                      <option>Selecciona un servicio</option>
-                      <option>Arquitectura Empresarial</option>
-                      <option>Transformación Digital</option>
-                      <option>Optimización de Procesos</option>
-                      <option>Desarrollo de Software</option>
-                      <option>Analítica y BI</option>
-                      <option>Change Management</option>
+                    <label htmlFor="servicio" className="block text-sm font-medium mb-2">
+                      Servicio de Interés
+                    </label>
+                    <select
+                      id="servicio"
+                      name="servicio"
+                      value={values.servicio}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                    >
+                      <option value="">Selecciona un servicio</option>
+                      <option value="Arquitectura Empresarial">Arquitectura Empresarial</option>
+                      <option value="Transformación Digital">Transformación Digital</option>
+                      <option value="Optimización de Procesos">Optimización de Procesos</option>
+                      <option value="Desarrollo de Software">Desarrollo de Software</option>
+                      <option value="Analítica y BI">Analítica y BI</option>
+                      <option value="Change Management">Change Management</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Mensaje *</label>
+                    <label htmlFor="mensaje" className="block text-sm font-medium mb-2">
+                      Mensaje *
+                    </label>
                     <textarea
-                      required
+                      id="mensaje"
+                      name="mensaje"
+                      value={values.mensaje}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+                      className={`w-full px-4 py-3 border rounded-button focus:ring-2 focus:ring-brand-orange focus:border-transparent ${
+                        errors.mensaje && touched.mensaje ? 'border-red-500' : 'border-gray-300'
+                      }`}
                       placeholder="Cuéntanos sobre tu proyecto o necesidad..."
-                    ></textarea>
+                      aria-invalid={errors.mensaje && touched.mensaje ? 'true' : 'false'}
+                      aria-describedby={errors.mensaje && touched.mensaje ? 'mensaje-error' : undefined}
+                    />
+                    {errors.mensaje && touched.mensaje && (
+                      <p id="mensaje-error" className="mt-1 text-sm text-red-600">{errors.mensaje}</p>
+                    )}
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold py-3 rounded-button transition-colors shadow-glow-orange"
+                    disabled={isSubmitting}
+                    className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold py-3 rounded-button transition-colors shadow-glow-orange disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Enviar Mensaje
+                    {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
                   </button>
                 </form>
               </div>
@@ -113,7 +231,7 @@ export default function ContactoPage() {
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-brand-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <MapPin className="h-6 w-6 text-brand-orange" />
+                        <MapPin className="h-6 w-6 text-brand-orange" aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Dirección</h3>
@@ -126,13 +244,13 @@ export default function ContactoPage() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-brand-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Phone className="h-6 w-6 text-brand-turquoise" />
+                        <Phone className="h-6 w-6 text-brand-turquoise" aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Teléfono</h3>
                         <p className="text-gray-600">
-                          <a href="tel:+573001234567" className="hover:text-brand-orange transition-colors">
-                            +57 300 123 4567
+                          <a href={`tel:${config.contact.phone}`} className="hover:text-brand-orange transition-colors">
+                            {config.contact.phone}
                           </a>
                         </p>
                       </div>
@@ -140,13 +258,13 @@ export default function ContactoPage() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-brand-purple/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Mail className="h-6 w-6 text-brand-purple" />
+                        <Mail className="h-6 w-6 text-brand-purple" aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Email</h3>
                         <p className="text-gray-600">
-                          <a href="mailto:info@forjadigital.co" className="hover:text-brand-orange transition-colors">
-                            info@forjadigital.co
+                          <a href={`mailto:${config.contact.email}`} className="hover:text-brand-orange transition-colors">
+                            {config.contact.email}
                           </a>
                         </p>
                       </div>
@@ -154,7 +272,7 @@ export default function ContactoPage() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-brand-coral/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Clock className="h-6 w-6 text-brand-coral" />
+                        <Clock className="h-6 w-6 text-brand-coral" aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Horario</h3>

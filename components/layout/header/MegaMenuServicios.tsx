@@ -41,10 +41,16 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
               <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                 {SERVICIOS_MEGA_MENU.map((column, columnIndex) => (
                   <div key={column.id} className="space-y-8">
-                    {/* Título de columna */}
-                    <h3 className="text-lg font-extrabold text-gray-900 text-center mb-10 tracking-tight">
-                      {column.title}
-                    </h3>
+                    {/* Título de columna como Link */}
+                    <Link
+                      href={`/servicios/${column.id}`}
+                      className="group block"
+                    >
+                      <h3 className="text-lg font-extrabold text-gray-900 text-center mb-10 tracking-tight group-hover:text-brand-orange transition-colors duration-300">
+                        {column.title}
+                      </h3>
+                      <div className="w-1/2 h-0.5 bg-brand-orange mx-auto -mt-8 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
+                    </Link>
 
                     {/* Lista de servicios */}
                     <div className="space-y-10">

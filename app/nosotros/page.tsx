@@ -7,6 +7,9 @@ import {
   Award, Shield, Lightbulb, CheckCircle2, XCircle,
   Flame, Star, ArrowRight, MessageSquareQuote
 } from 'lucide-react'
+import { MisionVisionValores } from '@/components/nosotros/MisionVisionValores'
+import { DiferenciadoresSection } from '@/components/nosotros/DiferenciadoresSection'
+import { OurCommitment } from '@/components/nosotros/OurCommitment'
 
 export default function NosotrosPage() {
   return (
@@ -172,6 +175,9 @@ export default function NosotrosPage() {
           </div>
         </div>
       </section>
+
+      {/* Misión, Visión y Valores */}
+      <MisionVisionValores />
 
       {/* Navegación a las 3 secciones principales */}
       <section className="py-16 md:py-24 bg-white">
@@ -456,6 +462,9 @@ export default function NosotrosPage() {
         </div>
       </section>
 
+      {/* Diferenciadores */}
+      <DiferenciadoresSection />
+
       {/* Manifiesto FORJA */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy text-white">
         <div className="container mx-auto px-4 md:px-8">
@@ -506,39 +515,8 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-6">
-              ¿Listo para Convertirte en un <span className="text-brand-orange">Gigante</span>?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Agenda una consulta gratuita y descubre cómo podemos transformar tu PYME
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/rayos-x-empresarial"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                🔍 Diagnóstico Gratuito
-              </Link>
-              <Link
-                href="/contacto"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-brand-navy hover:bg-brand-navy-dark text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                Habla con un Forjador
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Compromiso y CTA */}
+      <OurCommitment />
     </div>
   )
 }

@@ -5,6 +5,11 @@ import { Header } from '@/components/layout/header/Header'
 import { Footer } from '@/components/layout/footer/Footer'
 import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
 import { CookieConsent } from '@/components/shared/CookieConsent'
+import { ReadingProgressBar } from '@/components/ui/ReadingProgressBar'
+import { StickyCTABar } from '@/components/ui/StickyCTABar'
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
+import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
+import config from '@/lib/config'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -51,12 +56,19 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${montserrat.variable}`}>
       <body>
+        <GoogleAnalytics gaId={config.analytics.gaId} />
+        <AnalyticsProvider />
+        <a href="#main-content" className="skip-to-main">
+          Saltar al contenido principal
+        </a>
+        <ReadingProgressBar />
         <Header />
-        <main className="min-h-screen">
+        <main id="main-content" className="min-h-screen" role="main">
           {children}
         </main>
         <Footer />
         <WhatsAppFloat />
+        <StickyCTABar />
         <CookieConsent />
       </body>
     </html>

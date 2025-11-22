@@ -104,7 +104,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
           {
             title: 'Arquitectura Estratégica',
             description: 'Visión, Gobierno Corporativo, Modelo Financiero',
-            href: '/servicios/estrategia-empresarial',
+            href: '/servicios/estrategia-transformacion/arquitectura-estrategica',
             icon: 'Lightbulb',
             iconBg: 'bg-cyan-100 text-cyan-600'
           },
@@ -196,7 +196,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         id: 'estrategia-empresarial',
         title: 'Arquitectura Estratégica',
         description: 'Construimos el mapa desde dónde estás hasta dónde necesitas llegar',
-        href: '/servicios/estrategia-empresarial',
+        href: '/servicios/estrategia-transformacion/arquitectura-estrategica',
         icon: 'Lightbulb',
         iconBg: 'bg-cyan-100',
         iconColor: 'text-cyan-500',

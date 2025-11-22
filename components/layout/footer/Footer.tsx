@@ -2,12 +2,13 @@
 
 import Link from 'next/link'
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import config from '@/lib/config'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-brand-navy text-white">
+    <footer className="bg-brand-navy text-white" role="contentinfo">
       <div className="container-custom py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Columna 1: Brand */}
@@ -20,17 +21,41 @@ export function Footer() {
               Transformando PYMEs latinoamericanas mediante arquitectura empresarial y estrategia digital.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors">
-                <Linkedin className="h-5 w-5" />
+              <a 
+                href={config.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a 
+                href={config.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors">
-                <Twitter className="h-5 w-5" />
+              <a 
+                href={config.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a 
+                href={config.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 hover:bg-brand-orange rounded-full flex items-center justify-center transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -64,19 +89,19 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-gray-300">
-                <MapPin className="h-5 w-5 mt-1 flex-shrink-0 text-brand-orange" />
+                <MapPin className="h-5 w-5 mt-1 flex-shrink-0 text-brand-orange" aria-hidden="true" />
                 <span>Bogotá, Colombia</span>
               </li>
               <li className="flex items-center gap-2 text-gray-300">
-                <Phone className="h-5 w-5 flex-shrink-0 text-brand-orange" />
-                <a href="tel:+573001234567" className="hover:text-brand-orange transition-colors">
-                  +57 300 123 4567
+                <Phone className="h-5 w-5 flex-shrink-0 text-brand-orange" aria-hidden="true" />
+                <a href={`tel:${config.contact.phone}`} className="hover:text-brand-orange transition-colors">
+                  {config.contact.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2 text-gray-300">
-                <Mail className="h-5 w-5 flex-shrink-0 text-brand-orange" />
-                <a href="mailto:info@forjadigital.co" className="hover:text-brand-orange transition-colors">
-                  info@forjadigital.co
+                <Mail className="h-5 w-5 flex-shrink-0 text-brand-orange" aria-hidden="true" />
+                <a href={`mailto:${config.contact.email}`} className="hover:text-brand-orange transition-colors">
+                  {config.contact.email}
                 </a>
               </li>
             </ul>
