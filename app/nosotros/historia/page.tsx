@@ -30,7 +30,7 @@ export default function HistoriaPage() {
               priority
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/85 via-brand-purple/75 to-brand-navy/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/70 via-brand-purple/60 to-brand-navy/70" />
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">

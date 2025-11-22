@@ -28,7 +28,7 @@ export default function CasosExitoPage() {
               priority
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-red-50/90 to-white/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-red-50/60 to-white/70" />
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
