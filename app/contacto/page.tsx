@@ -27,6 +27,7 @@ export default function ContactoPage() {
       empresa: '',
       servicio: '',
       mensaje: '',
+      aceptaPoliticas: false,
     },
     validate: validateContactForm,
     onSubmit: async (data) => {
@@ -209,6 +210,49 @@ export default function ContactoPage() {
                     />
                     {errors.mensaje && touched.mensaje && (
                       <p id="mensaje-error" className="mt-1 text-sm text-red-600">{errors.mensaje}</p>
+                    )}
+                  </div>
+
+                  {/* Consentimiento de Políticas de Privacidad */}
+                  <div className="border-t border-gray-200 pt-4">
+                    <div className="flex items-start gap-3">
+                      <input
+                        id="aceptaPoliticas"
+                        name="aceptaPoliticas"
+                        type="checkbox"
+                        checked={values.aceptaPoliticas}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={`mt-1 h-4 w-4 text-brand-orange focus:ring-brand-orange border-gray-300 rounded ${
+                          errors.aceptaPoliticas && touched.aceptaPoliticas ? 'border-red-500' : ''
+                        }`}
+                        aria-invalid={errors.aceptaPoliticas && touched.aceptaPoliticas ? 'true' : 'false'}
+                        aria-describedby={errors.aceptaPoliticas && touched.aceptaPoliticas ? 'politicas-error' : undefined}
+                      />
+                      <label htmlFor="aceptaPoliticas" className="text-sm text-gray-700 leading-relaxed">
+                        Acepto la{' '}
+                        <a
+                          href="/politica-privacidad"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-orange hover:text-brand-orange-dark underline font-medium"
+                        >
+                          Política de Privacidad
+                        </a>{' '}
+                        y autorizo el tratamiento de mis datos personales de acuerdo con la{' '}
+                        <a
+                          href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-orange hover:text-brand-orange-dark underline font-medium"
+                        >
+                          Ley 1581 de 2012
+                        </a>{' '}
+                        para los fines de contacto comercial, envío de información y seguimiento. *
+                      </label>
+                    </div>
+                    {errors.aceptaPoliticas && touched.aceptaPoliticas && (
+                      <p id="politicas-error" className="mt-2 text-sm text-red-600 ml-7">{errors.aceptaPoliticas}</p>
                     )}
                   </div>
 

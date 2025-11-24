@@ -35,7 +35,8 @@ export async function POST(request: Request) {
         empresa: data.empresa || '',
         servicio: data.servicio || '',
         mensaje: data.mensaje,
-        ip: ip
+        ip: ip,
+        acepta_politicas: data.aceptaPoliticas ? 'Sí' : 'No'
       })
 
       const response = await fetch(GOOGLE_SCRIPT_URL, {

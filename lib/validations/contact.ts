@@ -7,6 +7,9 @@ export const contactFormSchema = z.object({
   empresa: z.string().optional().or(z.literal('')),
   servicio: z.string().optional().or(z.literal('')),
   mensaje: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
+  aceptaPoliticas: z.boolean().refine((val) => val === true, {
+    message: 'Debes aceptar la Política de Privacidad para continuar',
+  }),
 })
 
 export type ContactFormData = z.infer<typeof contactFormSchema>

@@ -132,11 +132,11 @@ function handleContactForm(datos) {
     "Nuevo - Contacto Web",                   // W: Estado_Lead
     datos.mensaje || "",                      // X: Notas
     "",                                       // Y: Ultimo_Contacto
-    "Sí",                                     // Z: Acepta_Politicas
+    datos.acepta_politicas || "Sí",           // Z: Acepta_Politicas
     ahora,                                    // AA: Fecha_Aceptacion
     datos.ip || "No capturada",               // AB: IP_Usuario
     VERSION_POLITICA,                         // AC: Version_Politica
-    "Formulario Contacto Web - Aceptación implícita" // AD: Evidencia_Consentimiento
+    "Formulario Contacto Web - Checkbox aceptado explícitamente por el usuario. Ley 1581/2012 Colombia." // AD: Evidencia_Consentimiento
   ];
   
   hoja.appendRow(fila);
