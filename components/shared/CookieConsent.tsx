@@ -23,18 +23,50 @@ export function CookieConsent() {
   }, [])
 
   const handleAccept = () => {
-    localStorage.setItem('cookieConsent', 'accepted')
+    const consentData = {
+      status: 'accepted',
+      timestamp: new Date().toISOString(),
+      analytics: true,
+      marketing: true,
+      functional: true
+    }
+    localStorage.setItem('cookieConsent', JSON.stringify(consentData))
     setShowBanner(false)
     setIsLoaded(true)
     
-    // Aquí puedes inicializar servicios de analytics, tracking, etc.
-    // Ejemplo: initGoogleAnalytics()
+    // Inicializar Google Analytics si está configurado
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted'
+      })
+    }
+    
+    // Disparar evento personalizado para tracking
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('cookieConsentAccepted'))
+    }
   }
 
   const handleReject = () => {
-    localStorage.setItem('cookieConsent', 'rejected')
+    const consentData = {
+      status: 'rejected',
+      timestamp: new Date().toISOString(),
+      analytics: false,
+      marketing: false,
+      functional: true // Las cookies funcionales siempre están activas
+    }
+    localStorage.setItem('cookieConsent', JSON.stringify(consentData))
     setShowBanner(false)
     setIsLoaded(true)
+    
+    // Rechazar Google Analytics
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied'
+      })
+    }
   }
 
   const handleClose = () => {

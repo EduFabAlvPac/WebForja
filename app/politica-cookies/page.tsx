@@ -1,10 +1,7 @@
-import { Metadata } from 'next'
-import { Cookie, Shield, Eye, BarChart3, Mail } from 'lucide-react'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Política de Cookies | Forja Digital - AE',
-  description: 'Conoce nuestra política de cookies y cómo utilizamos estas tecnologías para mejorar tu experiencia en nuestro sitio web.',
-}
+import { Cookie, Shield, Eye, BarChart3, Mail } from 'lucide-react'
+import { CookiePreferences } from '@/components/shared/CookiePreferences'
 
 export default function PoliticaCookiesPage() {
   return (
@@ -179,6 +176,29 @@ export default function PoliticaCookiesPage() {
                   Nos reservamos el derecho de actualizar esta política en cualquier momento para reflejar 
                   cambios en nuestras prácticas o por razones operativas, legales o reglamentarias.
                 </p>
+              </div>
+            </div>
+
+            {/* Gestión de Preferencias */}
+            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-8 md:p-12 mb-8 border-2 border-brand-orange/20">
+              <CookiePreferences onSave={() => {
+                // Mostrar mensaje de éxito
+                alert('✅ Tus preferencias de cookies han sido guardadas correctamente.')
+              }} />
+            </div>
+
+            {/* Contacto */}
+            <div className="bg-brand-navy rounded-2xl shadow-lg p-8 md:p-12 text-white">
+              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                <Mail className="w-8 h-8 text-brand-orange" />
+                ¿Tienes Preguntas?
+              </h2>
+              <p className="text-gray-300 mb-6">
+                Si tienes alguna pregunta sobre nuestra Política de Cookies, no dudes en contactarnos:
+              </p>
+              <div className="space-y-2 text-gray-300">
+                <p><strong className="text-white">Email:</strong> <a href="mailto:forjadigitalae@gmail.com" className="text-brand-orange hover:underline">forjadigitalae@gmail.com</a></p>
+                <p><strong className="text-white">Teléfono:</strong> +57 300 123 4567</p>
               </div>
             </div>
           </div>

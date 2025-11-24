@@ -34,6 +34,22 @@ export const metadata: Metadata = {
     apple: '/logo-color.png',
   },
   authors: [{ name: 'Forja Digital - AE' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Agregar cuando tengas las verificaciones
+    // google: 'tu-codigo-de-verificacion',
+    // yandex: 'tu-codigo-de-verificacion',
+  },
   openGraph: {
     title: 'Forja Digital - AE | Transformación Digital',
     description: 'Juntos forjamos el cambio que impulsa tu futuro. Transformación digital para PYMEs.',
@@ -45,6 +61,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Forja Digital - AE',
     description: 'Transformación Digital y Arquitectura Empresarial',
+  },
+  other: {
+    // Seguridad y privacidad
+    'referrer': 'origin-when-cross-origin',
+    'format-detection': 'telephone=no',
+    // Compliance
+    'privacy-policy': '/politica-privacidad',
+    'terms-of-service': '/terminos-condiciones',
+    'cookie-policy': '/politica-cookies',
   },
 }
 

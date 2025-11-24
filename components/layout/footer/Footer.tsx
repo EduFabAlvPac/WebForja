@@ -77,9 +77,9 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Empresa</h3>
             <ul className="space-y-2">
               <li><Link href="/nosotros" className="text-gray-300 hover:text-brand-orange transition-colors">Sobre Nosotros</Link></li>
-              <li><Link href="/nosotros#equipo" className="text-gray-300 hover:text-brand-orange transition-colors">Nuestro Equipo</Link></li>
-              <li><Link href="/nosotros#metodologia" className="text-gray-300 hover:text-brand-orange transition-colors">Metodología FORJA</Link></li>
-              <li><Link href="/blog" className="text-gray-300 hover:text-brand-orange transition-colors">Blog</Link></li>
+              <li><Link href="/nosotros/equipo" className="text-gray-300 hover:text-brand-orange transition-colors">Nuestro Equipo</Link></li>
+              <li><Link href="/nosotros/historia" className="text-gray-300 hover:text-brand-orange transition-colors">Nuestra Historia</Link></li>
+              <li><Link href="/casos-exito" className="text-gray-300 hover:text-brand-orange transition-colors">Casos de Éxito</Link></li>
               <li><Link href="/contacto" className="text-gray-300 hover:text-brand-orange transition-colors">Contacto</Link></li>
             </ul>
           </div>
@@ -111,13 +111,30 @@ export function Footer() {
         {/* Línea divisoria */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-            <p>&copy; {currentYear} Forja Digital - AE. Todos los derechos reservados.</p>
-            <div className="flex gap-6">
-              <Link href="/privacidad" className="hover:text-brand-orange transition-colors">
+            <div className="text-center md:text-left">
+              <p className="mb-1">&copy; {currentYear} Forja Digital - AE. Todos los derechos reservados.</p>
+              <p className="text-xs text-gray-500">
+                Cumplimiento con{' '}
+                <a 
+                  href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-orange transition-colors underline"
+                >
+                  Ley 1581 de 2012
+                </a>
+                {' '}(Colombia)
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <Link href="/politica-privacidad" className="hover:text-brand-orange transition-colors whitespace-nowrap">
                 Política de Privacidad
               </Link>
-              <Link href="/terminos" className="hover:text-brand-orange transition-colors">
+              <Link href="/terminos-condiciones" className="hover:text-brand-orange transition-colors whitespace-nowrap">
                 Términos y Condiciones
+              </Link>
+              <Link href="/politica-cookies" className="hover:text-brand-orange transition-colors whitespace-nowrap">
+                Política de Cookies
               </Link>
             </div>
           </div>
