@@ -4,6 +4,9 @@ import { emailService } from '@/lib/email/service'
 import { getContactEmailTemplate, getContactConfirmationTemplate } from '@/lib/email/templates/contact'
 import config from '@/lib/config'
 
+// URL del Google Apps Script
+const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbzbnqizy8aR20Nm-OX3jPYLIKApgi6i2UCTg7rb9ysuaCrbqzw4cHzVUJNbsZEiovQ/exec'
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -18,7 +21,43 @@ export async function POST(request: Request) {
 
     const data = validation.data
 
-    // Enviar email al equipo
+    // Capturar IP del usuario
+    const forwarded = request.headers.get('x-forwarded-for')
+    const ip = forwarded ? forwarded.split(',')[0] : request.headers.get('x-real-ip') || 'No capturada'
+
+    // 1. Enviar datos a Google Sheets
+    try {
+      const formData = new URLSearchParams({
+        action: 'contact_form',
+        nombre: data.nombre,
+        email: data.email,
+        telefono: data.telefono || '',
+        empresa: data.empresa || '',
+        servicio: data.servicio || '',
+        mensaje: data.mensaje,
+        ip: ip
+      })
+
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData.toString()
+      })
+
+      if (!response.ok) {
+        console.error('Error guardando en Google Sheets:', await response.text())
+      } else {
+        const result = await response.json()
+        console.log('✅ Datos guardados en Google Sheets:', result)
+      }
+    } catch (sheetsError) {
+      console.error('Error conectando con Google Sheets:', sheetsError)
+      // Continuar aunque falle el guardado en Sheets
+    }
+
+    // 2. Enviar email al equipo (OPCIONAL - Google Apps Script ya lo hace)
     try {
       await emailService.send({
         to: config.contact.email,
@@ -42,7 +81,7 @@ ${data.mensaje}
       // No retornar error al cliente, pero loggear
     }
 
-    // Enviar email de confirmación al usuario
+    // 3. Enviar email de confirmación al usuario (OPCIONAL - Google Apps Script ya lo hace)
     try {
       await emailService.send({
         to: data.email,
