@@ -85,6 +85,7 @@ export default function RayosXEmpresarial() {
   const [email, setEmail] = useState('')
   const [nombre, setNombre] = useState('')
   const [empresa, setEmpresa] = useState('')
+  const [aceptaPoliticas, setAceptaPoliticas] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
 
@@ -312,6 +313,47 @@ export default function RayosXEmpresarial() {
                     </div>
                   </div>
 
+                  {/* Consentimiento de Políticas de Privacidad */}
+                  {(email || nombre) && (
+                    <div className="border-t border-gray-200 pt-4">
+                      <div className="flex items-start gap-3">
+                        <input
+                          id="aceptaPoliticas"
+                          type="checkbox"
+                          checked={aceptaPoliticas}
+                          onChange={(e) => setAceptaPoliticas(e.target.checked)}
+                          className="mt-1 h-4 w-4 text-brand-orange focus:ring-brand-orange border-gray-300 rounded"
+                        />
+                        <label htmlFor="aceptaPoliticas" className="text-sm text-gray-700 leading-relaxed">
+                          Acepto la{' '}
+                          <a
+                            href="/politica-privacidad"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-brand-orange hover:text-brand-orange-dark underline font-medium"
+                          >
+                            Política de Privacidad
+                          </a>{' '}
+                          y autorizo el tratamiento de mis datos personales de acuerdo con la{' '}
+                          <a
+                            href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-brand-orange hover:text-brand-orange-dark underline font-medium"
+                          >
+                            Ley 1581 de 2012
+                          </a>{' '}
+                          para recibir el reporte por email. *
+                        </label>
+                      </div>
+                      {(email || nombre) && !aceptaPoliticas && (
+                        <p className="mt-2 text-sm text-red-600 ml-7">
+                          Debes aceptar la Política de Privacidad para recibir el reporte por email
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   <div className="flex gap-4">
                     <Button
                       variant="outline"
@@ -322,8 +364,8 @@ export default function RayosXEmpresarial() {
                     </Button>
                     <Button
                       onClick={calculateResults}
-                      disabled={isSubmitting}
-                      className="flex-1 bg-brand-orange hover:bg-brand-orange-dark"
+                      disabled={isSubmitting || ((email || nombre) && !aceptaPoliticas)}
+                      className="flex-1 bg-brand-orange hover:bg-brand-orange-dark disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? 'Procesando...' : 'Ver Resultados'}
                     </Button>

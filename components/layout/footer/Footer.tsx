@@ -1,14 +1,66 @@
 'use client'
 
 import Link from 'next/link'
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Shield, FileText, Cookie } from 'lucide-react'
 import config from '@/lib/config'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
+  const handleManageCookies = () => {
+    // Eliminar el consentimiento guardado para que el banner vuelva a aparecer
+    localStorage.removeItem('cookieConsent')
+    // Recargar la página para mostrar el banner
+    window.location.reload()
+  }
+
   return (
     <footer className="bg-brand-navy text-white" role="contentinfo">
+      {/* Sección Legal Destacada */}
+      <div className="bg-brand-navy/50 border-b border-white/10">
+        <div className="container-custom py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <Shield className="h-5 w-5 text-brand-orange" />
+              <span className="text-sm font-medium text-gray-300">
+                Tu privacidad es importante para nosotros
+              </span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <Link 
+                href="/politica-privacidad" 
+                className="flex items-center gap-2 text-gray-300 hover:text-brand-orange transition-colors group"
+              >
+                <Shield className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span>Política de Privacidad</span>
+              </Link>
+              <Link 
+                href="/terminos-condiciones" 
+                className="flex items-center gap-2 text-gray-300 hover:text-brand-orange transition-colors group"
+              >
+                <FileText className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span>Términos y Condiciones</span>
+              </Link>
+              <Link 
+                href="/politica-cookies" 
+                className="flex items-center gap-2 text-gray-300 hover:text-brand-orange transition-colors group"
+              >
+                <Cookie className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span>Política de Cookies</span>
+              </Link>
+              <button
+                onClick={handleManageCookies}
+                className="flex items-center gap-2 text-gray-300 hover:text-brand-turquoise transition-colors group"
+                aria-label="Gestionar preferencias de cookies"
+              >
+                <Cookie className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span>Gestionar Cookies</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container-custom py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Columna 1: Brand */}
@@ -112,30 +164,24 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <div className="text-center md:text-left">
-              <p className="mb-1">&copy; {currentYear} Forja Digital - AE. Todos los derechos reservados.</p>
-              <p className="text-xs text-gray-500">
+              <p className="mb-2">&copy; {currentYear} Forja Digital - AE. Todos los derechos reservados.</p>
+              <p className="text-xs text-gray-500 flex items-center justify-center md:justify-start gap-2">
+                <Shield className="h-3 w-3 text-brand-turquoise" />
                 Cumplimiento con{' '}
                 <a 
                   href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-brand-orange transition-colors underline"
+                  className="hover:text-brand-orange transition-colors underline font-medium"
                 >
                   Ley 1581 de 2012
                 </a>
                 {' '}(Colombia)
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              <Link href="/politica-privacidad" className="hover:text-brand-orange transition-colors whitespace-nowrap">
-                Política de Privacidad
-              </Link>
-              <Link href="/terminos-condiciones" className="hover:text-brand-orange transition-colors whitespace-nowrap">
-                Términos y Condiciones
-              </Link>
-              <Link href="/politica-cookies" className="hover:text-brand-orange transition-colors whitespace-nowrap">
-                Política de Cookies
-              </Link>
+            <div className="text-center md:text-right">
+              <p className="text-xs text-gray-500 mb-1">Diseñado y desarrollado con ❤️ en Colombia</p>
+              <p className="text-xs text-gray-600">&quot;El futuro no se espera, se forja&quot; 🔨</p>
             </div>
           </div>
         </div>

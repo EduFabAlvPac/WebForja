@@ -113,12 +113,31 @@ export function CookieConsent() {
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                   Utilizamos cookies propias y de terceros para mejorar nuestros servicios, 
                   personalizar el contenido y analizar el tráfico del sitio. Al hacer clic en 
-                  &quot;Aceptar&quot;, acepta el uso de cookies.{' '}
+                  &quot;Aceptar&quot;, acepta el uso de cookies de análisis y marketing. 
+                  Puede rechazarlas o configurar sus preferencias.{' '}
                   <Link 
                     href="/politica-cookies" 
                     className="text-brand-orange hover:text-brand-orange-dark font-semibold underline"
                   >
                     Más información
+                  </Link>
+                </p>
+                <p className="text-xs text-gray-500 mt-2">
+                  🔒 Cumplimiento con{' '}
+                  <a 
+                    href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-brand-turquoise hover:underline font-medium"
+                  >
+                    Ley 1581/2012
+                  </a>
+                  {' '}y GDPR |{' '}
+                  <Link 
+                    href="/politica-privacidad" 
+                    className="text-brand-turquoise hover:underline font-medium"
+                  >
+                    Política de Privacidad
                   </Link>
                 </p>
               </div>
@@ -128,14 +147,23 @@ export function CookieConsent() {
                 <button
                   onClick={handleReject}
                   className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 whitespace-nowrap"
+                  aria-label="Rechazar cookies opcionales"
                 >
                   Rechazar
                 </button>
+                <Link
+                  href="/politica-cookies#preferencias"
+                  className="px-6 py-3 bg-brand-turquoise/10 border-2 border-brand-turquoise text-brand-turquoise font-semibold rounded-lg hover:bg-brand-turquoise/20 transition-all duration-200 whitespace-nowrap text-center"
+                  onClick={() => setShowBanner(false)}
+                >
+                  Configurar
+                </Link>
                 <button
                   onClick={handleAccept}
                   className="px-6 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-dark transition-all duration-200 shadow-lg hover:shadow-xl whitespace-nowrap"
+                  aria-label="Aceptar todas las cookies"
                 >
-                  Aceptar Cookies
+                  Aceptar Todas
                 </button>
               </div>
             </div>
