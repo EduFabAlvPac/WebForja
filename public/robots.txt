@@ -1,0 +1,36 @@
+# robots.txt para ForjaDigitalAE
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Páginas importantes
+Allow: /servicios/
+Allow: /nosotros/
+Allow: /contacto
+Allow: /rayos-x-empresarial
+Allow: /casos-exito
+
+# Páginas legales (importantes para compliance)
+Allow: /politica-privacidad
+Allow: /terminos-condiciones
+Allow: /politica-cookies
+
+# Archivos estáticos
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Bloquear archivos sensibles
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Sitemap
+Sitemap: https://forjadigitalae.com/sitemap.xml
+

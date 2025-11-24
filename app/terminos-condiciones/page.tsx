@@ -1,11 +1,43 @@
-'use client'
-
+import { Metadata } from 'next'
 import { FileText, Scale, AlertTriangle, CheckCircle, XCircle, Shield, Mail, Calendar } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
+export const metadata: Metadata = {
+  title: 'Términos y Condiciones | ForjaDigitalAE',
+  description: 'Términos y Condiciones de uso del sitio web y servicios de consultoría empresarial de ForjaDigitalAE. Conoce tus derechos y obligaciones.',
+  keywords: 'términos y condiciones, condiciones de uso, servicios de consultoría, ForjaDigitalAE, Colombia',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Términos y Condiciones | ForjaDigitalAE',
+    description: 'Términos y Condiciones de uso del sitio web y servicios de ForjaDigitalAE.',
+    type: 'website',
+  },
+}
+
 export default function TerminosCondicionesPage() {
+  // Schema.org markup para SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Términos y Condiciones',
+    description: 'Términos y Condiciones de uso del sitio web y servicios de ForjaDigitalAE',
+    publisher: {
+      '@type': 'Organization',
+      name: 'ForjaDigitalAE',
+      url: 'https://forjadigitalae.com',
+    },
+    datePublished: '2025-11-24',
+    dateModified: '2025-11-24',
+    inLanguage: 'es-CO',
+  }
+
   return (
-    <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section */}
       <section className="gradient-hero py-16">
         <div className="container-custom text-center">
@@ -313,6 +345,7 @@ export default function TerminosCondicionesPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

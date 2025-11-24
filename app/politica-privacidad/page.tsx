@@ -1,11 +1,43 @@
-'use client'
-
+import { Metadata } from 'next'
 import { Shield, Lock, Eye, UserCheck, FileText, Mail, AlertCircle, Calendar } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
+export const metadata: Metadata = {
+  title: 'Política de Privacidad | ForjaDigitalAE',
+  description: 'Política de Privacidad de ForjaDigitalAE. Conoce cómo protegemos tus datos personales conforme a la Ley 1581 de 2012 de Colombia y GDPR.',
+  keywords: 'política de privacidad, protección de datos, Ley 1581 de 2012, GDPR, datos personales, ForjaDigitalAE',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Política de Privacidad | ForjaDigitalAE',
+    description: 'Conoce cómo protegemos tus datos personales conforme a la Ley 1581 de 2012 de Colombia.',
+    type: 'website',
+  },
+}
+
 export default function PoliticaPrivacidadPage() {
+  // Schema.org markup para SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Política de Privacidad',
+    description: 'Política de Privacidad de ForjaDigitalAE conforme a la Ley 1581 de 2012',
+    publisher: {
+      '@type': 'Organization',
+      name: 'ForjaDigitalAE',
+      url: 'https://forjadigitalae.com',
+    },
+    datePublished: '2025-11-24',
+    dateModified: '2025-11-24',
+    inLanguage: 'es-CO',
+  }
+
   return (
-    <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section */}
       <section className="gradient-hero py-16">
         <div className="container-custom text-center">
@@ -414,6 +446,7 @@ export default function PoliticaPrivacidadPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

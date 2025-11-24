@@ -1,88 +1,106 @@
 import { MetadataRoute } from 'next'
-import config from '@/lib/config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = config.app.url
-  const lastModified = new Date()
+  const baseUrl = 'https://forjadigitalae.com'
+  const currentDate = new Date()
 
-  // Rutas principales
-  const routes: MetadataRoute.Sitemap = [
+  return [
+    // Página principal
     {
       url: baseUrl,
-      lastModified,
+      lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 1,
+      priority: 1.0,
+    },
+    // Servicios
+    {
+      url: `${baseUrl}/servicios`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
-      url: `${baseUrl}/nosotros`,
-      lastModified,
+      url: `${baseUrl}/servicios/estrategia-transformacion`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/nosotros/equipo`,
-      lastModified,
+      url: `${baseUrl}/servicios/estrategia-transformacion/arquitectura-estrategica`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/estrategia-transformacion/transformacion-digital`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // Nosotros
+    {
+      url: `${baseUrl}/nosotros`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/nosotros/historia`,
-      lastModified,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/nosotros/equipo`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/nosotros/testimonios`,
-      lastModified,
-      changeFrequency: 'weekly',
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    // Casos de Éxito
+    {
+      url: `${baseUrl}/casos-exito`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/servicios`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
+    // Rayos-X Empresarial
     {
       url: `${baseUrl}/rayos-x-empresarial`,
-      lastModified,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    // Contacto
     {
       url: `${baseUrl}/contacto`,
-      lastModified,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    // Páginas Legales (IMPORTANTE para compliance)
+    {
+      url: `${baseUrl}/politica-privacidad`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terminos-condiciones`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
     {
       url: `${baseUrl}/politica-cookies`,
-      lastModified,
+      lastModified: currentDate,
       changeFrequency: 'yearly',
-      priority: 0.3,
+      priority: 0.5,
     },
   ]
-
-  // Servicios
-  const servicios = [
-    'arquitectura-empresarial',
-    'transformacion-digital',
-    'optimizacion-procesos',
-    'desarrollo-software',
-    'analitica-bi',
-    'excelencia-operativa',
-    'comercial-servicio',
-    'finanzas',
-    'talento-humano',
-  ]
-
-  const servicioRoutes: MetadataRoute.Sitemap = servicios.map((servicio) => ({
-    url: `${baseUrl}/servicios/${servicio}`,
-    lastModified,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
-
-  return [...routes, ...servicioRoutes]
 }
-

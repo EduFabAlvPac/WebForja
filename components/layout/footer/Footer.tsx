@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Shield, FileText, Cookie } from 'lucide-react'
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Shield, FileText, Cookie, Lock } from 'lucide-react'
 import config from '@/lib/config'
 
 export function Footer() {
@@ -160,23 +160,51 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Certificaciones y Compliance */}
+        <div className="border-t border-white/10 pt-8 pb-6">
+          <div className="text-center mb-6">
+            <h4 className="text-sm font-semibold text-gray-300 mb-4 flex items-center justify-center gap-2">
+              <Shield className="h-4 w-4 text-brand-turquoise" />
+              Certificaciones y Cumplimiento Legal
+            </h4>
+            <div className="flex flex-wrap justify-center items-center gap-6 text-xs text-gray-400">
+              <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg">
+                <Shield className="h-4 w-4 text-green-400" />
+                <span>
+                  <a 
+                    href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-brand-orange transition-colors font-medium"
+                  >
+                    Ley 1581/2012
+                  </a>
+                  {' '}(Colombia)
+                </span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg">
+                <Shield className="h-4 w-4 text-blue-400" />
+                <span>GDPR Compliant</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg">
+                <Lock className="h-4 w-4 text-yellow-400" />
+                <span>SSL/TLS Encryption</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg">
+                <FileText className="h-4 w-4 text-purple-400" />
+                <span>ISO 27001 Aligned</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Línea divisoria */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <div className="text-center md:text-left">
               <p className="mb-2">&copy; {currentYear} Forja Digital - AE. Todos los derechos reservados.</p>
-              <p className="text-xs text-gray-500 flex items-center justify-center md:justify-start gap-2">
-                <Shield className="h-3 w-3 text-brand-turquoise" />
-                Cumplimiento con{' '}
-                <a 
-                  href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-brand-orange transition-colors underline font-medium"
-                >
-                  Ley 1581 de 2012
-                </a>
-                {' '}(Colombia)
+              <p className="text-xs text-gray-500">
+                Registro Mercantil | NIT: En trámite | Cámara de Comercio de Bogotá
               </p>
             </div>
             <div className="text-center md:text-right">

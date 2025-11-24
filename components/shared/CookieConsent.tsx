@@ -28,7 +28,10 @@ export function CookieConsent() {
       timestamp: new Date().toISOString(),
       analytics: true,
       marketing: true,
-      functional: true
+      functional: true,
+      version: '1.0',
+      ip: 'captured-server-side', // La IP se captura en el servidor
+      userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : 'unknown'
     }
     localStorage.setItem('cookieConsent', JSON.stringify(consentData))
     setShowBanner(false)
@@ -40,11 +43,20 @@ export function CookieConsent() {
         analytics_storage: 'granted',
         ad_storage: 'granted'
       })
+      
+      // Trackear el evento de consentimiento
+      window.gtag('event', 'cookie_consent', {
+        event_category: 'Compliance',
+        event_label: 'Accepted All Cookies',
+        value: 1
+      })
     }
     
     // Disparar evento personalizado para tracking
     if (typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent('cookieConsentAccepted'))
+      window.dispatchEvent(new CustomEvent('cookieConsentAccepted', {
+        detail: consentData
+      }))
     }
   }
 
@@ -54,7 +66,9 @@ export function CookieConsent() {
       timestamp: new Date().toISOString(),
       analytics: false,
       marketing: false,
-      functional: true // Las cookies funcionales siempre están activas
+      functional: true, // Las cookies funcionales siempre están activas
+      version: '1.0',
+      userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : 'unknown'
     }
     localStorage.setItem('cookieConsent', JSON.stringify(consentData))
     setShowBanner(false)
@@ -66,6 +80,20 @@ export function CookieConsent() {
         analytics_storage: 'denied',
         ad_storage: 'denied'
       })
+      
+      // Trackear el rechazo (solo con cookies funcionales)
+      window.gtag('event', 'cookie_consent', {
+        event_category: 'Compliance',
+        event_label: 'Rejected Optional Cookies',
+        value: 0
+      })
+    }
+    
+    // Disparar evento personalizado
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('cookieConsentRejected', {
+        detail: consentData
+      }))
     }
   }
 
@@ -85,6 +113,10 @@ export function CookieConsent() {
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
           className="fixed bottom-0 left-0 right-0 z-[99999] bg-white shadow-2xl border-t-4 border-brand-orange"
+          role="dialog"
+          aria-labelledby="cookie-consent-title"
+          aria-describedby="cookie-consent-description"
+          aria-modal="false"
         >
           <div className="container mx-auto px-4 py-6 md:py-8 max-w-7xl">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
@@ -98,19 +130,20 @@ export function CookieConsent() {
               {/* Contenido */}
               <div className="flex-1 space-y-3">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 flex items-center gap-2">
-                    <Cookie className="w-5 h-5 text-brand-orange md:hidden" />
+                  <h3 id="cookie-consent-title" className="text-lg md:text-xl font-bold text-gray-900 flex items-center gap-2">
+                    <Cookie className="w-5 h-5 text-brand-orange md:hidden" aria-hidden="true" />
                     Política de Cookies
                   </h3>
                   <button
                     onClick={handleClose}
                     className="flex-shrink-0 p-1 hover:bg-gray-100 rounded-full transition-colors"
-                    aria-label="Cerrar"
+                    aria-label="Cerrar banner de cookies"
+                    type="button"
                   >
-                    <X className="w-5 h-5 text-gray-500" />
+                    <X className="w-5 h-5 text-gray-500" aria-hidden="true" />
                   </button>
                 </div>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                <p id="cookie-consent-description" className="text-sm md:text-base text-gray-600 leading-relaxed">
                   Utilizamos cookies propias y de terceros para mejorar nuestros servicios, 
                   personalizar el contenido y analizar el tráfico del sitio. Al hacer clic en 
                   &quot;Aceptar&quot;, acepta el uso de cookies de análisis y marketing. 
@@ -143,25 +176,28 @@ export function CookieConsent() {
               </div>
 
               {/* Botones */}
-              <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto md:flex-shrink-0">
+              <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto md:flex-shrink-0" role="group" aria-label="Opciones de cookies">
                 <button
                   onClick={handleReject}
-                  className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 whitespace-nowrap"
-                  aria-label="Rechazar cookies opcionales"
+                  type="button"
+                  className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2"
+                  aria-label="Rechazar cookies opcionales (analíticas y marketing)"
                 >
                   Rechazar
                 </button>
                 <Link
                   href="/politica-cookies#preferencias"
-                  className="px-6 py-3 bg-brand-turquoise/10 border-2 border-brand-turquoise text-brand-turquoise font-semibold rounded-lg hover:bg-brand-turquoise/20 transition-all duration-200 whitespace-nowrap text-center"
+                  className="px-6 py-3 bg-brand-turquoise/10 border-2 border-brand-turquoise text-brand-turquoise font-semibold rounded-lg hover:bg-brand-turquoise/20 transition-all duration-200 whitespace-nowrap text-center focus:outline-none focus:ring-2 focus:ring-brand-turquoise focus:ring-offset-2"
                   onClick={() => setShowBanner(false)}
+                  aria-label="Configurar preferencias de cookies"
                 >
                   Configurar
                 </Link>
                 <button
                   onClick={handleAccept}
-                  className="px-6 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-dark transition-all duration-200 shadow-lg hover:shadow-xl whitespace-nowrap"
-                  aria-label="Aceptar todas las cookies"
+                  type="button"
+                  className="px-6 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-dark transition-all duration-200 shadow-lg hover:shadow-xl whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2"
+                  aria-label="Aceptar todas las cookies (funcionales, analíticas y marketing)"
                 >
                   Aceptar Todas
                 </button>

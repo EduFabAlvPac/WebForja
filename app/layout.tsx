@@ -9,6 +9,7 @@ import { ReadingProgressBar } from '@/components/ui/ReadingProgressBar'
 import { StickyCTABar } from '@/components/ui/StickyCTABar'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
+import { OrganizationStructuredData, WebSiteStructuredData } from '@/components/seo/StructuredData'
 import config from '@/lib/config'
 
 const inter = Inter({ 
@@ -80,6 +81,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${inter.variable} ${montserrat.variable}`}>
+      <head>
+        <OrganizationStructuredData />
+        <WebSiteStructuredData />
+      </head>
       <body>
         <GoogleAnalytics gaId={config.analytics.gaId} />
         <AnalyticsProvider />
