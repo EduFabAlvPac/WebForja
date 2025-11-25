@@ -119,8 +119,8 @@ export function CTASection() {
                   className="inline-block"
                 >
                   <Link
-                    href="/rayos-x-empresarial"
-                    onClick={() => trackCTAClick('rayos_x_final', 'cta_section', '/rayos-x-empresarial')}
+                    href="/contacto"
+                    onClick={() => trackCTAClick('contacto_final', 'cta_section', '/contacto')}
                     className="group inline-flex flex-col items-center gap-2 px-10 py-5 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold text-lg md:text-xl rounded-2xl transition-all shadow-2xl hover:shadow-brand-orange/50 relative overflow-hidden"
                   >
                     {/* Glow effect */}

@@ -70,8 +70,8 @@ export function StickyCTABar() {
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                     <Link
-                      href="/rayos-x-empresarial"
-                      onClick={() => trackCTAClick('rayos_x_sticky_bar', 'sticky_bar', '/rayos-x-empresarial')}
+                      href="/contacto"
+                      onClick={() => trackCTAClick('contacto_sticky_bar', 'sticky_bar', '/contacto')}
                       className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold text-sm rounded-xl transition-all shadow-lg hover:shadow-xl group"
                     >
                       <ClipboardCheck className="w-5 h-5" />

@@ -78,7 +78,8 @@ export function Header() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button
+            {/* Temporalmente deshabilitado - Rayos X se conectará más adelante */}
+            {/* <Button
               variant="outline"
               className="border-brand-turquoise text-brand-turquoise hover:bg-brand-turquoise hover:text-white gap-2"
               asChild
@@ -87,7 +88,7 @@ export function Header() {
                 <Search className="h-4 w-4" />
                 Rayos X
               </Link>
-            </Button>
+            </Button> */}
             <Button
               className="bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"
               asChild

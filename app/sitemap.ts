@@ -69,13 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-    // Rayos-X Empresarial
-    {
-      url: `${baseUrl}/rayos-x-empresarial`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+    // Rayos-X Empresarial (Temporalmente deshabilitado)
+    // {
+    //   url: `${baseUrl}/rayos-x-empresarial`,
+    //   lastModified: currentDate,
+    //   changeFrequency: 'monthly',
+    //   priority: 0.9,
+    // },
     // Contacto
     {
       url: `${baseUrl}/contacto`,

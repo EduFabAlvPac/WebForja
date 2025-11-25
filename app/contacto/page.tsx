@@ -337,12 +337,13 @@ export default function ContactoPage() {
                   <p className="mb-6">
                     Realiza nuestro diagnóstico Rayos X Empresarial gratuito y obtén un reporte personalizado en minutos.
                   </p>
-                  <a
+                  {/* Temporalmente deshabilitado - Rayos X se conectará más adelante */}
+                  {/* <a
                     href="/rayos-x-empresarial"
                     className="inline-flex items-center justify-center w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold py-3 rounded-button transition-colors shadow-glow-orange"
                   >
                     🔍 Iniciar Rayos X Gratuito
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </ScrollReveal>

@@ -150,7 +150,8 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         </nav>
 
         <div className="mt-8 space-y-3">
-          <Button
+          {/* Temporalmente deshabilitado - Rayos X se conectará más adelante */}
+          {/* <Button
             variant="outline"
             className="w-full border-brand-turquoise text-brand-turquoise hover:bg-brand-turquoise hover:text-white"
             asChild
@@ -158,7 +159,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             <Link href="/rayos-x-empresarial" onClick={onClose}>
               Rayos X Empresarial
             </Link>
-          </Button>
+          </Button> */}
           <Button
             className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"
             asChild
