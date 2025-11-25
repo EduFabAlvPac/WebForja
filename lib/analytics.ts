@@ -65,10 +65,12 @@ export function trackEvent(
   }
 
   try {
-    window.gtag('event', eventName, {
-      ...properties,
-      timestamp: new Date().toISOString(),
-    })
+    if (window.gtag) {
+      window.gtag('event', eventName, {
+        ...properties,
+        timestamp: new Date().toISOString(),
+      })
+    }
   } catch (error) {
     console.error('[Analytics] Error tracking event:', error)
   }
@@ -86,10 +88,12 @@ export function trackPageView(pagePath: string, pageTitle?: string): void {
   }
 
   try {
-    window.gtag('event', 'page_view', {
-      page_path: pagePath,
-      page_title: pageTitle || document.title,
-    })
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: pagePath,
+        page_title: pageTitle || document.title,
+      })
+    }
   } catch (error) {
     console.error('[Analytics] Error tracking page view:', error)
   }
