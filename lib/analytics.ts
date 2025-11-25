@@ -200,12 +200,12 @@ export function trackContactClick(contactType: 'phone' | 'email', value: string)
 // Declaración global para TypeScript
 declare global {
   interface Window {
-    gtag: (
-      command: 'event' | 'config' | 'js',
+    gtag?: (
+      command: 'event' | 'config' | 'js' | 'consent',
       targetId: string,
       config?: Record<string, any>
     ) => void
-    dataLayer: any[]
+    dataLayer?: any[]
   }
 }
 
