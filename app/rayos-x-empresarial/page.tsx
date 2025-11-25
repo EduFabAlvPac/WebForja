@@ -364,7 +364,7 @@ export default function RayosXEmpresarial() {
                     </Button>
                     <Button
                       onClick={calculateResults}
-                      disabled={isSubmitting || ((email || nombre) && !aceptaPoliticas)}
+                      disabled={isSubmitting || ((email.trim() !== '' || nombre.trim() !== '') && !aceptaPoliticas)}
                       className="flex-1 bg-brand-orange hover:bg-brand-orange-dark disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? 'Procesando...' : 'Ver Resultados'}
