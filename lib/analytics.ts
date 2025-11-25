@@ -1,52 +1,12 @@
 /**
- * Google Analytics 4 - Event Tracking
- * Sistema de tracking de eventos para medir conversión y engagement
+ * Google Analytics 4 - Event Tracking (Versión Simplificada)
  */
 
 // Tipos de eventos
-export type EventName =
-  // CTA Clicks
-  | 'cta_rayos_x_hero'
-  | 'cta_rayos_x_servicios'
-  | 'cta_rayos_x_sticky_bar'
-  | 'cta_rayos_x_final'
-  | 'cta_metodologia_pdf'
-  | 'cta_casos_exito'
-  | 'cta_contacto'
-  | 'cta_whatsapp'
-  // Scroll Depth
-  | 'scroll_25'
-  | 'scroll_50'
-  | 'scroll_75'
-  | 'scroll_100'
-  // Section Views
-  | 'view_pain_points'
-  | 'view_services'
-  | 'view_methodology'
-  | 'view_case_studies'
-  | 'view_cta_section'
-  // Engagement
-  | 'hover_service_card'
-  | 'expand_methodology_step'
-  | 'click_case_study_link'
-  | 'click_phone'
-  | 'click_email'
+export type EventName = string
 
 export interface EventProperties {
   [key: string]: string | number | boolean | undefined
-}
-
-export interface CTAProperties extends EventProperties {
-  cta_name: string
-  cta_location: string
-  cta_url?: string
-}
-
-/**
- * Verifica si Google Analytics está disponible
- */
-function isGAAvailable(): boolean {
-  return typeof window !== 'undefined' && typeof window.gtag !== 'undefined'
 }
 
 /**
@@ -56,23 +16,9 @@ export function trackEvent(
   eventName: EventName,
   properties?: EventProperties
 ): void {
-  if (!isGAAvailable()) {
-    // En desarrollo, log en consola
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[Analytics]', eventName, properties)
-    }
-    return
-  }
-
-  try {
-    if (window.gtag) {
-      window.gtag('event', eventName, {
-        ...properties,
-        timestamp: new Date().toISOString(),
-      })
-    }
-  } catch (error) {
-    console.error('[Analytics] Error tracking event:', error)
+  // Temporalmente deshabilitado - se activará en producción
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[Analytics]', eventName, properties)
   }
 }
 
@@ -80,22 +26,8 @@ export function trackEvent(
  * Track page view
  */
 export function trackPageView(pagePath: string, pageTitle?: string): void {
-  if (!isGAAvailable()) {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[Analytics] Page View:', pagePath)
-    }
-    return
-  }
-
-  try {
-    if (window.gtag) {
-      window.gtag('event', 'page_view', {
-        page_path: pagePath,
-        page_title: pageTitle || document.title,
-      })
-    }
-  } catch (error) {
-    console.error('[Analytics] Error tracking page view:', error)
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[Analytics] Page View:', pagePath)
   }
 }
 
@@ -107,20 +39,7 @@ export function trackCTAClick(
   ctaLocation: string,
   ctaUrl?: string
 ): void {
-  const eventMap: Record<string, EventName> = {
-    'rayos_x_hero': 'cta_rayos_x_hero',
-    'rayos_x_servicios': 'cta_rayos_x_servicios',
-    'rayos_x_sticky_bar': 'cta_rayos_x_sticky_bar',
-    'rayos_x_final': 'cta_rayos_x_final',
-    'metodologia_pdf': 'cta_metodologia_pdf',
-    'casos_exito': 'cta_casos_exito',
-    'contacto': 'cta_contacto',
-    'whatsapp': 'cta_whatsapp',
-  }
-
-  const eventName = eventMap[ctaName] || 'cta_contacto'
-
-  trackEvent(eventName, {
+  trackEvent('cta_click', {
     cta_name: ctaName,
     cta_location: ctaLocation,
     cta_url: ctaUrl,
@@ -130,9 +49,8 @@ export function trackCTAClick(
 /**
  * Track scroll depth
  */
-export function trackScrollDepth(percentage: 25 | 50 | 75 | 100): void {
-  const eventName = `scroll_${percentage}` as EventName
-  trackEvent(eventName, {
+export function trackScrollDepth(percentage: number): void {
+  trackEvent('scroll_depth', {
     scroll_percentage: percentage,
   })
 }
@@ -141,20 +59,9 @@ export function trackScrollDepth(percentage: 25 | 50 | 75 | 100): void {
  * Track section view
  */
 export function trackSectionView(sectionName: string): void {
-  const eventMap: Record<string, EventName> = {
-    'pain-points': 'view_pain_points',
-    'services': 'view_services',
-    'metodologia': 'view_methodology',
-    'case-studies': 'view_case_studies',
-    'cta': 'view_cta_section',
-  }
-
-  const eventName = eventMap[sectionName]
-  if (eventName) {
-    trackEvent(eventName, {
-      section_name: sectionName,
-    })
-  }
+  trackEvent('section_view', {
+    section_name: sectionName,
+  })
 }
 
 /**
@@ -190,23 +97,10 @@ export function trackCaseStudyClick(caseStudyId: string, caseStudyName: string):
  * Track contact info clicks
  */
 export function trackContactClick(contactType: 'phone' | 'email', value: string): void {
-  const eventName = contactType === 'phone' ? 'click_phone' : 'click_email'
-  trackEvent(eventName, {
+  trackEvent('click_contact', {
     contact_type: contactType,
     contact_value: value,
   })
-}
-
-// Declaración global para TypeScript
-declare global {
-  interface Window {
-    gtag?: (
-      command: 'event' | 'config' | 'js' | 'consent',
-      targetId: string,
-      config?: Record<string, any>
-    ) => void
-    dataLayer?: any[]
-  }
 }
 
 const analytics = {
@@ -222,5 +116,4 @@ const analytics = {
 }
 
 export default analytics
-
 
