@@ -133,7 +133,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed bottom-40 right-6 z-50 w-[400px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-12rem)] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-40 right-6 z-[70] w-[400px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-12rem)] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 p-6 text-white">
@@ -452,10 +452,13 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
 
       {/* Main Toggle Button - Positioned above WhatsApp */}
       <motion.button
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.3 }}
         whileHover={{ scale: 1.05, rotate: -3 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white rounded-2xl shadow-lg shadow-purple-500/30 flex items-center justify-center relative overflow-hidden"
+        className="fixed bottom-24 right-6 z-[60] w-14 h-14 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white rounded-2xl shadow-lg shadow-purple-500/30 flex items-center justify-center overflow-hidden"
         aria-label={isOpen ? 'Cerrar widget' : 'Abrir widget de ayuda'}
       >
         <AnimatePresence mode="wait">
@@ -483,19 +486,33 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
         </AnimatePresence>
         
         {!isOpen && (
-          <motion.div
-            className="absolute inset-0 bg-white/20"
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 0, 0.3],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: 'loop',
-              delay: 0.5,
-            }}
-          />
+          <>
+            <motion.div
+              className="absolute inset-0 bg-white/20 rounded-2xl"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0, 0.3],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+            />
+            {/* Pulse ring effect */}
+            <motion.span
+              className="absolute -inset-1 rounded-2xl border-2 border-purple-400"
+              animate={{
+                scale: [1, 1.2],
+                opacity: [0.6, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+            />
+          </>
         )}
       </motion.button>
     </>
