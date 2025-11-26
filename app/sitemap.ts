@@ -50,7 +50,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/servicios/talento-finanzas/gestion-talento-estrategico`,
+      url: `${baseUrl}/servicios/talento-finanzas/ingenieria-financiera`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/comercial-operaciones`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/comercial-operaciones/excelencia-operativa`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/comercial-operaciones/comercial-cliente`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,

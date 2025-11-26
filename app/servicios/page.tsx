@@ -1,73 +1,153 @@
 import { Metadata } from 'next'
-import { ScrollReveal } from '@/components/animations/ScrollReveal'
-import { ServiceCard } from '@/components/shared/ServiceCard'
-import { SERVICES } from '@/lib/constants/services'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Servicios | Forja Digital - AE',
-  description: 'Servicios de transformación digital, arquitectura empresarial, desarrollo de software y consultoría para PYMEs.',
+  description: 'Servicios de transformación empresarial: Estrategia & Transformación, Talento & Finanzas, Comercial & Operaciones.',
 }
+
+const SERVICE_CATEGORIES = [
+  {
+    id: 'estrategia-transformacion',
+    title: 'Estrategia & Transformación',
+    description: 'Diseñamos el futuro de tu organización con arquitectura estratégica y transformación digital integral.',
+    icon: Target,
+    color: 'from-blue-500 to-cyan-500',
+    href: '/servicios/estrategia-transformacion',
+    services: [
+      'Arquitectura Estratégica',
+      'Transformación Digital 360°'
+    ]
+  },
+  {
+    id: 'talento-finanzas',
+    title: 'Talento & Finanzas',
+    description: 'Gestionamos de forma integrada tu capital humano y recursos financieros para maximizar el valor.',
+    icon: Users,
+    color: 'from-purple-500 to-pink-500',
+    href: '/servicios/talento-finanzas',
+    services: [
+      'Gestión de Talento Estratégico',
+      'Gestión Financiera'
+    ]
+  },
+  {
+    id: 'comercial-operaciones',
+    title: 'Comercial & Operaciones',
+    description: 'Optimizamos tus procesos comerciales y operativos para crecer de forma rentable y sostenible.',
+    icon: TrendingUp,
+    color: 'from-orange-500 to-red-500',
+    href: '/servicios/comercial-operaciones',
+    services: [
+      'Excelencia Operativa Lean',
+      'Comercial y Servicio al Cliente'
+    ]
+  }
+]
 
 export default function ServiciosPage() {
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section */}
-      <section className="gradient-hero py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-h1-mobile md:text-h1-desktop text-white mb-6">
-            Nuestros <span className="text-brand-orange">Servicios</span>
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Soluciones integrales de transformación digital diseñadas para impulsar el crecimiento de tu empresa
-          </p>
+      <section className="relative bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-20 md:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div className="w-full h-full relative">
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+              alt="Profesionales trabajando en soluciones empresariales innovadoras"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-purple/80 to-brand-navy/90" />
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="hero-title text-white mb-6">
+              Nuestros <span className="text-brand-orange">Servicios</span>
+            </h1>
+            <p className="hero-description text-white/90 mb-8">
+              Soluciones integrales de transformación empresarial diseñadas para impulsar el crecimiento sostenible de tu organización
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="section-padding">
-        <div className="container-custom">
+      {/* Service Categories Grid */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SERVICES.map((service, index) => (
-              <ScrollReveal
-                key={service.id}
-                delay={index * 0.1}
-                direction="up"
-              >
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.shortDescription}
-                  href={service.href}
-                  color={service.color}
-                />
-              </ScrollReveal>
-            ))}
+            {SERVICE_CATEGORIES.map((category, index) => {
+              const Icon = category.icon
+              return (
+                <Link
+                  key={category.id}
+                  href={category.href}
+                  className="group"
+                >
+                  <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col transform hover:-translate-y-2">
+                    {/* Header with gradient */}
+                    <div className={`bg-gradient-to-br ${category.color} p-8 text-white relative overflow-hidden`}>
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                      <div className="relative z-10">
+                        <Icon className="w-12 h-12 mb-4" strokeWidth={2} />
+                        <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                          {category.title}
+                        </h2>
+                        <p className="text-white/90 text-lg">
+                          {category.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Services List */}
+                    <div className="p-8 flex-1 flex flex-col">
+                      <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
+                        Servicios incluidos:
+                      </h3>
+                      <ul className="space-y-3 mb-6 flex-1">
+                        {category.services.map((service, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-700 leading-relaxed">{service}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* CTA */}
+                      <div className="flex items-center gap-2 text-brand-orange font-semibold group-hover:gap-4 transition-all">
+                        <span>Ver servicios</span>
+                        <ArrowRight className="w-5 h-5" strokeWidth={2.5} />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="bg-gradient-to-br from-brand-navy to-brand-purple rounded-card p-12 text-center">
-            <h2 className="text-h2-mobile md:text-h2-desktop text-white mb-6">
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="bg-gradient-to-br from-brand-navy to-brand-purple rounded-3xl p-12 md:p-16 text-center shadow-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               ¿No estás seguro por dónde empezar?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Realiza nuestro diagnóstico gratuito y recibe recomendaciones personalizadas
+              Agenda una consulta gratuita y recibe recomendaciones personalizadas para tu empresa
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/rayos-x-empresarial"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-orange text-white font-semibold rounded-button hover:bg-brand-orange-dark transition-all transform hover:scale-105 shadow-glow-orange"
-              >
-                🔍 Rayos X Empresarial Gratuito
-              </a>
-              <a
                 href="/contacto"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-navy font-semibold rounded-button hover:bg-gray-100 transition-all transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-orange text-white font-semibold rounded-xl hover:bg-brand-orange/90 transition-all transform hover:scale-105 shadow-lg"
               >
                 Habla con un Experto
+                <ArrowRight className="w-5 h-5" strokeWidth={2.5} />
               </a>
             </div>
           </div>
@@ -76,4 +156,3 @@ export default function ServiciosPage() {
     </div>
   )
 }
-

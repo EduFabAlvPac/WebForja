@@ -45,9 +45,9 @@ export function ServiceAccordion({ components }: ServiceAccordionProps) {
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                     transition={{ duration: 0.4 }}
-                    className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-brand-turquoise/20 to-brand-purple/10 rounded-xl flex items-center justify-center group-hover:from-brand-turquoise/30 group-hover:to-brand-purple/20 transition-colors"
+                    className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl flex items-center justify-center group-hover:from-blue-200 group-hover:to-blue-100 transition-colors"
                   >
-                    <IconComponent className="w-7 h-7 text-brand-turquoise" strokeWidth={2} />
+                    <IconComponent className="w-7 h-7 text-blue-600" strokeWidth={2} />
                   </motion.div>
                 ) : (
                   <div className="text-4xl flex-shrink-0">{component.icon}</div>

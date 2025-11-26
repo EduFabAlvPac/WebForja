@@ -22,9 +22,9 @@ export function ProblemCard({ problem, index }: ProblemCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-2xl shadow-lg border-l-4 border-brand-turquoise hover:shadow-xl hover:border-brand-orange transition-all duration-300 overflow-hidden group"
+      className="bg-white rounded-2xl shadow-lg border-l-4 border-brand-turquoise hover:shadow-xl hover:border-brand-orange transition-all duration-300 overflow-hidden group h-full flex flex-col"
     >
-      <div className="p-6 md:p-8">
+      <div className="p-6 md:p-8 flex-1 flex flex-col">
         {/* Icon and Title */}
         <div className="flex items-start gap-4 mb-6">
           {IconComponent ? (
@@ -55,7 +55,7 @@ export function ProblemCard({ problem, index }: ProblemCardProps) {
         </div>
 
         {/* Solution */}
-        <div>
+        <div className="flex-1">
           <p className="text-sm font-bold text-brand-turquoise uppercase tracking-wider mb-3 flex items-center gap-2">
             <span className="w-2 h-2 bg-brand-turquoise rounded-full"></span>
             Cómo lo Resolvemos

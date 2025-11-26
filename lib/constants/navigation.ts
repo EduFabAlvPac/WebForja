@@ -111,7 +111,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
           {
             title: 'Transformación Digital 360°',
             description: 'Innovación, BI, Tech Stack, Integración de IA',
-            href: '/servicios/transformacion-digital',
+            href: '/servicios/estrategia-transformacion/transformacion-digital',
             icon: 'Smartphone',
             iconBg: 'bg-orange-100 text-orange-600'
           }
@@ -123,14 +123,14 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
           {
             title: 'Gestión de Talento Estratégico',
             description: 'Desarrollo, Capacitación, Cultura Organizacional',
-            href: '/servicios/talento-humano',
+            href: '/servicios/talento-finanzas/gestion-talento-estrategico',
             icon: 'Users',
             iconBg: 'bg-purple-100 text-purple-600'
           },
           {
-            title: 'Ingeniería Financiera',
+            title: 'Gestión Financiera',
             description: 'Planeación, Análisis, Control de Impuestos, Pricing',
-            href: '/servicios/finanzas',
+            href: '/servicios/talento-finanzas/ingenieria-financiera',
             icon: 'DollarSign',
             iconBg: 'bg-teal-100 text-teal-600'
           }
@@ -142,14 +142,14 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
           {
             title: 'Excelencia Operativa Lean',
             description: 'BPM, Automatización, Mejora Continua',
-            href: '/servicios/excelencia-operativa',
+            href: '/servicios/comercial-operaciones/excelencia-operativa',
             icon: 'Settings',
             iconBg: 'bg-red-100 text-red-600'
           },
           {
-            title: 'Motor Comercial de Alto Rendimiento',
-            description: 'Ventas, CRM, Atención al Cliente, Fidelización',
-            href: '/servicios/comercial-servicio',
+            title: 'Comercial y Servicio al Cliente',
+            description: 'Ventas, Atención al Cliente, Fidelización',
+            href: '/servicios/comercial-operaciones/comercial-cliente',
             icon: 'Headphones',
             iconBg: 'bg-violet-100 text-violet-600'
           }
@@ -205,7 +205,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         id: 'transformacion-digital',
         title: 'Transformación Digital 360°',
         description: 'Convertimos la tecnología en ventaja competitiva medible',
-        href: '/servicios/transformacion-digital',
+        href: '/servicios/estrategia-transformacion/transformacion-digital',
         icon: 'Smartphone',
         iconBg: 'bg-orange-100',
         iconColor: 'text-orange-500',
@@ -217,19 +217,19 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
     title: 'Talento & Finanzas',
     services: [
       {
-        id: 'talento-humano',
+        id: 'gestion-talento-estrategico',
         title: 'Gestión de Talento Estratégico',
         description: 'Equipos alineados, productivos y comprometidos con la estrategia',
-        href: '/servicios/talento-humano',
+        href: '/servicios/talento-finanzas/gestion-talento-estrategico',
         icon: 'Users',
         iconBg: 'bg-purple-100',
         iconColor: 'text-purple-500',
       },
       {
-        id: 'finanzas',
-        title: 'Ingeniería Financiera',
+        id: 'ingenieria-financiera',
+        title: 'Gestión Financiera',
         description: 'Finanzas que financian el crecimiento, no que lo frenan',
-        href: '/servicios/finanzas',
+        href: '/servicios/talento-finanzas/ingenieria-financiera',
         icon: 'DollarSign',
         iconBg: 'bg-teal-100',
         iconColor: 'text-teal-500',
@@ -244,16 +244,16 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         id: 'excelencia-operativa',
         title: 'Excelencia Operativa Lean',
         description: 'Procesos eficientes que liberan recursos para crecer',
-        href: '/servicios/excelencia-operativa',
+        href: '/servicios/comercial-operaciones/excelencia-operativa',
         icon: 'Settings',
         iconBg: 'bg-red-100',
         iconColor: 'text-red-500',
       },
       {
-        id: 'comercial-servicio',
-        title: 'Motor Comercial de Alto Rendimiento',
-        description: 'Sistemas comerciales que convierten leads en clientes recurrentes',
-        href: '/servicios/comercial-servicio',
+        id: 'comercial-cliente',
+        title: 'Comercial y Servicio al Cliente',
+        description: 'Sistemas comerciales integrados con servicio que convierten prospectos en clientes recurrentes',
+        href: '/servicios/comercial-operaciones/comercial-cliente',
         icon: 'Headphones',
         iconBg: 'bg-violet-100',
         iconColor: 'text-violet-500',
