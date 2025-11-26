@@ -7,6 +7,7 @@ import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
 import { CookieConsent } from '@/components/shared/CookieConsent'
 import { ReadingProgressBar } from '@/components/ui/ReadingProgressBar'
 import { StickyCTABar } from '@/components/ui/StickyCTABar'
+import { FeedbackTrigger } from '@/components/shared/FeedbackTrigger'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import { OrganizationStructuredData, WebSiteStructuredData } from '@/components/seo/StructuredData'
@@ -100,6 +101,7 @@ export default function RootLayout({
         <WhatsAppFloat />
         <StickyCTABar />
         <CookieConsent />
+        <FeedbackTrigger />
       </body>
     </html>
   )
