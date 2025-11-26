@@ -266,12 +266,14 @@ export default function TalentoFinanzasPage() {
             })}
           </div>
 
-          <ScrollReveal>
-            <div className="bg-gradient-to-r from-brand-navy to-brand-purple rounded-3xl p-10 text-center text-white shadow-2xl">
-              <p className="text-6xl font-bold mb-4">{data.integration.benefitHighlight.stat}</p>
-              <p className="text-xl max-w-3xl mx-auto leading-relaxed">{data.integration.benefitHighlight.description}</p>
-            </div>
-          </ScrollReveal>
+          {data.integration.benefitHighlight && (
+            <ScrollReveal>
+              <div className="bg-gradient-to-r from-brand-navy to-brand-purple rounded-3xl p-10 text-center text-white shadow-2xl">
+                <p className="text-6xl font-bold mb-4">{data.integration.benefitHighlight.stat}</p>
+                <p className="text-xl max-w-3xl mx-auto leading-relaxed">{data.integration.benefitHighlight.description}</p>
+              </div>
+            </ScrollReveal>
+          )}
         </div>
       </section>
 

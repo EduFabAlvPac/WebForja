@@ -87,6 +87,7 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
       ],
       caseHighlight: {
         company: 'Empresa de Logística',
+        result: 'Redujo tiempo de procesamiento de 48h a 8h',
         description: 'Redujo tiempo de procesamiento de pedidos de 48h a 8h. Aumentó capacidad operativa 3x sin aumentar headcount.'
       },
       link: '/servicios/comercial-operaciones/excelencia-operativa',
@@ -121,6 +122,7 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
       ],
       caseHighlight: {
         company: 'SaaS B2B',
+        result: 'Aumentó conversión de 8% a 23%',
         description: 'Aumentó conversión de 8% a 23%. Implementó customer success que redujo churn de 35% a 12% anual.'
       },
       link: '/servicios/comercial-operaciones/comercial-cliente',

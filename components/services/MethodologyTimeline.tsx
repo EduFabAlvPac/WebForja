@@ -51,34 +51,38 @@ export function MethodologyTimeline({ phases }: MethodologyTimelineProps) {
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* QUÉ HACEMOS */}
-                    <div>
-                      <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">
-                        Qué Hacemos
-                      </h4>
-                      <ul className="space-y-2">
-                        {phase.activities.map((activity, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
-                            <span className="text-brand-orange">→</span>
-                            <span className="text-gray-700">{activity}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {phase.activities && phase.activities.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">
+                          Qué Hacemos
+                        </h4>
+                        <ul className="space-y-2">
+                          {phase.activities.map((activity, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="text-brand-orange">→</span>
+                              <span className="text-gray-700">{activity}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     {/* ENTREGABLES */}
-                    <div>
-                      <h4 className="text-sm font-bold text-brand-turquoise uppercase tracking-wider mb-3">
-                        Entregables
-                      </h4>
-                      <ul className="space-y-2">
-                        {phase.deliverables.map((deliverable, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
-                            <Check className="w-5 h-5 text-brand-turquoise flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700 font-semibold">{deliverable}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {phase.deliverables && phase.deliverables.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-bold text-brand-turquoise uppercase tracking-wider mb-3">
+                          Entregables
+                        </h4>
+                        <ul className="space-y-2">
+                          {phase.deliverables.map((deliverable, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <Check className="w-5 h-5 text-brand-turquoise flex-shrink-0 mt-0.5" />
+                              <span className="text-gray-700 font-semibold">{deliverable}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

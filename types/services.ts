@@ -49,11 +49,13 @@ export interface ComponentSection {
 }
 
 export interface MethodologyPhase {
-  phase: number
+  phase?: number
+  number?: number
   title: string
   tagline: string
-  activities: string[]
-  deliverables: string[]
+  description?: string
+  activities?: string[]
+  deliverables?: string[]
 }
 
 export interface CaseStudy {
@@ -131,6 +133,7 @@ export interface CategoryStat {
 export interface CategoryProblem {
   id: string
   icon: string
+  iconComponent?: string
   title: string
   symptom: string
   consequence: string
@@ -148,10 +151,11 @@ export interface CategoryService {
   caseHighlight: {
     company: string
     result: string
+    description?: string
   }
   link: string
   caseLink: string
-  borderColor: 'turquoise' | 'green'
+  borderColor: 'turquoise' | 'green' | 'red' | 'purple' | 'blue' | 'orange'
 }
 
 export interface IntegrationPoint {
@@ -160,7 +164,7 @@ export interface IntegrationPoint {
   iconComponent?: string
   title: string
   description: string
-  benefit: string
+  benefit?: string
 }
 
 export interface CategoryTargetProfile {
@@ -193,6 +197,8 @@ export interface CategoryCaseStudy {
 }
 
 export interface CategoryCTAData {
+  headline?: string
+  intro?: string
   primary: {
     title: string
     description: string
@@ -207,13 +213,17 @@ export interface CategoryCTAData {
     buttonLink: string
     icon: string
   }
-  serviceLinks: {
+  serviceLinks?: {
     title: string
     services: {
       name: string
       link: string
     }[]
   }
+  links?: {
+    label: string
+    href: string
+  }[]
 }
 
 export interface CategoryPageData {
@@ -233,14 +243,48 @@ export interface CategoryPageData {
     title: string
     subtitle: string
     points: IntegrationPoint[]
-    benefitHighlight: {
+    benefitHighlight?: {
       stat: string
       description: string
     }
+    statistic?: {
+      value: string
+      label: string
+    }
   }
-  targetProfile: CategoryTargetProfile
+  targetProfile?: CategoryTargetProfile
+  forWho?: {
+    title: string
+    intro: string
+    checklistItems: string[]
+    idealProfile: {
+      title: string
+      items: string[]
+    }
+  }
   methodology: MethodologyPhase[]
-  caseStudy: CategoryCaseStudy
+  caseStudy?: CategoryCaseStudy
+  integratedCaseStudy?: {
+    headline: string
+    company: {
+      name: string
+      industry: string
+      size: string
+      location: string
+    }
+    challenge: string
+    solution: string
+    results: {
+      talent: { label: string; before: string; after: string }[]
+      finance: { label: string; before: string; after: string }[]
+    }
+    testimonial: {
+      quote: string
+      author: string
+      position: string
+    }
+    downloadLink?: string
+  }
   cta: CategoryCTAData
 }
 

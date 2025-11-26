@@ -341,16 +341,18 @@ export default function ComercialOperacionesPage() {
           </div>
 
           {/* Statistic */}
-          <ScrollReveal>
-            <div className="bg-gradient-to-r from-brand-navy to-brand-purple rounded-3xl p-8 text-center shadow-2xl">
-              <div className="text-5xl md:text-6xl font-bold text-brand-orange mb-3">
-                {data.integration.statistic.value}
+          {data.integration.statistic && (
+            <ScrollReveal>
+              <div className="bg-gradient-to-r from-brand-navy to-brand-purple rounded-3xl p-8 text-center shadow-2xl">
+                <div className="text-5xl md:text-6xl font-bold text-brand-orange mb-3">
+                  {data.integration.statistic.value}
+                </div>
+                <p className="text-xl text-white/90 max-w-2xl mx-auto">
+                  {data.integration.statistic.label}
+                </p>
               </div>
-              <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                {data.integration.statistic.label}
-              </p>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          )}
         </div>
       </section>
 
@@ -423,22 +425,24 @@ export default function ComercialOperacionesPage() {
             </ScrollReveal>
           </div>
 
-          <ScrollReveal delay={0.3}>
-            <div className="text-center">
-              <p className="text-white/70 mb-4">O explora los servicios individuales:</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                {data.cta.links.map((link, i) => (
-                  <Link
-                    key={i}
-                    href={link.href}
-                    className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all border border-white/20 text-sm font-semibold"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+          {data.cta.links && data.cta.links.length > 0 && (
+            <ScrollReveal delay={0.3}>
+              <div className="text-center">
+                <p className="text-white/70 mb-4">O explora los servicios individuales:</p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  {data.cta.links.map((link, i) => (
+                    <Link
+                      key={i}
+                      href={link.href}
+                      className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all border border-white/20 text-sm font-semibold"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          )}
         </div>
       </section>
     </div>
