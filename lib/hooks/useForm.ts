@@ -21,8 +21,14 @@ export function useForm<T extends Record<string, any>>({
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value } = e.target
-    setValues((prev) => ({ ...prev, [name]: value }))
+    const { name, value, type } = e.target
+    
+    // Para checkboxes, usar checked en lugar de value
+    const newValue = type === 'checkbox' 
+      ? (e.target as HTMLInputElement).checked 
+      : value
+    
+    setValues((prev) => ({ ...prev, [name]: newValue }))
     
     // Limpiar error cuando el usuario empieza a escribir
     if (errors[name as keyof T]) {
