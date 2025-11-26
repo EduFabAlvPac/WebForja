@@ -155,7 +155,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             className="w-full border-brand-turquoise text-brand-turquoise hover:bg-brand-turquoise hover:text-white"
             asChild
           >
-            <Link href="/rayos-x-empresarial" onClick={onClose}>
+            <Link href="/contacto" onClick={onClose}>
               Rayos X Empresarial
             </Link>
           </Button>

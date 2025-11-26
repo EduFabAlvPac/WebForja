@@ -182,7 +182,7 @@ export default function EstrategiaTransformacionPage() {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link
-                href="/rayos-x-empresarial"
+                href="/contacto"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-brand-orange text-white font-bold text-lg rounded-xl hover:bg-brand-orange-dark transition-all shadow-xl"
               >
                 Solicitar Diagnóstico Gratuito

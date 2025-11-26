@@ -110,23 +110,24 @@ export function WhatsAppFloat() {
 
       <motion.button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg flex items-center justify-center text-white"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        animate={{
-          boxShadow: [
-            '0 0 0 0 rgba(34, 197, 94, 0.4)',
-            '0 0 0 20px rgba(34, 197, 94, 0)',
-          ],
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: 'loop',
-        }}
+        className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-2xl shadow-lg shadow-green-500/30 flex items-center justify-center text-white relative overflow-hidden"
+        whileHover={{ scale: 1.05, rotate: 3 }}
+        whileTap={{ scale: 0.95 }}
         aria-label="WhatsApp"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-6 w-6 relative z-10" />
+        <motion.div
+          className="absolute inset-0 bg-white/20"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.3, 0, 0.3],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: 'loop',
+          }}
+        />
       </motion.button>
     </motion.div>
   )

@@ -345,7 +345,7 @@ export const transformacionDigitalData: ServicePageData = {
       title: '¿Listo para Digitalizar tu Futuro?',
       description: 'Nuestro Diagnóstico de Madurez Digital es el primer paso. Identificamos tus brechas y te entregamos un plan de acción claro y priorizado. ¡Gratis!',
       buttonText: 'Iniciar Diagnóstico Digital',
-      buttonLink: '/rayos-x-empresarial',
+      buttonLink: '/contacto',
       icon: 'ClipboardCheck',
     },
     secondary: {

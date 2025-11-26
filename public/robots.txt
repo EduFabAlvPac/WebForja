@@ -8,7 +8,7 @@ Allow: /
 Allow: /servicios/
 Allow: /nosotros/
 Allow: /contacto
-Allow: /rayos-x-empresarial
+# Allow: /rayos-x-empresarial  # Temporalmente deshabilitado
 Allow: /casos-exito
 
 # Páginas legales (importantes para compliance)

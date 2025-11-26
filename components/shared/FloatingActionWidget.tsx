@@ -452,10 +452,10 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
 
       {/* Main Toggle Button - Positioned above WhatsApp */}
       <motion.button
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.05, rotate: -3 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 text-white rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center"
+        className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white rounded-2xl shadow-lg shadow-purple-500/30 flex items-center justify-center relative overflow-hidden"
         aria-label={isOpen ? 'Cerrar widget' : 'Abrir widget de ayuda'}
       >
         <AnimatePresence mode="wait">
@@ -465,6 +465,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
+              className="relative z-10"
             >
               <X className="w-6 h-6" />
             </motion.div>
@@ -474,6 +475,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
+              className="relative z-10"
             >
               <HelpCircle className="w-6 h-6" />
             </motion.div>
@@ -481,7 +483,19 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
         </AnimatePresence>
         
         {!isOpen && (
-          <span className="absolute inset-0 rounded-full bg-purple-600 animate-ping opacity-20" />
+          <motion.div
+            className="absolute inset-0 bg-white/20"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0, 0.3],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: 'loop',
+              delay: 0.5,
+            }}
+          />
         )}
       </motion.button>
     </>

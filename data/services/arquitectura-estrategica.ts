@@ -430,7 +430,7 @@ export const arquitecturaEstrategicaData: ServicePageData = {
       title: '¿Listo para Diseñar tu Arquitectura?',
       description: 'Solicita tu Diagnóstico Estratégico Gratuito y descubre las brechas críticas que frenan tu crecimiento.',
       buttonText: 'Solicitar Diagnóstico',
-      buttonLink: '/rayos-x-empresarial',
+      buttonLink: '/contacto',
       icon: '🔍',
     },
     secondary: {

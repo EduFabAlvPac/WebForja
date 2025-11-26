@@ -153,7 +153,7 @@ export function OurCommitment() {
                   </p>
 
                   <Link
-                    href="/rayos-x-empresarial"
+                    href="/contacto"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-white text-brand-orange font-bold text-lg rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 group/button"
                   >
                     Comenzar Ahora

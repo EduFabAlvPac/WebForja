@@ -274,7 +274,7 @@ export function ServicesSection() {
                 className="inline-block"
               >
                 <Link 
-                  href="/rayos-x-empresarial"
+                  href="/contacto"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-white text-brand-navy font-bold text-lg rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl group"
                 >
                   <ClipboardCheck className="w-6 h-6 text-brand-orange" />

@@ -83,7 +83,7 @@ export function Header() {
               className="border-brand-turquoise text-brand-turquoise hover:bg-brand-turquoise hover:text-white gap-2"
               asChild
             >
-              <Link href="/rayos-x-empresarial">
+              <Link href="/contacto">
                 <Search className="h-4 w-4" />
                 Rayos X
               </Link>
