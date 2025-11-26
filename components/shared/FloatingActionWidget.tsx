@@ -133,7 +133,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed bottom-28 right-6 z-50 w-[400px] max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-10rem)] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-40 right-6 z-50 w-[400px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-12rem)] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 p-6 text-white">
@@ -450,12 +450,12 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
         )}
       </AnimatePresence>
 
-      {/* Main Toggle Button */}
+      {/* Main Toggle Button - Positioned above WhatsApp */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 text-white rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center"
+        className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 text-white rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center"
         aria-label={isOpen ? 'Cerrar widget' : 'Abrir widget de ayuda'}
       >
         <AnimatePresence mode="wait">
@@ -466,7 +466,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
             >
-              <X className="w-7 h-7" />
+              <X className="w-6 h-6" />
             </motion.div>
           ) : (
             <motion.div
@@ -475,7 +475,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
             >
-              <HelpCircle className="w-7 h-7" />
+              <HelpCircle className="w-6 h-6" />
             </motion.div>
           )}
         </AnimatePresence>

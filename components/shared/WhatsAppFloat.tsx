@@ -74,7 +74,7 @@ export function WhatsAppFloat() {
 
   return (
     <motion.div
-      className="fixed bottom-6 right-6 z-[var(--z-whatsapp-float)]"
+      className="fixed bottom-6 right-6 z-40"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, duration: 0.3 }}
@@ -85,7 +85,7 @@ export function WhatsAppFloat() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="absolute bottom-20 right-0 bg-white rounded-card shadow-card-hover p-4 w-64 mb-2"
+            className="absolute bottom-20 right-0 bg-white rounded-2xl shadow-xl p-4 w-64 mb-2"
           >
             <button
               onClick={() => setIsExpanded(false)}
@@ -100,7 +100,7 @@ export function WhatsAppFloat() {
             </p>
             <button
               onClick={handleWhatsAppClick}
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-button text-sm font-medium transition-colors"
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-xl text-sm font-medium transition-colors"
             >
               Iniciar Chat
             </button>

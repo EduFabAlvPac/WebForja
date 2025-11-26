@@ -177,7 +177,7 @@ export function ServicesSection() {
         { text: 'Gestión Financiera & Control de Gestión' },
         { text: 'Pricing Estratégico & Análisis de Rentabilidad' },
       ],
-      link: '/servicios/talento-humano',
+      link: '/servicios/talento-finanzas',
     },
     {
       icon: Settings,
@@ -189,7 +189,7 @@ export function ServicesSection() {
         { text: 'Motor Comercial & CRM Estratégico' },
         { text: 'Experiencia de Cliente (CX) Omnicanal' },
       ],
-      link: '/servicios/excelencia-operativa',
+      link: '/servicios/comercial-operaciones',
     },
   ]
 
