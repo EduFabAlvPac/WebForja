@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Lightbulb, Smartphone, Check, Target } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 
 const colorClasses = {
   cyan: {
@@ -34,7 +35,7 @@ const services = [
     icon: Smartphone,
     title: 'Transformación Digital 360°',
     description: 'Convertimos la tecnología en una ventaja competitiva medible, integrando innovación, inteligencia de negocio y automatización en tu ADN empresarial.',
-    href: '/servicios/transformacion-digital',
+    href: '/servicios/estrategia-transformacion/transformacion-digital',
     highlights: [
       'Innovación y nuevos modelos de negocio',
       'Inteligencia de Negocio (BI) y Analytics',

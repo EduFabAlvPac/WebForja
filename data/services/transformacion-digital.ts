@@ -8,13 +8,13 @@ export const transformacionDigitalData: ServicePageData = {
     subtitle: 'Tecnología como Ventaja Competitiva Medible',
     description: 'Orquestamos la adopción de tecnología y cultura digital en toda tu organización, convirtiendo datos en decisiones, automatizando procesos y creando experiencias de cliente que fidelizan.',
     category: 'estrategia-transformacion',
-    backgroundImage: 'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2070&auto=format&fit=crop',
-    backgroundAlt: 'Equipo de profesionales colaborando en una oficina moderna con tecnología y análisis de datos',
+    backgroundImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+    backgroundAlt: 'Transformación digital con tecnología y datos conectados globalmente',
     breadcrumbs: [
       { label: 'Inicio', href: '/' },
       { label: 'Servicios', href: '/servicios' },
       { label: 'Estrategia & Transformación', href: '/servicios/estrategia-transformacion' },
-      { label: 'Transformación Digital 360°', href: '/servicios/transformacion-digital' },
+      { label: 'Transformación Digital 360°', href: '/servicios/estrategia-transformacion/transformacion-digital' },
     ],
   },
 

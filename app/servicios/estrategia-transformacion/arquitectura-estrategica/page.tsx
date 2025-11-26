@@ -8,6 +8,7 @@ import { ProblemCard } from '@/components/services/ProblemCard'
 import { ServiceAccordion } from '@/components/services/ServiceAccordion'
 import { MethodologyTimeline } from '@/components/services/MethodologyTimeline'
 import { CaseStudy } from '@/components/services/CaseStudy'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 import { arquitecturaEstrategicaData } from '@/data/services/arquitectura-estrategica'
 
 export default function ArquitecturaEstrategicaPage() {
@@ -25,28 +26,11 @@ export default function ArquitecturaEstrategicaPage() {
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-brand-orange/8 to-transparent rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
         
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          {/* Header mejorado */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-orange/10 to-transparent border-l-4 border-brand-orange rounded-r-lg mb-4"
-            >
-              <span className="text-brand-orange font-bold text-sm uppercase tracking-wider">
-                PERFIL IDEAL
-              </span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-4 leading-tight"
-            >
-              {data.targetProfile.title}
-            </motion.h2>
-          </div>
+          <SectionHeader
+            eyebrow="PERFIL IDEAL"
+            title="¿Este Servicio es para Tu Empresa?"
+            highlight="Tu Empresa"
+          />
 
           {/* Checklist Grid - Mejorado */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
@@ -120,25 +104,12 @@ export default function ArquitecturaEstrategicaPage() {
       {/* SECCIÓN 3 - PROBLEMAS QUE RESUELVE */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4"
-            >
-              ¿Qué Problemas <span className="text-brand-orange">Resuelve</span>?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600"
-            >
-              Identificamos y solucionamos los obstáculos críticos que frenan tu crecimiento
-            </motion.p>
-          </div>
+          <SectionHeader
+            eyebrow="TU REALIDAD ACTUAL"
+            title="¿Te Identificas con Alguna de Estas Situaciones?"
+            highlight="Estas Situaciones"
+            description="Identificamos y solucionamos los obstáculos críticos que frenan tu crecimiento"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {data.problems.map((problem, index) => (
@@ -151,25 +122,12 @@ export default function ArquitecturaEstrategicaPage() {
       {/* SECCIÓN 4 - COMPONENTES DEL SERVICIO */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4"
-            >
-              ¿Qué Incluye el <span className="text-brand-orange">Servicio</span>?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600"
-            >
-              6 componentes modulares que puedes contratar de forma independiente o completa
-            </motion.p>
-          </div>
+          <SectionHeader
+            eyebrow="SERVICIO MODULAR"
+            title="Qué Incluye Nuestro Servicio"
+            highlight="Nuestro Servicio"
+            description="6 componentes modulares que puedes contratar de forma independiente o completa"
+          />
 
           <div className="max-w-6xl mx-auto">
             <ServiceAccordion components={data.components} />
@@ -180,34 +138,12 @@ export default function ArquitecturaEstrategicaPage() {
       {/* SECCIÓN 5 - METODOLOGÍA FORJA */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-6xl mx-auto text-center mb-12">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-brand-orange font-bold text-base uppercase tracking-wider mb-4"
-            >
-              METODOLOGÍA FORJA®
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
-            >
-              Cómo <span className="text-brand-orange">Trabajamos</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600"
-            >
-              Proceso estructurado en 5 fases con entregables tangibles en cada etapa
-            </motion.p>
-          </div>
+          <SectionHeader
+            eyebrow="METODOLOGÍA FORJA®"
+            title="Cómo Trabajamos"
+            highlight="Trabajamos"
+            description="Proceso estructurado en 5 fases con entregables tangibles en cada etapa"
+          />
 
           <div className="max-w-7xl mx-auto">
             <MethodologyTimeline phases={data.methodology} />
@@ -218,25 +154,12 @@ export default function ArquitecturaEstrategicaPage() {
       {/* SECCIÓN 6 - CASO DE ÉXITO */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4"
-            >
-              Caso de <span className="text-brand-orange">Éxito</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600"
-            >
-              Resultados reales de empresas que transformaron su arquitectura estratégica
-            </motion.p>
-          </div>
+          <SectionHeader
+            eyebrow="RESULTADOS REALES"
+            title="Caso de Éxito"
+            highlight="Éxito"
+            description="Resultados reales de empresas que transformaron su arquitectura estratégica"
+          />
 
           <div className="max-w-5xl mx-auto">
             <CaseStudy caseStudy={data.caseStudy} />
