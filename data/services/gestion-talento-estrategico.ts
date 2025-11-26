@@ -1,12 +1,12 @@
 import { ServicePageData } from '@/types/services'
 
-export const gestionTalentoEstrategicoData: ServicePageData = {
+export const gestionTalentoData: ServicePageData = {
   hero: {
-    eyebrow: '👥 Servicio de Consultoría Especializada',
+    eyebrow: 'Servicio de Consultoría Especializada',
     icon: 'Users',
     title: 'Gestión de Talento Estratégico',
-    subtitle: 'Equipos alineados, productivos y comprometidos con la estrategia',
-    description: 'Convierte tu capital humano en ventaja competitiva sostenible mediante gestión por competencias, cultura organizacional y desarrollo integral. El talento es tu activo más valioso, pero también el más complejo de gestionar. Diseñamos sistemas de gestión de talento que convierten equipos reactivos en organizaciones de alto rendimiento.',
+    subtitle: 'Convierte tu capital humano en ventaja competitiva sostenible',
+    description: 'El talento es tu activo más valioso, pero también el más complejo de gestionar. No basta con contratar bien: necesitas desarrollar capacidades, retener personas clave, crear cultura de alto desempeño y alinear cada colaborador con los objetivos estratégicos del negocio. Diseñamos sistemas de gestión de talento que convierten equipos reactivos en organizaciones de alto rendimiento.',
     category: 'Talento & Finanzas',
     breadcrumbs: [
       { label: 'Inicio', href: '/' },
@@ -14,8 +14,8 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       { label: 'Talento & Finanzas', href: '/servicios/talento-finanzas' },
       { label: 'Gestión de Talento Estratégico', href: '/servicios/talento-finanzas/gestion-talento-estrategico' }
     ],
-    backgroundImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
-    backgroundAlt: 'Equipo profesional colaborando en estrategia de talento'
+    backgroundImage: 'https://images.unsplash.com/photo-1552664730-d307ca8849d1?q=80&w=2070&auto=format&fit=crop',
+    backgroundAlt: 'Equipo de trabajo colaborando en estrategia de talento'
   },
 
   targetProfile: {
@@ -29,8 +29,8 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       'Necesitas profesionalizar la gestión de RRHH más allá de nómina y contratos'
     ],
     idealProfile: {
-      title: 'Perfil de Empresas Ideales',
-      description: 'CEOs, Directores de RRHH y Gerentes Generales de empresas de 30-200 empleados en crecimiento o transformación, donde el talento es crítico para la operación.'
+      title: 'Perfil Ideal',
+      description: 'CEOs, Directores de RRHH, Gerentes Generales de empresas de 30-200 empleados. Organizaciones en crecimiento o transformación donde el talento es crítico para la operación.'
     }
   },
 
@@ -38,57 +38,57 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
     {
       id: 'rotacion-alta',
       icon: '🔥',
-      iconComponent: 'Flame',
-      title: 'Rotación Alta de Personal Clave',
+      iconComponent: 'UserX',
+      title: 'Rotación Alta que Destruye Conocimiento',
       symptom: 'Cada año perdemos 2-3 personas críticas que se llevan conocimiento operacional. Cada salida nos cuesta 6 meses de productividad perdida mientras entrenamos reemplazos.',
       solution: [
         'Identificación de posiciones críticas y planes de sucesión',
-        'Análisis de causas de rotación (entrevistas de salida estructuradas)',
-        'Diseño de planes de carrera y desarrollo',
-        'Estrategia de compensación competitiva y beneficios',
-        'Programa de reconocimiento y engagement'
+        'Análisis de causas raíz de rotación con entrevistas estructuradas',
+        'Diseño de planes de carrera y desarrollo claros',
+        'Estrategia de retención de talento clave',
+        'Programa de reconocimiento y engagement personalizado'
       ]
     },
     {
       id: 'brecha-competencias',
       icon: '💡',
-      iconComponent: 'Lightbulb',
-      title: 'Brecha de Competencias para Estrategia',
+      iconComponent: 'Brain',
+      title: 'Brecha de Competencias para el Futuro',
       symptom: 'Nuestra estrategia requiere capacidades digitales, analíticas y de innovación que nuestro equipo actual no tiene. No sabemos si desarrollar, contratar o externalizar.',
       solution: [
         'Identificación de competencias necesarias para estrategia futura',
         'Evaluación de brecha de competencias (GAP Analysis)',
         'Estrategia make vs buy (desarrollar vs contratar)',
-        'Planes de desarrollo por rol crítico',
-        'Roadmap de capacitación y upskilling'
+        'Planes de desarrollo personalizados por rol crítico',
+        'Roadmap de capacitación y upskilling estratégico'
       ]
     },
     {
       id: 'bajo-desempeno',
       icon: '📉',
       iconComponent: 'TrendingDown',
-      title: 'Bajo Desempeño y Productividad',
+      title: 'Desempeño Inconsistente sin Métricas Claras',
       symptom: 'Algunos equipos son altamente productivos, otros no tanto. No tenemos forma objetiva de medir desempeño ni de identificar quién necesita apoyo vs quién merece promoción.',
       solution: [
         'Definición de KPIs de desempeño por rol',
-        'Sistema de evaluación objetivo (360°, OKRs, etc.)',
+        'Sistema de evaluación 360° objetivo',
         'Proceso de feedback continuo (no solo anual)',
         'Planes de mejora de desempeño (PIP)',
-        'Conexión de desempeño individual con compensación'
+        'Conexión de desempeño individual con desarrollo y reconocimiento'
       ]
     },
     {
       id: 'cultura-debil',
       icon: '🤝',
-      iconComponent: 'Handshake',
-      title: 'Cultura Organizacional Débil o Tóxica',
-      symptom: 'Los equipos trabajan en silos, hay poca colaboración. La cultura no está definida o existe cultura tóxica que genera conflictos y afecta clima laboral.',
+      iconComponent: 'Users2',
+      title: 'Cultura Débil y Falta de Engagement',
+      symptom: 'Los equipos trabajan en silos, hay poca colaboración. La cultura no está definida o existe ambiente tóxico que genera conflictos y afecta el clima laboral.',
       solution: [
-        'Diagnóstico de cultura actual (encuestas, focus groups)',
+        'Diagnóstico de cultura actual con encuestas y focus groups',
         'Definición de valores y comportamientos deseados',
-        'Plan de cambio cultural con iniciativas concretas',
+        'Plan de transformación cultural con iniciativas concretas',
         'Programa de embajadores de cultura',
-        'Medición continua de clima organizacional'
+        'Medición continua de engagement y clima organizacional'
       ]
     },
     {
@@ -96,13 +96,55 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       icon: '📋',
       iconComponent: 'ClipboardList',
       title: 'RRHH Administrativo, No Estratégico',
-      symptom: 'El área de RRHH solo procesa nómina y contratos. No hay estrategia de talento, no hay desarrollo, no hay métricas de capital humano que apoyen decisiones del negocio.',
+      symptom: 'El área de RRHH solo procesa nómina y contratos. No hay estrategia de talento, no hay desarrollo, no hay métricas que apoyen decisiones del negocio.',
       solution: [
         'Rediseño del modelo de RRHH (operativo + estratégico)',
         'Implementación de HRIS (sistema de gestión de RRHH)',
-        'Dashboard de People Analytics (métricas de talento)',
+        'Dashboard de People Analytics con métricas clave',
         'Upskilling del equipo de RRHH en gestión estratégica',
-        'Alineación de estrategia de talento con estrategia de negocio'
+        'Alineación de estrategia de talento con objetivos de negocio'
+      ]
+    },
+    {
+      id: 'contratacion-reactiva',
+      icon: '🚨',
+      iconComponent: 'AlertTriangle',
+      title: 'Contratación Reactiva y Sin Estrategia',
+      symptom: 'Solo contratamos cuando alguien renuncia o cuando ya estamos saturados. No hay planeación de talento ni pipeline de candidatos. Cada contratación es una emergencia.',
+      solution: [
+        'Planeación estratégica de headcount a 12 meses',
+        'Proceso de reclutamiento profesional y estructurado',
+        'Employer branding para atraer talento de calidad',
+        'Pipeline de candidatos potenciales',
+        'Programa de onboarding que acelera productividad'
+      ]
+    },
+    {
+      id: 'falta-liderazgo',
+      icon: '👔',
+      iconComponent: 'GraduationCap',
+      title: 'Líderes Sin Habilidades de Gestión',
+      symptom: 'Promovimos a nuestros mejores técnicos a líderes, pero no saben gestionar equipos. Hay micro-management, falta de delegación y equipos frustrados.',
+      solution: [
+        'Evaluación de competencias de liderazgo',
+        'Programa de desarrollo de líderes',
+        'Coaching individual para líderes clave',
+        'Definición de modelo de liderazgo organizacional',
+        'Sistema de feedback 360° para líderes'
+      ]
+    },
+    {
+      id: 'falta-carrera',
+      icon: '🎯',
+      iconComponent: 'Target',
+      title: 'Sin Planes de Carrera Claros',
+      symptom: 'La gente no sabe cómo crecer en la empresa. Los buenos talentos se van porque no ven futuro. No hay camino claro de junior a senior.',
+      solution: [
+        'Diseño de rutas de carrera por familia de cargos',
+        'Definición de criterios de promoción objetivos',
+        'Programa de desarrollo por nivel',
+        'Sistema de mentoring interno',
+        'Comunicación transparente de oportunidades'
       ]
     }
   ],
@@ -111,9 +153,9 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
     {
       id: 'modelo-competencias',
       icon: '📋',
-      iconComponent: 'ClipboardList',
+      iconComponent: 'FileCheck2',
       title: 'Modelo de Competencias y Perfiles de Cargo',
-      description: 'Diseño del modelo de competencias organizacionales (técnicas, conductuales y estratégicas) y definición detallada de perfiles de cargo para todas las posiciones clave de la empresa.',
+      description: 'Diseño del modelo de competencias organizacionales y definición detallada de perfiles de cargo para todas las posiciones clave.',
       includes: [
         {
           subtitle: 'Diseño de Modelo de Competencias',
@@ -121,7 +163,7 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
             'Identificación de competencias core organizacionales',
             'Definición de competencias por familia de cargos',
             'Niveles de dominio por competencia (básico, intermedio, avanzado, experto)',
-            'Diccionario de competencias (definición + comportamientos observables)',
+            'Diccionario de competencias con comportamientos observables',
             'Alineación de competencias con estrategia de negocio'
           ]
         },
@@ -161,16 +203,16 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       icon: '📊',
       iconComponent: 'BarChart3',
       title: 'Sistema de Gestión de Desempeño',
-      description: 'Implementación de sistema objetivo de evaluación y gestión del desempeño individual y de equipos, conectado con desarrollo, compensación y planes de carrera.',
+      description: 'Implementación de sistema objetivo de evaluación y gestión del desempeño individual y de equipos, conectado con desarrollo y planes de carrera.',
       includes: [
         {
           subtitle: 'Diseño del Sistema',
           items: [
-            'Definición de metodología de evaluación (360°, OKRs, Balanced Scorecard, MBO)',
+            'Definición de metodología de evaluación (360°, OKRs, Balanced Scorecard)',
             'KPIs de desempeño por rol (cuantitativos + cualitativos)',
             'Escalas de calificación y criterios de evaluación',
             'Proceso de evaluación (frecuencia, responsables, flujo)',
-            'Conexión de desempeño con compensación y desarrollo'
+            'Conexión de desempeño con desarrollo y reconocimiento'
           ]
         },
         {
@@ -218,12 +260,12 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       icon: '🎓',
       iconComponent: 'GraduationCap',
       title: 'Desarrollo y Capacitación Estratégica',
-      description: 'Diseño e implementación de programas de capacitación y desarrollo alineados con brechas de competencias identificadas y estrategia de negocio.',
+      description: 'Diseño e implementación de programas de capacitación y desarrollo alineados con brechas de competencias y estrategia de negocio.',
       includes: [
         {
           subtitle: 'Estrategia de Capacitación',
           items: [
-            'Identificación de necesidades de capacitación (por brecha de competencias)',
+            'Identificación de necesidades de capacitación por brecha de competencias',
             'Priorización de programas según impacto en negocio',
             'Diseño de ruta de aprendizaje por rol',
             'Definición de metodologías (presencial, online, blended, on-the-job)',
@@ -233,10 +275,10 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
         {
           subtitle: 'Programas de Desarrollo',
           items: [
-            'Programa de inducción y onboarding',
-            'Capacitación técnica especializada',
+            'Programa de inducción y onboarding estructurado',
+            'Capacitación técnica especializada por rol',
             'Desarrollo de habilidades blandas (liderazgo, comunicación, trabajo en equipo)',
-            'Programa de mentoring y coaching',
+            'Programa de mentoring y coaching interno',
             'Programa de desarrollo de líderes',
             'Certificaciones técnicas estratégicas'
           ]
@@ -273,9 +315,9 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
     {
       id: 'cultura-engagement',
       icon: '🎨',
-      iconComponent: 'Palette',
+      iconComponent: 'Heart',
       title: 'Cultura Organizacional y Engagement',
-      description: 'Diseño e implementación de programa de transformación cultural que alinea valores, comportamientos y prácticas organizacionales con la estrategia de negocio.',
+      description: 'Diseño e implementación de programa de transformación cultural que alinea valores, comportamientos y prácticas con la estrategia.',
       includes: [
         {
           subtitle: 'Diagnóstico de Cultura',
@@ -303,7 +345,7 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
             'Plan de comunicación interna',
             'Programa de embajadores de cultura',
             'Iniciativas de engagement (eventos, reconocimiento, beneficios)',
-            'Integración de cultura en procesos de RRHH (selección, inducción, evaluación)',
+            'Integración de cultura en procesos de RRHH',
             'Quick wins para generar momentum'
           ]
         },
@@ -332,7 +374,7 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       icon: '🏗️',
       iconComponent: 'Building2',
       title: 'Estructura Organizacional y Diseño de Roles',
-      description: 'Rediseño de la estructura organizacional para optimizar eficiencia, clarificar responsabilidades y preparar la organización para crecimiento escalable.',
+      description: 'Rediseño de la estructura organizacional para optimizar eficiencia, clarificar responsabilidades y preparar la organización para crecimiento.',
       includes: [
         {
           subtitle: 'Análisis de Estructura Actual',
@@ -377,7 +419,7 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       ],
       deliverables: [
         'Análisis de Estructura Actual',
-        'Organigrama Objetivo (3 versiones: corto, mediano, largo plazo)',
+        'Organigrama Objetivo (corto, mediano, largo plazo)',
         'Matriz RACI por Proceso Crítico',
         'Manual de Roles y Responsabilidades',
         'Plan de Transición Organizacional',
@@ -385,11 +427,11 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       ]
     },
     {
-      id: 'atraccion-seleccion',
+      id: 'reclutamiento-onboarding',
       icon: '🎯',
       iconComponent: 'Target',
       title: 'Atracción, Selección y Onboarding',
-      description: 'Diseño e implementación de procesos profesionales de reclutamiento, selección por competencias y onboarding estructurado para garantizar fit cultural y técnico desde el día 1.',
+      description: 'Diseño e implementación de procesos profesionales de reclutamiento, selección por competencias y onboarding estructurado.',
       includes: [
         {
           subtitle: 'Proceso de Reclutamiento',
@@ -545,15 +587,14 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       size: '45 empleados',
       location: 'Bogotá, Colombia'
     },
-    challenge: 'Rotación anual de 35% (promedio industria: 20%). 70% de contrataciones urgentes por salidas inesperadas. Dependencia total de 3 socios fundadores. Sin planes de carrera ni desarrollo estructurado. Evaluación de desempeño subjetiva (sin criterios claros). Clima laboral deteriorado (eNPS de 12).',
-    solution: 'Implementamos transformación completa de gestión de talento: diseño de modelo de competencias (8 competencias core), definición de 15 perfiles de cargo estructurados, sistema de evaluación 360° + OKRs, programa de desarrollo de consultores jr → sr, y estrategia de compensación competitiva. Establecimos programa de mentoring (1 senior por cada 2 juniors) y planes de carrera claros (3 niveles).',
+    challenge: 'Rotación anual del 35% de personal clave, 70% de contrataciones urgentes por salidas inesperadas, dependencia total de 3 socios fundadores, sin planes de carrera ni desarrollo estructurado, evaluación subjetiva de desempeño y clima laboral deteriorado (eNPS de 12).',
+    solution: 'Implementamos sistema integral de gestión de talento: modelo de competencias con 8 competencias core, 15 perfiles de cargo estructurados, sistema de evaluación 360° + OKRs, programa de mentoring, upskilling técnico, planes de carrera con 3 niveles claros y herramienta de RRHH automatizada.',
     results: {
       before: [
         { label: 'Rotación anual', value: '35%' },
         { label: 'eNPS (engagement)', value: '12' },
         { label: 'Tiempo de contratación', value: '45 días' },
         { label: 'Retención top talent', value: '60%' },
-        { label: 'Productividad ($/empl.)', value: 'Baseline' },
         { label: 'Promociones internas', value: '0' }
       ],
       after: [
@@ -561,7 +602,6 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
         { label: 'eNPS (engagement)', value: '62' },
         { label: 'Tiempo de contratación', value: '25 días' },
         { label: 'Retención top talent', value: '92%' },
-        { label: 'Productividad ($/empl.)', value: '+28%' },
         { label: 'Promociones internas', value: '8' }
       ]
     },
@@ -570,23 +610,23 @@ export const gestionTalentoEstrategicoData: ServicePageData = {
       author: 'Juan Carlos Ramírez',
       position: 'Socio Director'
     },
-    downloadLink: '/casos-exito/firma-consultoria-auditoria.pdf'
+    downloadLink: '/casos-exito/firma-consultoria.pdf'
   },
 
   cta: {
     primary: {
       title: 'Diagnóstico Gratuito de Gestión de Talento',
-      description: 'Solicita tu Evaluación de Madurez de Talento sin costo',
+      description: 'Solicita tu Evaluación de Madurez de Talento sin costo. Identificamos tus brechas críticas y te damos recomendaciones prácticas.',
       buttonText: 'Solicitar Evaluación GRATIS',
       buttonLink: '/contacto',
       icon: 'Search'
     },
     secondary: {
       title: 'Consulta con Especialista en Talento',
-      description: 'Agenda 30 minutos con nuestro experto en gestión de talento',
+      description: 'Agenda 30 minutos con nuestro experto en gestión de talento para analizar tus desafíos específicos.',
       buttonText: 'Agendar Llamada Estratégica',
       buttonLink: '/contacto',
-      icon: 'Phone'
+      icon: 'Calendar'
     }
   }
 }

@@ -108,7 +108,7 @@ export const talentoFinanzasCategoryData: CategoryPageData = {
       id: 'ingenieria-financiera',
       icon: '💰',
       iconComponent: 'DollarSign',
-      title: 'Ingeniería Financiera Operativa',
+      title: 'Gestión Financiera Operativa',
       description: 'Diseñamos tu motor financiero: estructura de costos optimizada, flujo de caja predecible, márgenes saludables y un modelo de pricing que sostiene el crecimiento.',
       forWho: [
         'Empresas rentables "en papel" pero sin liquidez',
@@ -336,7 +336,7 @@ export const talentoFinanzasCategoryData: CategoryPageData = {
           link: '/servicios/talento-finanzas/gestion-talento-estrategico'
         },
         {
-          name: 'Ingeniería Financiera Operativa',
+          name: 'Gestión Financiera Operativa',
           link: '/servicios/talento-finanzas/ingenieria-financiera'
         }
       ]

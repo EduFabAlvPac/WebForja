@@ -9,10 +9,10 @@ import { ServiceAccordion } from '@/components/services/ServiceAccordion'
 import { MethodologyTimeline } from '@/components/services/MethodologyTimeline'
 import { CaseStudy } from '@/components/services/CaseStudy'
 import { SectionHeader } from '@/components/shared/SectionHeader'
-import { gestionTalentoData } from '@/data/services/gestion-talento-estrategico'
+import { ingenieriaFinancieraData } from '@/data/services/ingenieria-financiera'
 
-export default function GestionTalentoEstrategicoPage() {
-  const data = gestionTalentoData
+export default function IngenieriaFinancieraPage() {
+  const data = ingenieriaFinancieraData
 
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
@@ -88,15 +88,10 @@ export default function GestionTalentoEstrategicoPage() {
       {/* SECCIÓN 3 - PROBLEMAS QUE RESUELVE */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-8">
-          <SectionHeader
-            eyebrow="TU REALIDAD ACTUAL"
-            title="¿Te Identificas con Alguna de Estas Situaciones?"
-            highlight="Estas Situaciones"
-            description="Estos son los dolores más comunes en la gestión de talento de las PYMEs"
-          />
+          <SectionHeader eyebrow="TU REALIDAD ACTUAL" title="¿Te Identificas con Alguna de Estas Situaciones?" highlight="Estas Situaciones" />
 
           {/* Problem Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
             {data.problems.map((problem, index) => (
               <motion.div
                 key={problem.id}
@@ -135,7 +130,7 @@ export default function GestionTalentoEstrategicoPage() {
             eyebrow="METODOLOGÍA FORJA®"
             title="Cómo Trabajamos"
             highlight="Trabajamos"
-            description="Nuestra metodología probada garantiza transformación real del capital humano, no solo documentos en un cajón"
+            description="Nuestra metodología probada garantiza transformación real de tu función financiera"
           />
 
           <div className="max-w-6xl mx-auto">
@@ -151,7 +146,7 @@ export default function GestionTalentoEstrategicoPage() {
             eyebrow="RESULTADOS REALES"
             title="Caso de Éxito"
             highlight="Éxito"
-            description="Cómo transformamos la gestión de talento en una firma de servicios profesionales"
+            description="Cómo transformamos las finanzas de un distribuidor regional"
           />
 
           <div className="max-w-6xl mx-auto">
@@ -176,10 +171,10 @@ export default function GestionTalentoEstrategicoPage() {
               className="text-center mb-12"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                ¿Tu Empresa Necesita Profesionalizar la Gestión de Talento?
+                ¿Tu Empresa Necesita Transformar su Función Financiera?
               </h2>
               <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-                Si la rotación, el bajo engagement o la falta de desarrollo están afectando tu capacidad de crecer, es momento de actuar.
+                Si la falta de liquidez, información tardía o márgenes que se erosionan están limitando tu crecimiento, es momento de actuar.
               </p>
             </motion.div>
 
@@ -245,3 +240,5 @@ export default function GestionTalentoEstrategicoPage() {
     </div>
   )
 }
+
+

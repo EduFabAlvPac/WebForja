@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 import { 
   Users, 
   DollarSign, 
@@ -77,14 +78,12 @@ export default function TalentoFinanzasPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
-                ¿Por qué Talento y Finanzas deben gestionarse juntos?
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                La desconexión entre estas dos áreas es la causa #1 de estancamiento en PYMEs
-              </p>
-            </div>
+            <SectionHeader
+              eyebrow="INTEGRACIÓN ESTRATÉGICA"
+              title="¿Por qué Talento y Finanzas deben gestionarse juntos?"
+              highlight="juntos"
+              description="La desconexión entre estas dos áreas es la causa #1 de estancamiento en PYMEs"
+            />
           </ScrollReveal>
 
           {/* Problems Cards con diseño mejorado */}
@@ -238,14 +237,12 @@ export default function TalentoFinanzasPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
-                El Poder de la Integración
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Cuando Talento y Finanzas trabajan como un solo sistema
-              </p>
-            </div>
+            <SectionHeader
+              eyebrow="SINERGIA TOTAL"
+              title="El Poder de la Integración"
+              highlight="Integración"
+              description="Cuando Talento y Finanzas trabajan como un solo sistema"
+            />
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -307,3 +304,4 @@ export default function TalentoFinanzasPage() {
     </div>
   )
 }
+
