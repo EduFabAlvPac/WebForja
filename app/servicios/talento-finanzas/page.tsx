@@ -1,34 +1,34 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { 
   Users, 
   DollarSign, 
-  TrendingUp, 
-  Scale, 
-  Target, 
-  Rocket,
-  CheckCircle,
   ArrowRight,
-  AlertCircle,
-  Search,
-  Calendar,
-  Download
+  CheckCircle2,
+  TrendingUp,
+  Target,
+  Zap,
+  Award,
+  BarChart3,
+  Scale,
+  Rocket,
+  Wallet,
+  Crosshair,
+  PieChart
 } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { talentoFinanzasCategoryData } from '@/data/services/talento-finanzas-category'
 
 const iconMap: Record<string, any> = {
+  TrendingUp,
   Users,
   DollarSign,
-  TrendingUp,
-  Scale,
   Target,
+  Scale,
   Rocket,
-  Search,
-  Calendar
+  BarChart3
 }
 
 export default function TalentoFinanzasPage() {
@@ -37,255 +37,195 @@ export default function TalentoFinanzasPage() {
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        {/* Background Image con Ken Burns effect */}
-        <div className="absolute inset-0">
-          <motion.div
-            className="w-full h-full"
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.05 }}
-            transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1552664730-d307ca8849d1?q=80&w=2070&auto=format&fit=crop"
-              alt="Equipo colaborando en estrategia de talento y finanzas"
-              fill
-              className="object-cover"
-              quality={90}
-              priority
-            />
-          </motion.div>
+      {/* Hero Section - Estilo Estrategia & Transformación */}
+      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-r from-brand-navy via-brand-purple to-brand-navy">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }} />
         </div>
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-purple/80 to-transparent" />
         
         {/* Content */}
         <div className="container-custom relative z-10">
           <ScrollReveal>
-            {/* Breadcrumbs */}
-            <nav className="flex items-center gap-2 text-sm mb-6 text-white/80">
-              {data.hero.breadcrumbs.map((crumb, index) => (
-                <div key={crumb.href} className="flex items-center gap-2">
-                  {index > 0 && <span>›</span>}
-                  <Link 
-                    href={crumb.href}
-                    className="hover:text-white transition-colors"
-                  >
-                    {crumb.label}
-                  </Link>
-                </div>
-              ))}
-            </nav>
-
-            {/* Eyebrow */}
-            <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 text-white">
-              {data.hero.eyebrow}
+            {/* Eyebrow Badge */}
+            <div className="inline-block px-4 py-2 bg-brand-orange rounded-full text-sm font-medium mb-6 text-white uppercase tracking-wide">
+              Categoría de Servicios
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-              {data.hero.title}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white max-w-4xl">
+              Talento & <span className="text-brand-orange">Finanzas</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl font-semibold mb-4 text-brand-turquoise">
-              {data.hero.subtitle}
+            <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl leading-relaxed">
+              La ecuación del crecimiento sostenible
             </p>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mb-12">
-              {data.hero.description}
+            <p className="text-base md:text-lg text-white/80 max-w-3xl leading-relaxed">
+              Integramos la gestión estratégica del talento con ingeniería financiera para construir empresas rentables, escalables y con equipos de alto rendimiento.
             </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
-              {data.hero.stats.map((stat) => {
-                const Icon = iconMap[stat.icon]
-                return (
-                  <motion.div
-                    key={stat.label}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
-                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      {Icon && <Icon className="h-8 w-8 text-brand-turquoise" />}
-                      <span className="text-4xl font-bold text-white">{stat.value}</span>
-                    </div>
-                    <p className="text-sm text-white/80">{stat.label}</p>
-                  </motion.div>
-                )
-              })}
-            </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Why Integration Section */}
+      {/* Why Integration - Diseño impactante */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
-                {data.whyIntegration.title}
+                ¿Por qué Talento y Finanzas deben gestionarse juntos?
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {data.whyIntegration.subtitle}
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                La desconexión entre estas dos áreas es la causa #1 de estancamiento en PYMEs
               </p>
             </div>
           </ScrollReveal>
 
-          {/* Problems */}
+          {/* Problems Cards con diseño mejorado */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {data.whyIntegration.problems.map((problem, index) => (
-              <ScrollReveal key={problem.id} delay={index * 0.1}>
-                <div className="bg-white border-l-4 border-red-500 rounded-lg p-6 shadow-card hover:shadow-lg transition-shadow">
-                  <div className="text-4xl mb-4">{problem.icon}</div>
-                  <h3 className="text-xl font-bold mb-3 text-brand-navy">{problem.title}</h3>
-                  
-                  <div className="mb-4">
-                    <div className="flex items-start gap-2 mb-2">
-                      <AlertCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-semibold text-red-700">SÍNTOMA:</p>
-                        <p className="text-sm text-gray-700">{problem.symptom}</p>
+            {data.whyIntegration.problems.map((problem, index) => {
+              // Mapeo de iconos modernos únicos
+              const ProblemIcon = index === 0 ? Wallet : index === 1 ? Crosshair : PieChart
+              
+              return (
+                <ScrollReveal key={problem.id} delay={index * 0.1}>
+                  <motion.div 
+                    className="relative bg-white rounded-2xl p-6 shadow-card hover:shadow-lg transition-all border-t-4 border-brand-orange group h-full flex flex-col"
+                    whileHover={{ y: -4 }}
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-50 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
+                    
+                    <div className="relative flex-1 flex flex-col">
+                      {/* Icono moderno de Lucide */}
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-orange to-red-500 flex items-center justify-center mb-4 shadow-md group-hover:scale-105 transition-transform">
+                        <ProblemIcon className="h-7 w-7 text-white" strokeWidth={2} />
+                      </div>
+                      
+                      <h3 className="text-lg font-bold text-brand-navy mb-3 leading-tight">
+                        {problem.title}
+                      </h3>
+                      
+                      <div className="mb-3 bg-orange-50/50 rounded-lg p-3 flex-1">
+                        <p className="text-xs font-bold text-brand-orange uppercase mb-1">Síntoma</p>
+                        <p className="text-sm text-gray-700 leading-relaxed">{problem.symptom}</p>
+                      </div>
+
+                      <div className="bg-gradient-to-br from-brand-orange to-red-500 rounded-lg p-3 text-white">
+                        <p className="text-xs font-bold uppercase mb-1">Consecuencia</p>
+                        <p className="text-sm leading-relaxed">{problem.consequence}</p>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="bg-red-50 rounded-lg p-3">
-                    <p className="text-sm font-semibold text-red-800 mb-1">CONSECUENCIA:</p>
-                    <p className="text-sm text-gray-700">{problem.consequence}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                  </motion.div>
+                </ScrollReveal>
+              )
+            })}
           </div>
 
-          {/* Solution */}
+          {/* Solution Box - Efecto WOW */}
           <ScrollReveal>
-            <div className="bg-gradient-to-br from-brand-turquoise/10 to-brand-purple/10 rounded-2xl p-8 md:p-12 border-l-4 border-brand-turquoise">
-              <h3 className="text-2xl font-bold mb-4 text-brand-navy">
-                {data.whyIntegration.solution.title}
-              </h3>
-              <p className="text-lg text-gray-700 mb-6">
-                {data.whyIntegration.solution.description}
-              </p>
-              <ul className="space-y-3">
-                {data.whyIntegration.solution.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <motion.div 
+              className="relative bg-gradient-to-br from-brand-turquoise/10 via-brand-purple/5 to-white rounded-3xl p-10 md:p-12 border-2 border-brand-turquoise/30 shadow-2xl overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-brand-turquoise/10 to-transparent rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-brand-purple/10 to-transparent rounded-full blur-3xl" />
+              
+              <div className="relative">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-turquoise to-brand-purple flex items-center justify-center shadow-xl">
+                    <Zap className="h-8 w-8 text-white" strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-brand-navy mb-2">
+                      {data.whyIntegration.solution.title}
+                    </h3>
+                    <p className="text-lg text-gray-700">
+                      {data.whyIntegration.solution.description}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-4">
+                  {data.whyIntegration.solution.benefits.map((benefit, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-start gap-3 bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-brand-turquoise/20 hover:border-brand-turquoise/50 hover:shadow-md transition-all"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="h-4 w-4 text-white" strokeWidth={2} />
+                      </div>
+                      <span className="text-sm text-gray-700 leading-relaxed font-medium">{benefit}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - Estilo Estrategia & Transformación mejorado */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
-                Nuestros 2 Servicios Integrados
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Dos servicios complementarios que trabajan como un solo sistema
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
             {data.services.map((service, index) => {
-              const Icon = iconMap[service.iconComponent || '']
-              const borderColor = service.borderColor === 'turquoise' ? 'border-brand-turquoise' : 'border-green-500'
+              const Icon = service.iconComponent === 'Users' ? Users : DollarSign
+              const bgColor = service.borderColor === 'turquoise' ? 'bg-brand-turquoise' : 'bg-orange-500'
+              const checkColor = service.borderColor === 'turquoise' ? 'text-brand-turquoise' : 'text-orange-500'
               
               return (
                 <ScrollReveal key={service.id} delay={index * 0.2}>
                   <motion.div
-                    className={`bg-white rounded-2xl p-8 shadow-card border-l-4 ${borderColor} h-full flex flex-col`}
-                    whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                    className="bg-white rounded-3xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all h-full flex flex-col border border-gray-100"
+                    whileHover={{ y: -8 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {/* Header */}
-                    <div className="flex items-center gap-4 mb-6">
-                      {Icon && (
-                        <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.borderColor === 'turquoise' ? 'from-brand-turquoise/20 to-brand-purple/20' : 'from-green-100 to-emerald-100'} flex items-center justify-center`}>
-                          <Icon className={`h-8 w-8 ${service.borderColor === 'turquoise' ? 'text-brand-turquoise' : 'text-green-600'}`} />
-                        </div>
-                      )}
-                      <h3 className="text-2xl font-bold text-brand-navy">{service.title}</h3>
+                    {/* Header con icono grande */}
+                    <div className="flex items-start gap-5 mb-6">
+                      <div className={`w-20 h-20 rounded-2xl ${bgColor} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                        <Icon className="h-10 w-10 text-white" strokeWidth={2} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl md:text-3xl font-bold text-brand-navy leading-tight">
+                          {service.title}
+                        </h3>
+                      </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-700 mb-6">{service.description}</p>
+                    <p className="text-gray-700 mb-8 leading-relaxed text-base">
+                      {service.description}
+                    </p>
 
-                    {/* For Who */}
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-brand-navy mb-3">PARA QUIÉN:</h4>
-                      <ul className="space-y-2">
-                        {service.forWho.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                            <CheckCircle className="h-4 w-4 text-brand-turquoise flex-shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {/* Includes List */}
+                    <ul className="space-y-4 mb-8 flex-grow">
+                      {service.includes.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckCircle2 className={`h-6 w-6 ${checkColor} flex-shrink-0 mt-0.5`} strokeWidth={2} />
+                          <span className="text-gray-700 text-base leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                    {/* Includes */}
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-brand-navy mb-3">QUÉ INCLUYE:</h4>
-                      <ul className="space-y-2">
-                        {service.includes.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                            <div className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 flex-shrink-0" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Results */}
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-brand-navy mb-3">RESULTADOS TÍPICOS:</h4>
-                      <ul className="space-y-2">
-                        {service.results.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                            <TrendingUp className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Case Highlight */}
-                    <div className="bg-gray-50 rounded-lg p-4 mb-6">
-                      <p className="text-xs font-semibold text-brand-navy mb-2">CASO DESTACADO:</p>
-                      <p className="text-sm font-medium text-gray-800 mb-1">{service.caseHighlight.company}</p>
-                      <p className="text-sm text-gray-700">{service.caseHighlight.result}</p>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="mt-auto space-y-3">
-                      <Link
-                        href={service.link}
-                        className="block w-full text-center px-6 py-3 bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-lg transition-colors"
-                      >
-                        Conocer Servicio Completo
-                      </Link>
-                      <Link
-                        href={service.caseLink}
-                        className="block w-full text-center text-brand-navy hover:text-brand-orange transition-colors text-sm font-medium"
-                      >
-                        Ver Caso de Éxito →
-                      </Link>
-                    </div>
+                    {/* CTA Button */}
+                    <Link
+                      href={service.link}
+                      className={`group flex items-center justify-center gap-3 w-full px-8 py-5 ${bgColor} hover:opacity-90 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl text-lg`}
+                    >
+                      Conocer Más
+                      <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" strokeWidth={2} />
+                    </Link>
                   </motion.div>
                 </ScrollReveal>
               )
@@ -294,56 +234,71 @@ export default function TalentoFinanzasPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-brand-navy to-brand-purple">
+      {/* Integration Points - Diseño impactante */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                ¿No sabes por dónde empezar?
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
+                El Poder de la Integración
               </h2>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                Nuestro <strong>Diagnóstico Gratuito</strong> es el primer paso. Evaluamos tu situación actual y te entregamos un roadmap claro con los pasos a seguir.
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Cuando Talento y Finanzas trabajan como un solo sistema
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center max-w-4xl mx-auto">
-            <ScrollReveal delay={0.1}>
-              <Link
-                href={data.cta.primary.buttonLink}
-                className="flex-1 bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
-              >
-                {data.cta.primary.buttonText}
-              </Link>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.2}>
-              <Link
-                href={data.cta.secondary.buttonLink}
-                className="flex-1 bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-center transition-all"
-              >
-                {data.cta.secondary.buttonText}
-              </Link>
-            </ScrollReveal>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {data.integration.points.map((point, index) => {
+              const Icon = iconMap[point.iconComponent || '']
+              return (
+                <ScrollReveal key={point.id} delay={index * 0.1}>
+                  <motion.div 
+                    className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100"
+                    whileHover={{ y: -4 }}
+                  >
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand-turquoise to-brand-purple flex items-center justify-center mb-4 shadow-md">
+                      {Icon && <Icon className="h-7 w-7 text-white" strokeWidth={2} />}
+                    </div>
+                    <h3 className="text-lg font-bold text-brand-navy mb-3 leading-tight">{point.title}</h3>
+                    <p className="text-sm text-gray-700 mb-3 leading-relaxed">{point.description}</p>
+                    <p className="text-xs font-semibold text-brand-turquoise leading-relaxed">{point.benefit}</p>
+                  </motion.div>
+                </ScrollReveal>
+              )
+            })}
           </div>
 
-          {/* Service Links */}
-          <ScrollReveal delay={0.3}>
-            <div className="mt-12 text-center">
-              <p className="text-white/80 mb-4">{data.cta.serviceLinks.title}</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                {data.cta.serviceLinks.services.map((service) => (
-                  <Link
-                    key={service.link}
-                    href={service.link}
-                    className="text-brand-turquoise hover:text-white transition-colors font-medium flex items-center gap-2"
-                  >
-                    {service.name}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
-              </div>
+          <ScrollReveal>
+            <div className="bg-gradient-to-r from-brand-navy to-brand-purple rounded-3xl p-10 text-center text-white shadow-2xl">
+              <p className="text-6xl font-bold mb-4">{data.integration.benefitHighlight.stat}</p>
+              <p className="text-xl max-w-3xl mx-auto leading-relaxed">{data.integration.benefitHighlight.description}</p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* CTA Section - Estilo Estrategia & Transformación */}
+      <section className="section-padding bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-brand-turquoise/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl" />
+        
+        <div className="container-custom relative z-10">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                ¿No sabes por dónde empezar?
+              </h2>
+              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+                Nuestro <strong className="text-brand-turquoise">Diagnóstico Gratuito</strong> es el primer paso. Evaluamos tu madurez digital y te entregamos un roadmap claro con los pasos a seguir.
+              </p>
+              <Link
+                href="/contacto"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl"
+              >
+                Solicitar Diagnóstico Gratuito
+                <ArrowRight className="h-5 w-5" strokeWidth={2} />
+              </Link>
             </div>
           </ScrollReveal>
         </div>
@@ -352,4 +307,3 @@ export default function TalentoFinanzasPage() {
     </div>
   )
 }
-
