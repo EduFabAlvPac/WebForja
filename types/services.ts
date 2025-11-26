@@ -118,6 +118,8 @@ export interface CategoryHeroData {
   description: string
   stats: CategoryStat[]
   breadcrumbs: Breadcrumb[]
+  backgroundImage?: string
+  backgroundAlt?: string
 }
 
 export interface CategoryStat {
