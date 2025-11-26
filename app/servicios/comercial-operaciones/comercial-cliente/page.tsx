@@ -139,7 +139,7 @@ export default function ComercialServicioPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <ProblemCard problem={problem} />
+                <ProblemCard problem={problem} index={index} />
               </motion.div>
             ))}
           </div>
