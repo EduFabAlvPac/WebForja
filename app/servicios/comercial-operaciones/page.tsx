@@ -43,23 +43,25 @@ export default function ComercialOperacionesPage() {
       {/* Hero Section con imagen de fondo */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         {/* Background Image con Ken Burns effect */}
-        <div className="absolute inset-0">
-          <motion.div
-            className="w-full h-full"
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.05 }}
-            transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
-          >
-            <Image
-              src={data.hero.backgroundImage!}
-              alt={data.hero.backgroundAlt!}
-              fill
-              className="object-cover"
-              quality={90}
-              priority
-            />
-          </motion.div>
-        </div>
+        {data.hero.backgroundImage && (
+          <div className="absolute inset-0">
+            <motion.div
+              className="w-full h-full"
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.05 }}
+              transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+            >
+              <Image
+                src={data.hero.backgroundImage}
+                alt={data.hero.backgroundAlt || 'Background'}
+                fill
+                className="object-cover"
+                quality={90}
+                priority
+              />
+            </motion.div>
+          </div>
+        )}
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-purple/80 to-transparent" />
