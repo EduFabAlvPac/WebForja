@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 import Link from 'next/link'
 import { MessageSquareQuote, Star, ArrowRight, Factory, ShoppingBag, Briefcase, Sprout, Heart, TrendingUp } from 'lucide-react'
 import { useState } from 'react'
@@ -221,14 +222,12 @@ export default function TestimoniosPage() {
       {/* Casos de Estudio Destacados */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4">
-              Casos de Estudio <span className="text-brand-orange">Destacados</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Proyectos de transformación que generaron impacto significativo
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="CASOS DE ESTUDIO"
+            title="Casos de Estudio Destacados"
+            highlight="Destacados"
+            description="Proyectos de transformación que generaron impacto significativo"
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Caso 1: Retail */}

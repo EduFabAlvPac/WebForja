@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 import { Clock } from 'lucide-react'
 import { HistoriaSection } from '@/components/nosotros/HistoriaSection'
 import { MisionVisionValores } from '@/components/nosotros/MisionVisionValores'

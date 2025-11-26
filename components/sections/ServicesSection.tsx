@@ -174,7 +174,7 @@ export function ServicesSection() {
       benefits: [
         { text: 'Gestión de Talento por Competencias' },
         { text: 'Cultura Organizacional & Engagement' },
-        { text: 'Ingeniería Financiera & Control de Gestión' },
+        { text: 'Gestión Financiera & Control de Gestión' },
         { text: 'Pricing Estratégico & Análisis de Rentabilidad' },
       ],
       link: '/servicios/talento-humano',

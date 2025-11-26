@@ -117,7 +117,7 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Servicios</h3>
             <ul className="space-y-2">
               <li><Link href="/servicios/arquitectura-empresarial" className="text-gray-300 hover:text-brand-orange transition-colors">Arquitectura Empresarial</Link></li>
-              <li><Link href="/servicios/transformacion-digital" className="text-gray-300 hover:text-brand-orange transition-colors">Transformación Digital</Link></li>
+              <li><Link href="/servicios/estrategia-transformacion/transformacion-digital" className="text-gray-300 hover:text-brand-orange transition-colors">Transformación Digital</Link></li>
               <li><Link href="/servicios/optimizacion-procesos" className="text-gray-300 hover:text-brand-orange transition-colors">Optimización de Procesos</Link></li>
               <li><Link href="/servicios/desarrollo-software" className="text-gray-300 hover:text-brand-orange transition-colors">Desarrollo de Software</Link></li>
               <li><Link href="/servicios/analitica-bi" className="text-gray-300 hover:text-brand-orange transition-colors">Analítica y BI</Link></li>

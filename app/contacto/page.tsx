@@ -3,6 +3,7 @@
 import { Metadata } from 'next'
 import { Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 import { useForm } from '@/lib/hooks/useForm'
 import { ContactFormData, validateContactForm } from '@/lib/validations/contact'
 import { api } from '@/lib/api/client'
@@ -38,12 +39,24 @@ export default function ContactoPage() {
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Hero Section */}
-      <section className="gradient-hero py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-h1-mobile md:text-h1-desktop text-white mb-6">
+      <section className="relative bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div className="w-full h-full relative">
+            <img
+              src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074&auto=format&fit=crop"
+              alt="Contacta con nuestro equipo de expertos"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-purple/80 to-brand-navy/90" />
+        </div>
+        
+        <div className="container-custom text-center relative z-10">
+          <h1 className="hero-title text-white mb-6">
             Hablemos de tu <span className="text-brand-orange">Transformación</span>
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="hero-description text-white/90 max-w-2xl mx-auto">
             Estamos listos para escucharte y ayudarte a forjar el futuro de tu empresa
           </p>
         </div>

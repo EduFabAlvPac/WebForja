@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 import { 
   Target, Rocket, Zap, Heart, Users, TrendingUp, Clock,
   Award, Shield, Lightbulb, CheckCircle2, XCircle,
@@ -26,8 +27,8 @@ export default function NosotrosPage() {
             transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-              alt="Equipo de FORJA Digital - Forjadores del crecimiento PYME"
+              src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070&auto=format&fit=crop"
+              alt="Equipo de FORJA Digital trabajando en soluciones empresariales"
               fill
               className="object-cover"
               quality={90}
@@ -56,12 +57,12 @@ export default function NosotrosPage() {
               </span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="hero-title text-white mb-6">
               Somos la Revolución Silenciosa <br className="hidden md:block" />
               de las <span className="text-brand-orange">PYMEs</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
+            <p className="hero-description text-white/90 mb-8">
               No vendemos horas. <strong className="text-brand-orange">Forjamos futuros.</strong><br />
               No adaptamos, nos adaptamos. No prometemos. <strong className="text-brand-orange">Garantizamos.</strong>
             </p>
@@ -197,14 +198,12 @@ export default function NosotrosPage() {
       {/* Navegación a las 3 secciones principales */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4">
-              Conoce Más Sobre <span className="text-brand-orange">Nosotros</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explora nuestra historia, equipo y casos de éxito
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="DESCUBRE"
+            title="Conoce Más Sobre Nosotros"
+            highlight="Nosotros"
+            description="Explora nuestra historia, equipo y casos de éxito"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Historia */}
@@ -293,14 +292,12 @@ export default function NosotrosPage() {
       {/* Principios y Valores FORJAR */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4">
-              Principios que nos <span className="text-brand-orange">FORJAN</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Cada letra representa nuestro compromiso contigo
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="NUESTROS VALORES"
+            title="Principios que nos FORJAN"
+            highlight="FORJAN"
+            description="Cada letra representa nuestro compromiso contigo"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
@@ -408,14 +405,12 @@ export default function NosotrosPage() {
       {/* ¿Quiénes Somos? - NO SOMOS vs SÍ SOMOS */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4">
-              🏆 ¿Quiénes <span className="text-brand-orange">Somos?</span>
-            </h2>
-            <p className="text-2xl font-bold text-brand-orange mb-2">
-              Los Forjadores del Crecimiento PYME
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="IDENTIDAD"
+            title="¿Quiénes Somos?"
+            highlight="Somos"
+            description="Los Forjadores del Crecimiento PYME"
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* NO SOMOS */}

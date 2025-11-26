@@ -55,7 +55,7 @@ const HERO_SLIDES = [
     tagline: "De la Estrategia a la Ejecución: Tu Roadmap Sin Improvisación",
     description: "Fundamentar → Orientar → Rediseñar → Justificar → Acompañar. Un enfoque sistemático donde cada fase genera entregables concretos, métricas claras y decisiones basadas en datos, no en intuición.",
     ctaPrimary: "Solicita tu Rayos-X Empresarial",
-    ctaPrimaryLink: "/contacto", // Temporalmente cambiado de /rayos-x-empresarial
+    ctaPrimaryLink: "/rayos-x-empresarial",
     ctaSecondary: "Descarga Guía: 5 Fases Explicadas",
     ctaSecondaryLink: "/servicios",
     // Imagen: Equipo trabajando en planificación estratégica y proceso
@@ -75,7 +75,7 @@ const HERO_SLIDES = [
     tagline: "Integramos Estrategia + Procesos + Tecnología + Talento en un Sistema Coherente de Crecimiento",
     description: "No vendemos 'soluciones' aisladas. Diseñamos ecosistemas empresariales donde cada decisión impulsa objetivos estratégicos y cada proceso potencia a tu equipo. El resultado: ventaja competitiva sostenible.",
     ctaPrimary: "Evalúa tu Arquitectura Actual",
-    ctaPrimaryLink: "/contacto", // Temporalmente cambiado de /rayos-x-empresarial
+    ctaPrimaryLink: "/rayos-x-empresarial",
     ctaSecondary: "Ver Casos: Antes y Después",
     ctaSecondaryLink: "/nosotros/testimonios",
     // Imagen moderna: Oficina tecnológica y profesional

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, Quote } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { SectionHeader } from '@/components/shared/SectionHeader'
 
 export default function CasosExitoPage() {
   return (
