@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
 import { MetodologiaForja } from '@/components/ui/metodologia-forja'
@@ -55,13 +56,14 @@ export default function ServiciosPage() {
       <section className="relative bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-20 md:py-32 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="w-full h-full relative">
-            <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-              alt="Profesionales trabajando en soluciones empresariales innovadoras"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Image
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+            alt="Profesionales trabajando en soluciones empresariales innovadoras"
+            fill
+            className="object-cover"
+            quality={80}
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-purple/80 to-brand-navy/90" />
         </div>
         

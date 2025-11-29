@@ -1,6 +1,7 @@
 'use client'
 
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { SectionHeader } from '@/components/shared/SectionHeader'
@@ -42,13 +43,13 @@ export default function ContactoPage() {
       <section className="relative bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="w-full h-full relative">
-            <img
-              src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074&auto=format&fit=crop"
-              alt="Contacta con nuestro equipo de expertos"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Image
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074&auto=format&fit=crop"
+            alt="Contacta con nuestro equipo de expertos"
+            fill
+            className="object-cover"
+            quality={80}
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-purple/80 to-brand-navy/90" />
         </div>
         

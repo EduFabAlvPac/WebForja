@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { MegaMenuNosotros } from './MegaMenuNosotros'
 // import { MegaMenuIndustrias } from './MegaMenuIndustrias' // TEMPORALMENTE OCULTO
 import { MegaMenuServicios } from './MegaMenuServicios'
@@ -13,6 +15,7 @@ interface NavigationProps {
 }
 
 export function Navigation({ className }: NavigationProps) {
+  const pathname = usePathname()
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null)
 

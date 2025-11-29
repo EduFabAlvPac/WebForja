@@ -89,8 +89,22 @@ const HERO_SLIDES = [
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   const slide = HERO_SLIDES[currentSlide]
+
+  // Detectar preferencia de movimiento reducido
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setPrefersReducedMotion(mediaQuery.matches)
+    
+    const handleChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches)
+    }
+    
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
 
   // Auto-play cada 15 segundos
   useEffect(() => {
@@ -115,14 +129,22 @@ export function HeroSection() {
 
   return (
     <section className="relative h-screen min-h-[700px] overflow-hidden pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
-      {/* Background Image con transición */}
+      {/* Background Image con transición - respeta reduced motion */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 1 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ 
+            duration: 1, 
+            ease: "easeInOut",
+            // Respeta prefers-reduced-motion
+            ...(typeof window !== 'undefined' && 
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches 
+                ? { duration: 0.01 } 
+                : {})
+          }}
           className="absolute inset-0"
         >
           {slide.isGif ? (
@@ -148,8 +170,10 @@ export function HeroSection() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlay oscuro para legibilidad */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+      {/* Overlay optimizado para máxima legibilidad y accesibilidad */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/75 via-40% to-black/50" />
+      {/* Gradiente adicional desde abajo para asegurar contraste en CTAs */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
       {/* Content - Con padding ajustado para visibilidad completa */}
       <div className="container mx-auto px-4 md:px-8 lg:px-16 relative h-full flex items-center py-6 md:py-8">
@@ -157,29 +181,38 @@ export function HeroSection() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 40 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -40 }}
+              transition={{ 
+                duration: prefersReducedMotion ? 0.01 : 0.6, 
+                ease: "easeOut" 
+              }}
               className="space-y-3 md:space-y-4 lg:space-y-5"
             >
               {/* Headline */}
               <motion.h1 
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight"
-                initial={{ opacity: 0, y: 20 }}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight drop-shadow-2xl"
+                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                transition={{ 
+                  delay: prefersReducedMotion ? 0 : 0.2,
+                  duration: prefersReducedMotion ? 0.01 : 0.5
+                }}
               >
                 {slide.headline}
               </motion.h1>
 
               {/* Subheadline */}
               <motion.h2 
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight drop-shadow-xl"
                 style={{ color: '#00D9FF' }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ 
+                  delay: prefersReducedMotion ? 0 : 0.3,
+                  duration: prefersReducedMotion ? 0.01 : 0.5
+                }}
               >
                 {slide.subheadline}
               </motion.h2>
@@ -187,10 +220,13 @@ export function HeroSection() {
               {/* Tagline */}
               {slide.tagline && (
                 <motion.p 
-                  className="text-base sm:text-lg md:text-xl lg:text-2xl text-cyan-400 font-medium leading-snug"
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl text-cyan-400 font-medium leading-snug drop-shadow-lg"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ 
+                    delay: prefersReducedMotion ? 0 : 0.4,
+                    duration: prefersReducedMotion ? 0.01 : 0.5
+                  }}
                 >
                   {slide.tagline}
                 </motion.p>
@@ -198,36 +234,63 @@ export function HeroSection() {
 
               {/* Description */}
               <motion.p 
-                className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-2xl"
+                className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 leading-relaxed max-w-2xl drop-shadow-md"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                transition={{ 
+                  delay: prefersReducedMotion ? 0 : 0.5,
+                  duration: prefersReducedMotion ? 0.01 : 0.5
+                }}
               >
                 {slide.description}
               </motion.p>
 
-              {/* CTA Buttons */}
+              {/* CTA Buttons - Primario dominante, sin scroll en móvil */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 md:pt-4"
-                initial={{ opacity: 0, y: 20 }}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 md:pt-5"
+                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
+                transition={{ 
+                  delay: prefersReducedMotion ? 0 : 0.6,
+                  duration: prefersReducedMotion ? 0.01 : 0.4
+                }}
               >
-                <Button
-                  variant="primary"
-                  size="lg"
-                  asChild
+                {/* CTA Primario - DOMINANTE con animación de pulso sutil */}
+                <motion.div
+                  animate={prefersReducedMotion ? {} : { 
+                    scale: [1, 1.03, 1],
+                    boxShadow: [
+                      '0 10px 40px rgba(237, 116, 66, 0.3)',
+                      '0 15px 60px rgba(237, 116, 66, 0.5)',
+                      '0 10px 40px rgba(237, 116, 66, 0.3)'
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 2.5, 
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut"
+                  }}
+                  className="relative"
                 >
-                  <Link href={slide.ctaPrimaryLink} className="flex items-center justify-center gap-2">
-                    <Lock className="w-5 h-5" />
-                    <span>{slide.ctaPrimary}</span>
-                  </Link>
-                </Button>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    className="w-full sm:w-auto text-base md:text-lg font-bold shadow-2xl relative overflow-hidden"
+                    asChild
+                  >
+                    <Link href={slide.ctaPrimaryLink} className="flex items-center justify-center gap-2.5">
+                      <Lock className="w-5 h-5 md:w-6 md:h-6" />
+                      <span>{slide.ctaPrimary}</span>
+                    </Link>
+                  </Button>
+                </motion.div>
 
+                {/* CTA Secundario - Más sutil */}
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="text-white hover:text-white backdrop-blur-sm bg-white/10"
+                  className="w-full sm:w-auto text-white hover:text-white backdrop-blur-md bg-white/10 hover:bg-white/20 border-2 border-white/30 transition-all duration-300"
                   asChild
                 >
                   <Link href={slide.ctaSecondaryLink} className="flex items-center justify-center gap-2">
@@ -240,9 +303,12 @@ export function HeroSection() {
               {/* Stats */}
               <motion.div
                 className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 pt-3 md:pt-5"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
+                transition={{ 
+                  delay: prefersReducedMotion ? 0 : 0.7,
+                  duration: prefersReducedMotion ? 0.01 : 0.5
+                }}
               >
                 {slide.stats.map((stat, index) => (
                   <div key={index} className="text-center md:text-left">
@@ -260,13 +326,13 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Navigation Controls - LATERALES */}
+      {/* Navigation Controls - LATERALES con accesibilidad mejorada */}
       {/* Botón Anterior - Izquierda */}
       <motion.button
         onClick={handlePrev}
-        whileHover={{ scale: 1.1, x: -5 }}
-        whileTap={{ scale: 0.9 }}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-all duration-300 z-20 shadow-lg"
+        whileHover={prefersReducedMotion ? {} : { scale: 1.1, x: -5 }}
+        whileTap={prefersReducedMotion ? {} : { scale: 0.9 }}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/20 hover:bg-white/35 focus-visible:bg-white/40 backdrop-blur-md border border-white/30 focus-visible:border-white/60 flex items-center justify-center text-white transition-all duration-300 z-20 shadow-lg focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
         aria-label="Slide anterior"
       >
         <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2.5} />
@@ -275,9 +341,9 @@ export function HeroSection() {
       {/* Botón Siguiente - Derecha */}
       <motion.button
         onClick={handleNext}
-        whileHover={{ scale: 1.1, x: 5 }}
-        whileTap={{ scale: 0.9 }}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-all duration-300 z-20 shadow-lg"
+        whileHover={prefersReducedMotion ? {} : { scale: 1.1, x: 5 }}
+        whileTap={prefersReducedMotion ? {} : { scale: 0.9 }}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/20 hover:bg-white/35 focus-visible:bg-white/40 backdrop-blur-md border border-white/30 focus-visible:border-white/60 flex items-center justify-center text-white transition-all duration-300 z-20 shadow-lg focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
         aria-label="Siguiente slide"
       >
         <ChevronRight className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2.5} />
@@ -295,20 +361,21 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Números de slide - Derecha (Opcional) */}
+      {/* Números de slide - Derecha con accesibilidad mejorada */}
       <div className="absolute bottom-20 md:bottom-24 right-4 md:right-8 flex flex-col gap-2 z-20 hidden lg:flex">
         {HERO_SLIDES.map((_, index) => (
           <motion.button
             key={index}
             onClick={() => goToSlide(index)}
-            whileHover={{ scale: 1.15 }}
-            whileTap={{ scale: 0.95 }}
-            className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 ${
+            whileHover={prefersReducedMotion ? {} : { scale: 1.15 }}
+            whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
+            className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 ${
               index === currentSlide
                 ? 'bg-brand-orange text-white shadow-lg scale-110'
-                : 'bg-white/20 text-white/70 hover:bg-white/30 backdrop-blur-sm border border-white/30'
+                : 'bg-white/20 text-white/70 hover:bg-white/35 focus-visible:bg-white/40 backdrop-blur-sm border border-white/30'
             }`}
             aria-label={`Ir al slide ${index + 1}`}
+            aria-current={index === currentSlide ? 'true' : 'false'}
           >
             {index + 1}
           </motion.button>

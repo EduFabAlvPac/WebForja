@@ -382,10 +382,12 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
                     className="p-6 space-y-4"
                   >
                     {newsItems.map((item, index) => (
-                      <div
+                      <button
                         key={index}
-                        className="p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors cursor-pointer"
+                        type="button"
+                        className="w-full text-left p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors cursor-pointer"
                         onClick={() => window.open(item.url, '_blank')}
+                        aria-label={`Leer más sobre ${item.title}`}
                       >
                         <div className="flex items-start justify-between gap-2 mb-2">
                           <h4 className="font-semibold text-gray-900 leading-tight">
@@ -400,7 +402,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
                           <span>•</span>
                           <span>{item.date}</span>
                         </div>
-                      </div>
+                      </button>
                     ))}
                   </motion.div>
                 )}
