@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ClipboardCheck, Gift, X } from 'lucide-react'
 import { useScrollProgress } from '@/lib/hooks/useScrollProgress'
 import { trackCTAClick } from '@/lib/analytics'
+import { siteMetrics } from '@/lib/site-metrics'
 
 /**
  * Barra CTA flotante con diseño "glassmorphism" que aparece después de cierto scroll.
@@ -56,13 +57,13 @@ export function StickyCTABar() {
                 <div className="flex items-center gap-3 text-white w-full">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: [0, -10, 10, 0] }}
-                    className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-brand-orange to-orange-600 rounded-xl flex items-center justify-center shadow-lg"
+                    className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-forja-fire to-orange-600 rounded-xl flex items-center justify-center shadow-lg"
                   >
                     <Gift className="w-6 h-6 text-white" />
                   </motion.div>
                   <p className="text-sm font-medium">
-                    <strong className="text-white">Diagnóstico GRATIS:</strong>
-                    <span className="text-white/80"> Descubre tu madurez digital en 15 min.</span>
+                    <strong className="text-white">Rayos-X Empresarial Gratis:</strong>
+                    <span className="text-white/80"> Descubre tu madurez digital en {siteMetrics.rayosX.averageTime} min.</span>
                   </p>
                 </div>
 
@@ -72,10 +73,10 @@ export function StickyCTABar() {
                     <Link
                       href="/contacto"
                       onClick={() => trackCTAClick('contacto_sticky_bar', 'sticky_bar', '/contacto')}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold text-sm rounded-xl transition-all shadow-lg hover:shadow-xl group"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-forja-fire hover:bg-forja-fire/90 text-white font-bold text-sm rounded-xl transition-all shadow-lg hover:shadow-xl group"
                     >
                       <ClipboardCheck className="w-5 h-5" />
-                      Solicitar Rayos-X
+                      Rayos-X Gratis
                     </Link>
                   </motion.div>
 

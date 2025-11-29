@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Lock, Target } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
+import { getDigitalTransformationClaim, getHeroStats } from '@/lib/site-metrics'
 
 const HERO_SLIDES = [
   {
@@ -13,11 +14,11 @@ const HERO_SLIDES = [
     headline: "¿Tu PYME Compite o Sobrevive?",
     subheadline: "Arquitectura Empresarial que Convierte tu Negocio en Líder de Mercado",
     tagline: "",
-    description: "El 73% de las PYMEs colombianas fracasan en transformación digital por falta de estrategia. Nosotros diseñamos el blueprint que integra tecnología, procesos y personas para resultados medibles.",
-    ctaPrimary: "Descubre tu Madurez Digital - GRATIS",
-    ctaPrimaryLink: "/contacto", // Temporalmente cambiado de /rayos-x-empresarial
-    ctaSecondary: "Ver Casos de Transformación Real",
-    ctaSecondaryLink: "/nosotros/testimonios",
+    description: getDigitalTransformationClaim() + " Nosotros diseñamos el blueprint que integra tecnología, procesos y personas para resultados medibles.",
+    ctaPrimary: "Rayos-X Empresarial Gratis",
+    ctaPrimaryLink: "/contacto",
+    ctaSecondary: "Habla con un Forjador",
+    ctaSecondaryLink: "/contacto",
     // Imagen impactante: PYME competitiva en acción
     backgroundImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&q=80",
     backgroundAlt: "Equipo empresarial competitivo desarrollando estrategia de negocio",
@@ -34,19 +35,15 @@ const HERO_SLIDES = [
     subheadline: "Especializados en PYMEs Latinoamericanas",
     tagline: "Metodología Probada. Resultados Medibles. Inversión Inteligente (Trabajamos al Éxito).",
     description: "Mientras otros consultores venden software o servicios genéricos, nosotros construimos la arquitectura estratégica que alinea TODA tu organización hacia objetivos de crecimiento sostenible.",
-    ctaPrimary: "Agenda tu Diagnóstico Estratégico",
+    ctaPrimary: "Rayos-X Empresarial Gratis",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Conoce a tu Arquitecto Forjador",
-    ctaSecondaryLink: "/nosotros/equipo",
+    ctaSecondary: "Habla con un Forjador",
+    ctaSecondaryLink: "/contacto",
     // Imagen profesional: Arquitectos empresariales trabajando con cliente
     backgroundImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80",
     backgroundAlt: "Arquitectos empresariales desarrollando estrategia con equipo PYME",
     isGif: false,
-    stats: [
-      { value: "+10", label: "Empresas Transformadas" },
-      { value: "95%", label: "Tasa de Satisfacción NPS 9+" },
-      { value: "10+ Años", label: "Forjando Líderes Digitales" }
-    ]
+    stats: getHeroStats()
   },
   {
     id: 3,
@@ -54,10 +51,10 @@ const HERO_SLIDES = [
     subheadline: "El Sistema de 5 Fases que Elimina el Caos",
     tagline: "De la Estrategia a la Ejecución: Tu Roadmap Sin Improvisación",
     description: "Fundamentar → Orientar → Rediseñar → Justificar → Acompañar. Un enfoque sistemático donde cada fase genera entregables concretos, métricas claras y decisiones basadas en datos, no en intuición.",
-    ctaPrimary: "Solicita tu Rayos-X Empresarial",
+    ctaPrimary: "Rayos-X Empresarial Gratis",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Descarga Guía: 5 Fases Explicadas",
-    ctaSecondaryLink: "/servicios",
+    ctaSecondary: "Habla con un Forjador",
+    ctaSecondaryLink: "/contacto",
     // Imagen: Equipo trabajando en planificación estratégica y proceso
     backgroundImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80",
     backgroundAlt: "Equipo colaborando en planificación estratégica con metodología estructurada",
@@ -74,10 +71,10 @@ const HERO_SLIDES = [
     subheadline: "que Multiplica tu Capacidad Competitiva",
     tagline: "Integramos Estrategia + Procesos + Tecnología + Talento en un Sistema Coherente de Crecimiento",
     description: "No vendemos 'soluciones' aisladas. Diseñamos ecosistemas empresariales donde cada decisión impulsa objetivos estratégicos y cada proceso potencia a tu equipo. El resultado: ventaja competitiva sostenible.",
-    ctaPrimary: "Evalúa tu Arquitectura Actual",
+    ctaPrimary: "Rayos-X Empresarial Gratis",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Ver Casos: Antes y Después",
-    ctaSecondaryLink: "/nosotros/testimonios",
+    ctaSecondary: "Habla con un Forjador",
+    ctaSecondaryLink: "/contacto",
     // Imagen moderna: Oficina tecnológica y profesional
     backgroundImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80",
     backgroundAlt: "Equipo profesional en oficina moderna con tecnología",
@@ -211,31 +208,31 @@ export function HeroSection() {
 
               {/* CTA Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 md:pt-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 md:pt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
                 <Button
+                  variant="primary"
                   size="lg"
-                  className="bg-brand-orange hover:bg-brand-orange-dark text-white font-bold px-5 sm:px-6 md:px-8 py-4 sm:py-5 text-xs sm:text-sm md:text-base rounded-md shadow-xl hover:shadow-2xl transition-all duration-300 group"
                   asChild
                 >
                   <Link href={slide.ctaPrimaryLink} className="flex items-center justify-center gap-2">
-                    <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                    <span className="truncate">{slide.ctaPrimary}</span>
+                    <Lock className="w-5 h-5" />
+                    <span>{slide.ctaPrimary}</span>
                   </Link>
                 </Button>
 
                 <Button
+                  variant="secondary"
                   size="lg"
-                  variant="outline"
-                  className="border-2 border-white/80 text-white hover:bg-white hover:text-brand-navy font-semibold px-5 sm:px-6 md:px-8 py-4 sm:py-5 text-xs sm:text-sm md:text-base rounded-md backdrop-blur-sm bg-white/10 transition-all duration-300 group"
+                  className="text-white hover:text-white backdrop-blur-sm bg-white/10"
                   asChild
                 >
                   <Link href={slide.ctaSecondaryLink} className="flex items-center justify-center gap-2">
-                    <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                    <span className="truncate">{slide.ctaSecondary}</span>
+                    <Target className="w-5 h-5" />
+                    <span>{slide.ctaSecondary}</span>
                   </Link>
                 </Button>
               </motion.div>

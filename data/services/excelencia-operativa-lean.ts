@@ -508,15 +508,15 @@ export const excelenciaOperativaData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Lean Gratuito',
-      description: 'Evaluamos tu operación y te mostramos dónde está la capacidad oculta. Sin costo, sin compromiso.',
-      buttonText: 'Solicitar Diagnóstico GRATIS',
+      description: 'Solicita tu Rayos-X Empresarial Gratis. Evaluamos tu operación y te mostramos dónde está la capacidad oculta.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: 'Search'
     },
     secondary: {
       title: 'Consulta con Experto Lean',
-      description: 'Agenda 30 minutos para analizar tus desafíos operativos específicos.',
-      buttonText: 'Agendar Llamada',
+      description: 'Agenda 30 minutos con uno de nuestros Forjadores especialistas en Lean para analizar tus desafíos operativos.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: 'Calendar'
     }

@@ -6,6 +6,7 @@ import { SectionHeader } from '@/components/shared/SectionHeader'
 import Link from 'next/link'
 import { MessageSquareQuote, Star, ArrowRight, Factory, ShoppingBag, Briefcase, Sprout, Heart, TrendingUp } from 'lucide-react'
 import { useState } from 'react'
+import { getTestimonialsStats, siteMetrics } from '@/lib/site-metrics'
 
 export default function TestimoniosPage() {
   const [activeFilter, setActiveFilter] = useState('todos')
@@ -74,12 +75,7 @@ export default function TestimoniosPage() {
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
-            {[
-              { value: '200+', label: 'Proyectos Exitosos', color: 'text-cyan-500' },
-              { value: '95%', label: 'Satisfacción Cliente', color: 'text-orange-500' },
-              { value: '150+', label: 'Empresas Transformadas', color: 'text-purple-500' },
-              { value: '$50M+', label: 'Valor Generado', color: 'text-red-500' }
-            ].map((stat, index) => (
+            {getTestimonialsStats().map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -344,7 +340,7 @@ export default function TestimoniosPage() {
               ¿Listo para Transformar tu <span className="text-brand-orange">Empresa?</span>
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Únete a las más de 150 empresas que han confiado en nosotros para alcanzar sus objetivos
+              Únete a las más de {siteMetrics.clients.totalCompanies} empresas que han confiado en nosotros para alcanzar sus objetivos
             </p>
             <Link
               href="/contacto"

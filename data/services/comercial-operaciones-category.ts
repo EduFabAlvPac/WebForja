@@ -262,15 +262,15 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
     intro: 'Si vendes bien pero no entregas consistentemente, o si operaciones es eficiente pero ventas no llena capacidad, es momento de integrar.',
     primary: {
       title: 'Diagnóstico Comercial-Operativo Gratuito',
-      description: 'Evaluamos tu integración actual y te mostramos dónde están las desconexiones críticas',
-      buttonText: 'Solicitar Diagnóstico GRATIS',
+      description: 'Solicita tu Rayos-X Empresarial Gratis. Evaluamos tu integración actual y te mostramos dónde están las desconexiones críticas.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: 'Search'
     },
     secondary: {
       title: 'Consulta con Especialista',
-      description: 'Agenda 30 minutos para analizar tus desafíos específicos',
-      buttonText: 'Agendar Llamada',
+      description: 'Agenda 30 minutos con uno de nuestros Forjadores para analizar tus desafíos específicos.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: 'Calendar'
     },

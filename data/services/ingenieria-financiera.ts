@@ -541,15 +541,15 @@ export const ingenieriaFinancieraData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Financiero Gratuito',
-      description: 'Solicita tu Evaluación de Salud Financiera sin costo. Identificamos tus brechas críticas y te damos recomendaciones prácticas.',
-      buttonText: 'Solicitar Evaluación GRATIS',
+      description: 'Solicita tu Rayos-X Empresarial Gratis. Identificamos tus brechas críticas financieras y te damos recomendaciones prácticas.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: 'Search'
     },
     secondary: {
       title: 'Consulta con Especialista Financiero',
-      description: 'Agenda 30 minutos con nuestro experto en finanzas para analizar tus desafíos específicos.',
-      buttonText: 'Agendar Llamada Estratégica',
+      description: 'Agenda 30 minutos con uno de nuestros Forjadores especialistas en finanzas para analizar tus desafíos específicos.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: 'Calendar'
     }

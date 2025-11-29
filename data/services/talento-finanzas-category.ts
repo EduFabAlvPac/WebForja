@@ -316,15 +316,15 @@ export const talentoFinanzasCategoryData: CategoryPageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Gratuito Talento & Finanzas',
-      description: 'Evaluamos tu situación actual en ambas áreas y te entregamos un reporte con brechas críticas y roadmap de acción.',
-      buttonText: 'Solicitar Diagnóstico Gratuito',
+      description: 'Solicita tu Rayos-X Empresarial Gratis. Evaluamos tu situación actual en ambas áreas y te entregamos un reporte con brechas críticas.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: 'Search'
     },
     secondary: {
       title: '¿Prefieres una Consulta Directa?',
-      description: 'Agenda una sesión de 45 minutos con nuestro equipo para revisar tu caso específico.',
-      buttonText: 'Agendar Consulta',
+      description: 'Agenda una sesión de 45 minutos con uno de nuestros Forjadores para revisar tu caso específico.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: 'Calendar'
     },

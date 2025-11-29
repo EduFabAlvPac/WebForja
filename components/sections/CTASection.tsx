@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Check, Phone, Target, BookOpen, Lock, Zap, Gift, BarChart3 } from 'lucide-react'
 import { trackCTAClick } from '@/lib/analytics'
+import { getCTAClaim, siteMetrics } from '@/lib/site-metrics'
+import { Button } from '@/components/ui/button'
 
 interface AlternativeCTA {
   icon: React.ElementType
@@ -19,11 +21,11 @@ const alternativeCTAs: AlternativeCTA[] = [
   {
     icon: Phone,
     title: '¿Prefieres Hablar Primero?',
-    description: 'Agenda una llamada de 30 minutos con uno de nuestros arquitectos empresariales.',
-    buttonText: 'Agendar Llamada Estratégica',
-    buttonLink: '/contacto?tipo=llamada',
-    iconColor: 'text-brand-turquoise',
-    iconBg: 'bg-brand-turquoise/10',
+    description: 'Agenda una llamada de 30 minutos con uno de nuestros Forjadores.',
+    buttonText: 'Habla con un Forjador',
+    buttonLink: '/contacto',
+    iconColor: 'text-forja-teal',
+    iconBg: 'bg-forja-teal/10',
   },
   {
     icon: Target,
@@ -31,8 +33,8 @@ const alternativeCTAs: AlternativeCTA[] = [
     description: 'Lee cómo empresas similares a la tuya han transformado su competitividad con FORJA.',
     buttonText: 'Ver Casos Documentados',
     buttonLink: '/casos-exito',
-    iconColor: 'text-brand-purple',
-    iconBg: 'bg-brand-purple/10',
+    iconColor: 'text-forja-purple',
+    iconBg: 'bg-forja-purple/10',
   },
   {
     icon: BookOpen,
@@ -40,15 +42,15 @@ const alternativeCTAs: AlternativeCTA[] = [
     description: 'Accede a guías, frameworks y herramientas de arquitectura empresarial sin costo.',
     buttonText: 'Acceder a Recursos',
     buttonLink: '/recursos',
-    iconColor: 'text-brand-orange',
-    iconBg: 'bg-brand-orange/10',
+    iconColor: 'text-forja-fire',
+    iconBg: 'bg-forja-fire/10',
   },
 ]
 
 const trustBadges = [
-  { icon: Lock, text: '100% Confidencial' },
-  { icon: Zap, text: 'Respuesta en 48h' },
-  { icon: Gift, text: 'Sin costo ni compromiso' },
+  { icon: Lock, text: siteMetrics.guarantees.confidentiality },
+  { icon: Zap, text: `Respuesta en ${siteMetrics.rayosX.deliveryTime}h` },
+  { icon: Gift, text: siteMetrics.guarantees.noCommitment },
 ]
 
 export function CTASection() {
@@ -80,7 +82,7 @@ export function CTASection() {
 
               {/* Description */}
               <p className="text-lg md:text-xl text-white/90 mb-8 text-center max-w-3xl mx-auto leading-relaxed">
-                Más de <strong>200 CEOs</strong> han comenzado su transformación con nuestro <strong>Rayos-X Empresarial gratuito</strong>. En solo 15 minutos descubres:
+                {getCTAClaim()}
               </p>
 
               {/* Benefits List */}
@@ -121,17 +123,17 @@ export function CTASection() {
                   <Link
                     href="/contacto"
                     onClick={() => trackCTAClick('contacto_final', 'cta_section', '/contacto')}
-                    className="group inline-flex flex-col items-center gap-2 px-10 py-5 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold text-lg md:text-xl rounded-2xl transition-all shadow-2xl hover:shadow-brand-orange/50 relative overflow-hidden"
+                    className="group inline-flex flex-col items-center gap-2 px-10 py-5 bg-forja-fire hover:bg-forja-fire/90 text-white font-bold text-lg md:text-xl rounded-2xl transition-all shadow-2xl hover:shadow-forja-fire/50 relative overflow-hidden"
                   >
                     {/* Glow effect */}
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
                     
                     <span className="flex items-center gap-3 relative">
                       <BarChart3 className="w-6 h-6" />
-                      Solicitar mi Rayos-X Empresarial GRATIS
+                      Rayos-X Empresarial Gratis
                     </span>
                     <span className="text-sm font-normal text-white/90 relative">
-                      Sin compromiso · Entrega en 48 horas
+                      {siteMetrics.guarantees.noCommitment} · Entrega en {siteMetrics.rayosX.deliveryTime} horas
                     </span>
                   </Link>
                 </motion.div>
@@ -197,20 +199,25 @@ export function CTASection() {
                     </p>
 
                     {/* Button */}
-                    <Link
-                      href={cta.buttonLink}
-                      onClick={() => {
-                        const ctaName = cta.buttonLink.includes('contacto') 
-                          ? 'contacto' 
-                          : cta.buttonLink.includes('casos-exito') 
-                          ? 'casos_exito' 
-                          : 'recursos'
-                        trackCTAClick(ctaName, 'alternative_cta', cta.buttonLink)
-                      }}
-                      className="inline-flex items-center justify-center px-6 py-3 border-2 border-brand-turquoise text-brand-turquoise font-semibold rounded-xl hover:bg-brand-turquoise hover:text-white transition-all group/btn"
+                    <Button
+                      variant="secondary"
+                      size="md"
+                      asChild
                     >
-                      {cta.buttonText}
-                    </Link>
+                      <Link
+                        href={cta.buttonLink}
+                        onClick={() => {
+                          const ctaName = cta.buttonLink.includes('contacto') 
+                            ? 'contacto' 
+                            : cta.buttonLink.includes('casos-exito') 
+                            ? 'casos_exito' 
+                            : 'recursos'
+                          trackCTAClick(ctaName, 'alternative_cta', cta.buttonLink)
+                        }}
+                      >
+                        {cta.buttonText}
+                      </Link>
+                    </Button>
                   </div>
                 </motion.div>
               )

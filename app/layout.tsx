@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Montserrat } from 'next/font/google'
+import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/header/Header'
 import { Footer } from '@/components/layout/footer/Footer'
@@ -13,16 +13,21 @@ import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import { OrganizationStructuredData, WebSiteStructuredData } from '@/components/seo/StructuredData'
 import config from '@/lib/config'
 
-const inter = Inter({ 
+// FORJA Design Tokens - Tipografías
+// Headings: Plus Jakarta Sans (moderna, geométrica, profesional)
+const plusJakartaSans = Plus_Jakarta_Sans({ 
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-heading',
   display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
 })
 
-const montserrat = Montserrat({ 
+// Body: DM Sans (legible, versátil, humanista)
+const dmSans = DM_Sans({ 
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-body',
   display: 'swap',
+  weight: ['400', '500', '700'],
 })
 
 export const metadata: Metadata = {
@@ -81,12 +86,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${montserrat.variable}`}>
+    <html lang="es" className={`${dmSans.variable} ${plusJakartaSans.variable}`}>
       <head>
         <OrganizationStructuredData />
         <WebSiteStructuredData />
       </head>
-      <body>
+      <body className="font-body antialiased bg-slate-50 text-slate-900">
         <GoogleAnalytics gaId={config.analytics.gaId} />
         <AnalyticsProvider />
         <a href="#main-content" className="skip-to-main">

@@ -519,15 +519,15 @@ export const comercialServicioData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Comercial y Servicio Gratuito',
-      description: 'Evaluamos tu sistema comercial y de servicio al cliente. Te mostramos dónde están las fugas de clientes.',
-      buttonText: 'Solicitar Diagnóstico GRATIS',
+      description: 'Solicita tu Rayos-X Empresarial Gratis. Evaluamos tu sistema comercial y de servicio al cliente.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: 'Search'
     },
     secondary: {
       title: 'Consulta con Especialista',
-      description: 'Agenda 30 minutos para analizar tus desafíos en comercial y servicio.',
-      buttonText: 'Agendar Llamada',
+      description: 'Agenda 30 minutos con uno de nuestros Forjadores para analizar tus desafíos en comercial y servicio.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: 'Calendar'
     }

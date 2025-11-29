@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Building2, Users, Settings, ArrowRight, Check, Star, ClipboardCheck, TrendingUp } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 
 interface ServiceBenefit {
   text: string
@@ -115,29 +117,30 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeature
 
         {/* CTA Buttons */}
         <div className={`flex flex-col gap-3 ${isFeatured ? 'pt-2' : ''}`}>
-          <Link href={link}>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
-                isFeatured
-                  ? 'bg-gradient-to-r from-brand-orange to-brand-orange-dark text-white shadow-lg hover:shadow-xl'
-                  : 'bg-brand-navy text-white hover:bg-brand-navy-dark'
-              }`}
-            >
-              {isFeatured ? 'Evalúa tu Arquitectura Actual' : 'Conocer más'}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-          </Link>
+          <Button
+            variant={isFeatured ? 'primary' : 'outline'}
+            size="lg"
+            className="w-full"
+            asChild
+          >
+            <Link href={link} className="flex items-center justify-center gap-2">
+              {isFeatured ? 'Rayos-X Empresarial Gratis' : 'Conocer más'}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </Button>
           
           {isFeatured && (
-            <Link 
-              href="/casos-exito#estrategia"
-              className="text-center text-brand-orange hover:text-brand-orange-dark font-semibold text-sm transition-colors flex items-center justify-center gap-1"
+            <Button
+              variant="link"
+              size="sm"
+              className="text-forja-fire"
+              asChild
             >
-              Ver casos de éxito
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              <Link href="/casos-exito#estrategia" className="flex items-center justify-center gap-1">
+                Ver casos de éxito
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
           )}
         </div>
       </div>
@@ -275,10 +278,10 @@ export function ServicesSection() {
               >
                 <Link 
                   href="/contacto"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-white text-brand-navy font-bold text-lg rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl group"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-white text-forja-navy font-bold text-lg rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl group"
                 >
-                  <ClipboardCheck className="w-6 h-6 text-brand-orange" />
-                  Solicita tu Diagnóstico Estratégico GRATIS
+                  <ClipboardCheck className="w-6 h-6 text-forja-fire" />
+                  Rayos-X Empresarial Gratis
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </motion.div>

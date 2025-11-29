@@ -343,15 +343,15 @@ export const transformacionDigitalData: ServicePageData = {
   cta: {
     primary: {
       title: '¿Listo para Digitalizar tu Futuro?',
-      description: 'Nuestro Diagnóstico de Madurez Digital es el primer paso. Identificamos tus brechas y te entregamos un plan de acción claro y priorizado. ¡Gratis!',
-      buttonText: 'Iniciar Diagnóstico Digital',
+      description: 'Nuestro Rayos-X Empresarial Gratis es el primer paso. Identificamos tus brechas y te entregamos un plan de acción claro y priorizado.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: 'ClipboardCheck',
     },
     secondary: {
       title: '¿Tienes Preguntas Específicas?',
-      description: 'Agenda una llamada de 30 minutos sin costo con un arquitecto de transformación digital y resuelve todas tus dudas.',
-      buttonText: 'Agendar Llamada',
+      description: 'Agenda una llamada de 30 minutos sin costo con uno de nuestros Forjadores y resuelve todas tus dudas.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: 'Phone',
     },

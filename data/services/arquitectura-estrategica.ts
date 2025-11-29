@@ -428,15 +428,15 @@ export const arquitecturaEstrategicaData: ServicePageData = {
   cta: {
     primary: {
       title: '¿Listo para Diseñar tu Arquitectura?',
-      description: 'Solicita tu Diagnóstico Estratégico Gratuito y descubre las brechas críticas que frenan tu crecimiento.',
-      buttonText: 'Solicitar Diagnóstico',
+      description: 'Solicita tu Rayos-X Empresarial Gratis y descubre las brechas críticas que frenan tu crecimiento.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: '🔍',
     },
     secondary: {
       title: '¿Tienes Preguntas sobre el Servicio?',
-      description: 'Agenda una llamada de 30 minutos con uno de nuestros arquitectos para discutir tu caso específico.',
-      buttonText: 'Agendar Llamada',
+      description: 'Agenda una llamada de 30 minutos con uno de nuestros Forjadores para discutir tu caso específico.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: '📞',
     },

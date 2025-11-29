@@ -6,35 +6,40 @@
   html {
     scroll-behavior: smooth;
   }
+  
+  /* ============================================
+     FORJA DESIGN TOKENS - Variables CSS
+     ============================================ */
   :root {
+    /* Colores Base (HSL para compatibilidad shadcn) */
     --background: 0 0% 100%;
-    --foreground: 213 24% 27%;
+    --foreground: 222 28% 24%; /* forja-navy */
     --card: 0 0% 100%;
-    --card-foreground: 213 24% 27%;
+    --card-foreground: 222 28% 24%;
     --popover: 0 0% 100%;
-    --popover-foreground: 213 24% 27%;
-    --primary: 20 91% 59%;
+    --popover-foreground: 222 28% 24%;
+    --primary: 14 82% 60%; /* forja-fire */
     --primary-foreground: 0 0% 100%;
-    --secondary: 187 71% 58%;
-    --secondary-foreground: 213 24% 27%;
+    --secondary: 187 67% 60%; /* forja-teal */
+    --secondary-foreground: 222 28% 24%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 260 44% 56%;
+    --accent: 249 35% 56%; /* forja-purple */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 20 91% 59%;
+    --ring: 14 82% 60%;
     --radius: 0.5rem;
     
     /* Spacing Scale */
-    --spacing-xs: 0.5rem;    /* 8px */
-    --spacing-sm: 1rem;      /* 16px */
-    --spacing-md: 1.5rem;    /* 24px */
-    --spacing-lg: 3rem;      /* 48px */
-    --spacing-xl: 4rem;      /* 64px */
-    --spacing-xxl: 6rem;     /* 96px */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    --spacing-xxl: 6rem;
     
     /* Container */
     --container-max-width: 1280px;
@@ -60,18 +65,29 @@
     @apply border-border;
   }
   
+  /* ============================================
+     REGLA 60-30-10 (Design Token)
+     60% Neutros | 30% Navy | 10% Fire/Teal
+     ============================================ */
   body {
-    @apply bg-white text-brand-navy font-sans antialiased;
+    @apply bg-slate-50 text-forja-navy font-body antialiased;
     font-feature-settings: 'cv11', 'ss01';
   }
   
+  /* Tipografía: Headings usan Plus Jakarta Sans */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading text-forja-navy;
   }
 }
 
 @layer components {
-  /* Container */
+  /* ============================================
+     HELPERS - Container & Layout
+     ============================================ */
+  .container {
+    @apply max-w-[var(--container-max-width)] mx-auto px-6 md:px-8 lg:px-12;
+  }
+  
   .container-custom {
     @apply max-w-[1280px] mx-auto px-6 md:px-8 lg:px-12;
   }
@@ -81,50 +97,78 @@
     @apply py-16 md:py-20 lg:py-24;
   }
   
-  /* Typography Standards */
+  /* ============================================
+     PROSE BASE - Tipografía de contenido
+     Regla 60-30-10 aplicada
+     ============================================ */
+  .prose {
+    @apply text-slate-700 leading-relaxed;
+  }
+  
+  .prose h1, .prose h2, .prose h3 {
+    @apply font-heading text-forja-navy font-bold;
+  }
+  
+  .prose a {
+    @apply text-forja-fire hover:text-forja-fire/80 transition-colors;
+  }
+  
+  .prose strong {
+    @apply text-forja-navy font-semibold;
+  }
+  
+  /* ============================================
+     TYPOGRAPHY STANDARDS
+     ============================================ */
   .hero-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-forja-navy;
   }
   
   .hero-subtitle {
-    @apply text-xl md:text-2xl lg:text-3xl font-semibold leading-snug;
+    @apply text-xl md:text-2xl lg:text-3xl font-heading font-semibold leading-snug text-forja-navy;
   }
   
   .hero-description {
-    @apply text-lg md:text-xl leading-relaxed;
+    @apply text-lg md:text-xl font-body leading-relaxed text-slate-700;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-brand-navy leading-tight;
+    @apply text-3xl md:text-4xl font-heading font-bold text-forja-navy leading-tight;
   }
   
   .section-subtitle {
-    @apply text-xl md:text-2xl font-semibold text-gray-700 leading-snug;
+    @apply text-xl md:text-2xl font-heading font-semibold text-slate-700 leading-snug;
   }
   
   .section-description {
-    @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+    @apply text-lg md:text-xl font-body text-slate-600 leading-relaxed;
   }
   
   .card-title {
-    @apply text-xl md:text-2xl font-bold text-brand-navy leading-tight;
+    @apply text-xl md:text-2xl font-heading font-bold text-forja-navy leading-tight;
   }
   
   .card-description {
-    @apply text-base md:text-lg text-gray-700 leading-relaxed;
+    @apply text-base md:text-lg font-body text-slate-700 leading-relaxed;
   }
   
   .body-text {
-    @apply text-base text-gray-700 leading-relaxed;
+    @apply text-base font-body text-slate-700 leading-relaxed;
   }
   
-  /* Gradient Backgrounds */
+  /* ============================================
+     GRADIENT BACKGROUNDS (Design Tokens)
+     ============================================ */
   .gradient-hero {
-    background: linear-gradient(135deg, #2B3E5C 0%, #7E57C2 100%);
+    background: linear-gradient(135deg, #22335A 0%, #8060BF 100%);
   }
   
   .gradient-cta {
-    background: linear-gradient(135deg, #4DD0E1 0%, #7E57C2 100%);
+    background: linear-gradient(135deg, #52D6DE 0%, #8060BF 100%);
+  }
+  
+  .gradient-fire {
+    background: linear-gradient(135deg, #ED7442 0%, #F47D3B 100%);
   }
 }
 
@@ -199,4 +243,106 @@
   display: inline-block;
   animation: wave 1.5s ease-in-out infinite;
   transform-origin: 70% 70%;
+}
+
+/* ============================================
+   UTILIDADES ADICIONALES DE DESIGN TOKENS
+   ============================================ */
+
+@layer components {
+  /* Container Variants */
+  .container-prose {
+    @apply max-w-[65ch] mx-auto px-6 leading-relaxed;
+  }
+
+  .container-narrow {
+    @apply max-w-[640px] mx-auto px-6;
+  }
+
+  .container-wide {
+    @apply max-w-[1536px] mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  /* Surface Styles */
+  .surface-card {
+    @apply bg-white rounded-xl border border-slate-200 shadow-card;
+  }
+
+  .surface-card-hover {
+    @apply surface-card hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  .surface-panel {
+    @apply bg-slate-50 rounded-xl border border-slate-200;
+  }
+
+  .surface-glass {
+    @apply bg-white/80 backdrop-blur-md rounded-xl border border-white/20 shadow-lg;
+  }
+
+  /* Text Utilities */
+  .text-primary {
+    @apply text-forja-navy;
+  }
+
+  .text-secondary {
+    @apply text-slate-600;
+  }
+
+  .text-accent {
+    @apply text-forja-fire;
+  }
+
+  /* Button Utilities */
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-button transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-forja-fire text-white hover:bg-forja-fire/90 focus-visible:ring-forja-fire shadow-glow-orange;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-forja-navy text-white hover:bg-forja-navy-700 focus-visible:ring-forja-navy;
+  }
+
+  .btn-outline {
+    @apply btn-base border-2 border-forja-navy text-forja-navy hover:bg-forja-navy hover:text-white focus-visible:ring-forja-navy;
+  }
+
+  /* Link Utilities */
+  .link-primary {
+    @apply text-forja-fire hover:text-forja-fire/80 underline-offset-4 hover:underline transition-colors;
+  }
+
+  .link-nav {
+    @apply text-slate-700 hover:text-forja-fire transition-colors font-medium;
+  }
+
+  /* Dividers */
+  .divider-horizontal {
+    @apply h-px w-full bg-slate-200;
+  }
+
+  .divider-gradient {
+    background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+    @apply h-px w-full;
+  }
+}
+
+@layer utilities {
+  /* Truncate utilities */
+  .truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Check, AlertCircle } from 'lucide-react'
 import { Problem } from '@/types/services'
 import * as LucideIcons from 'lucide-react'
+import { Card } from '@/components/ui/card'
 
 interface ProblemCardProps {
   problem: Problem
@@ -22,8 +23,9 @@ export function ProblemCard({ problem, index }: ProblemCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-2xl shadow-lg border-l-4 border-brand-turquoise hover:shadow-xl hover:border-brand-orange transition-all duration-300 overflow-hidden group h-full flex flex-col"
+      className="h-full"
     >
+      <Card className="border-l-4 border-brand-turquoise hover:border-brand-orange transition-all duration-300 overflow-hidden group h-full flex flex-col">
       <div className="p-6 md:p-8 flex-1 flex flex-col">
         {/* Icon and Title */}
         <div className="flex items-start gap-4 mb-6">
@@ -70,6 +72,7 @@ export function ProblemCard({ problem, index }: ProblemCardProps) {
           </ul>
         </div>
       </div>
+    </Card>
     </motion.div>
   )
 }

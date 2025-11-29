@@ -616,15 +616,15 @@ export const gestionTalentoData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Gratuito de Gestión de Talento',
-      description: 'Solicita tu Evaluación de Madurez de Talento sin costo. Identificamos tus brechas críticas y te damos recomendaciones prácticas.',
-      buttonText: 'Solicitar Evaluación GRATIS',
+      description: 'Solicita tu Rayos-X Empresarial Gratis. Identificamos tus brechas críticas en gestión de talento y te damos recomendaciones prácticas.',
+      buttonText: 'Rayos-X Empresarial Gratis',
       buttonLink: '/contacto',
       icon: 'Search'
     },
     secondary: {
       title: 'Consulta con Especialista en Talento',
-      description: 'Agenda 30 minutos con nuestro experto en gestión de talento para analizar tus desafíos específicos.',
-      buttonText: 'Agendar Llamada Estratégica',
+      description: 'Agenda 30 minutos con uno de nuestros Forjadores especialistas en talento para analizar tus desafíos específicos.',
+      buttonText: 'Habla con un Forjador',
       buttonLink: '/contacto',
       icon: 'Calendar'
     }
