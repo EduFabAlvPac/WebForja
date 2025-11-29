@@ -15,10 +15,10 @@ const HERO_SLIDES = [
     subheadline: "Arquitectura Empresarial que Convierte tu Negocio en Líder de Mercado",
     tagline: "",
     description: getDigitalTransformationClaim() + " Nosotros diseñamos el blueprint que integra tecnología, procesos y personas para resultados medibles.",
-    ctaPrimary: "Rayos-X Empresarial Gratis",
+    ctaPrimary: "Descubre tu Madurez Digital - GRATIS",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Habla con un Forjador",
-    ctaSecondaryLink: "/contacto",
+    ctaSecondary: "Ver Casos de Transformación Real",
+    ctaSecondaryLink: "/casos-exito",
     // Imagen impactante: PYME competitiva en acción
     backgroundImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&q=80",
     backgroundAlt: "Equipo empresarial competitivo desarrollando estrategia de negocio",
@@ -35,10 +35,10 @@ const HERO_SLIDES = [
     subheadline: "Especializados en PYMEs Latinoamericanas",
     tagline: "Metodología Probada. Resultados Medibles. Inversión Inteligente (Trabajamos al Éxito).",
     description: "Mientras otros consultores venden software o servicios genéricos, nosotros construimos la arquitectura estratégica que alinea TODA tu organización hacia objetivos de crecimiento sostenible.",
-    ctaPrimary: "Rayos-X Empresarial Gratis",
+    ctaPrimary: "Agenda tu Diagnóstico Estratégico",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Habla con un Forjador",
-    ctaSecondaryLink: "/contacto",
+    ctaSecondary: "Conoce a tu Arquitecto Forjador",
+    ctaSecondaryLink: "/nosotros/equipo",
     // Imagen profesional: Arquitectos empresariales trabajando con cliente
     backgroundImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80",
     backgroundAlt: "Arquitectos empresariales desarrollando estrategia con equipo PYME",
@@ -51,9 +51,9 @@ const HERO_SLIDES = [
     subheadline: "El Sistema de 5 Fases que Elimina el Caos",
     tagline: "De la Estrategia a la Ejecución: Tu Roadmap Sin Improvisación",
     description: "Fundamentar → Orientar → Rediseñar → Justificar → Acompañar. Un enfoque sistemático donde cada fase genera entregables concretos, métricas claras y decisiones basadas en datos, no en intuición.",
-    ctaPrimary: "Rayos-X Empresarial Gratis",
+    ctaPrimary: "Solicita tu Rayos-X Empresarial",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Habla con un Forjador",
+    ctaSecondary: "Descarga Guía: 5 Fases Explicadas",
     ctaSecondaryLink: "/contacto",
     // Imagen: Equipo trabajando en planificación estratégica y proceso
     backgroundImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80",
@@ -71,10 +71,10 @@ const HERO_SLIDES = [
     subheadline: "que Multiplica tu Capacidad Competitiva",
     tagline: "Integramos Estrategia + Procesos + Tecnología + Talento en un Sistema Coherente de Crecimiento",
     description: "No vendemos 'soluciones' aisladas. Diseñamos ecosistemas empresariales donde cada decisión impulsa objetivos estratégicos y cada proceso potencia a tu equipo. El resultado: ventaja competitiva sostenible.",
-    ctaPrimary: "Rayos-X Empresarial Gratis",
+    ctaPrimary: "Evalúa tu Arquitectura Actual",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Habla con un Forjador",
-    ctaSecondaryLink: "/contacto",
+    ctaSecondary: "Ver Casos: Antes y Después",
+    ctaSecondaryLink: "/casos-exito",
     // Imagen moderna: Oficina tecnológica y profesional
     backgroundImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80",
     backgroundAlt: "Equipo profesional en oficina moderna con tecnología",
@@ -245,7 +245,7 @@ export function HeroSection() {
                 {slide.description}
               </motion.p>
 
-              {/* CTA Buttons - Primario dominante, sin scroll en móvil */}
+               {/* CTA Buttons - Primario dominante, sin scroll en móvil */}
               <motion.div
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 md:pt-5"
                 initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
@@ -255,36 +255,18 @@ export function HeroSection() {
                   duration: prefersReducedMotion ? 0.01 : 0.4
                 }}
               >
-                {/* CTA Primario - DOMINANTE con animación de pulso sutil */}
-                <motion.div
-                  animate={prefersReducedMotion ? {} : { 
-                    scale: [1, 1.03, 1],
-                    boxShadow: [
-                      '0 10px 40px rgba(237, 116, 66, 0.3)',
-                      '0 15px 60px rgba(237, 116, 66, 0.5)',
-                      '0 10px 40px rgba(237, 116, 66, 0.3)'
-                    ]
-                  }}
-                  transition={{ 
-                    duration: 2.5, 
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut"
-                  }}
-                  className="relative"
+                {/* CTA Primario - SIN wrapper motion.div para evitar esquinas negras */}
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="w-full sm:w-auto text-base md:text-lg font-bold shadow-2xl"
+                  asChild
                 >
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    className="w-full sm:w-auto text-base md:text-lg font-bold shadow-2xl relative overflow-hidden"
-                    asChild
-                  >
-                    <Link href={slide.ctaPrimaryLink} className="flex items-center justify-center gap-2.5">
-                      <Lock className="w-5 h-5 md:w-6 md:h-6" />
-                      <span>{slide.ctaPrimary}</span>
-                    </Link>
-                  </Button>
-                </motion.div>
+                  <Link href={slide.ctaPrimaryLink} className="flex items-center justify-center gap-2.5">
+                    <Lock className="w-5 h-5 md:w-6 md:h-6" />
+                    <span>{slide.ctaPrimary}</span>
+                  </Link>
+                </Button>
 
                 {/* CTA Secundario - Más sutil */}
                 <Button
