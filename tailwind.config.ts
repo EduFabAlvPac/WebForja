@@ -40,10 +40,8 @@ const config: Config = {
         // FORJA DESIGN TOKENS - Paleta Principal
         // ============================================
         forja: {
-          navy: {
-            DEFAULT: '#22335A',  // Navy principal
-            700: '#34497A',      // Navy 700 (más claro)
-          },
+          navy: '#22335A',       // Navy principal
+          'navy-700': '#34497A', // Navy 700 (más claro)
           fire: '#ED7442',       // Fire/Orange (acentos)
           teal: '#52D6DE',       // Teal (acentos secundarios)
           purple: '#8060BF',     // Purple (acentos terciarios)
