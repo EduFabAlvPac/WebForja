@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
+import { MetodologiaForja } from '@/components/ui/metodologia-forja'
 
 export const metadata: Metadata = {
   title: 'Servicios | Forja Digital - AE',
@@ -128,6 +129,13 @@ export default function ServiciosPage() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Metodología FORJA® */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <MetodologiaForja />
         </div>
       </section>
 

@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion'
 import { Download, Building2, Users, MapPin, Quote } from 'lucide-react'
 import { CaseStudy as CaseStudyType } from '@/types/services'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { StatBadge } from '@/components/ui/stat-badge'
 
 interface CaseStudyProps {
   caseStudy: CaseStudyType
@@ -14,13 +17,13 @@ export function CaseStudy({ caseStudy }: CaseStudyProps) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden"
     >
+      <Card className="overflow-hidden">
       {/* Header with company info */}
       <div className="bg-gradient-to-br from-brand-navy to-brand-purple p-6 md:p-8 text-white">
         <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-2">{caseStudy.company.name}</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{caseStudy.company.name}</h3>
             <div className="flex flex-wrap gap-4 text-sm text-white/80">
               <div className="flex items-center gap-2">
                 <Building2 className="w-4 h-4" />
@@ -37,14 +40,21 @@ export function CaseStudy({ caseStudy }: CaseStudyProps) {
             </div>
           </div>
           {caseStudy.downloadLink && (
-            <a
-              href={caseStudy.downloadLink}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-brand-navy font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-              download
+            <Button
+              variant="secondary"
+              size="sm"
+              className="bg-white hover:bg-slate-100"
+              asChild
             >
-              <Download className="w-4 h-4" />
-              <span className="hidden sm:inline">Descargar Caso</span>
-            </a>
+              <a
+                href={caseStudy.downloadLink}
+                download
+                className="flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                <span className="hidden sm:inline">Descargar Caso</span>
+              </a>
+            </Button>
           )}
         </div>
       </div>
@@ -116,6 +126,7 @@ export function CaseStudy({ caseStudy }: CaseStudyProps) {
           </div>
         </div>
       </div>
+    </Card>
     </motion.div>
   )
 }

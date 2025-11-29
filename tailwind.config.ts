@@ -36,25 +36,50 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Brand Colors (del logo)
+        // ============================================
+        // FORJA DESIGN TOKENS - Paleta Principal
+        // ============================================
+        forja: {
+          navy: {
+            DEFAULT: '#22335A',  // Navy principal
+            700: '#34497A',      // Navy 700 (más claro)
+          },
+          fire: '#ED7442',       // Fire/Orange (acentos)
+          teal: '#52D6DE',       // Teal (acentos secundarios)
+          purple: '#8060BF',     // Purple (acentos terciarios)
+        },
+        // Escala Slate (Neutros)
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+        },
+        // Brand Colors (compatibilidad con código existente)
         brand: {
           navy: {
-            DEFAULT: '#2B3E5C',
-            light: '#3A5070',
+            DEFAULT: '#22335A',
+            light: '#34497A',
             dark: '#1F2E44',
           },
           orange: {
-            DEFAULT: '#F47D3B',
+            DEFAULT: '#ED7442',
             light: '#F69558',
             dark: '#E06829',
           },
           turquoise: {
-            DEFAULT: '#4DD0E1',
+            DEFAULT: '#52D6DE',
             light: '#6DD9E7',
             dark: '#3AB8C8',
           },
           purple: {
-            DEFAULT: '#7E57C2',
+            DEFAULT: '#8060BF',
             light: '#9575CD',
             dark: '#6741A8',
           },
@@ -130,8 +155,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-heading)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'], // Fallback
       },
       fontSize: {
         // Mobile-first responsive
@@ -152,12 +178,14 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
         'card': '0.75rem',     // 12px
         'button': '0.5rem',    // 8px
+        'xl': '1rem',          // 16px - Design Token
+        '2xl': '1.5rem',       // 24px - Design Token
       },
       boxShadow: {
-        'card': '0 4px 12px rgba(0, 0, 0, 0.08)',
+        'card': '0 10px 30px rgba(15, 23, 42, 0.12)', // Design Token
         'card-hover': '0 12px 24px rgba(0, 0, 0, 0.15)',
-        'glow-orange': '0 8px 16px rgba(244, 125, 59, 0.3)',
-        'glow-turquoise': '0 8px 16px rgba(77, 208, 225, 0.3)',
+        'glow-orange': '0 8px 16px rgba(237, 116, 66, 0.3)',
+        'glow-turquoise': '0 8px 16px rgba(82, 214, 222, 0.3)',
         'mega-menu': '0 20px 60px rgba(0, 0, 0, 0.12)',
       },
       animation: {
