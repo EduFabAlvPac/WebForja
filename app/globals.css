@@ -345,4 +345,14 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* Scrollbar hide - para scroll horizontal limpio */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
 }

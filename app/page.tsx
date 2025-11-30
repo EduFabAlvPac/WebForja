@@ -1,4 +1,6 @@
 import { HeroSection } from '@/components/sections/HeroSection'
+import { ClientLogosSection } from '@/components/sections/ClientLogosSection'
+import { ThreePillarsSection } from '@/components/sections/ThreePillarsSection'
 import { StatsSection } from '@/components/sections/StatsSection'
 import { PainPointsSection } from '@/components/sections/PainPointsSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
@@ -11,6 +13,12 @@ export default function Home() {
     <>
       <div id="hero">
         <HeroSection />
+      </div>
+      <div id="client-logos">
+        <ClientLogosSection />
+      </div>
+      <div id="three-pillars">
+        <ThreePillarsSection />
       </div>
       <div id="stats">
         <StatsSection />
