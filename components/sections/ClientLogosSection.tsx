@@ -25,38 +25,38 @@ interface ClientLogo {
 
 const CLIENT_LOGOS: ClientLogo[] = [
   {
-    name: 'Accenture',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg',
+    name: 'Empresa Tecnológica',
+    logo: 'https://logo.clearbit.com/microsoft.com',
     width: 200,
     height: 60
   },
   {
-    name: 'Deloitte',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Deloitte.svg',
+    name: 'Firma Consultora',
+    logo: 'https://logo.clearbit.com/deloitte.com',
     width: 200,
     height: 60
   },
   {
-    name: 'Microsoft',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg',
+    name: 'Corporación Global',
+    logo: 'https://logo.clearbit.com/ibm.com',
     width: 200,
     height: 60
   },
   {
-    name: 'IBM',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
+    name: 'Soluciones Empresariales',
+    logo: 'https://logo.clearbit.com/sap.com',
     width: 200,
     height: 60
   },
   {
-    name: 'SAP',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg',
+    name: 'Innovación Digital',
+    logo: 'https://logo.clearbit.com/oracle.com',
     width: 200,
     height: 60
   },
   {
-    name: 'Oracle',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg',
+    name: 'Transformación Tech',
+    logo: 'https://logo.clearbit.com/accenture.com',
     width: 200,
     height: 60
   }

@@ -36,6 +36,18 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'pixabay.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'logo.clearbit.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.worldvectorlogo.com',
+      },
     ],
   },
 
