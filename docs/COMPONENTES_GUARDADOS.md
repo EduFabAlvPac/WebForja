@@ -4,7 +4,74 @@ Este documento contiene componentes que fueron removidos del flujo principal per
 
 ---
 
-## ProcessStepperSection
+## 1. ClientLogosSection
+
+**Ubicación**: `components/sections/ClientLogosSection.tsx`
+
+**Estado**: ✅ Componente completo y funcional
+
+**Razón de remoción**: Usuario no lo considera necesario en homepage
+
+**Cuándo usar**:
+- Páginas de "Nosotros" o "Clientes"
+- Landing pages B2B
+- Secciones de credibilidad/confianza
+- Footer con logos de partners
+
+### Features
+- ✅ 6 logos de clientes (Clearbit CDN)
+- ✅ Escala de grises con hover color
+- ✅ Lazy loading con next/image
+- ✅ Scroll horizontal en móvil
+- ✅ Grid 3x2 en desktop
+- ✅ ARIA labels claros
+
+### Reactivar
+```tsx
+import { ClientLogosSection } from '@/components/sections/ClientLogosSection'
+
+<ClientLogosSection />
+```
+
+---
+
+## 2. ThreePillarsSection
+
+**Ubicación**: `components/sections/ThreePillarsSection.tsx`
+
+**Estado**: ✅ Componente completo y funcional
+
+**Razón de remoción**: Usuario no lo considera necesario en homepage
+
+**Cuándo usar**:
+- Página de servicios principal
+- Landing pages de categorías
+- Secciones de "Qué Hacemos"
+- Páginas de presentación corporativa
+
+### Features
+- ✅ 3 Cards con colores distintivos (Navy/Teal/Purple)
+- ✅ Iconos lucide-react (Compass, Users, Rocket)
+- ✅ Grid 3 cols desktop / 1 móvil
+- ✅ CTAs específicos a cada categoría
+- ✅ Hover effects (translate + shadow)
+- ✅ Textos escaneables con bullets
+
+### Pilares
+1. **Estrategia & Transformación** (Navy)
+2. **Talento & Finanzas** (Teal)
+3. **Comercial & Operaciones** (Purple)
+
+### Reactivar
+```tsx
+import { ThreePillarsSection } from '@/components/sections/ThreePillarsSection'
+
+<ThreePillarsSection />
+```
+
+---
+
+## 3. ProcessStepperSection
 
 **Ubicación**: `components/sections/ProcessStepperSection.tsx`
 
@@ -18,49 +85,19 @@ Este documento contiene componentes que fueron removidos del flujo principal per
 - Secciones de "Cómo Trabajamos"
 - Páginas de onboarding de clientes
 
-### Features Implementadas
-
+### Features
 - ✅ 5 fases FORJA® con descripciones
 - ✅ Paso actual resaltado con animaciones
 - ✅ Progress bar con Radix UI
 - ✅ Botones interactivos para explorar fases
 - ✅ 3 microcopys de beneficios
 - ✅ CTA final con gradiente
-- ✅ Animaciones framer-motion
-- ✅ Accesibilidad completa (ARIA)
 
-### Cómo Reactivar
-
+### Reactivar
 ```tsx
-// En cualquier página:
 import { ProcessStepperSection } from '@/components/sections/ProcessStepperSection'
 
-export default function Page() {
-  return (
-    <>
-      {/* ... otras secciones ... */}
-      <ProcessStepperSection />
-      {/* ... */}
-    </>
-  )
-}
-```
-
-### Ejemplo de Uso
-
-```tsx
-// app/servicios/estrategia-transformacion/page.tsx
-import { ProcessStepperSection } from '@/components/sections/ProcessStepperSection'
-
-export default function EstrategiaPage() {
-  return (
-    <div>
-      <ServiceHero data={estrategiaData} />
-      <ProcessStepperSection /> {/* Aquí se vería bien */}
-      <CaseStudiesSection />
-    </div>
-  )
-}
+<ProcessStepperSection />
 ```
 
 ---
@@ -76,73 +113,41 @@ export default function EstrategiaPage() {
 **Props**:
 ```typescript
 interface ProcessStepperProps {
-  currentStep: number        // Paso actual (1-5)
-  steps: ProcessStep[]       // Array de pasos
+  currentStep: number
+  steps: ProcessStep[]
   orientation?: 'horizontal' | 'vertical'
   className?: string
 }
-
-interface ProcessStep {
-  label: string
-  description?: string
-}
-```
-
-**Ejemplo de uso directo**:
-```tsx
-import { ProcessStepper } from '@/components/ui/process-stepper'
-
-const steps = [
-  { label: 'Paso 1', description: 'Descripción' },
-  { label: 'Paso 2', description: 'Descripción' },
-  // ...
-]
-
-<ProcessStepper 
-  currentStep={2} 
-  steps={steps} 
-  orientation="horizontal"
-/>
 ```
 
 ---
 
-## Estilos y Tokens Utilizados
+## Orden Homepage Actual (Limpio)
 
-### Colores
-- `forja-navy` - Background principal
-- `forja-fire` - Acentos y highlights
-- `forja-teal` - Secundario
-- `forja-purple` - Gradientes
+```
+1. HeroSection
+2. StatsSection              ← Directo después del Hero
+3. PainPointsSection
+4. ServicesSection
+5. MetodologiaSection
+6. CaseStudiesSection
+7. CTASection
+```
 
-### Animaciones
-- Pulse ring en paso actual
-- Check animation con spring
-- Fade-in staggered
-- Progress bar smooth transition
-
-### Shadows
-- `shadow-card` - Cards estándar
-- `shadow-2xl` - CTA destacado
+**Componentes removidos**:
+- ~~ClientLogosSection~~
+- ~~ThreePillarsSection~~
+- ~~ProcessStepperSection~~
 
 ---
 
 ## Historial de Cambios
 
-| Fecha | Acción | Commit |
-|-------|--------|--------|
-| 2025-11-30 | Creado | 963e22e |
-| 2025-11-30 | Removido de homepage | (pending) |
-
----
-
-## Notas
-
-- El componente está **completamente funcional** y listo para usar
-- **No requiere configuración adicional**
-- Compatible con el sistema de diseño FORJA
-- Accesibilidad validada (WCAG 2.1 AA)
-- Responsive (mobile-first)
+| Fecha | Componente | Acción | Commit |
+|-------|------------|--------|--------|
+| 2025-11-30 | ProcessStepperSection | Creado y removido | 963e22e, af80fd1 |
+| 2025-11-30 | ClientLogosSection | Creado y removido | 7fd36a4, (pending) |
+| 2025-11-30 | ThreePillarsSection | Creado y removido | 7fd36a4, (pending) |
 
 ---
 

@@ -1,7 +1,6 @@
 import { HeroSection } from '@/components/sections/HeroSection'
-import { ClientLogosSection } from '@/components/sections/ClientLogosSection'
-import { ThreePillarsSection } from '@/components/sections/ThreePillarsSection'
-// import { ProcessStepperSection } from '@/components/sections/ProcessStepperSection' // GUARDADO para uso futuro
+// import { ClientLogosSection } from '@/components/sections/ClientLogosSection' // GUARDADO
+// import { ThreePillarsSection } from '@/components/sections/ThreePillarsSection' // GUARDADO
 import { StatsSection } from '@/components/sections/StatsSection'
 import { PainPointsSection } from '@/components/sections/PainPointsSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
@@ -15,14 +14,11 @@ export default function Home() {
       <div id="hero">
         <HeroSection />
       </div>
-      <div id="client-logos">
+      {/* <div id="client-logos">
         <ClientLogosSection />
       </div>
       <div id="three-pillars">
         <ThreePillarsSection />
-      </div>
-      {/* <div id="process-stepper">
-        <ProcessStepperSection />
       </div> */}
       <div id="stats">
         <StatsSection />
