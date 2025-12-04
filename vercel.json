@@ -13,18 +13,13 @@
       "permanent": true
     },
     {
-      "source": "/",
-      "destination": "/es",
-      "permanent": false
-    },
-    {
       "source": "/index",
-      "destination": "/es",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/home",
-      "destination": "/es",
+      "destination": "/",
       "permanent": true
     }
   ],
