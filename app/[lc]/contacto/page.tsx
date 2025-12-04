@@ -117,7 +117,7 @@ export default function ContactoLocalePage({ params }: PageProps) {
 
   const country = getCountryByLocale(lc)
   const contactInfo = CONTACT_INFO[lc as LocaleCode] || CONTACT_INFO.co
-  const whatsappNumber = country.whatsappNumber || '+573103350651'
+  const whatsappNumber = country.whatsapp || '+573103350651'
 
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
