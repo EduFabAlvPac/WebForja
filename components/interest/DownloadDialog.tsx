@@ -232,17 +232,19 @@ export function DownloadDialog({
       {isOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          onClick={handleBackdropClick}
           role="dialog"
           aria-modal="true"
           aria-labelledby="download-dialog-title"
         >
           {/* Backdrop */}
-          <motion.div
+          <motion.button
+            type="button"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={handleBackdropClick}
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-default"
+            aria-label="Cerrar diálogo"
           />
 
           {/* Dialog */}

@@ -257,7 +257,7 @@ export function InterestToolbar({
           <span className="font-semibold text-slate-900">{totalResults}</span>{' '}
           {totalResults === 1 ? 'resultado' : 'resultados'}
           {searchQuery && (
-            <span> para "<span className="font-medium">{searchQuery}</span>"</span>
+            <span> para &quot;<span className="font-medium">{searchQuery}</span>&quot;</span>
           )}
         </p>
 

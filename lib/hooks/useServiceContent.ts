@@ -150,12 +150,12 @@ export async function getServiceOverlay(
   
   try {
     // Intentar cargar overlay
-    const module = await import(`@/content/${locale}/servicios/${serviceSlug}`);
+    const overlayModule = await import(`@/content/${locale}/servicios/${serviceSlug}`);
     
     // El overlay puede tener nombres diferentes según el país
     const overlayKey = `overlayComercialServicioData${locale.split('-')[1]?.toUpperCase() || ''}`;
     
-    return module[overlayKey] || module.default || null;
+    return overlayModule[overlayKey] || overlayModule.default || null;
   } catch (error) {
     console.warn(`Failed to load overlay for ${locale}/${serviceSlug}:`, error);
     return null;

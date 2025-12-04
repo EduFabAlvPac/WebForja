@@ -49,7 +49,7 @@ export function PlaceholderContent({ item, locale }: PlaceholderContentProps) {
                 Próximamente disponible
               </h4>
               <p className="text-amber-700 text-sm">
-                El contenido detallado de "{item.title}" estará disponible pronto.
+                El contenido detallado de &quot;{item.title}&quot; estará disponible pronto.
               </p>
             </div>
           </div>

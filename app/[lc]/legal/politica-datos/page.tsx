@@ -313,7 +313,7 @@ export default function PoliticaDatosPage({ params }: { params: { lc: string } }
                   <p className="text-sm text-gray-700">
                     <strong>Cómo ejercer tus derechos:</strong> Puedes ejercer cualquiera de estos derechos
                     enviando un correo a <a href={`mailto:${ORG.email}`} className="text-brand-orange hover:underline">{ORG.email}</a> con
-                    el asunto "Solicitud de Derechos ARCO" e indicando claramente qué derecho deseas ejercer.
+                    el asunto &quot;Solicitud de Derechos ARCO&quot; e indicando claramente qué derecho deseas ejercer.
                   </p>
                 </div>
               </div>

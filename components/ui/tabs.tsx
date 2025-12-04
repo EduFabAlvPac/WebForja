@@ -102,6 +102,7 @@ const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
         }}
         role="tablist"
         aria-orientation="horizontal"
+        tabIndex={-1}
         onKeyDown={handleKeyDown}
         className={cn(
           'inline-flex items-center justify-start gap-1',

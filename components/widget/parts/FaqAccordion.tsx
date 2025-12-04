@@ -102,7 +102,7 @@ export function FaqAccordion({ data }: FaqAccordionProps) {
       {filteredData.length === 0 ? (
         <div className="space-y-4 text-center">
           <p className="text-sm text-slate-500">
-            No se encontraron resultados para "{debouncedQuery}"
+            No se encontraron resultados para &quot;{debouncedQuery}&quot;
           </p>
           <Button
             size="sm"

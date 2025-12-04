@@ -46,12 +46,9 @@ export function MessagesForm() {
     if (country) {
       setValue('countryCode', country.country.code)
       
-      // Prellenar saludo solo si el mensaje está vacío
-      const currentMessage = reset.call ? '' : undefined
-      if (!currentMessage) {
-        const greeting = `Hola, les escribo desde ${country.country.name}. `
-        setValue('message', greeting)
-      }
+      // Prellenar saludo al montar el componente
+      const greeting = `Hola, les escribo desde ${country.country.name}. `
+      setValue('message', greeting)
     }
   }, [country, setValue])
 
