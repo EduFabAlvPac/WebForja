@@ -61,7 +61,6 @@ interface ReadingLayoutProps {
 
 const TYPE_STYLES: Record<InterestType, { bg: string; text: string; label: string }> = {
   programa: { bg: 'bg-teal-100', text: 'text-teal-700', label: 'Programa' },
-  regulacion: { bg: 'bg-purple-100', text: 'text-purple-700', label: 'Regulación' },
   guia: { bg: 'bg-slate-100', text: 'text-slate-700', label: 'Guía' },
   evento: { bg: 'bg-orange-100', text: 'text-orange-700', label: 'Evento' },
   articulo: { bg: 'bg-blue-100', text: 'text-blue-700', label: 'Artículo' },

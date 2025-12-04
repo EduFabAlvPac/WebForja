@@ -255,7 +255,7 @@ export function InterestPageClient({ locale }: InterestPageClientProps) {
         >
           <InterestGrid
             items={filteredItems}
-            showFeatured={activeCategory !== 'all' && !searchQuery && selectedTypes.length === 0}
+            showFeaturedHero={activeCategory !== 'all' && !searchQuery && selectedTypes.length === 0}
             emptyMessage={
               searchQuery 
                 ? `No encontramos resultados para "${searchQuery}"`

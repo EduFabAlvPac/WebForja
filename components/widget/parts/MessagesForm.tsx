@@ -57,7 +57,7 @@ export function MessagesForm() {
     reset()
     // Volver a prellenar saludo
     if (country) {
-      const greeting = `Hola, les escribo desde ${country.name}. `
+      const greeting = `Hola, les escribo desde ${country.country.name}. `
       setValue('message', greeting)
     }
   }

@@ -50,7 +50,7 @@ export function trackEvent(
   
   // Vercel Analytics (si está disponible)
   if (typeof window !== 'undefined' && window.va) {
-    window.va('track', eventName, enrichedProps)
+    window.va('event', { name: eventName, ...enrichedProps })
   }
 }
 

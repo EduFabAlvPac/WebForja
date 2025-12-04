@@ -41,11 +41,6 @@ const TYPE_STYLES: Record<InterestType, { bg: string; text: string; label: strin
     text: 'text-teal-700', 
     label: 'Programa' 
   },
-  regulacion: { 
-    bg: 'bg-purple-100', 
-    text: 'text-purple-700', 
-    label: 'Regulación' 
-  },
   guia: { 
     bg: 'bg-slate-100', 
     text: 'text-slate-700', 
