@@ -149,12 +149,12 @@ export function ExitIntentModal() {
             animate={{ opacity: 1 }}
             exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0 }}
             transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[2000]"
             onClick={closeModal}
             aria-hidden="true"
           />
 
-          {/* Modal - Centrado y mejorado */}
+          {/* Modal - Centrado y responsive para móvil */}
           <motion.div
             role="dialog"
             aria-modal="true"
@@ -163,7 +163,7 @@ export function ExitIntentModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: prefersReducedMotion ? 0 : 0.3, type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[calc(100%-2rem)] max-w-md"
+            className="fixed inset-4 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-[2001] sm:w-[calc(100%-2rem)] sm:max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto"
           >
             <div className="bg-white rounded-2xl shadow-2xl border-2 border-forja-purple/20 overflow-hidden">
               {/* Header con gradiente mejorado */}
