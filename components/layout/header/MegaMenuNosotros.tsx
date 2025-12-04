@@ -1,10 +1,12 @@
 // components/layout/header/MegaMenuNosotros.tsx
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { Clock, Users, MessageSquareQuote } from 'lucide-react'
+import { SUPPORTED_LOCALES } from '@/lib/country'
 
 interface MegaMenuNosotrosProps {
   isOpen: boolean
@@ -46,7 +48,24 @@ const NOSOTROS_ITEMS = [
 ]
 
 export function MegaMenuNosotros({ isOpen, onMouseEnter, onMouseLeave }: MegaMenuNosotrosProps) {
+  const pathname = usePathname()
   const [isMounted, setIsMounted] = useState(false)
+
+  // Obtener el locale actual del pathname
+  const currentLocale = useMemo(() => {
+    const firstSegment = pathname.split('/')[1]
+    if (SUPPORTED_LOCALES.includes(firstSegment as any)) {
+      return firstSegment
+    }
+    return null
+  }, [pathname])
+
+  // Función para construir href con locale
+  const getLocalizedHref = (href: string) => {
+    if (!currentLocale) return href
+    if (href.startsWith(`/${currentLocale}`)) return href
+    return `/${currentLocale}${href}`
+  }
 
   useEffect(() => {
     setIsMounted(true)
@@ -79,7 +98,7 @@ export function MegaMenuNosotros({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
                     transition={{ delay: index * 0.1, duration: 0.3 }}
                   >
                     <Link
-                      href={item.href}
+                      href={getLocalizedHref(item.href)}
                       className="group block p-6 rounded-xl hover:bg-gray-50 transition-colors duration-200"
                     >
                       {/* Ícono a la izquierda con texto a la derecha */}

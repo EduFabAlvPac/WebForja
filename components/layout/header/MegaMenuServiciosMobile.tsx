@@ -1,11 +1,13 @@
 // components/layout/header/MegaMenuServiciosMobile.tsx
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import * as LucideIcons from 'lucide-react'
 import { SERVICIOS_MEGA_MENU } from '@/lib/constants/navigation'
+import { SUPPORTED_LOCALES } from '@/lib/country'
 
 interface MegaMenuServiciosMobileProps {
   isOpen: boolean
@@ -13,7 +15,24 @@ interface MegaMenuServiciosMobileProps {
 }
 
 export function MegaMenuServiciosMobile({ isOpen, onClose }: MegaMenuServiciosMobileProps) {
+  const pathname = usePathname()
   const [expandedSection, setExpandedSection] = useState<string | null>(null)
+
+  // Obtener el locale actual del pathname
+  const currentLocale = useMemo(() => {
+    const firstSegment = pathname.split('/')[1]
+    if (SUPPORTED_LOCALES.includes(firstSegment as any)) {
+      return firstSegment
+    }
+    return null
+  }, [pathname])
+
+  // Función para construir href con locale
+  const getLocalizedHref = (href: string) => {
+    if (!currentLocale) return href
+    if (href.startsWith(`/${currentLocale}`)) return href
+    return `/${currentLocale}${href}`
+  }
 
   return (
     <AnimatePresence>
@@ -57,7 +76,7 @@ export function MegaMenuServiciosMobile({ isOpen, onClose }: MegaMenuServiciosMo
                         return (
                           <Link
                             key={service.id}
-                            href={service.href}
+                            href={getLocalizedHref(service.href)}
                             onClick={onClose}
                             className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >

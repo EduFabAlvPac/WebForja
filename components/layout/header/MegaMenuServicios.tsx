@@ -1,11 +1,13 @@
 // components/layout/header/MegaMenuServicios.tsx
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import * as LucideIcons from 'lucide-react'
 import { SERVICIOS_MEGA_MENU } from '@/lib/constants/navigation'
+import { SUPPORTED_LOCALES } from '@/lib/country'
 
 interface MegaMenuServiciosProps {
   isOpen: boolean
@@ -14,7 +16,24 @@ interface MegaMenuServiciosProps {
 }
 
 export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMenuServiciosProps) {
+  const pathname = usePathname()
   const [isMounted, setIsMounted] = useState(false)
+
+  // Obtener el locale actual del pathname
+  const currentLocale = useMemo(() => {
+    const firstSegment = pathname.split('/')[1]
+    if (SUPPORTED_LOCALES.includes(firstSegment as any)) {
+      return firstSegment
+    }
+    return null
+  }, [pathname])
+
+  // Función para construir href con locale
+  const getLocalizedHref = (href: string) => {
+    if (!currentLocale) return href
+    if (href.startsWith(`/${currentLocale}`)) return href
+    return `/${currentLocale}${href}`
+  }
 
   useEffect(() => {
     setIsMounted(true)
@@ -43,7 +62,7 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
                   <div key={column.id} className="space-y-8">
                     {/* Título de columna como Link */}
                     <Link
-                      href={`/servicios/${column.id}`}
+                      href={getLocalizedHref(`/servicios/${column.id}`)}
                       className="group block"
                     >
                       <h3 className="text-lg font-extrabold text-gray-900 text-center mb-10 tracking-tight group-hover:text-brand-orange transition-colors duration-300">
@@ -68,7 +87,7 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
                             }}
                           >
                             <Link
-                              href={service.href}
+                              href={getLocalizedHref(service.href)}
                               className="group block"
                             >
                               <div className="flex items-start gap-4">

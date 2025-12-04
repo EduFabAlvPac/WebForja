@@ -91,7 +91,7 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
         description: 'Redujo tiempo de procesamiento de pedidos de 48h a 8h. Aumentó capacidad operativa 3x sin aumentar headcount.'
       },
       link: '/servicios/comercial-operaciones/excelencia-operativa',
-      caseLink: '/casos-exito#logistica',
+      caseLink: '/nosotros/testimonios',
       borderColor: 'red'
     },
     {
@@ -126,7 +126,7 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
         description: 'Aumentó conversión de 8% a 23%. Implementó customer success que redujo churn de 35% a 12% anual.'
       },
       link: '/servicios/comercial-operaciones/comercial-cliente',
-      caseLink: '/casos-exito#saas-b2b',
+      caseLink: '/nosotros/testimonios',
       borderColor: 'purple'
     }
   ],
@@ -254,7 +254,7 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
       author: 'Andrés Villegas',
       position: 'Gerente General'
     },
-    downloadLink: '/casos-exito/distribuidor-industrial.pdf'
+    downloadLink: '/contacto'
   },
 
   cta: {

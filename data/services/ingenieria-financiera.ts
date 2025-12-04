@@ -535,7 +535,7 @@ export const ingenieriaFinancieraData: ServicePageData = {
       author: 'Carlos Mendoza',
       position: 'CEO'
     },
-    downloadLink: '/casos-exito/distribuidor-medico.pdf'
+    downloadLink: '/contacto'
   },
 
   cta: {

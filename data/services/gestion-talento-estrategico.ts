@@ -610,7 +610,7 @@ export const gestionTalentoData: ServicePageData = {
       author: 'Juan Carlos Ramírez',
       position: 'Socio Director'
     },
-    downloadLink: '/casos-exito/firma-consultoria.pdf'
+    downloadLink: '/contacto'
   },
 
   cta: {

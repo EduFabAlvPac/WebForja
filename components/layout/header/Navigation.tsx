@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
@@ -9,6 +9,7 @@ import { MegaMenuNosotros } from './MegaMenuNosotros'
 // import { MegaMenuIndustrias } from './MegaMenuIndustrias' // TEMPORALMENTE OCULTO
 import { MegaMenuServicios } from './MegaMenuServicios'
 import { NAVIGATION_ITEMS } from '@/lib/constants/navigation'
+import { SUPPORTED_LOCALES } from '@/lib/country'
 
 interface NavigationProps {
   className?: string
@@ -18,6 +19,23 @@ export function Navigation({ className }: NavigationProps) {
   const pathname = usePathname()
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null)
+
+  // Obtener el locale actual del pathname
+  const currentLocale = useMemo(() => {
+    const firstSegment = pathname.split('/')[1]
+    if (SUPPORTED_LOCALES.includes(firstSegment as any)) {
+      return firstSegment
+    }
+    return null // Internacional (sin locale en URL)
+  }, [pathname])
+
+  // Función para construir href con locale
+  const getLocalizedHref = (href: string) => {
+    if (!currentLocale) return href // Internacional
+    // Si el href ya tiene el locale, no agregar
+    if (href.startsWith(`/${currentLocale}`)) return href
+    return `/${currentLocale}${href}`
+  }
 
   const handleMouseEnter = (itemId: string) => {
     if (leaveTimeout) {
@@ -85,7 +103,7 @@ export function Navigation({ className }: NavigationProps) {
                 </div>
               ) : (
                 <Link
-                  href={item.href || '#'}
+                  href={getLocalizedHref(item.href || '#')}
                   className="text-brand-navy hover:text-brand-orange transition-colors font-medium"
                 >
                   {item.label}

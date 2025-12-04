@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { CheckCircle2, ArrowRight, Calendar, Sparkles } from 'lucide-react'
+import { CheckCircle2, ArrowRight, Calendar, Sparkles, Lock, Rocket, Zap } from 'lucide-react'
 
 interface Compromiso {
   titulo: string
@@ -208,8 +208,12 @@ export function OurCommitment() {
             transition={{ delay: 0.6 }}
             className="text-center mt-8"
           >
-            <p className="text-gray-600 text-sm">
-              🔒 <strong>100% Confidencial</strong> · 🚀 <strong>Sin Compromisos Ocultos</strong> · ⚡ <strong>Respuesta en 24 horas</strong>
+            <p className="text-gray-600 text-sm flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+              <span className="inline-flex items-center gap-1"><Lock className="w-4 h-4 text-brand-turquoise" /><strong>100% Confidencial</strong></span>
+              <span className="hidden sm:inline">·</span>
+              <span className="inline-flex items-center gap-1"><Rocket className="w-4 h-4 text-brand-orange" /><strong>Sin Compromisos Ocultos</strong></span>
+              <span className="hidden sm:inline">·</span>
+              <span className="inline-flex items-center gap-1"><Zap className="w-4 h-4 text-brand-purple" /><strong>Respuesta en 24 horas</strong></span>
             </p>
           </motion.div>
         </div>

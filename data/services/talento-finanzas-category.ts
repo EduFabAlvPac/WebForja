@@ -101,7 +101,7 @@ export const talentoFinanzasCategoryData: CategoryPageData = {
         result: 'Redujo rotación de 45% a 12% en 8 meses. Productividad por empleado aumentó 38%.'
       },
       link: '/servicios/talento-finanzas/gestion-talento-estrategico',
-      caseLink: '/casos-exito#distribuidor-regional',
+      caseLink: '/nosotros/testimonios',
       borderColor: 'turquoise'
     },
     {
@@ -135,7 +135,7 @@ export const talentoFinanzasCategoryData: CategoryPageData = {
         result: 'Aumentó margen neto de 8% a 22% en 6 meses. Flujo de caja positivo por primera vez en 3 años.'
       },
       link: '/servicios/talento-finanzas/ingenieria-financiera',
-      caseLink: '/casos-exito#servicios-ti',
+      caseLink: '/nosotros/testimonios',
       borderColor: 'green'
     }
   ],
@@ -310,7 +310,7 @@ export const talentoFinanzasCategoryData: CategoryPageData = {
       author: 'Carlos Mendoza',
       position: 'CEO, Grupo Empresarial Andino'
     },
-    downloadLink: '/casos-exito/grupo-andino.pdf'
+    downloadLink: '/contacto'
   },
 
   cta: {

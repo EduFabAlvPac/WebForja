@@ -160,7 +160,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
     id: 'interes',
     label: 'Interés',
-    href: '/casos-exito'
+    href: '/interes'
   },
   {
     id: 'contacto',

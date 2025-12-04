@@ -337,7 +337,7 @@ export const transformacionDigitalData: ServicePageData = {
       author: 'Isabel Gómez',
       position: 'Gerente General, Hilos Andinos',
     },
-    downloadLink: '/casos-exito/textilera-regional',
+    downloadLink: '/nosotros/testimonios',
   },
 
   cta: {

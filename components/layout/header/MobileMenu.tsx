@@ -1,5 +1,7 @@
 'use client'
 
+import { useState, useMemo } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
@@ -7,7 +9,8 @@ import * as Icons from 'lucide-react'
 import { NAVIGATION_ITEMS } from '@/lib/constants/navigation'
 import { Button } from '@/components/ui/button'
 import { MegaMenuServiciosMobile } from './MegaMenuServiciosMobile'
-import { useState } from 'react'
+import { CountrySwitcher } from '@/components/country/CountrySwitcher'
+import { SUPPORTED_LOCALES } from '@/lib/country'
 
 interface MobileMenuProps {
   onClose: () => void
@@ -20,7 +23,24 @@ const getIcon = (iconName: string) => {
 }
 
 export function MobileMenu({ onClose }: MobileMenuProps) {
+  const pathname = usePathname()
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
+
+  // Obtener el locale actual del pathname
+  const currentLocale = useMemo(() => {
+    const firstSegment = pathname.split('/')[1]
+    if (SUPPORTED_LOCALES.includes(firstSegment as any)) {
+      return firstSegment
+    }
+    return null // Internacional (sin locale en URL)
+  }, [pathname])
+
+  // Función para construir href con locale
+  const getLocalizedHref = (href: string) => {
+    if (!currentLocale) return href // Internacional
+    if (href.startsWith(`/${currentLocale}`)) return href
+    return `/${currentLocale}${href}`
+  }
 
   return (
     <motion.div
@@ -74,7 +94,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                                   return (
                                     <li key={subItem.href}>
                                       <Link
-                                        href={subItem.href}
+                                        href={getLocalizedHref(subItem.href)}
                                         onClick={onClose}
                                         className="flex items-start gap-3 py-2 px-4 rounded-lg hover:bg-brand-orange/5 transition-colors"
                                       >
@@ -108,7 +128,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                                         return (
                                           <li key={subItem.href}>
                                             <Link
-                                              href={subItem.href}
+                                              href={getLocalizedHref(subItem.href)}
                                               onClick={onClose}
                                               className="flex items-start gap-3 py-2 px-4 rounded-lg hover:bg-brand-orange/5 transition-colors"
                                             >
@@ -136,7 +156,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                     </>
                   ) : (
                     <Link
-                      href={item.href || '#'}
+                      href={getLocalizedHref(item.href || '#')}
                       onClick={onClose}
                       className="block py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors font-medium text-brand-navy"
                     >
@@ -149,13 +169,23 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
           </ul>
         </nav>
 
-        <div className="mt-8 space-y-3">
+        {/* Country Switcher para móvil */}
+        <div className="mt-8 mb-4">
+          <div className="px-4 mb-2">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              Seleccionar País
+            </p>
+          </div>
+          <CountrySwitcher className="w-full" />
+        </div>
+
+        <div className="mt-6 space-y-3">
           <Button
             variant="outline"
             className="w-full border-brand-turquoise text-brand-turquoise hover:bg-brand-turquoise hover:text-white"
             asChild
           >
-            <Link href="/contacto" onClick={onClose}>
+            <Link href={getLocalizedHref('/contacto')} onClick={onClose}>
               Rayos X Empresarial
             </Link>
           </Button>
@@ -163,7 +193,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"
             asChild
           >
-            <Link href="/contacto" onClick={onClose}>
+            <Link href={getLocalizedHref('/contacto')} onClick={onClose}>
               Habla con un Forjador
             </Link>
           </Button>

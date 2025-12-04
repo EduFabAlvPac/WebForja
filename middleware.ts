@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from '@/lib/country'
 
 // Simple in-memory rate limiter (Para producción, usar Redis o similar)
 const rateLimit = new Map<string, { count: number; resetTime: number }>()
@@ -41,9 +42,56 @@ setInterval(() => {
   }
 }, 5 * 60 * 1000)
 
+/**
+ * Mapear código de país ISO a locale soportado
+ */
+function mapCountryToLocale(countryCode?: string): string | null {
+  if (!countryCode) return null;
+  
+  const countryMap: Record<string, string> = {
+    'CO': 'co',  // Colombia
+    'CL': 'cl',  // Chile
+    'PE': 'pe',  // Perú
+    'EC': 'ec',  // Ecuador
+  };
+  
+  return countryMap[countryCode.toUpperCase()] || null;
+}
+
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
+  // ========================================
+  // 1. GEO DETECTION (para sugerencia)
+  // ========================================
+  
+  // Detectar país por geolocalización (Vercel Edge)
+  // @ts-ignore - request.geo está disponible en Vercel Edge
+  const geoCountry = request.geo?.country;
+  const suggestedLocale = mapCountryToLocale(geoCountry);
+  
+  // ========================================
+  // 2. LOCALE DETECTION & REDIRECT
+  // ========================================
+  
+  // Verificar si la ruta tiene un locale de país específico
+  const pathnameHasCountryLocale = SUPPORTED_LOCALES.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  )
+
+  // Redirigir /es a / (Internacional ahora es la raíz)
+  if (pathname === '/es' || pathname.startsWith('/es/')) {
+    const newPath = pathname.replace(/^\/es/, '') || '/'
+    return NextResponse.redirect(new URL(newPath, request.url))
+  }
+
+  // La raíz / y rutas sin locale son válidas (Internacional)
+  // No redirigir, dejar pasar
+
+  // ========================================
+  // 2. RATE LIMITING
+  // ========================================
+  
   // Aplicar rate limiting solo a rutas API sensibles
   if (pathname.startsWith('/api/contact') || pathname.startsWith('/api/rayos-x')) {
     const ip = request.headers.get('x-forwarded-for') || 
@@ -65,8 +113,16 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Agregar headers de seguridad adicionales
+  // ========================================
+  // 3. PREPARAR RESPONSE CON HEADERS
+  // ========================================
+  
   const response = NextResponse.next()
+  
+  // Agregar header con país detectado (para CountrySuggest)
+  if (suggestedLocale) {
+    response.headers.set('x-geo-country', suggestedLocale);
+  }
   
   // CORS para APIs
   if (pathname.startsWith('/api/')) {

@@ -136,7 +136,7 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeature
               className="text-forja-fire"
               asChild
             >
-              <Link href="/casos-exito#estrategia" className="flex items-center justify-center gap-1">
+              <Link href="/nosotros/testimonios" className="flex items-center justify-center gap-1">
                 Ver casos de éxito
                 <ArrowRight className="w-4 h-4" />
               </Link>

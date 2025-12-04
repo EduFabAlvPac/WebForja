@@ -502,7 +502,7 @@ export const excelenciaOperativaData: ServicePageData = {
       author: 'Roberto Gómez',
       position: 'Gerente de Operaciones'
     },
-    downloadLink: '/casos-exito/fabricante-metalico.pdf'
+    downloadLink: '/contacto'
   },
 
   cta: {

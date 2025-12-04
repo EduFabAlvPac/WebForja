@@ -1,8 +1,15 @@
-import { MetadataRoute } from 'next'
+/**
+ * FORJA DIGITAL - Robots.txt
+ * 
+ * Configura robots.txt con sitemap y reglas de crawling
+ * 
+ * @module app/robots
+ */
+
+import { MetadataRoute } from 'next';
+import { ORG } from '@/lib/org';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://forjadigitalae.com'
-
   return {
     rules: [
       {
@@ -10,23 +17,27 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/admin/',
           '/_next/',
-          '/private/',
+          '/admin/',
+          '*.json',
+          '/*?*utm_*', // Evitar indexar URLs con parámetros UTM
         ],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/admin/',
+        ],
       },
       {
-        userAgent: 'Bingbot',
+        userAgent: 'Googlebot-Image',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
-  }
+    sitemap: `${ORG.baseUrl}/sitemap.xml`,
+    host: ORG.baseUrl,
+  };
 }

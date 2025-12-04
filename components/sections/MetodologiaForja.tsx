@@ -2,17 +2,27 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Check, Download } from 'lucide-react'
+import { Check, Download, Search, Target, Zap, Rocket, TrendingUp, LucideIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ScrollReveal } from '../animations/ScrollReveal'
 
-const FORJA_PHASES = [
+interface ForjaPhase {
+  letter: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: LucideIcon;
+  color: string;
+  deliverables: string[];
+}
+
+const FORJA_PHASES: ForjaPhase[] = [
   {
     letter: 'F',
     title: 'Fundamentar',
     subtitle: 'Diagnóstico',
     description: 'Evaluamos el estado actual de tu empresa mediante análisis profundo de procesos, tecnología y estrategia. Identificamos oportunidades y brechas.',
-    icon: '🔍',
+    icon: Search,
     color: 'brand-turquoise',
     deliverables: ['Diagnóstico empresarial completo', 'Análisis FODA digital', 'Roadmap inicial de transformación']
   },
@@ -21,7 +31,7 @@ const FORJA_PHASES = [
     title: 'Orientar',
     subtitle: 'Estrategia',
     description: 'Definimos la visión estratégica y los objetivos alineados con tu modelo de negocio. Diseñamos la arquitectura objetivo.',
-    icon: '🎯',
+    icon: Target,
     color: 'brand-orange',
     deliverables: ['Plan estratégico de transformación', 'OKRs definidos', 'Arquitectura empresarial objetivo']
   },
@@ -30,7 +40,7 @@ const FORJA_PHASES = [
     title: 'Realizar',
     subtitle: 'Ejecución',
     description: 'Implementamos las iniciativas priorizadas con metodologías ágiles. Ejecutamos quick wins para generar tracción.',
-    icon: '⚡',
+    icon: Zap,
     color: 'brand-purple',
     deliverables: ['Proyectos implementados', 'Quick wins entregados', 'Procesos optimizados']
   },
@@ -39,7 +49,7 @@ const FORJA_PHASES = [
     title: 'Jugar',
     subtitle: 'Agilidad',
     description: 'Fomentamos experimentación controlada y cultura de innovación. Probamos nuevos modelos de negocio digitales.',
-    icon: '🚀',
+    icon: Rocket,
     color: 'brand-coral',
     deliverables: ['MVPs lanzados', 'Pilotos ejecutados', 'Aprendizajes documentados']
   },
@@ -48,11 +58,20 @@ const FORJA_PHASES = [
     title: 'Avanzar',
     subtitle: 'Mejora Continua',
     description: 'Establecemos mecanismos de mejora continua y medición de resultados. Escalamos las iniciativas exitosas.',
-    icon: '📈',
+    icon: TrendingUp,
     color: 'brand-turquoise',
     deliverables: ['Framework de governance', 'KPIs y dashboards', 'Plan de escalamiento']
   }
 ]
+
+function PhaseIcon({ phase }: { phase: ForjaPhase }) {
+  const IconComponent = phase.icon;
+  return (
+    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-coral flex items-center justify-center shadow-lg flex-shrink-0">
+      <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-white" />
+    </div>
+  );
+}
 
 export function MetodologiaForja() {
   const [activePhase, setActivePhase] = useState(0)
@@ -121,7 +140,7 @@ export function MetodologiaForja() {
           className="bg-white rounded-card shadow-card p-8 md:p-12"
         >
           <div className="flex flex-col md:flex-row items-start gap-6">
-            <div className="text-6xl">{FORJA_PHASES[activePhase].icon}</div>
+            <PhaseIcon phase={FORJA_PHASES[activePhase]} />
             <div className="flex-1">
               <h3 className="text-h3-mobile md:text-h3-desktop mb-2">
                 {FORJA_PHASES[activePhase].title}

@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getDigitalTransformationClaim, getHeroStats } from '@/lib/site-metrics'
+import { trackCTAClick } from '@/lib/analytics'
+import { useCountryOptional } from '@/context/CountryProvider'
 
 const HERO_SLIDES = [
   {
@@ -18,7 +20,7 @@ const HERO_SLIDES = [
     ctaPrimary: "Descubre tu Madurez Digital - GRATIS",
     ctaPrimaryLink: "/contacto",
     ctaSecondary: "Ver Casos de Transformación Real",
-    ctaSecondaryLink: "/casos-exito",
+    ctaSecondaryLink: "/nosotros/testimonios",
     // Imagen impactante: PYME competitiva en acción
     backgroundImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&q=80",
     backgroundAlt: "Equipo empresarial competitivo desarrollando estrategia de negocio",
@@ -74,7 +76,7 @@ const HERO_SLIDES = [
     ctaPrimary: "Evalúa tu Arquitectura Actual",
     ctaPrimaryLink: "/contacto",
     ctaSecondary: "Ver Casos: Antes y Después",
-    ctaSecondaryLink: "/casos-exito",
+    ctaSecondaryLink: "/nosotros/testimonios",
     // Imagen moderna: Oficina tecnológica y profesional
     backgroundImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80",
     backgroundAlt: "Equipo profesional en oficina moderna con tecnología",
@@ -90,6 +92,9 @@ const HERO_SLIDES = [
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const countryContext = useCountryOptional()
+  const country = countryContext?.country
+  const countryCode = country?.code
 
   const slide = HERO_SLIDES[currentSlide]
 
@@ -127,6 +132,14 @@ export function HeroSection() {
     setCurrentSlide(index)
   }
 
+  const handlePrimaryCtaClick = (slide: typeof HERO_SLIDES[0]) => {
+    trackCTAClick(slide.ctaPrimary, 'hero_primary', slide.ctaPrimaryLink)
+  }
+
+  const handleSecondaryCtaClick = (slide: typeof HERO_SLIDES[0]) => {
+    trackCTAClick(slide.ctaSecondary, 'hero_secondary', slide.ctaSecondaryLink)
+  }
+
   return (
     <section className="relative h-screen min-h-[700px] overflow-hidden pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
       {/* Background Image con transición - respeta reduced motion */}
@@ -154,7 +167,8 @@ export function HeroSection() {
               fill
               unoptimized
               className="object-cover"
-              priority
+              priority={currentSlide === 0}
+              loading={currentSlide === 0 ? 'eager' : 'lazy'}
             />
           ) : (
             <Image
@@ -162,9 +176,12 @@ export function HeroSection() {
               alt={slide.backgroundAlt}
               fill
               className="object-cover"
-              priority
+              priority={currentSlide === 0}
+              loading={currentSlide === 0 ? 'eager' : 'lazy'}
               sizes="100vw"
-              quality={90}
+              quality={85}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDAwUBAAAAAAAAAAAAAQIDAAQRBQYhEhMiMUFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAZEQADAQEBAAAAAAAAAAAAAAAAAQIDBBH/2gAMAwEAAhEDEQA/ANF3Dq91YazLaWUcJt4wvT3FJLMQCTwfXNVNt7gvdRu5Le8igEaJkGJSM5I/aUqzeli+xjl7P//Z"
             />
           )}
         </motion.div>
@@ -190,6 +207,35 @@ export function HeroSection() {
               }}
               className="space-y-3 md:space-y-4 lg:space-y-5"
             >
+              {/* Badge de País con Bandera */}
+              {countryCode && countryCode !== 'default' && (
+                <motion.div
+                  className="inline-flex items-center gap-3 mb-2"
+                  initial={{ opacity: 0, x: prefersReducedMotion ? 0 : -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: prefersReducedMotion ? 0 : 0.1,
+                    duration: prefersReducedMotion ? 0.01 : 0.4
+                  }}
+                >
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20 shadow-xl">
+                    <div className="relative w-8 h-8 rounded-full overflow-hidden shadow-lg border-2 border-white/30 flex-shrink-0">
+                      <Image
+                        src={`https://flagcdn.com/w80/${countryCode}.png`}
+                        alt={`Bandera de ${country?.name}`}
+                        fill
+                        className="object-cover"
+                        unoptimized
+                        sizes="32px"
+                      />
+                    </div>
+                    <span className="text-white font-semibold text-sm">
+                      Servicio en {country?.name}
+                    </span>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Headline */}
               <motion.h1 
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight drop-shadow-2xl"
@@ -262,7 +308,11 @@ export function HeroSection() {
                   className="w-full sm:w-auto text-base md:text-lg font-bold shadow-2xl"
                   asChild
                 >
-                  <Link href={slide.ctaPrimaryLink} className="flex items-center justify-center gap-2.5">
+                  <Link 
+                    href={slide.ctaPrimaryLink} 
+                    className="flex items-center justify-center gap-2.5"
+                    onClick={() => handlePrimaryCtaClick(slide)}
+                  >
                     <Lock className="w-5 h-5 md:w-6 md:h-6" />
                     <span>{slide.ctaPrimary}</span>
                   </Link>
@@ -275,7 +325,11 @@ export function HeroSection() {
                   className="w-full sm:w-auto text-white hover:text-white backdrop-blur-md bg-white/10 hover:bg-white/20 border-2 border-white/30 transition-all duration-300"
                   asChild
                 >
-                  <Link href={slide.ctaSecondaryLink} className="flex items-center justify-center gap-2">
+                  <Link 
+                    href={slide.ctaSecondaryLink} 
+                    className="flex items-center justify-center gap-2"
+                    onClick={() => handleSecondaryCtaClick(slide)}
+                  >
                     <Target className="w-5 h-5" />
                     <span>{slide.ctaSecondary}</span>
                   </Link>

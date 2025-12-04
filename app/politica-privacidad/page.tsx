@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Shield, Lock, Eye, UserCheck, FileText, Mail, AlertCircle, Calendar } from 'lucide-react'
+import { Shield, Lock, Eye, UserCheck, FileText, Mail, AlertCircle, Calendar, Search, Pencil, Trash2, Ban, ClipboardList, MessageCircleWarning, ScanSearch, FileCheck2 } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 export const metadata: Metadata = {
@@ -225,32 +225,50 @@ export default function PoliticaPrivacidadPage() {
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-gradient-to-br from-brand-orange/10 to-brand-coral/10 p-4 rounded-lg">
-                  <h3 className="font-semibold text-brand-navy mb-2">🔍 Derecho de Acceso</h3>
+                  <h3 className="font-semibold text-brand-navy mb-2 flex items-center gap-2">
+                    <Search className="w-4 h-4 text-brand-orange" />
+                    Derecho de Acceso
+                  </h3>
                   <p className="text-sm text-gray-700">Conocer qué datos tenemos sobre ti y cómo los usamos.</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-brand-turquoise/10 to-brand-purple/10 p-4 rounded-lg">
-                  <h3 className="font-semibold text-brand-navy mb-2">✏️ Derecho de Rectificación</h3>
+                  <h3 className="font-semibold text-brand-navy mb-2 flex items-center gap-2">
+                    <Pencil className="w-4 h-4 text-brand-turquoise" />
+                    Derecho de Rectificación
+                  </h3>
                   <p className="text-sm text-gray-700">Actualizar o corregir datos inexactos o incompletos.</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-brand-purple/10 to-brand-navy/10 p-4 rounded-lg">
-                  <h3 className="font-semibold text-brand-navy mb-2">🗑️ Derecho de Supresión</h3>
+                  <h3 className="font-semibold text-brand-navy mb-2 flex items-center gap-2">
+                    <Trash2 className="w-4 h-4 text-brand-purple" />
+                    Derecho de Supresión
+                  </h3>
                   <p className="text-sm text-gray-700">Solicitar la eliminación de tus datos personales.</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-brand-coral/10 to-brand-orange/10 p-4 rounded-lg">
-                  <h3 className="font-semibold text-brand-navy mb-2">🚫 Derecho de Oposición</h3>
+                  <h3 className="font-semibold text-brand-navy mb-2 flex items-center gap-2">
+                    <Ban className="w-4 h-4 text-brand-coral" />
+                    Derecho de Oposición
+                  </h3>
                   <p className="text-sm text-gray-700">Oponerte al tratamiento de tus datos en ciertos casos.</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-brand-navy/10 to-brand-turquoise/10 p-4 rounded-lg">
-                  <h3 className="font-semibold text-brand-navy mb-2">📋 Derecho de Consulta</h3>
+                  <h3 className="font-semibold text-brand-navy mb-2 flex items-center gap-2">
+                    <ClipboardList className="w-4 h-4 text-brand-navy" />
+                    Derecho de Consulta
+                  </h3>
                   <p className="text-sm text-gray-700">Consultar tus datos almacenados en nuestras bases.</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-green-100 to-blue-100 p-4 rounded-lg">
-                  <h3 className="font-semibold text-brand-navy mb-2">⚠️ Derecho de Reclamo</h3>
+                  <h3 className="font-semibold text-brand-navy mb-2 flex items-center gap-2">
+                    <MessageCircleWarning className="w-4 h-4 text-amber-600" />
+                    Derecho de Reclamo
+                  </h3>
                   <p className="text-sm text-gray-700">Presentar quejas ante la Superintendencia de Industria y Comercio.</p>
                 </div>
               </div>
@@ -290,11 +308,11 @@ export default function PoliticaPrivacidadPage() {
                       <span><strong>Respaldos seguros:</strong> Copias de seguridad periódicas y encriptadas.</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-brand-turquoise mt-1">🔍</span>
+                      <ScanSearch className="w-4 h-4 text-brand-turquoise mt-1 flex-shrink-0" />
                       <span><strong>Monitoreo continuo:</strong> Detección de accesos no autorizados.</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-brand-turquoise mt-1">📋</span>
+                      <FileCheck2 className="w-4 h-4 text-brand-turquoise mt-1 flex-shrink-0" />
                       <span><strong>Políticas internas:</strong> Protocolos de seguridad y confidencialidad.</span>
                     </li>
                   </ul>

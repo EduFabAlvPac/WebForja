@@ -8,6 +8,7 @@ interface SectionHeaderProps {
   highlight?: string // Palabra(s) a resaltar en naranja
   description?: string
   align?: 'left' | 'center' | 'right'
+  className?: string
 }
 
 export function SectionHeader({ 
@@ -15,7 +16,8 @@ export function SectionHeader({
   title, 
   highlight,
   description, 
-  align = 'center' 
+  align = 'center',
+  className = ''
 }: SectionHeaderProps) {
   const alignmentClass = {
     left: 'text-left',
@@ -42,7 +44,7 @@ export function SectionHeader({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`mb-12 ${alignmentClass}`}
+      className={`mb-12 ${alignmentClass} ${className}`}
     >
       {eyebrow && (
         <motion.p

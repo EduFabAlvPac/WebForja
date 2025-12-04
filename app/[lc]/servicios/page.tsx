@@ -1,0 +1,172 @@
+/**
+ * FORJA DIGITAL - Página Servicios Localizada
+ * 
+ * Página principal de servicios con contexto de país.
+ * 
+ * @module app/[lc]/servicios/page
+ */
+
+import { Metadata } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
+import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
+import { MetodologiaForja } from '@/components/ui/metodologia-forja'
+
+export const metadata: Metadata = {
+  title: 'Servicios | Forja Digital - AE',
+  description: 'Servicios de transformación empresarial: Estrategia & Transformación, Talento & Finanzas, Comercial & Operaciones.',
+}
+
+interface PageProps {
+  params: { lc: string }
+}
+
+export default function ServiciosLocalePage({ params }: PageProps) {
+  const { lc } = params
+  
+  const localizedLink = (path: string) => `/${lc}${path}`
+
+  const SERVICE_CATEGORIES = [
+    {
+      id: 'estrategia-transformacion',
+      title: 'Estrategia & Transformación',
+      description: 'Diseñamos el futuro de tu organización con arquitectura estratégica y transformación digital integral.',
+      icon: Target,
+      color: 'from-blue-500 to-cyan-500',
+      href: localizedLink('/servicios/estrategia-transformacion'),
+      services: [
+        'Arquitectura Estratégica',
+        'Transformación Digital 360°'
+      ]
+    },
+    {
+      id: 'talento-finanzas',
+      title: 'Talento & Finanzas',
+      description: 'Gestionamos de forma integrada tu capital humano y recursos financieros para maximizar el valor.',
+      icon: Users,
+      color: 'from-purple-500 to-pink-500',
+      href: localizedLink('/servicios/talento-finanzas'),
+      services: [
+        'Gestión de Talento Estratégico',
+        'Gestión Financiera'
+      ]
+    },
+    {
+      id: 'comercial-operaciones',
+      title: 'Comercial & Operaciones',
+      description: 'Optimizamos tus procesos comerciales y operativos para crecer de forma rentable y sostenible.',
+      icon: TrendingUp,
+      color: 'from-orange-500 to-red-500',
+      href: localizedLink('/servicios/comercial-operaciones'),
+      services: [
+        'Excelencia Operativa Lean',
+        'Comercial y Servicio al Cliente'
+      ]
+    }
+  ]
+
+  return (
+    <main className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+            alt="Servicios de transformación empresarial"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="container-custom relative z-10 text-center">
+          <span className="inline-block px-4 py-2 bg-brand-orange/20 text-brand-orange font-semibold rounded-full text-sm mb-6">
+            NUESTROS SERVICIOS
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Arquitectura Empresarial para <span className="text-brand-orange">PYMEs</span>
+          </h1>
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            Soluciones integrales que transforman tu empresa desde su núcleo, 
+            optimizando procesos, potenciando talento y acelerando el crecimiento.
+          </p>
+        </div>
+      </section>
+
+      {/* Categorías de Servicios */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+              Tres Pilares de <span className="text-brand-orange">Transformación</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Cada área está diseñada para abordar los desafíos específicos de tu organización
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {SERVICE_CATEGORIES.map((category) => {
+              const Icon = category.icon
+              return (
+                <Link 
+                  key={category.id}
+                  href={category.href}
+                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-brand-orange/20"
+                >
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-brand-navy mb-3 group-hover:text-brand-orange transition-colors">
+                    {category.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-6">
+                    {category.description}
+                  </p>
+
+                  <ul className="space-y-2 mb-6">
+                    {category.services.map((service) => (
+                      <li key={service} className="flex items-center gap-2 text-sm text-gray-700">
+                        <span className="w-1.5 h-1.5 bg-brand-orange rounded-full" />
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex items-center gap-2 text-brand-orange font-semibold group-hover:gap-3 transition-all">
+                    <span>Explorar servicios</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Metodología FORJA */}
+      <MetodologiaForja />
+
+      {/* CTA Final */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-brand-navy to-brand-navy-dark">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            ¿Listo para Transformar tu Empresa?
+          </h2>
+          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+            Agenda una consulta gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos
+          </p>
+          <Link
+            href={localizedLink('/contacto')}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange hover:bg-brand-orange-dark text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+          >
+            Agenda tu Consulta
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
+    </main>
+  )
+}
+

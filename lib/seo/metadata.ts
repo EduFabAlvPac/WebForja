@@ -1,54 +1,95 @@
-import { Metadata } from 'next'
-import config from '@/lib/config'
+/**
+ * FORJA DIGITAL - SEO Metadata Helpers
+ * 
+ * Helpers para generar metadata con hreflang y canonical correctos
+ * 
+ * @module lib/seo/metadata
+ */
 
-interface PageMetadata {
-  title: string
-  description: string
-  keywords?: string[]
-  ogImage?: string
-  canonical?: string
+import { Metadata } from 'next';
+import { ORG } from '@/lib/org';
+
+export const SUPPORTED_LOCALES = ['es', 'es-co', 'es-cl', 'es-pe', 'es-ec'] as const;
+export type SupportedLocale = typeof SUPPORTED_LOCALES[number];
+
+export interface GenerateI18nMetadataParams {
+  /** Locale code actual (es-co, es-cl, etc.) */
+  lc: string;
+  /** Path relativo sin el locale (ej: /servicios/arquitectura) */
+  pathname: string;
+  /** Title de la página */
+  title: string;
+  /** Description de la página */
+  description: string;
+  /** Keywords (opcional) */
+  keywords?: string;
+  /** Metadata adicional */
+  additionalMetadata?: Partial<Metadata>;
 }
 
-export function generateMetadata({
+/**
+ * Genera metadata completo con hreflang, canonical y alternates
+ * 
+ * @param params - Parámetros para generar metadata
+ * @returns Metadata de Next.js con hreflang y canonical
+ * 
+ * @example
+ * ```tsx
+ * export async function generateMetadata({ params }: { params: { lc: string } }): Promise<Metadata> {
+ *   return generateI18nMetadata({
+ *     lc: params.lc,
+ *     pathname: '/servicios/arquitectura',
+ *     title: 'Arquitectura Estratégica | Forja Digital',
+ *     description: 'Diseño y optimización de estructuras empresariales.',
+ *   });
+ * }
+ * ```
+ */
+export function generateI18nMetadata({
+  lc,
+  pathname,
   title,
   description,
-  keywords = [],
-  ogImage,
-  canonical,
-}: PageMetadata): Metadata {
-  const fullTitle = title.includes('|') ? title : `${title} | ${config.app.name}`
-  const url = canonical || config.app.url
-  const image = ogImage || `${config.app.url}/logo-color.png`
+  keywords,
+  additionalMetadata = {},
+}: GenerateI18nMetadataParams): Metadata {
+  // Asegurar que pathname empieza con /
+  const cleanPathname = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  
+  // URL canonical: baseUrl + locale + pathname
+  const canonicalUrl = `${ORG.baseUrl}/${lc}${cleanPathname}`;
+  
+  // Generar alternates para cada locale
+  const languages: Record<string, string> = {};
+  SUPPORTED_LOCALES.forEach((locale) => {
+    languages[locale] = `${ORG.baseUrl}/${locale}${cleanPathname}`;
+  });
+  
+  // x-default apunta al español genérico
+  languages['x-default'] = `${ORG.baseUrl}/es${cleanPathname}`;
 
   return {
-    title: fullTitle,
+    title,
     description,
-    keywords: keywords.join(', '),
-    metadataBase: new URL(config.app.url),
+    ...(keywords && { keywords }),
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
+      languages,
     },
     openGraph: {
-      title: fullTitle,
+      title,
       description,
-      url,
-      siteName: config.app.name,
-      images: [
-        {
-          url: image,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
-      locale: 'es_CO',
+      url: canonicalUrl,
+      siteName: ORG.brandName,
+      locale: lc,
       type: 'website',
+      ...additionalMetadata.openGraph,
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title,
       description,
-      images: [image],
+      ...additionalMetadata.twitter,
     },
     robots: {
       index: true,
@@ -61,31 +102,49 @@ export function generateMetadata({
         'max-snippet': -1,
       },
     },
-  }
+    ...additionalMetadata,
+  };
 }
 
-// Metadata preconfigurados para páginas comunes
-export const commonMetadata = {
-  home: generateMetadata({
-    title: 'Transformación Digital y Arquitectura Empresarial',
-    description: 'Consultora líder en transformación digital y arquitectura empresarial para PYMEs en Colombia y Latinoamérica. Metodología FORJA probada.',
-    keywords: ['transformación digital', 'arquitectura empresarial', 'consultoría digital', 'Colombia', 'PYMEs', 'FORJA'],
-  }),
-  services: generateMetadata({
-    title: 'Nuestros Servicios',
-    description: 'Servicios especializados en arquitectura empresarial, transformación digital, optimización de procesos y más. Soluciones a medida para PYMEs.',
-    keywords: ['servicios de consultoría', 'arquitectura empresarial', 'transformación digital', 'optimización de procesos'],
-  }),
-  contact: generateMetadata({
-    title: 'Contacto',
-    description: 'Contáctanos para iniciar tu transformación digital. Estamos en Bogotá, Colombia, y atendemos toda Latinoamérica.',
-    keywords: ['contacto', 'consultoría', 'Bogotá', 'Colombia'],
-  }),
-  rayosX: generateMetadata({
-    title: 'Rayos X Empresarial Gratuito',
-    description: 'Descubre el nivel de madurez digital de tu empresa en 5 minutos. Diagnóstico gratuito y personalizado con recomendaciones accionables.',
-    keywords: ['diagnóstico digital', 'madurez digital', 'evaluación empresarial', 'gratis'],
-  }),
+/**
+ * Genera solo las alternates (hreflang + canonical)
+ * Útil cuando necesitas más control sobre el resto de metadata
+ * 
+ * @param lc - Locale code
+ * @param pathname - Path sin locale
+ * @returns Object con canonical y languages
+ */
+export function generateAlternates(lc: string, pathname: string) {
+  const cleanPathname = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const canonicalUrl = `${ORG.baseUrl}/${lc}${cleanPathname}`;
+  
+  const languages: Record<string, string> = {};
+  SUPPORTED_LOCALES.forEach((locale) => {
+    languages[locale] = `${ORG.baseUrl}/${locale}${cleanPathname}`;
+  });
+  languages['x-default'] = `${ORG.baseUrl}/es${cleanPathname}`;
+
+  return {
+    canonical: canonicalUrl,
+    languages,
+  };
 }
 
+/**
+ * Obtiene la URL completa para un path y locale
+ */
+export function getFullUrl(lc: string, pathname: string): string {
+  const cleanPathname = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  return `${ORG.baseUrl}/${lc}${cleanPathname}`;
+}
 
+/**
+ * Obtiene todas las URLs alternativas para un path
+ */
+export function getAllAlternateUrls(pathname: string): Array<{ lc: string; url: string }> {
+  const cleanPathname = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  return SUPPORTED_LOCALES.map((lc) => ({
+    lc,
+    url: `${ORG.baseUrl}/${lc}${cleanPathname}`,
+  }));
+}

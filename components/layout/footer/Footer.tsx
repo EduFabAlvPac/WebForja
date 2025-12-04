@@ -3,9 +3,22 @@
 import Link from 'next/link'
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Shield, FileText, Cookie, Lock } from 'lucide-react'
 import config from '@/lib/config'
+import { LegalStamp } from '@/components/site/LegalStamp'
+import { useCountryOptional } from '@/context/CountryProvider'
+import { SUPPORTED_LOCALES } from '@/lib/country'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const country = useCountryOptional()
+  const locale = country?.locale || 'es'
+
+  // Función para construir href con locale (sin prefijo para 'es')
+  const getLocalizedHref = (href: string) => {
+    if (locale === 'es' || !SUPPORTED_LOCALES.includes(locale as any)) {
+      return href
+    }
+    return `/${locale}${href}`
+  }
 
   const handleManageCookies = () => {
     // Eliminar el consentimiento guardado para que el banner vuelva a aparecer
@@ -28,25 +41,32 @@ export function Footer() {
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <Link 
-                href="/politica-privacidad" 
+                href={getLocalizedHref('/legal/politica-datos')}
                 className="flex items-center gap-2 text-gray-300 hover:text-brand-orange transition-colors group"
               >
                 <Shield className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                <span>Política de Privacidad</span>
+                <span>Política de Datos</span>
               </Link>
               <Link 
-                href="/terminos-condiciones" 
+                href={getLocalizedHref('/legal/terminos')}
                 className="flex items-center gap-2 text-gray-300 hover:text-brand-orange transition-colors group"
               >
                 <FileText className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                <span>Términos y Condiciones</span>
+                <span>Términos</span>
               </Link>
               <Link 
-                href="/politica-cookies" 
+                href={getLocalizedHref('/legal/cookies')}
                 className="flex items-center gap-2 text-gray-300 hover:text-brand-orange transition-colors group"
               >
                 <Cookie className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                <span>Política de Cookies</span>
+                <span>Cookies</span>
+              </Link>
+              <Link 
+                href={getLocalizedHref('/legal/contratacion-facturacion')}
+                className="flex items-center gap-2 text-gray-300 hover:text-brand-turquoise transition-colors group"
+              >
+                <Lock className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span>Facturación</span>
               </Link>
               <button
                 onClick={handleManageCookies}
@@ -116,11 +136,11 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Servicios</h3>
             <ul className="space-y-2">
-              <li><Link href="/servicios/estrategia-transformacion/arquitectura-estrategica" className="text-gray-300 hover:text-brand-orange transition-colors">Arquitectura Estratégica</Link></li>
-              <li><Link href="/servicios/estrategia-transformacion/transformacion-digital" className="text-gray-300 hover:text-brand-orange transition-colors">Transformación Digital</Link></li>
-              <li><Link href="/servicios/talento-finanzas/gestion-talento-estrategico" className="text-gray-300 hover:text-brand-orange transition-colors">Gestión de Talento</Link></li>
-              <li><Link href="/servicios/talento-finanzas/ingenieria-financiera" className="text-gray-300 hover:text-brand-orange transition-colors">Gestión Financiera</Link></li>
-              <li><Link href="/servicios/comercial-operaciones/excelencia-operativa" className="text-gray-300 hover:text-brand-orange transition-colors">Excelencia Operativa</Link></li>
+              <li><Link href={getLocalizedHref('/servicios/estrategia-transformacion/arquitectura-estrategica')} className="text-gray-300 hover:text-brand-orange transition-colors">Arquitectura Estratégica</Link></li>
+              <li><Link href={getLocalizedHref('/servicios/estrategia-transformacion/transformacion-digital')} className="text-gray-300 hover:text-brand-orange transition-colors">Transformación Digital</Link></li>
+              <li><Link href={getLocalizedHref('/servicios/talento-finanzas/gestion-talento-estrategico')} className="text-gray-300 hover:text-brand-orange transition-colors">Gestión de Talento</Link></li>
+              <li><Link href={getLocalizedHref('/servicios/talento-finanzas/ingenieria-financiera')} className="text-gray-300 hover:text-brand-orange transition-colors">Gestión Financiera</Link></li>
+              <li><Link href={getLocalizedHref('/servicios/comercial-operaciones/excelencia-operativa')} className="text-gray-300 hover:text-brand-orange transition-colors">Excelencia Operativa</Link></li>
             </ul>
           </div>
 
@@ -128,11 +148,12 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Empresa</h3>
             <ul className="space-y-2">
-              <li><Link href="/nosotros" className="text-gray-300 hover:text-brand-orange transition-colors">Sobre Nosotros</Link></li>
-              <li><Link href="/nosotros/equipo" className="text-gray-300 hover:text-brand-orange transition-colors">Nuestro Equipo</Link></li>
-              <li><Link href="/nosotros/historia" className="text-gray-300 hover:text-brand-orange transition-colors">Nuestra Historia</Link></li>
-              <li><Link href="/casos-exito" className="text-gray-300 hover:text-brand-orange transition-colors">Casos de Éxito</Link></li>
-              <li><Link href="/contacto" className="text-gray-300 hover:text-brand-orange transition-colors">Contacto</Link></li>
+              <li><Link href={getLocalizedHref('/nosotros')} className="text-gray-300 hover:text-brand-orange transition-colors">Sobre Nosotros</Link></li>
+              <li><Link href={getLocalizedHref('/nosotros/equipo')} className="text-gray-300 hover:text-brand-orange transition-colors">Nuestro Equipo</Link></li>
+              <li><Link href={getLocalizedHref('/nosotros/historia')} className="text-gray-300 hover:text-brand-orange transition-colors">Nuestra Historia</Link></li>
+              <li><Link href={getLocalizedHref('/nosotros/testimonios')} className="text-gray-300 hover:text-brand-orange transition-colors">Casos de Éxito</Link></li>
+              <li><Link href={getLocalizedHref('/interes')} className="text-gray-300 hover:text-brand-orange transition-colors">Recursos de Interés</Link></li>
+              <li><Link href={getLocalizedHref('/contacto')} className="text-gray-300 hover:text-brand-orange transition-colors">Contacto</Link></li>
             </ul>
           </div>
 
@@ -203,9 +224,10 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <div className="text-center md:text-left">
               <p className="mb-2">&copy; {currentYear} Forja Digital - AE. Todos los derechos reservados.</p>
-              <p className="text-xs text-gray-500">
-                Registro Mercantil | NIT: En trámite | Cámara de Comercio de Bogotá
-              </p>
+              {/* Legal Stamp sutil - información de entidad legal */}
+              <div className="mt-2">
+                <LegalStamp compact className="text-gray-400" />
+              </div>
             </div>
             <div className="text-center md:text-right">
               <p className="text-xs text-gray-500 mb-1">Diseñado y desarrollado con ❤️ en Colombia</p>

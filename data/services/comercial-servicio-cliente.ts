@@ -513,7 +513,7 @@ export const comercialServicioData: ServicePageData = {
       author: 'María Fernanda Ruiz',
       position: 'Directora Comercial'
     },
-    downloadLink: '/casos-exito/saas-servicio.pdf'
+    downloadLink: '/contacto'
   },
 
   cta: {
