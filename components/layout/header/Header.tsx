@@ -71,81 +71,83 @@ export function Header() {
   }, [isMobileMenuOpen])
 
   return (
-    <motion.header
-      role="banner"
-      className={`fixed top-0 left-0 right-0 z-[var(--z-header)] transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white shadow-md backdrop-blur-sm bg-opacity-95' 
-          : 'bg-white shadow-sm'
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-[var(--header-height-mobile)] md:h-[var(--header-height-desktop)]">
-          {/* Logo - Lleva al home del país actual */}
-          <Link href={homeUrl} className="relative z-10 flex items-center">
-            <Image
-              src="/logo-color.png"
-              alt="Forja Digital AE"
-              width={260}
-              height={87}
-              className="h-14 md:h-16 lg:h-18 w-auto object-contain"
-              priority
-            />
-          </Link>
+    <>
+      <motion.header
+        role="banner"
+        className={`fixed top-0 left-0 right-0 z-[var(--z-header)] transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white shadow-md backdrop-blur-sm bg-opacity-95' 
+            : 'bg-white shadow-sm'
+        }`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="container-custom">
+          <div className="flex items-center justify-between h-[var(--header-height-mobile)] md:h-[var(--header-height-desktop)]">
+            {/* Logo - Lleva al home del país actual */}
+            <Link href={homeUrl} className="relative z-10 flex items-center">
+              <Image
+                src="/logo-color.png"
+                alt="Forja Digital AE"
+                width={260}
+                height={87}
+                className="h-14 md:h-16 lg:h-18 w-auto object-contain"
+                priority
+              />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <Navigation className="hidden lg:flex" />
+            {/* Desktop Navigation */}
+            <Navigation className="hidden lg:flex" />
 
-          {/* Desktop Actions: CTAs + Country Switcher */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* CTAs */}
-            <Button
-              variant="outline"
-              className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white gap-2 font-semibold"
-              asChild
+            {/* Desktop Actions: CTAs + Country Switcher */}
+            <div className="hidden lg:flex items-center gap-3">
+              {/* CTAs */}
+              <Button
+                variant="outline"
+                className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white gap-2 font-semibold"
+                asChild
+              >
+                <Link href={getLocalizedHref('/contacto')}>
+                  <Search className="h-4 w-4" />
+                  Rayos X
+                </Link>
+              </Button>
+              <Button
+                className="bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"
+                asChild
+              >
+                <Link href={getLocalizedHref('/contacto')}>Habla con Forjador</Link>
+              </Button>
+              
+              {/* Country Switcher - Después del botón naranja */}
+              <CountrySwitcher />
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="lg:hidden relative z-[1010] p-2 -mr-2 touch-manipulation"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMobileMenuOpen}
             >
-              <Link href={getLocalizedHref('/contacto')}>
-                <Search className="h-4 w-4" />
-                Rayos X
-              </Link>
-            </Button>
-            <Button
-              className="bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"
-              asChild
-            >
-              <Link href={getLocalizedHref('/contacto')}>Habla con Forjador</Link>
-            </Button>
-            
-            {/* Country Switcher - Después del botón naranja */}
-            <CountrySwitcher />
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6 text-brand-navy" />
+              ) : (
+                <Menu className="h-6 w-6 text-brand-navy" />
+              )}
+            </button>
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden relative z-[1001] p-2 -mr-2 touch-manipulation"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-brand-navy" />
-            ) : (
-              <Menu className="h-6 w-6 text-brand-navy" />
-            )}
-          </button>
         </div>
-      </div>
+      </motion.header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - FUERA del header para evitar problemas de stacking context */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <MobileMenu onClose={() => setIsMobileMenuOpen(false)} />
         )}
       </AnimatePresence>
-    </motion.header>
+    </>
   )
 }
 

@@ -48,7 +48,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
       animate={{ x: 0 }}
       exit={{ x: '100%' }}
       transition={{ type: 'tween', duration: 0.3 }}
-      className="fixed inset-0 top-[var(--header-height-mobile)] bg-white z-[1000] overflow-y-auto overscroll-contain"
+      className="fixed inset-x-0 top-[var(--header-height-mobile)] bottom-0 bg-white z-[1005] overflow-y-auto overscroll-contain"
     >
       <div className="container-custom py-8">
         <nav>
