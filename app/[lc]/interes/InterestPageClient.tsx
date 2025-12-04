@@ -36,7 +36,7 @@ export function InterestPageClient({ locale }: InterestPageClientProps) {
   const [activeCategory, setActiveCategory] = useState<InterestCategory | 'all'>('Transformación Digital');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTypes, setSelectedTypes] = useState<InterestType[]>([]);
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // Contexto del país
   const countryContext = useCountryOptional();
@@ -74,13 +74,15 @@ export function InterestPageClient({ locale }: InterestPageClientProps) {
       );
   }, [categoryItems, selectedTypes]);
 
-  // Aplicar filtro de tag
+  // Aplicar filtro de tags
   const tagFilteredItems = useMemo(() => {
-    if (!selectedTag) return typeFilteredItems;
+    if (selectedTags.length === 0) return typeFilteredItems;
     return typeFilteredItems.filter(item => 
-      item.tags.some(t => t.toLowerCase() === selectedTag.toLowerCase())
+      selectedTags.some(selectedTag => 
+        item.tags.some(t => t.toLowerCase() === selectedTag.toLowerCase())
+      )
     );
-  }, [typeFilteredItems, selectedTag]);
+  }, [typeFilteredItems, selectedTags]);
 
   // Aplicar búsqueda
   const filteredItems = useMemo(() => {
@@ -113,18 +115,18 @@ export function InterestPageClient({ locale }: InterestPageClientProps) {
     setSearchQuery(query);
   }, []);
 
-  const handleTypeFilter = useCallback((types: InterestType[]) => {
+  const handleTypeChange = useCallback((types: InterestType[]) => {
     setSelectedTypes(types);
   }, []);
 
-  const handleTagFilter = useCallback((tag: string | null) => {
-    setSelectedTag(tag);
+  const handleTagChange = useCallback((tags: string[]) => {
+    setSelectedTags(tags);
   }, []);
 
   const handleCategoryChange = useCallback((category: InterestCategory | 'all') => {
     setActiveCategory(category);
     // Limpiar filtros al cambiar categoría
-    setSelectedTag(null);
+    setSelectedTags([]);
     setSearchQuery('');
   }, []);
 
@@ -232,11 +234,12 @@ export function InterestPageClient({ locale }: InterestPageClientProps) {
         >
           <InterestToolbar
             onSearchChange={handleSearchChange}
-            onTypeFilter={handleTypeFilter}
-            onTagFilter={handleTagFilter}
+            onTypeChange={handleTypeChange}
+            onTagChange={handleTagChange}
             selectedTypes={selectedTypes}
-            selectedTag={selectedTag}
+            selectedTags={selectedTags}
             availableTags={availableTags}
+            searchQuery={searchQuery}
             totalResults={filteredItems.length}
           />
         </motion.div>

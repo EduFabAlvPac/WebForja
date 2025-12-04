@@ -7,6 +7,7 @@
  */
 
 export { InterestCard } from './InterestCard';
+export { InterestTabs } from './InterestTabs';
 export { InterestToolbar } from './InterestToolbar';
 export { InterestGrid } from './InterestGrid';
 export { InterestList } from './InterestList';
