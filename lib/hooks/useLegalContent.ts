@@ -1,7 +1,10 @@
 /**
- * FORJA DIGITAL - Legal Content Hook
+ * FORJA DIGITAL - Legal Content Hook (Client-side)
  * 
  * Hook para obtener contenido legal mergeado (base + overlay por país)
+ * en Client Components.
+ * 
+ * Para Server Components, usa getLegalContent de '@/lib/legal-content'
  * 
  * @module lib/hooks/useLegalContent
  */
@@ -11,51 +14,21 @@
 import { useMemo } from 'react';
 import { useCountryOptional } from '@/context/CountryProvider';
 import { legalContentBase, LegalContent } from '@/content/base/legal';
+import { deepMerge } from '@/lib/legal-content';
+
+// Re-export para backwards compatibility
+export { getLegalContent } from '@/lib/legal-content';
 
 /**
- * Deep merge de objetos
- */
-function deepMerge<T>(base: T, overlay: Partial<T>): T {
-  if (!overlay) return base;
-  
-  const result = { ...base };
-  
-  for (const key in overlay) {
-    const overlayValue = overlay[key];
-    const baseValue = base[key];
-    
-    if (overlayValue === undefined) {
-      // Si overlay es undefined, usa base
-      continue;
-    }
-    
-    if (
-      typeof overlayValue === 'object' &&
-      overlayValue !== null &&
-      !Array.isArray(overlayValue) &&
-      typeof baseValue === 'object' &&
-      baseValue !== null &&
-      !Array.isArray(baseValue)
-    ) {
-      // Recursivo para objetos anidados
-      result[key] = deepMerge(baseValue, overlayValue) as any;
-    } else {
-      // Usa valor de overlay
-      result[key] = overlayValue as any;
-    }
-  }
-  
-  return result;
-}
-
-/**
- * Hook para obtener contenido legal localizado
+ * Hook para obtener contenido legal localizado (Client-side)
  * 
  * @returns Contenido legal mergeado (base + país)
  * 
  * @example
  * ```tsx
- * function PrivacyPage() {
+ * 'use client';
+ * 
+ * function PrivacySection() {
  *   const content = useLegalContent();
  *   
  *   return (
@@ -107,38 +80,3 @@ export function useLegalContent(): LegalContent {
     return deepMerge(legalContentBase, overlay);
   }, [lc]);
 }
-
-/**
- * Versión server-side para obtener contenido legal
- * 
- * @param lc - Locale code
- * @returns Contenido legal mergeado
- */
-export function getLegalContent(lc: string): LegalContent {
-  let overlay: Partial<LegalContent> = {};
-  
-  try {
-    switch (lc) {
-      case 'co':
-        overlay = require('@/content/co/legal').legalContentOverlay;
-        break;
-      case 'cl':
-        overlay = require('@/content/cl/legal').legalContentOverlay;
-        break;
-      case 'pe':
-        overlay = require('@/content/pe/legal').legalContentOverlay;
-        break;
-      case 'ec':
-        overlay = require('@/content/ec/legal').legalContentOverlay;
-        break;
-      default:
-        overlay = {};
-    }
-  } catch (error) {
-    console.warn(`No overlay found for ${lc}, using base content only`);
-    overlay = {};
-  }
-  
-  return deepMerge(legalContentBase, overlay);
-}
-

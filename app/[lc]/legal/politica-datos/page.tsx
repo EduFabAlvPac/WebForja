@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { Shield, Eye, UserCheck, FileText, Lock, Calendar, AlertCircle, Search, Pencil, Trash2, Ban, ClipboardList, MessageCircleWarning } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { LegalStamp } from '@/components/site/LegalStamp';
-import { getLegalContent } from '@/lib/hooks/useLegalContent';
+import { getLegalContent } from '@/lib/legal-content';
 import { ORG } from '@/lib/org';
 
 export async function generateMetadata({ params }: { params: { lc: string } }): Promise<Metadata> {
