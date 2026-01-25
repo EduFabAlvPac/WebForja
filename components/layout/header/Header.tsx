@@ -35,6 +35,7 @@ export function Header() {
 
   // URL del home según el locale actual
   const homeUrl = currentLocale ? `/${currentLocale}` : '/'
+  const ctaLabel = currentLocale === 'co' ? 'Habla con un Forjador' : 'Habla con Forjador'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,7 +118,7 @@ export function Header() {
                 className="bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"
                 asChild
               >
-                <Link href={getLocalizedHref('/contacto')}>Habla con Forjador</Link>
+                <Link href={getLocalizedHref('/contacto')}>{ctaLabel}</Link>
               </Button>
               
               {/* Country Switcher - Después del botón naranja */}
