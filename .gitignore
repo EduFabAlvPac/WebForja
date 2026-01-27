@@ -28,6 +28,10 @@ yarn-error.log*
 .env*.local
 .env
 
+# deploy scripts temp
+.deploy-msg.txt
+.git-commit-msg.txt
+
 # vercel
 .vercel
 

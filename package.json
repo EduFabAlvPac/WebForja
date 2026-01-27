@@ -13,7 +13,9 @@
     "qa:links": "ts-node scripts/qa-links.ts",
     "qa:links:prod": "ts-node scripts/qa-links.ts production",
     "typecheck": "tsc --noEmit",
-    "new:interest": "ts-node --esm scripts/new-interest.ts"
+    "new:interest": "ts-node --esm scripts/new-interest.ts",
+    "deploy": "node scripts/deploy.js",
+    "deploy:check": "node scripts/deploy-check.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.0",

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Shield, FileText, Cookie, Lock } from 'lucide-react'
 import config from '@/lib/config'
 import { LegalStamp } from '@/components/site/LegalStamp'
+import { isServiceHrefDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 import { useCountryOptional } from '@/context/CountryProvider'
 import { SUPPORTED_LOCALES } from '@/lib/country'
 
@@ -138,8 +139,20 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href={getLocalizedHref('/servicios/estrategia-transformacion/arquitectura-estrategica')} className="text-gray-300 hover:text-brand-orange transition-colors">Arquitectura Estratégica</Link></li>
               <li><Link href={getLocalizedHref('/servicios/estrategia-transformacion/transformacion-digital')} className="text-gray-300 hover:text-brand-orange transition-colors">Transformación Digital</Link></li>
-              <li><Link href={getLocalizedHref('/servicios/talento-finanzas/gestion-talento-estrategico')} className="text-gray-300 hover:text-brand-orange transition-colors">Gestión de Talento</Link></li>
-              <li><Link href={getLocalizedHref('/servicios/talento-finanzas/ingenieria-financiera')} className="text-gray-300 hover:text-brand-orange transition-colors">Gestión Financiera</Link></li>
+              <li>
+                {isServiceHrefDisabled('/servicios/talento-finanzas/gestion-talento-estrategico') ? (
+                  <span className="text-gray-500 cursor-not-allowed" title={PROXIMAMENTE_LABEL}>Gestión de Talento <span className="text-xs">({PROXIMAMENTE_LABEL})</span></span>
+                ) : (
+                  <Link href={getLocalizedHref('/servicios/talento-finanzas/gestion-talento-estrategico')} className="text-gray-300 hover:text-brand-orange transition-colors">Gestión de Talento</Link>
+                )}
+              </li>
+              <li>
+                {isServiceHrefDisabled('/servicios/talento-finanzas/ingenieria-financiera') ? (
+                  <span className="text-gray-500 cursor-not-allowed" title={PROXIMAMENTE_LABEL}>Gestión Financiera <span className="text-xs">({PROXIMAMENTE_LABEL})</span></span>
+                ) : (
+                  <Link href={getLocalizedHref('/servicios/talento-finanzas/ingenieria-financiera')} className="text-gray-300 hover:text-brand-orange transition-colors">Gestión Financiera</Link>
+                )}
+              </li>
               <li><Link href={getLocalizedHref('/servicios/comercial-operaciones/excelencia-operativa')} className="text-gray-300 hover:text-brand-orange transition-colors">Excelencia Operativa</Link></li>
             </ul>
           </div>

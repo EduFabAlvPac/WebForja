@@ -23,39 +23,27 @@ interface TimelineEvent {
 const propositos: Proposito[] = [
   {
     icon: Target,
-    text: 'Democratizar el acceso a arquitectura empresarial de clase mundial para PYMEs',
+    text: 'Democratizar el acceso a arquitectura empresarial y estrategias alineadas a las necesidades de las pequeñas y medianas empresas.',
     iconColor: 'text-brand-turquoise',
     iconBg: 'bg-cyan-50',
   },
   {
     icon: Hammer,
-    text: 'Diseñar estrategias que generan resultados medibles, no documentos que se archivan',
+    text: 'Diseñar soluciones prácticas, medibles y accionables, no documentos que terminan archivados.',
     iconColor: 'text-brand-orange',
     iconBg: 'bg-orange-50',
   },
   {
     icon: Rocket,
-    text: 'Transformar PYMEs colombianas y latinoamericanas en líderes competitivos globalmente',
+    text: 'Acompañar a las empresas para que tengan claro dónde están y el horizonte a desarrollar para llegar a ser competitivos en otros escenarios, incluso en mercados con oportunidad de crecimiento.',
     iconColor: 'text-brand-purple',
     iconBg: 'bg-purple-50',
   },
   {
-    icon: Lightbulb,
-    text: 'Probar que el tamaño de tu empresa no define el alcance de tu ambición',
-    iconColor: 'text-yellow-600',
-    iconBg: 'bg-yellow-50',
-  },
-  {
     icon: Heart,
-    text: 'Construir relaciones de largo plazo, no transacciones de corto plazo',
+    text: 'Construir relaciones a largo plazo, no transacciones.',
     iconColor: 'text-brand-coral',
     iconBg: 'bg-red-50',
-  },
-  {
-    icon: Users,
-    text: 'Empoderar equipos internos para que lideren su propia transformación digital',
-    iconColor: 'text-blue-600',
-    iconBg: 'bg-blue-50',
   },
 ]
 
@@ -102,7 +90,7 @@ export function HistoriaSection() {
             viewport={{ once: true }}
             className="text-brand-orange font-bold text-sm uppercase tracking-wider mb-3"
           >
-            NUESTRO ORIGEN
+            NOSOTROS
           </motion.p>
 
           <motion.h2
@@ -112,7 +100,7 @@ export function HistoriaSection() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-6 leading-tight"
           >
-            Por Qué <span className="text-brand-orange">Existimos</span>
+            <span className="text-brand-orange">Nosotros</span>
           </motion.h2>
 
           <motion.p
@@ -122,7 +110,7 @@ export function HistoriaSection() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl font-bold text-brand-turquoise"
           >
-            La Historia Detrás de FORJA
+            La Historia detrás de FORJA/STRATX
           </motion.p>
         </div>
 
@@ -138,32 +126,43 @@ export function HistoriaSection() {
           >
             <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border-2 border-brand-turquoise/20 w-full flex flex-col">
               <h3 className="text-2xl md:text-3xl font-bold text-brand-navy mb-6">
-                Todo Comenzó con una <span className="text-brand-orange">Frustración...</span>
+                La Historia detrás de <span className="text-brand-orange">FORJA/STRATX</span>
               </h3>
 
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed flex-1">
                 <p>
-                  En 2024, uno de nuestros socios trabajaba como arquitecto de soluciones en una gran corporación.
+                  Trabajando más de 14 años en compañías en la búsqueda de proveedores de productos y servicios,
+                  vimos cómo la economía latinoamericana se mueve a través de miles de empresas pequeñas y medianas.
                 </p>
 
                 <p>
-                  Veía cómo las grandes empresas contaban con <strong className="text-brand-navy">frameworks robustos</strong>, metodologías probadas y equipos especializados en arquitectura empresarial.
+                  Estas empresas no crecen o desaparecen por falta de claridad estratégica, procesos eficientes,
+                  cultura preparada para transformarse, y por la carencia o insuficiencia de capital de trabajo
+                  por errores en la gestión financiera.
                 </p>
 
                 <p>
-                  Pero las <strong className="text-brand-orange">PYMEs</strong> —las empresas que realmente mueven la economía latinoamericana— estaban completamente abandonadas.
+                  Eso hace que rápidamente desaparezcan del mercado, independientemente de si tenían o no un buen
+                  producto o servicio.
                 </p>
 
                 <p>
-                  Los consultores tradicionales les vendían <span className="text-gray-600 italic">software sin estrategia</span>, <span className="text-gray-600 italic">capacitaciones sin contexto</span>, y <span className="text-gray-600 italic">soluciones genéricas que nunca funcionaban</span>.
+                  Desafortunadamente estas compañías son abordadas por consultorías genéricas con modelos copiados
+                  de otros sectores que nunca funcionaban.
                 </p>
 
                 <p>
-                  El resultado era predecible: <strong className="text-red-600">inversiones perdidas</strong>, equipos frustrados, y empresas brillantes que nunca alcanzaban su verdadero potencial.
+                  El resultado era siempre el mismo: <strong className="text-red-600">inversiones perdidas</strong>,
+                  dueños de empresas y colaboradores frustrados, y negocios brillantes que desaparecieron o no
+                  progresaron.
                 </p>
 
                 <p className="text-xl font-bold text-brand-navy pt-4 border-t-2 border-brand-turquoise/30">
-                  Esa frustración dio origen a <span className="text-brand-orange">FORJADIGITALAE</span>.
+                  Comprometidos en cambiar esta historia, nos reunimos un grupo de ejecutivos con experiencia en
+                  sector real de arquitectura empresarial, finanzas, cadena de abastecimiento, servicio al cliente
+                  y desarrollo de talento, para desarrollar una metodología de trabajo abordable y clara, alineada
+                  con la pequeña y mediana empresa que requieren acompañamiento para generar resultados reales y
+                  sostenibles.
                 </p>
               </div>
             </div>
@@ -179,7 +178,7 @@ export function HistoriaSection() {
           >
             <div className="bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy rounded-2xl p-8 md:p-10 shadow-2xl w-full flex flex-col">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                Lo Que Nos Mueve <span className="text-brand-orange">Cada Día</span>
+                A qué nos <span className="text-brand-orange">comprometemos</span>
               </h3>
 
               <div className="space-y-6 flex-1">

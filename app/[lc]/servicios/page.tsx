@@ -11,6 +11,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
 import { MetodologiaForja } from '@/components/ui/metodologia-forja'
+import { isCategoryDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 
 export const metadata: Metadata = {
   title: 'Servicios | Forja Digital - AE',
@@ -107,23 +108,29 @@ export default function ServiciosLocalePage({ params }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {SERVICE_CATEGORIES.map((category) => {
               const Icon = category.icon
-              return (
-                <Link 
-                  key={category.id}
-                  href={category.href}
-                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-brand-orange/20"
+              const disabled = isCategoryDisabled(category.id)
+              const card = (
+                <div
+                  className={
+                    disabled
+                      ? 'bg-white rounded-2xl p-8 shadow-lg border border-gray-100 opacity-70 cursor-not-allowed'
+                      : 'group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-brand-orange/20'
+                  }
                 >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                  {disabled && (
+                    <span className="inline-block text-xs font-bold bg-gray-200 text-gray-600 px-3 py-1 rounded-full mb-4">
+                      {PROXIMAMENTE_LABEL}
+                    </span>
+                  )}
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 ${disabled ? '' : 'group-hover:scale-110 transition-transform'}`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  
-                  <h3 className="text-2xl font-bold text-brand-navy mb-3 group-hover:text-brand-orange transition-colors">
+
+                  <h3 className={`text-2xl font-bold text-brand-navy mb-3 ${disabled ? 'text-gray-500' : 'group-hover:text-brand-orange transition-colors'}`}>
                     {category.title}
                   </h3>
-                  
-                  <p className="text-gray-600 mb-6">
-                    {category.description}
-                  </p>
+
+                  <p className="text-gray-600 mb-6">{category.description}</p>
 
                   <ul className="space-y-2 mb-6">
                     {category.services.map((service) => (
@@ -134,10 +141,23 @@ export default function ServiciosLocalePage({ params }: PageProps) {
                     ))}
                   </ul>
 
-                  <div className="flex items-center gap-2 text-brand-orange font-semibold group-hover:gap-3 transition-all">
-                    <span>Explorar servicios</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
+                  {disabled ? (
+                    <div className="flex items-center gap-2 text-gray-400 font-semibold">
+                      <span>{PROXIMAMENTE_LABEL}</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2 text-brand-orange font-semibold group-hover:gap-3 transition-all">
+                      <span>Explorar servicios</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                  )}
+                </div>
+              )
+              return disabled ? (
+                <div key={category.id}>{card}</div>
+              ) : (
+                <Link key={category.id} href={category.href} className="block group">
+                  {card}
                 </Link>
               )
             })}

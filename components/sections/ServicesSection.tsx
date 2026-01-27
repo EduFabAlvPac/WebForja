@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Building2, Users, Settings, ArrowRight, Check, Star, ClipboardCheck, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { isCategoryDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 
 interface ServiceBenefit {
   text: string
@@ -17,23 +18,36 @@ interface ServiceCardProps {
   benefits: ServiceBenefit[]
   link: string
   isFeatured?: boolean
+  disabled?: boolean
 }
 
-const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeatured }: ServiceCardProps) => {
+const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeatured, disabled }: ServiceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group ${
-        isFeatured 
-          ? 'border-2 border-brand-turquoise lg:scale-105 lg:z-10' 
-          : 'border border-gray-200 hover:border-brand-orange/30'
+      className={`relative bg-white rounded-2xl shadow-lg overflow-hidden ${
+        disabled
+          ? 'opacity-70 cursor-not-allowed border border-gray-200'
+          : `transition-all duration-300 group hover:shadow-2xl ${
+              isFeatured
+                ? 'border-2 border-brand-turquoise lg:scale-105 lg:z-10'
+                : 'border border-gray-200 hover:border-brand-orange/30'
+            }`
       }`}
     >
+      {/* Badge "Próximamente" cuando está deshabilitado */}
+      {disabled && (
+        <div className="absolute top-4 right-4 z-20">
+          <span className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-xs font-bold">
+            {PROXIMAMENTE_LABEL}
+          </span>
+        </div>
+      )}
       {/* Badge "Más Solicitado" */}
-      {isFeatured && (
+      {isFeatured && !disabled && (
         <div className="absolute top-4 right-4 z-20">
           <div className="flex items-center gap-1.5 bg-gradient-to-r from-brand-orange to-brand-orange-dark text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg animate-pulse">
             <Star className="w-3.5 h-3.5 fill-current" />
@@ -42,27 +56,29 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeature
         </div>
       )}
 
-      {/* Decorative gradient overlay */}
-      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-        isFeatured 
-          ? 'bg-gradient-to-br from-brand-turquoise/5 to-brand-purple/5' 
-          : 'bg-gradient-to-br from-brand-orange/5 to-brand-orange/0'
-      }`} />
+      {/* Decorative gradient overlay - solo si no está deshabilitado */}
+      {!disabled && (
+        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+          isFeatured 
+            ? 'bg-gradient-to-br from-brand-turquoise/5 to-brand-purple/5' 
+            : 'bg-gradient-to-br from-brand-orange/5 to-brand-orange/0'
+        }`} />
+      )}
 
       {/* Content */}
       <div className={`relative z-10 ${isFeatured ? 'p-8 lg:p-10' : 'p-8'}`}>
         {/* Icon */}
         <motion.div 
           className={`inline-flex items-center justify-center rounded-2xl mb-6 ${
-            isFeatured 
+            isFeatured && !disabled
               ? 'w-20 h-20 bg-gradient-to-br from-brand-turquoise/20 to-brand-turquoise/10' 
               : 'w-16 h-16 bg-gray-50'
           }`}
-          whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+          whileHover={disabled ? undefined : { scale: 1.1, rotate: [0, -5, 5, 0] }}
           transition={{ duration: 0.4 }}
         >
           <Icon 
-            className={`${isFeatured ? 'w-10 h-10 text-brand-turquoise' : 'w-8 h-8 text-brand-orange'}`} 
+            className={`${isFeatured && !disabled ? 'w-10 h-10 text-brand-turquoise' : 'w-8 h-8 text-brand-orange'}`} 
             strokeWidth={2} 
           />
         </motion.div>
@@ -98,8 +114,8 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeature
           ))}
         </ul>
 
-        {/* Trabajamos al Éxito - Solo para featured */}
-        {isFeatured && (
+        {/* Trabajamos al Éxito - Solo para featured y no deshabilitado */}
+        {isFeatured && !disabled && (
           <div className="bg-gray-50 rounded-xl p-6 mb-6 border border-gray-200">
             <div className="flex items-center justify-center gap-3">
               <motion.div
@@ -116,37 +132,44 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeature
         )}
 
         {/* CTA Buttons */}
-        <div className={`flex flex-col gap-3 ${isFeatured ? 'pt-2' : ''}`}>
-          <Button
-            variant={isFeatured ? 'primary' : 'outline'}
-            size="lg"
-            className="w-full"
-            asChild
-          >
-            <Link href={link} className="flex items-center justify-center gap-2">
-              {isFeatured ? 'Rayos-X Empresarial Gratis' : 'Conocer más'}
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </Button>
-          
-          {isFeatured && (
-            <Button
-              variant="link"
-              size="sm"
-              className="text-forja-fire"
-              asChild
-            >
-              <Link href="/nosotros/testimonios" className="flex items-center justify-center gap-1">
-                Ver casos de éxito
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
+        <div className={`flex flex-col gap-3 ${isFeatured && !disabled ? 'pt-2' : ''}`}>
+          {disabled ? (
+            <div className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-gray-100 text-gray-500 font-medium">
+              {PROXIMAMENTE_LABEL}
+            </div>
+          ) : (
+            <>
+              <Button
+                variant={isFeatured ? 'primary' : 'outline'}
+                size="lg"
+                className="w-full"
+                asChild
+              >
+                <Link href={link} className="flex items-center justify-center gap-2">
+                  {isFeatured ? 'Rayos-X Empresarial Gratis' : 'Conocer más'}
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+              {isFeatured && (
+                <Button
+                  variant="link"
+                  size="sm"
+                  className="text-forja-fire"
+                  asChild
+                >
+                  <Link href="/nosotros/testimonios" className="flex items-center justify-center gap-1">
+                    Ver casos de éxito
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+              )}
+            </>
           )}
         </div>
       </div>
 
       {/* Glow effect en hover para featured */}
-      {isFeatured && (
+      {isFeatured && !disabled && (
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-turquoise/10 via-transparent to-brand-purple/10 blur-xl" />
         </div>
@@ -158,6 +181,7 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeature
 export function ServicesSection() {
   const services = [
     {
+      categoryId: 'estrategia-transformacion',
       icon: Building2,
       title: 'Estrategia & Transformación',
       description: 'Construimos la arquitectura estratégica que alinea tu visión, gobierno corporativo, tecnología y finanzas hacia objetivos de crecimiento medibles.',
@@ -171,6 +195,7 @@ export function ServicesSection() {
       isFeatured: true,
     },
     {
+      categoryId: 'talento-finanzas',
       icon: Users,
       title: 'Talento & Finanzas',
       description: 'Equipos alineados + finanzas saludables = crecimiento sostenible. Optimizamos tu capital humano y estructura financiera simultáneamente.',
@@ -183,6 +208,7 @@ export function ServicesSection() {
       link: '/servicios/talento-finanzas',
     },
     {
+      categoryId: 'comercial-operaciones',
       icon: Settings,
       title: 'Comercial & Operaciones',
       description: 'Procesos eficientes que liberan recursos + sistemas comerciales que convierten leads en clientes recurrentes.',
@@ -246,6 +272,7 @@ export function ServicesSection() {
               benefits={service.benefits}
               link={service.link}
               isFeatured={service.isFeatured}
+              disabled={isCategoryDisabled(service.categoryId)}
             />
           ))}
         </div>

@@ -1,5 +1,19 @@
 # 🚀 Guía de Deployment - Forja Digital - AE
 
+## Deploy automatizado (Git → GitHub → Vercel)
+
+Para subir cambios y que Vercel despliegue en **https://web-forja.vercel.app**:
+
+```bash
+npm run deploy:check   # Verificar que Git, remote y Vercel están ok
+npm run deploy        # add + commit + push → Vercel auto-deploy
+npm run deploy -- "feat: tu mensaje"   # Con mensaje de commit
+```
+
+Requisitos una sola vez: Git (PortableGit en Downloads o en PATH), `gh auth login` + `gh auth setup-git`, repo conectado en Vercel. Ver [QUICK-START-DEPLOYMENT.md](./QUICK-START-DEPLOYMENT.md) y **[ANALISIS-DEPLOY.md](./ANALISIS-DEPLOY.md)** (análisis completo de qué hace falta en tu equipo).
+
+---
+
 ## Opciones de Deployment
 
 ### 1. Vercel (Recomendado) ⭐

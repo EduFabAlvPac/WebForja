@@ -46,22 +46,33 @@ npm run qa:links
 
 ## 🚀 Deploy a Vercel
 
-### Opción A: Auto-Deploy (Recomendado)
+### Opción A: Script automatizado (Recomendado)
 
 ```bash
-# Commit y push
+# Verificar que todo está listo
+npm run deploy:check
+
+# Deploy: add + commit + push (Vercel despliega al detectar el push)
+npm run deploy
+
+# Con mensaje de commit personalizado
+npm run deploy -- "feat: descripción del cambio"
+```
+
+El script hace `git add -A`, `git commit` y `git push origin main`. Vercel detecta el push y despliega en **https://web-forja.vercel.app**.
+
+### Opción B: Manual (git directo)
+
+```bash
 git add .
 git commit -m "feat: ready for production"
 git push origin main
-
-# Vercel detecta el push y deploya automáticamente
-# Monitorear en: https://vercel.com/dashboard
 ```
 
-### Opción B: CLI Manual
+### Opción C: CLI Manual
 
 ```bash
-# Instalar CLI
+# Instalar CLI (o usar npx vercel)
 npm i -g vercel
 
 # Login
@@ -70,6 +81,13 @@ vercel login
 # Deploy a producción
 vercel --prod
 ```
+
+### Requisitos una sola vez (para Opción A/B)
+
+- Git en PATH.
+- `gh auth login` y `gh auth setup-git` (push sin contraseña).
+- Repo conectado en Vercel (Git) o `npx vercel link`.
+- Remote `origin` → `https://github.com/EduFabAlvPac/WebForja`.
 
 ---
 

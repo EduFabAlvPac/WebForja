@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
 import { MetodologiaForja } from '@/components/ui/metodologia-forja'
+import { isCategoryDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 
 export const metadata: Metadata = {
   title: 'Servicios | Forja Digital - AE',
@@ -85,48 +86,61 @@ export default function ServiciosPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICE_CATEGORIES.map((category, index) => {
               const Icon = category.icon
-              return (
-                <Link
-                  key={category.id}
-                  href={category.href}
-                  className="group"
-                >
-                  <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col transform hover:-translate-y-2">
-                    {/* Header with gradient */}
-                    <div className={`bg-gradient-to-br ${category.color} p-8 text-white relative overflow-hidden`}>
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                      <div className="relative z-10">
-                        <Icon className="w-12 h-12 mb-4" strokeWidth={2} />
-                        <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                          {category.title}
-                        </h2>
-                        <p className="text-white/90 text-lg">
-                          {category.description}
-                        </p>
-                      </div>
+              const disabled = isCategoryDisabled(category.id)
+              const card = (
+                <div className={`bg-white rounded-3xl shadow-lg overflow-hidden h-full flex flex-col ${disabled ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group'}`}>
+                  {/* Header with gradient */}
+                  <div className={`bg-gradient-to-br ${category.color} p-8 text-white relative overflow-hidden ${disabled ? 'opacity-90' : ''}`}>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                    <div className="relative z-10">
+                      {disabled && (
+                        <span className="inline-block text-xs font-bold bg-white/20 text-white px-3 py-1 rounded-full mb-3">
+                          {PROXIMAMENTE_LABEL}
+                        </span>
+                      )}
+                      <Icon className="w-12 h-12 mb-4" strokeWidth={2} />
+                      <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                        {category.title}
+                      </h2>
+                      <p className="text-white/90 text-lg">
+                        {category.description}
+                      </p>
                     </div>
+                  </div>
 
-                    {/* Services List */}
-                    <div className="p-8 flex-1 flex flex-col">
-                      <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
-                        Servicios incluidos:
-                      </h3>
-                      <ul className="space-y-3 mb-6 flex-1">
-                        {category.services.map((service, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-700 leading-relaxed">{service}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  {/* Services List */}
+                  <div className="p-8 flex-1 flex flex-col">
+                    <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
+                      Servicios incluidos:
+                    </h3>
+                    <ul className="space-y-3 mb-6 flex-1">
+                      {category.services.map((service, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-700 leading-relaxed">{service}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                      {/* CTA */}
+                    {/* CTA */}
+                    {disabled ? (
+                      <div className="flex items-center gap-2 text-gray-400 font-semibold">
+                        <span>{PROXIMAMENTE_LABEL}</span>
+                      </div>
+                    ) : (
                       <div className="flex items-center gap-2 text-brand-orange font-semibold group-hover:gap-4 transition-all">
                         <span>Ver servicios</span>
                         <ArrowRight className="w-5 h-5" strokeWidth={2.5} />
                       </div>
-                    </div>
+                    )}
                   </div>
+                </div>
+              )
+              return disabled ? (
+                <div key={category.id}>{card}</div>
+              ) : (
+                <Link key={category.id} href={category.href} className="group">
+                  {card}
                 </Link>
               )
             })}

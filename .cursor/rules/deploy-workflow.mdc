@@ -1,0 +1,40 @@
+---
+description: Flujo de deploy automatizado (Git → GitHub → Vercel)
+alwaysApply: true
+---
+
+# Deploy automatizado: Git → GitHub → Vercel
+
+## Flujo
+
+1. **Cambios en código** → se hacen en el proyecto.
+2. **Deploy** → `npm run deploy` (o `npm run deploy -- "feat: descripción"`).
+3. El script hace `git add -A`, `git commit`, `git push origin main`.
+4. **Vercel** despliega automáticamente al detectar el push en GitHub.
+
+## Comandos
+
+- `npm run deploy` — Añade todo, commit con mensaje por defecto y push a `main`.
+- `npm run deploy -- "feat: tu mensaje"` — Igual, con mensaje de commit personalizado.
+- `DEPLOY_MSG="fix: algo" npm run deploy` — Mensaje vía variable de entorno.
+- `npm run deploy:check` — Comprueba Git, remote, branch y Vercel link.
+
+## Después de cambios relevantes
+
+Cuando el usuario pida "subir a Vercel", "validar en Vercel" o "deploy":
+
+1. Indicar que ejecute en su terminal:  
+   `npm run deploy`  
+   o, si quiere mensaje:  
+   `npm run deploy -- "feat: descripción"`.
+2. Recordar que el deploy corre en **su máquina** (Git necesita acceso a `.git`). Si en Cursor fallan `git`/`npm run deploy` por permisos, debe usar una terminal externa (PowerShell, CMD, etc.).
+3. Vercel despliega en **https://web-forja.vercel.app** (y previews según config).
+
+## Requisitos (una sola vez)
+
+- Git instalado y en PATH.
+- `gh auth login` y `gh auth setup-git` para push sin contraseña.
+- Repo conectado en Vercel (Git) o `npx vercel link` si usa CLI.
+- Remote `origin` → `https://github.com/EduFabAlvPac/WebForja`.
+
+Si algo falla, ejecutar `npm run deploy:check` y seguir sus indicaciones.
