@@ -8,10 +8,12 @@ Para que las fotos **no se vean cortadas ni pixeladas** en las tarjetas:
 - **Recomendado:** **1000 × 1000 px** o más (p. ej. 1200 × 1200).
 - **Formato:** PNG o JPG.
 
+**Importante:** Si la imagen es menor (p. ej. 200×200), se verá **pixelada** al ampliarla. En ese caso, sustituir por una de al menos 800×800 px. Actualmente `foto-eduard.png` es 200×200: conviene reemplazarla por una de 800×800 o mayor.
+
 ## Encuadre
 
 - Centra el **rostro** en la zona superior del encuadre (aprox. 25–35 % desde arriba).
-- Incluye algo de **hombros y parte superior del torso** para que el recorte en tarjeta no corte cabeza ni hombros.
+- Incluye algo de **hombros y parte superior del torso**.
 
 ## Nombres de archivo
 
