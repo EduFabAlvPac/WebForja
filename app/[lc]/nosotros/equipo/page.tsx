@@ -14,7 +14,7 @@ import { useParams } from 'next/navigation'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import Link from 'next/link'
 import { 
-  Users, ArrowRight, Lightbulb, Rocket, Heart, Settings, DollarSign, Leaf,
+  Users, ArrowRight, Lightbulb, Rocket, Settings,
   Mail, Linkedin
 } from 'lucide-react'
 
@@ -269,32 +269,11 @@ export default function EquipoLocalePage() {
                 description: 'Innovación tecnológica, IA, Business Intelligence y automatización'
               },
               {
-                icon: Heart,
-                iconBg: 'bg-purple-100',
-                iconColor: 'text-purple-500',
-                title: 'Gestión del Talento',
-                description: 'Desarrollo organizacional, capacitación y evaluación de desempeño'
-              },
-              {
                 icon: Settings,
                 iconBg: 'bg-red-100',
                 iconColor: 'text-red-500',
-                title: 'Excelencia Operacional',
-                description: 'Optimización de procesos, Lean, Six Sigma y mejora continua'
-              },
-              {
-                icon: DollarSign,
-                iconBg: 'bg-teal-100',
-                iconColor: 'text-teal-500',
-                title: 'Finanzas Corporativas',
-                description: 'Análisis financiero, gestión de cartera y planificación tributaria'
-              },
-              {
-                icon: Leaf,
-                iconBg: 'bg-violet-100',
-                iconColor: 'text-violet-500',
-                title: 'Sostenibilidad',
-                description: 'Responsabilidad social empresarial y estrategias sustentables'
+                title: 'Cadena de Suministros',
+                description: 'Procesos eficientes que liberan recursos para crecer'
               }
             ].map((area, index) => {
               const IconComponent = area.icon
