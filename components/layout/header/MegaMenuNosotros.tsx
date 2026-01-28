@@ -28,7 +28,7 @@ const NOSOTROS_ITEMS = [
   {
     id: 'equipo',
     title: 'Equipo Profesional',
-    subtitle: 'Los Arquitectos Forjadores',
+    subtitle: 'Expertos que Impulsan tu Transformación',
     description: 'Certificaciones, Experiencia, Especialidades',
     href: '/nosotros/equipo',
     icon: Users,

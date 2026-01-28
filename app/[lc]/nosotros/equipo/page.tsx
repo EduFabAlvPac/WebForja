@@ -153,23 +153,25 @@ export default function EquipoLocalePage() {
             description="Líderes visionarios que guían nuestra estrategia y cultura organizacional"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
               {
                 id: 1,
-                name: 'María Fernández',
-                role: 'CEO & Fundadora',
+                name: 'Nestor (Fernando) Barreto Gómez',
+                role: 'Estratega Empresarial',
                 specialty: 'Estrategia Empresarial',
-                image: '/team/maria-fernandez.jpg',
-                linkedin: 'https://linkedin.com',
-                email: 'maria@forjadigital.com'
+                bio: 'Estratega en cadena de Abastecimiento, más de 25 años de experiencia desarrollando cadenas de abastecimiento resilientes y flexibles para el crecimiento del mercado. MBA ESADE/U Pacifico, Georgia tech supply, demand.',
+                image: '/logos/Foto_Nestor.jfif',
+                linkedin: 'https://www.linkedin.com/in/nestor-barreto-g%C3%B3mez-14369986/',
+                email: null
               },
               {
                 id: 2,
                 name: 'Carlos Rodríguez',
                 role: 'Director de Transformación Digital',
                 specialty: 'Tecnología e Innovación',
-                image: '/team/carlos-rodriguez.jpg',
+                bio: null,
+                image: null,
                 linkedin: 'https://linkedin.com',
                 email: 'carlos@forjadigital.com'
               },
@@ -178,18 +180,10 @@ export default function EquipoLocalePage() {
                 name: 'Ana Martínez',
                 role: 'Directora de Talento',
                 specialty: 'Desarrollo Organizacional',
-                image: '/team/ana-martinez.jpg',
+                bio: null,
+                image: null,
                 linkedin: 'https://linkedin.com',
                 email: 'ana@forjadigital.com'
-              },
-              {
-                id: 4,
-                name: 'Roberto Silva',
-                role: 'Director de Operaciones',
-                specialty: 'Excelencia Operacional',
-                image: '/team/roberto-silva.jpg',
-                linkedin: 'https://linkedin.com',
-                email: 'roberto@forjadigital.com'
               }
             ].map((member, index) => (
               <motion.div
@@ -203,10 +197,19 @@ export default function EquipoLocalePage() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
                   {/* Image Container */}
                   <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                    {/* Placeholder - Reemplazar con fotos reales */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Users className="w-20 h-20 text-gray-300" />
-                    </div>
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Users className="w-20 h-20 text-gray-300" />
+                      </div>
+                    )}
                     
                     {/* Social Icons Overlay on hover */}
                     <div className="absolute inset-0 bg-brand-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
@@ -218,12 +221,14 @@ export default function EquipoLocalePage() {
                       >
                         <Linkedin className="w-6 h-6 text-[#0077B5] group-hover/linkedin:text-white transition-colors" />
                       </a>
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="flex items-center justify-center w-12 h-12 bg-white rounded-full hover:bg-brand-orange hover:scale-110 transition-all duration-300 group/email"
-                      >
-                        <Mail className="w-6 h-6 text-brand-orange group-hover/email:text-white transition-colors" />
-                      </a>
+                      {member.email && (
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="flex items-center justify-center w-12 h-12 bg-white rounded-full hover:bg-brand-orange hover:scale-110 transition-all duration-300 group/email"
+                        >
+                          <Mail className="w-6 h-6 text-brand-orange group-hover/email:text-white transition-colors" />
+                        </a>
+                      )}
                     </div>
                   </div>
 
@@ -235,9 +240,15 @@ export default function EquipoLocalePage() {
                     <p className="text-brand-orange font-semibold text-sm mb-2">
                       {member.role}
                     </p>
-                    <p className="text-gray-600 text-sm">
-                      {member.specialty}
-                    </p>
+                    {member.bio ? (
+                      <p className="text-gray-600 text-sm italic leading-relaxed">
+                        {member.bio}
+                      </p>
+                    ) : (
+                      <p className="text-gray-600 text-sm">
+                        {member.specialty}
+                      </p>
+                    )}
                   </div>
                 </div>
               </motion.div>
