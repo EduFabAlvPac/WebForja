@@ -109,10 +109,14 @@ export function Header() {
                 className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white gap-2 font-semibold"
                 asChild
               >
-                <Link href={getLocalizedHref('/contacto')}>
+                <a
+                  href="https://forjadigitalae.github.io/Evaluaci%C3%B3n_Madurez_PYMEs.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Search className="h-4 w-4" />
                   Evaluación Empresarial
-                </Link>
+                </a>
               </Button>
               <Button
                 className="bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"

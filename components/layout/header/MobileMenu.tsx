@@ -185,9 +185,14 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             className="w-full border-brand-turquoise text-brand-turquoise hover:bg-brand-turquoise hover:text-white"
             asChild
           >
-            <Link href={getLocalizedHref('/contacto')} onClick={onClose}>
+            <a
+              href="https://forjadigitalae.github.io/Evaluaci%C3%B3n_Madurez_PYMEs.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+            >
               Evaluación Empresarial
-            </Link>
+            </a>
           </Button>
           <Button
             className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white shadow-glow-orange"
