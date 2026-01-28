@@ -147,7 +147,7 @@ export default function EquipoPage() {
                 role: 'Estratega Empresarial',
                 specialty: 'Estrategia Empresarial',
                 bio: 'Estratega en cadena de Abastecimiento, más de 25 años de experiencia desarrollando cadenas de abastecimiento resilientes y flexibles para el crecimiento del mercado. MBA ESADE/U Pacifico, Georgia tech supply, demand.',
-                image: '/logos/Foto_Nestor.png',
+                image: '/images/team/foto-nestor.png',
                 linkedin: 'https://www.linkedin.com/in/nestor-barreto-g%C3%B3mez-14369986/',
                 email: null
               },
@@ -157,7 +157,7 @@ export default function EquipoPage() {
                 role: 'Director de Transformación Digital',
                 specialty: 'Tecnología e Innovación',
                 bio: 'Arquitecto Empresarial Senior con +15 años de experiencia liderando la planeación estratégica de TI y telecomunicaciones, la transformación digital y el gobierno corporativo TI&T en organizaciones tanto del sector público como privado.',
-                image: '/logos/Foto_Eduard.png',
+                image: '/images/team/foto-eduard.png',
                 linkedin: 'https://www.linkedin.com/in/eduard-alvarez/',
                 email: 'carlos@forjadigital.com'
               },
