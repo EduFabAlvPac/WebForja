@@ -80,7 +80,7 @@ export default function EquipoPage() {
               />
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
                 <p>
-                  Nuestro equipo está conformado por más de 80 profesionales altamente calificados, con experiencia en las principales industrias y especializaciones en áreas clave de la consultoría empresarial.
+                  Nuestro equipo está conformado por profesionales altamente calificados, con experiencia en las principales industrias y especializaciones en áreas clave de la consultoría empresarial.
                 </p>
                 <p>
                   Cada miembro de nuestro equipo aporta una combinación única de expertise técnico, visión estratégica y pasión por la innovación, trabajando en colaboración para entregar resultados excepcionales.
@@ -88,21 +88,13 @@ export default function EquipoPage() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-md">
                 <div className="bg-cyan-50 rounded-2xl p-6 border border-cyan-100">
                   <div className="text-4xl font-bold text-cyan-600 mb-2">
                     15+
                   </div>
                   <div className="text-brand-navy font-semibold">
                     Años Experiencia Promedio
-                  </div>
-                </div>
-                <div className="bg-orange-50 rounded-2xl p-6 border border-orange-100">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">
-                    50+
-                  </div>
-                  <div className="text-brand-navy font-semibold">
-                    Certificaciones Profesionales
                   </div>
                 </div>
               </div>
@@ -116,13 +108,13 @@ export default function EquipoPage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <div className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-purple-50">
-                  {/* Placeholder - Reemplazar con imagen real del equipo */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Users className="w-32 h-32 text-purple-300" />
-                  </div>
-                </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/team/foto-equipo.png"
+                  alt="Equipo profesional de FORJA Digital"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
