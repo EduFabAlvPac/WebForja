@@ -75,11 +75,11 @@ export default function EquipoLocalePage() {
         </div>
       </section>
 
-      {/* Talento de Clase Mundial */}
+      {/* Talento de Clase Mundial — igual en global y por país */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            {/* Contenido */}
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+            {/* Contenido — columna izquierda ~40% */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -101,20 +101,14 @@ export default function EquipoLocalePage() {
                 </p>
               </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-md">
-                <div className="bg-cyan-50 rounded-2xl p-6 border border-cyan-100">
-                  <div className="text-4xl font-bold text-cyan-600 mb-2">
-                    15+
-                  </div>
-                  <div className="text-brand-navy font-semibold">
-                    Años Experiencia Promedio
-                  </div>
-                </div>
+              {/* Caja 15+ horizontal: número izquierda, texto derecha */}
+              <div className="bg-cyan-50 rounded-2xl px-6 py-5 border border-cyan-100 flex flex-row items-center gap-5 max-w-md">
+                <span className="text-4xl font-bold text-cyan-600 shrink-0">15+</span>
+                <span className="text-gray-600 font-medium">Años Experiencia Promedio</span>
               </div>
             </motion.div>
 
-            {/* Imagen */}
+            {/* Imagen — columna derecha ~60% */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -122,7 +116,7 @@ export default function EquipoLocalePage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/team/foto-equipo.png"
