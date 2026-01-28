@@ -195,14 +195,14 @@ export default function EquipoLocalePage() {
                 className="group"
               >
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                  {/* Image Container */}
-                  <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                  {/* Image Container - h-80 y object-position para evitar cortes en cabeza/hombros */}
+                  <div className="relative h-80 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                     {member.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover object-[center_28%]"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
