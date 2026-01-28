@@ -21,7 +21,7 @@ const SERVICE_CATEGORIES = [
     href: '/servicios/estrategia-transformacion',
     services: [
       'Arquitectura Estratégica',
-      'Transformación Digital 360°'
+      'Transformación Digital'
     ]
   },
   {
@@ -44,7 +44,7 @@ const SERVICE_CATEGORIES = [
     color: 'from-orange-500 to-red-500',
     href: '/servicios/comercial-operaciones',
     services: [
-      'Excelencia Operativa Lean',
+      'Cadena de Suministros',
       'Comercial y Servicio al Cliente'
     ]
   }

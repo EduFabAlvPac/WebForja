@@ -33,7 +33,7 @@ const services = [
   },
   {
     icon: Smartphone,
-    title: 'Transformación Digital 360°',
+    title: 'Transformación Digital',
     description: 'Convertimos la tecnología en una ventaja competitiva medible, integrando innovación, inteligencia de negocio y automatización en tu ADN empresarial.',
     href: '/servicios/estrategia-transformacion/transformacion-digital',
     highlights: [

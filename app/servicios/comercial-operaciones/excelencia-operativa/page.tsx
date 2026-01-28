@@ -61,7 +61,7 @@ export default function ExcelenciaOperativaPage() {
                   {/* Potential Capacity */}
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-semibold text-gray-600">Con Excelencia Operativa Lean</span>
+                      <span className="text-sm font-semibold text-gray-600">Con Cadena de Suministros</span>
                       <span className="text-2xl font-bold text-green-600">{capacityData.potential}%</span>
                   </div>
                     <div className="h-8 bg-gray-200 rounded-full overflow-hidden">

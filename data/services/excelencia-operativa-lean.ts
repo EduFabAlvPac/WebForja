@@ -4,7 +4,7 @@ export const excelenciaOperativaData: ServicePageData = {
   hero: {
     eyebrow: 'Servicio de Consultoría Especializada',
     icon: 'Settings',
-    title: 'Excelencia Operativa Lean',
+    title: 'Cadena de Suministros',
     subtitle: 'Libera el 40% de capacidad oculta que ya tienes',
     description: 'Tu operación actual funciona al 60% de su capacidad real. El resto se pierde en desperdicios, reprocesos, esperas y movimientos innecesarios. No necesitas invertir en más máquinas ni contratar más gente: necesitas eliminar lo que no agrega valor y liberar la capacidad que ya existe. Transformamos operaciones caóticas en sistemas eficientes, predecibles y escalables mediante metodologías Lean probadas.',
     category: 'Comercial & Operaciones',
@@ -12,7 +12,7 @@ export const excelenciaOperativaData: ServicePageData = {
       { label: 'Inicio', href: '/' },
       { label: 'Servicios', href: '/servicios' },
       { label: 'Comercial & Operaciones', href: '/servicios/comercial-operaciones' },
-      { label: 'Excelencia Operativa Lean', href: '/servicios/comercial-operaciones/excelencia-operativa' }
+      { label: 'Cadena de Suministros', href: '/servicios/comercial-operaciones/excelencia-operativa' }
     ],
     backgroundImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
     backgroundAlt: 'Operaciones industriales eficientes y optimizadas'

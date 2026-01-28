@@ -33,7 +33,7 @@ export default function ComercialOperacionesLocalePage() {
   const services = [
     {
       icon: Settings,
-      title: 'Excelencia Operativa Lean',
+      title: 'Cadena de Suministros',
       description: 'Optimizamos tus operaciones mediante metodologías Lean y mejora continua para maximizar eficiencia y reducir desperdicios.',
       href: localizedLink('/servicios/comercial-operaciones/excelencia-operativa'),
       highlights: [

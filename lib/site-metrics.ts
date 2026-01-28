@@ -116,10 +116,10 @@ export const siteMetrics = {
     totalServices: 6,
     servicesList: [
       'Arquitectura Estratégica',
-      'Transformación Digital 360°',
+      'Transformación Digital',
       'Gestión de Talento Estratégico',
       'Gestión Financiera',
-      'Excelencia Operativa Lean',
+      'Cadena de Suministros',
       'Comercial y Servicio al Cliente',
     ],
   },
@@ -158,7 +158,7 @@ export const siteMetrics = {
       profitabilityIncrease: 35, // % aumento
     },
 
-    // Excelencia Operativa
+    // Cadena de Suministros
     operationalExcellence: {
       capacityIncrease: 40, // % aumento sin CAPEX
       wasteReduction: 35, // % reducción

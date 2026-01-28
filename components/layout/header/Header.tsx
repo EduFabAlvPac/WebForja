@@ -35,7 +35,7 @@ export function Header() {
 
   // URL del home según el locale actual
   const homeUrl = currentLocale ? `/${currentLocale}` : '/'
-  const ctaLabel = currentLocale === 'co' ? 'Habla con un Forjador' : 'Habla con Forjador'
+  const ctaLabel = 'Contáctanos'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,7 +111,7 @@ export function Header() {
               >
                 <Link href={getLocalizedHref('/contacto')}>
                   <Search className="h-4 w-4" />
-                  Rayos X
+                  Evaluación Empresarial
                 </Link>
               </Button>
               <Button

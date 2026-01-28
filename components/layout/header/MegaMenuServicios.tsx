@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import * as LucideIcons from 'lucide-react'
 import { SERVICIOS_MEGA_MENU } from '@/lib/constants/navigation'
-import { isCategoryDisabled, isServiceDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
+import { isCategoryDisabled, isServiceDisabled, categoryHidesProximamenteAndDarkTitle, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 import { SUPPORTED_LOCALES } from '@/lib/country'
 
 interface MegaMenuServiciosProps {
@@ -61,15 +61,18 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
               <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                 {SERVICIOS_MEGA_MENU.map((column, columnIndex) => {
                   const categoryDisabled = isCategoryDisabled(column.id)
+                  const noProxDark = categoryHidesProximamenteAndDarkTitle(column.id)
                   return (
                     <div key={column.id} className="space-y-8">
                       {/* Título de columna: Link o span si deshabilitado */}
                       {categoryDisabled ? (
                         <div className="group block">
-                          <h3 className="text-lg font-extrabold text-gray-400 text-center mb-2 tracking-tight">
+                          <h3 className={`text-lg font-extrabold text-center tracking-tight ${noProxDark ? 'text-gray-900 mb-10' : 'text-gray-400 mb-2'}`}>
                             {column.title}
                           </h3>
-                          <p className="text-xs font-semibold text-gray-400 text-center mb-10">{PROXIMAMENTE_LABEL}</p>
+                          {!noProxDark && (
+                            <p className="text-xs font-semibold text-gray-400 text-center mb-10">{PROXIMAMENTE_LABEL}</p>
+                          )}
                         </div>
                       ) : (
                         <Link

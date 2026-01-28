@@ -63,7 +63,7 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
       id: 'excelencia-operativa',
       icon: '⚙️',
       iconComponent: 'Settings',
-      title: 'Excelencia Operativa Lean',
+      title: 'Cadena de Suministros',
       description: 'Transformamos operaciones caóticas en sistemas eficientes, predecibles y escalables mediante metodologías Lean, automatización inteligente y mejora continua.',
       forWho: [
         'Empresas que crecen pero la operación colapsa',
@@ -275,7 +275,7 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
       icon: 'Calendar'
     },
     links: [
-      { label: 'Ver Excelencia Operativa', href: '/servicios/comercial-operaciones/excelencia-operativa' },
+      { label: 'Ver Cadena de Suministros', href: '/servicios/comercial-operaciones/excelencia-operativa' },
       { label: 'Ver Motor Comercial', href: '/servicios/comercial-operaciones/motor-comercial' }
     ]
   }

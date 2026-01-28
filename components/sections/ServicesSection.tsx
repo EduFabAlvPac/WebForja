@@ -187,7 +187,7 @@ export function ServicesSection() {
       description: 'Construimos la arquitectura estratégica que alinea tu visión, gobierno corporativo, tecnología y finanzas hacia objetivos de crecimiento medibles.',
       benefits: [
         { text: 'Arquitectura Empresarial' },
-        { text: 'Roadmap de Transformación Digital 360°' },
+        { text: 'Roadmap de Transformación Digital' },
         { text: 'Gobierno Corporativo & Estructura Financiera' },
         { text: 'Integración de IA y Tecnologías Emergentes' },
       ],
@@ -213,7 +213,7 @@ export function ServicesSection() {
       title: 'Comercial & Operaciones',
       description: 'Procesos eficientes que liberan recursos + sistemas comerciales que convierten leads en clientes recurrentes.',
       benefits: [
-        { text: 'Excelencia Operativa Lean & BPM' },
+        { text: 'Cadena de Suministros & BPM' },
         { text: 'Automatización de Procesos (RPA)' },
         { text: 'Motor Comercial & CRM Estratégico' },
         { text: 'Experiencia de Cliente (CX) Omnicanal' },

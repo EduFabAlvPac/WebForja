@@ -74,7 +74,7 @@ export function HomeJsonLd() {
       'Analítica de Negocios',
       'Gestión del Talento',
       'Ingeniería Financiera',
-      'Excelencia Operativa',
+      'Cadena de Suministros',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

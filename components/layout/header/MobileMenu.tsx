@@ -186,7 +186,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             asChild
           >
             <Link href={getLocalizedHref('/contacto')} onClick={onClose}>
-              Rayos X Empresarial
+              Evaluación Empresarial
             </Link>
           </Button>
           <Button
@@ -194,7 +194,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             asChild
           >
             <Link href={getLocalizedHref('/contacto')} onClick={onClose}>
-              Habla con un Forjador
+              Contáctanos
             </Link>
           </Button>
         </div>

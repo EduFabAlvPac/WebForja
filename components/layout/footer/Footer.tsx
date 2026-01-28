@@ -153,7 +153,7 @@ export function Footer() {
                   <Link href={getLocalizedHref('/servicios/talento-finanzas/ingenieria-financiera')} className="text-gray-300 hover:text-brand-orange transition-colors">Gestión Financiera</Link>
                 )}
               </li>
-              <li><Link href={getLocalizedHref('/servicios/comercial-operaciones/excelencia-operativa')} className="text-gray-300 hover:text-brand-orange transition-colors">Excelencia Operativa</Link></li>
+              <li><Link href={getLocalizedHref('/servicios/comercial-operaciones/excelencia-operativa')} className="text-gray-300 hover:text-brand-orange transition-colors">Cadena de Suministros</Link></li>
             </ul>
           </div>
 

@@ -92,7 +92,7 @@ const PILLARS: Pillar[] = [
     subtitle: 'Ejecución que Escala',
     description: 'Transformamos tus procesos comerciales y operativos en motores de crecimiento sostenible y escalable.',
     benefits: [
-      'Excelencia Operativa',
+      'Cadena de Suministros',
       'Motor Comercial de Alto Rendimiento',
       'Automatización Inteligente'
     ],

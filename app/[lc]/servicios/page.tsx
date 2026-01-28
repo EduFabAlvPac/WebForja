@@ -37,7 +37,7 @@ export default function ServiciosLocalePage({ params }: PageProps) {
       href: localizedLink('/servicios/estrategia-transformacion'),
       services: [
         'Arquitectura Estratégica',
-        'Transformación Digital 360°'
+        'Transformación Digital'
       ]
     },
     {
@@ -60,7 +60,7 @@ export default function ServiciosLocalePage({ params }: PageProps) {
       color: 'from-orange-500 to-red-500',
       href: localizedLink('/servicios/comercial-operaciones'),
       services: [
-        'Excelencia Operativa Lean',
+        'Cadena de Suministros',
         'Comercial y Servicio al Cliente'
       ]
     }

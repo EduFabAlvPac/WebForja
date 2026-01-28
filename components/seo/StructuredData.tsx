@@ -98,7 +98,7 @@ export function ServiceStructuredData({ service }: { service: string }) {
     'transformacion-digital': {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      serviceType: 'Transformación Digital 360°',
+      serviceType: 'Transformación Digital',
       provider: {
         '@type': 'Organization',
         name: 'ForjaDigitalAE',

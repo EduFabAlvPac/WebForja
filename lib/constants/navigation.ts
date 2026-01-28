@@ -109,7 +109,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
             iconBg: 'bg-cyan-100 text-cyan-600'
           },
           {
-            title: 'Transformación Digital 360°',
+            title: 'Transformación Digital',
             description: 'Innovación, BI, Tech Stack, Integración de IA',
             href: '/servicios/estrategia-transformacion/transformacion-digital',
             icon: 'Smartphone',
@@ -140,7 +140,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
         category: 'Comercial & Operaciones',
         items: [
           {
-            title: 'Excelencia Operativa Lean',
+            title: 'Cadena de Suministros',
             description: 'BPM, Automatización, Mejora Continua',
             href: '/servicios/comercial-operaciones/excelencia-operativa',
             icon: 'Settings',
@@ -203,7 +203,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
       },
       {
         id: 'transformacion-digital',
-        title: 'Transformación Digital 360°',
+        title: 'Transformación Digital',
         description: 'Convertimos la tecnología en ventaja competitiva medible',
         href: '/servicios/estrategia-transformacion/transformacion-digital',
         icon: 'Smartphone',
@@ -242,7 +242,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
     services: [
       {
         id: 'excelencia-operativa',
-        title: 'Excelencia Operativa Lean',
+        title: 'Cadena de Suministros',
         description: 'Procesos eficientes que liberan recursos para crecer',
         href: '/servicios/comercial-operaciones/excelencia-operativa',
         icon: 'Settings',

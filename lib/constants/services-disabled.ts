@@ -36,3 +36,13 @@ export function isServiceHrefDisabled(href: string): boolean {
 }
 
 export const PROXIMAMENTE_LABEL = 'Próximamente'
+
+/** Categorías que no muestran "Próximamente" en el título y usan texto negro (no gris) */
+export const CATEGORIES_NO_PROXIMAMENTE_DARK_TITLE = [
+  'estrategia-transformacion',
+  'comercial-operaciones',
+] as const
+
+export function categoryHidesProximamenteAndDarkTitle(id: string): boolean {
+  return (CATEGORIES_NO_PROXIMAMENTE_DARK_TITLE as readonly string[]).includes(id)
+}

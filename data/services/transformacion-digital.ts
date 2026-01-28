@@ -4,7 +4,7 @@ export const transformacionDigitalData: ServicePageData = {
   hero: {
     eyebrow: 'Estrategia & Transformación',
     icon: 'Smartphone',
-    title: 'Transformación Digital 360°',
+    title: 'Transformación Digital',
     subtitle: 'Tecnología como Ventaja Competitiva Medible',
     description: 'Orquestamos la adopción de tecnología y cultura digital en toda tu organización, convirtiendo datos en decisiones, automatizando procesos y creando experiencias de cliente que fidelizan.',
     category: 'estrategia-transformacion',
@@ -14,7 +14,7 @@ export const transformacionDigitalData: ServicePageData = {
       { label: 'Inicio', href: '/' },
       { label: 'Servicios', href: '/servicios' },
       { label: 'Estrategia & Transformación', href: '/servicios/estrategia-transformacion' },
-      { label: 'Transformación Digital 360°', href: '/servicios/estrategia-transformacion/transformacion-digital' },
+      { label: 'Transformación Digital', href: '/servicios/estrategia-transformacion/transformacion-digital' },
     ],
   },
 
