@@ -76,7 +76,7 @@ export default function EquipoLocalePage() {
       </section>
 
       {/* Talento de Clase Mundial — igual en global y por país */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white border-t border-gray-200 shadow-[0_1px_0_0_rgba(255,255,255,0.8)_inset]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Contenido — columna izquierda ~40% */}
@@ -130,7 +130,7 @@ export default function EquipoLocalePage() {
       </section>
 
       {/* Equipo de Liderazgo */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 border-t border-gray-200 shadow-[0_4px_12px_rgba(0,0,0,0.04)]">
         <div className="container mx-auto px-4 md:px-8">
           <SectionHeader
             eyebrow="LIDERAZGO"
@@ -243,7 +243,7 @@ export default function EquipoLocalePage() {
       </section>
 
       {/* Áreas de Expertise */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white border-t border-gray-200 shadow-[0_1px_0_0_rgba(255,255,255,0.8)_inset]">
         <div className="container mx-auto px-4 md:px-8">
           <SectionHeader
             eyebrow="EXPERTISE"
@@ -303,7 +303,7 @@ export default function EquipoLocalePage() {
       </section>
 
       {/* CTA - ¿Quieres Formar Parte? */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-brand-navy to-brand-navy-dark">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-brand-navy to-brand-navy-dark border-t border-gray-300">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
