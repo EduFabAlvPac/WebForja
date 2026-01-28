@@ -147,7 +147,7 @@ export default function EquipoPage() {
                 role: 'Estratega Empresarial',
                 specialty: 'Estrategia Empresarial',
                 bio: 'Estratega en cadena de Abastecimiento, más de 25 años de experiencia desarrollando cadenas de abastecimiento resilientes y flexibles para el crecimiento del mercado. MBA ESADE/U Pacifico, Georgia tech supply, demand.',
-                image: '/logos/Foto_Nestor.jfif',
+                image: '/logos/Foto_Nestor.png',
                 linkedin: 'https://www.linkedin.com/in/nestor-barreto-g%C3%B3mez-14369986/',
                 email: null
               },
@@ -184,12 +184,11 @@ export default function EquipoPage() {
                   {/* Image Container */}
                   <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                     {member.image ? (
-                      <Image
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
                         src={member.image}
                         alt={member.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="absolute inset-0 w-full h-full object-cover"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
