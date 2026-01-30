@@ -143,7 +143,7 @@ export default function EquipoPage() {
                 role: 'Director de Transformación Digital',
                 specialty: 'Tecnología e Innovación',
                 bio: 'Arquitecto Empresarial Senior con +15 años de experiencia liderando la planeación estratégica de TI y telecomunicaciones, la transformación digital y el gobierno corporativo TI&T en organizaciones tanto del sector público como privado.',
-                image: '/images/team/foto-eduard2.png',
+                image: '/images/team/foto-eduard.png',
                 linkedin: 'https://www.linkedin.com/in/eduard-alvarez/',
                 email: 'carlos@forjadigital.com'
               },
@@ -152,7 +152,7 @@ export default function EquipoPage() {
                 name: 'Natalia Ardila Barreto',
                 role: 'Senior Product Owner',
                 specialty: 'Product & Operations',
-                bio: 'Ejecutiva global con más de 16 años de experiencia en tecnología, e-commerce y fintech, liderando equipos multifuncionales. Ha ocupado posiciones estratégicas como Product Director, Ops Director y Fellow Associate, (Yape / Stori / Rappi / McKinsey) destacando por su capacidad de innovar y generar resultados tangibles.',
+                bio: 'Ejecutiva global con más de 16 años de experiencia en tecnología, e-commerce y fintech, liderando equipos multifuncionales. Ha ocupado posiciones estratégicas como Product Director, Ops Director y Fellow Associate, destacando por su capacidad de innovar y generar resultados tangibles.',
                 image: '/images/team/foto-natalia.png',
                 linkedin: 'https://www.linkedin.com/in/natalia-ardila-barreto-98739063/',
                 email: null
