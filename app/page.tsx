@@ -9,7 +9,6 @@
 
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
-import dynamic from 'next/dynamic';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { HomeJsonLd } from '@/components/seo/HomeJsonLd';
 import { NotificationBell } from '@/components/alerts/NotificationBell';
@@ -18,35 +17,11 @@ import { HomeViewTracker } from '@/components/analytics/HomeViewTracker';
 import { CountryProvider } from '@/context/CountryProvider';
 import { ORG } from '@/lib/org';
 
-// Secciones above-the-fold: importación estática para primer paint
+// Todas las secciones estáticas para orden garantizado (1 → 2 → 3 → 4)
+import { ServicesSection } from '@/components/sections/ServicesSection';
+import { PainPointsSection } from '@/components/sections/PainPointsSection';
+import { MetodologiaSection } from '@/components/sections/MetodologiaSection';
 import { StatsSection } from '@/components/sections/StatsSection';
-
-// Secciones below-the-fold: dynamic imports para mejor TBT
-const PainPointsSection = dynamic(
-  () => import('@/components/sections/PainPointsSection').then(mod => mod.PainPointsSection),
-  { loading: () => <SectionSkeleton /> }
-);
-
-const ServicesSection = dynamic(
-  () => import('@/components/sections/ServicesSection').then(mod => mod.ServicesSection),
-  { loading: () => <SectionSkeleton /> }
-);
-
-const MetodologiaSection = dynamic(
-  () => import('@/components/sections/MetodologiaSection').then(mod => mod.MetodologiaSection),
-  { loading: () => <SectionSkeleton /> }
-);
-
-// Skeleton loader para secciones en carga
-function SectionSkeleton({ height = '400px' }: { height?: string }) {
-  return (
-    <div 
-      className="animate-pulse bg-slate-100" 
-      style={{ height, minHeight: height }}
-      aria-hidden="true"
-    />
-  );
-}
 
 /**
  * Metadata para la homepage Internacional
