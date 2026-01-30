@@ -149,13 +149,13 @@ export default function EquipoPage() {
               },
               {
                 id: 3,
-                name: 'Ana Martínez',
-                role: 'Directora de Talento',
-                specialty: 'Desarrollo Organizacional',
-                bio: null,
-                image: null,
-                linkedin: 'https://linkedin.com',
-                email: 'ana@forjadigital.com'
+                name: 'Natalia Ardila Barreto',
+                role: 'Senior Product Owner',
+                specialty: 'Product & Operations',
+                bio: 'Ejecutiva global con más de 16 años de experiencia en tecnología, e-commerce y fintech, liderando equipos multifuncionales. Ha ocupado posiciones estratégicas como Product Director, Ops Director y Fellow Associate, (Yape / Stori / Rappi / McKinsey) destacando por su capacidad de innovar y generar resultados tangibles.',
+                image: '/images/team/foto-natalia.png',
+                linkedin: 'https://www.linkedin.com/in/natalia-ardila-barreto-98739063/',
+                email: null
               }
             ].map((member, index) => (
               <motion.div
