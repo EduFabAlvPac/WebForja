@@ -145,7 +145,7 @@ export default function TerminosPage({ params }: { params: { lc: string } }) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Realizar diagnósticos empresariales (Rayos-X)</span>
+                      <span>Realizar diagnósticos empresariales (Evaluación de Madurez)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>

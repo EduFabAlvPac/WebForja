@@ -92,7 +92,7 @@ export function StatsSection() {
             transition={{ delay: 0.4 }}
           >
             <KpiCard
-              title="Rayos-X Empresarial"
+              title="Evaluación de Madurez"
               value={`${siteMetrics.rayosX.averageTime} min`}
               description={`Entrega en ${siteMetrics.rayosX.deliveryTime}h`}
               icon={Zap}

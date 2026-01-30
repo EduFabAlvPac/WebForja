@@ -146,7 +146,7 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeature
                 asChild
               >
                 <Link href={link} className="flex items-center justify-center gap-2">
-                  {isFeatured ? 'Rayos-X Empresarial Gratis' : 'Conocer más'}
+                  {isFeatured ? 'Evaluación de Madurez Gratis' : 'Conocer más'}
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
@@ -295,7 +295,7 @@ export function ServicesSection() {
                 ¿No Sabes Por Dónde Empezar?
               </h3>
               <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                Nuestro <strong>Rayos-X Empresarial</strong> evalúa tu madurez digital y te recomienda el camino más efectivo para tu situación específica.
+                Nuestro <strong>Evaluación de Madurez</strong> evalúa tu madurez digital y te recomienda el camino más efectivo para tu situación específica.
               </p>
               
               <motion.div
@@ -308,7 +308,7 @@ export function ServicesSection() {
                   className="inline-flex items-center gap-3 px-8 py-4 bg-white text-forja-navy font-bold text-lg rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl group"
                 >
                   <ClipboardCheck className="w-6 h-6 text-forja-fire" />
-                  Rayos-X Empresarial Gratis
+                  Evaluación de Madurez Gratis
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </motion.div>

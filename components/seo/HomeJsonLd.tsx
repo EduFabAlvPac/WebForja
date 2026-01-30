@@ -84,7 +84,7 @@ export function HomeJsonLd() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Rayos-X Empresarial',
+            name: 'Evaluación de Madurez',
             description: 'Diagnóstico empresarial gratuito en 15 minutos',
           },
         },

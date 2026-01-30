@@ -38,7 +38,7 @@ export const siteMetrics = {
     totalCompanies: 150, // Empresas transformadas
     totalProjects: 200, // Proyectos exitosos completados
     activeClients: 45, // Clientes activos actualmente
-    ceosTrained: 200, // CEOs que han usado Rayos-X o servicios
+    ceosTrained: 200, // CEOs que han usado Evaluación de Madurez o servicios
     industries: 12, // Sectores atendidos
   },
 
@@ -374,7 +374,7 @@ export function getDigitalTransformationClaim(): string {
  * Obtiene el claim de CEOs para CTA Section
  */
 export function getCTAClaim(): string {
-  return `Más de ${siteMetrics.clients.ceosTrained} CEOs han comenzado su transformación con nuestro Rayos-X Empresarial Gratis. En solo ${siteMetrics.rayosX.averageTime} minutos descubres:`
+  return `Más de ${siteMetrics.clients.ceosTrained} CEOs han comenzado su transformación con nuestro Evaluación de Madurez Gratis. En solo ${siteMetrics.rayosX.averageTime} minutos descubres:`
 }
 
 // ============================================

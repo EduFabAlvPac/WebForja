@@ -508,8 +508,8 @@ export const excelenciaOperativaData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Lean Gratuito',
-      description: 'Solicita tu Rayos-X Empresarial Gratis. Evaluamos tu operación y te mostramos dónde está la capacidad oculta.',
-      buttonText: 'Rayos-X Empresarial Gratis',
+      description: 'Solicita tu Evaluación de Madurez Gratis. Evaluamos tu operación y te mostramos dónde está la capacidad oculta.',
+      buttonText: 'Evaluación de Madurez Gratis',
       buttonLink: '/contacto',
       icon: 'Search'
     },

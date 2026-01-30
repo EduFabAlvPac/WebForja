@@ -148,7 +148,7 @@ export default function PoliticaDatosPage({ params }: { params: { lc: string } }
                       ))}
                     </ul>
 
-                    <h3 className="text-lg font-semibold mb-3 text-brand-navy">Datos Empresariales (Rayos-X):</h3>
+                    <h3 className="text-lg font-semibold mb-3 text-brand-navy">Datos Empresariales (Evaluación de Madurez):</h3>
                     <ul className="list-disc list-inside space-y-2 text-gray-700">
                       {content.privacy.dataCollection.business.map((item, idx) => (
                         <li key={idx}>{item}</li>
