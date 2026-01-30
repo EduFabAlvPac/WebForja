@@ -11,7 +11,7 @@ import { siteMetrics } from '@/lib/site-metrics'
  */
 export function StatsSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-16 md:py-24 bg-slate-50 border-t border-gray-200 shadow-[0_4px_12px_rgba(0,0,0,0.04)]" data-cta-primary>
       <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
         <motion.div

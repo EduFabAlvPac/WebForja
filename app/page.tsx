@@ -37,16 +37,6 @@ const MetodologiaSection = dynamic(
   { loading: () => <SectionSkeleton /> }
 );
 
-const CaseStudiesSection = dynamic(
-  () => import('@/components/sections/CaseStudiesSection').then(mod => mod.CaseStudiesSection),
-  { loading: () => <SectionSkeleton /> }
-);
-
-const CTASection = dynamic(
-  () => import('@/components/sections/CTASection').then(mod => mod.CTASection),
-  { loading: () => <SectionSkeleton height="300px" /> }
-);
-
 // Skeleton loader para secciones en carga
 function SectionSkeleton({ height = '400px' }: { height?: string }) {
   return (
@@ -97,36 +87,29 @@ export default function HomePage() {
         currentLocale="es"
       />
       
-      {/* Above-the-fold: Crítico para FCP y LCP */}
+      {/* Hero */}
       <div id="hero">
         <HeroSection />
       </div>
       
-      {/* Stats: Visible en primer scroll */}
-      <div id="stats">
-        <StatsSection />
-      </div>
-      
-      {/* Below-the-fold: Dynamic imports */}
-      <div id="pain-points">
-        <PainPointsSection />
-      </div>
-      
+      {/* 1. 3 Frentes Estratégicos */}
       <div id="services">
         <ServicesSection />
       </div>
       
+      {/* 2. ¿Te Identificas con Alguna de Estas Situaciones? */}
+      <div id="pain-points">
+        <PainPointsSection />
+      </div>
+      
+      {/* 3. Metodología FORJA® */}
       <div id="metodologia">
         <MetodologiaSection />
       </div>
       
-      <div id="case-studies">
-        <CaseStudiesSection />
-      </div>
-      
-      {/* CTA Final */}
-      <div id="cta" data-cta-primary>
-        <CTASection />
+      {/* 4. Números que Hablan por Sí Solos */}
+      <div id="stats">
+        <StatsSection />
       </div>
       
       {/* Botón Flotante de Notificaciones - Solo en Home */}
