@@ -2,226 +2,127 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Building2, Users, Settings, ArrowRight, Check, Star, ClipboardCheck, TrendingUp } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { isCategoryDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
+import { Box, ArrowRight, Check, ClipboardCheck, Hand } from 'lucide-react'
 
-interface ServiceBenefit {
-  text: string
+interface PillarData {
+  number: number
+  name: string
+  intro: string
+  details: string[]
+  valueProp: string
 }
 
-interface ServiceCardProps {
-  icon: React.ElementType
-  title: string
-  description: string
-  benefits: ServiceBenefit[]
-  link: string
-  isFeatured?: boolean
-  disabled?: boolean
+interface PillarCardProps {
+  pillar: PillarData
 }
 
-const ServiceCard = ({ icon: Icon, title, description, benefits, link, isFeatured, disabled }: ServiceCardProps) => {
+const PillarCard = ({ pillar }: PillarCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`relative bg-white rounded-2xl shadow-lg overflow-hidden ${
-        disabled
-          ? 'opacity-70 cursor-not-allowed border border-gray-200'
-          : `transition-all duration-300 group hover:shadow-2xl ${
-              isFeatured
-                ? 'border-2 border-brand-turquoise lg:scale-105 lg:z-10'
-                : 'border border-gray-200 hover:border-brand-orange/30'
-            }`
-      }`}
+      className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:border-brand-orange/30 group"
     >
-      {/* Badge "Próximamente" cuando está deshabilitado */}
-      {disabled && (
-        <div className="absolute top-4 right-4 z-20">
-          <span className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-xs font-bold">
-            {PROXIMAMENTE_LABEL}
-          </span>
-        </div>
-      )}
-      {/* Badge "Más Solicitado" */}
-      {isFeatured && !disabled && (
-        <div className="absolute top-4 right-4 z-20">
-          <div className="flex items-center gap-1.5 bg-gradient-to-r from-brand-orange to-brand-orange-dark text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg animate-pulse">
-            <Star className="w-3.5 h-3.5 fill-current" />
-            MÁS SOLICITADO
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-brand-orange/5 to-brand-orange/0" />
+
+      <div className="relative z-10 p-8">
+        {/* Icon y título */}
+        <div className="flex items-center gap-3 mb-5">
+          <motion.div
+            className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gray-50"
+            whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+            transition={{ duration: 0.4 }}
+          >
+            <Box className="w-8 h-8 text-brand-orange" strokeWidth={2} />
+          </motion.div>
+          <div>
+            <h3 className="text-brand-navy font-bold text-lg">
+              PILAR {pillar.number} —{' '}
+              <span className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md">
+                {pillar.name}
+              </span>
+            </h3>
           </div>
         </div>
-      )}
 
-      {/* Decorative gradient overlay - solo si no está deshabilitado */}
-      {!disabled && (
-        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-          isFeatured 
-            ? 'bg-gradient-to-br from-brand-turquoise/5 to-brand-purple/5' 
-            : 'bg-gradient-to-br from-brand-orange/5 to-brand-orange/0'
-        }`} />
-      )}
-
-      {/* Content */}
-      <div className={`relative z-10 ${isFeatured ? 'p-8 lg:p-10' : 'p-8'}`}>
-        {/* Icon */}
-        <motion.div 
-          className={`inline-flex items-center justify-center rounded-2xl mb-6 ${
-            isFeatured && !disabled
-              ? 'w-20 h-20 bg-gradient-to-br from-brand-turquoise/20 to-brand-turquoise/10' 
-              : 'w-16 h-16 bg-gray-50'
-          }`}
-          whileHover={disabled ? undefined : { scale: 1.1, rotate: [0, -5, 5, 0] }}
-          transition={{ duration: 0.4 }}
-        >
-          <Icon 
-            className={`${isFeatured && !disabled ? 'w-10 h-10 text-brand-turquoise' : 'w-8 h-8 text-brand-orange'}`} 
-            strokeWidth={2} 
-          />
-        </motion.div>
-
-        {/* Title */}
-        <h3 className={`font-bold text-brand-navy mb-4 ${isFeatured ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>
-          {title}
-        </h3>
-
-        {/* Description */}
-        <p className={`text-gray-600 leading-relaxed mb-6 ${isFeatured ? 'text-base' : 'text-sm'}`}>
-          {description}
+        {/* Frase introductoria */}
+        <p className="text-gray-600 italic mb-5 border-l-2 border-brand-orange/40 pl-4">
+          &ldquo;{pillar.intro}&rdquo;
         </p>
 
-        {/* Benefits List */}
+        {/* Lista de detalles */}
         <ul className="space-y-3 mb-6">
-          {benefits.map((benefit, index) => (
+          {pillar.details.map((detail, i) => (
             <motion.li
-              key={index}
+              key={i}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: i * 0.1 }}
               className="flex items-start gap-3"
             >
-              <div className={`flex-shrink-0 ${isFeatured ? 'mt-1' : 'mt-0.5'}`}>
-                <Check className={`${isFeatured ? 'w-5 h-5' : 'w-4 h-4'} text-green-500`} strokeWidth={3} />
+              <div className="flex-shrink-0 mt-0.5">
+                <Check className="w-4 h-4 text-green-500" strokeWidth={3} />
               </div>
-              <span className={`text-gray-700 ${isFeatured ? 'text-base font-medium' : 'text-sm'}`}>
-                {benefit.text}
-              </span>
+              <span className="text-gray-700 text-sm">{detail}</span>
             </motion.li>
           ))}
         </ul>
 
-        {/* Trabajamos al Éxito - Solo para featured y no deshabilitado */}
-        {isFeatured && !disabled && (
-          <div className="bg-gray-50 rounded-xl p-6 mb-6 border border-gray-200">
-            <div className="flex items-center justify-center gap-3">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 0.4 }}
-              >
-                <TrendingUp className="w-8 h-8 text-brand-coral" strokeWidth={2.5} />
-              </motion.div>
-              <h4 className="text-lg font-bold text-brand-navy">
-                Trabajamos al Éxito
-              </h4>
-            </div>
+        {/* Valor para la PYME */}
+        <div className="pt-5 border-t border-gray-200">
+          <div className="flex items-start gap-3">
+            <Hand className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" strokeWidth={2} />
+            <p className="text-gray-700 text-sm font-medium">
+              <span className="text-brand-navy">Valor para la PYME:</span>{' '}
+              {pillar.valueProp}
+            </p>
           </div>
-        )}
-
-        {/* CTA Buttons */}
-        <div className={`flex flex-col gap-3 ${isFeatured && !disabled ? 'pt-2' : ''}`}>
-          {disabled ? (
-            <div className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-gray-100 text-gray-500 font-medium">
-              {PROXIMAMENTE_LABEL}
-            </div>
-          ) : (
-            <>
-              <Button
-                variant={isFeatured ? 'primary' : 'outline'}
-                size="lg"
-                className="w-full"
-                asChild
-              >
-                <Link href={link} className="flex items-center justify-center gap-2">
-                  {isFeatured ? 'Evaluación de Madurez Gratis' : 'Conocer más'}
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              {isFeatured && (
-                <Button
-                  variant="link"
-                  size="sm"
-                  className="text-forja-fire"
-                  asChild
-                >
-                  <Link href="/nosotros/testimonios" className="flex items-center justify-center gap-1">
-                    Ver casos de éxito
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              )}
-            </>
-          )}
         </div>
       </div>
-
-      {/* Glow effect en hover para featured */}
-      {isFeatured && !disabled && (
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-turquoise/10 via-transparent to-brand-purple/10 blur-xl" />
-        </div>
-      )}
     </motion.div>
   )
 }
 
-export function ServicesSection() {
-  const services = [
-    {
-      categoryId: 'estrategia-transformacion',
-      icon: Building2,
-      title: 'Estrategia & Transformación',
-      description: 'Construimos la arquitectura estratégica que alinea tu visión, gobierno corporativo, tecnología y finanzas hacia objetivos de crecimiento medibles.',
-      benefits: [
-        { text: 'Arquitectura Empresarial' },
-        { text: 'Roadmap de Transformación Digital' },
-        { text: 'Gobierno Corporativo & Estructura Financiera' },
-        { text: 'Integración de IA y Tecnologías Emergentes' },
-      ],
-      link: '/servicios/estrategia-transformacion/arquitectura-estrategica',
-      isFeatured: true,
-    },
-    {
-      categoryId: 'talento-finanzas',
-      icon: Users,
-      title: 'Talento & Finanzas',
-      description: 'Equipos alineados + finanzas saludables = crecimiento sostenible. Optimizamos tu capital humano y estructura financiera simultáneamente.',
-      benefits: [
-        { text: 'Gestión de Talento por Competencias' },
-        { text: 'Cultura Organizacional & Engagement' },
-        { text: 'Gestión Financiera & Control de Gestión' },
-        { text: 'Pricing Estratégico & Análisis de Rentabilidad' },
-      ],
-      link: '/servicios/talento-finanzas',
-    },
-    {
-      categoryId: 'comercial-operaciones',
-      icon: Settings,
-      title: 'Comercial & Operaciones',
-      description: 'Procesos eficientes que liberan recursos + sistemas comerciales que convierten leads en clientes recurrentes.',
-      benefits: [
-        { text: 'Cadena de Suministros & BPM' },
-        { text: 'Automatización de Procesos (RPA)' },
-        { text: 'Motor Comercial & CRM Estratégico' },
-        { text: 'Experiencia de Cliente (CX) Omnicanal' },
-      ],
-      link: '/servicios/comercial-operaciones',
-    },
-  ]
+const PILARES: PillarData[] = [
+  {
+    number: 1,
+    name: 'CLARIDAD ESTRATÉGICA',
+    intro: 'Saber dónde estás y hacia dónde vas',
+    details: [
+      'Diagnóstico de madurez empresarial y digital (Evaluación de Madurez).',
+      'Alineación de negocio, tecnología y personas.',
+      'Decisiones basadas en datos, no intuición.',
+    ],
+    valueProp: 'Dejar de improvisar.',
+  },
+  {
+    number: 2,
+    name: 'ORDEN Y EJECUCIÓN',
+    intro: 'Convertir la estrategia en acción',
+    details: [
+      'Procesos claros en operaciones, finanzas, comercial y talento.',
+      'Arquitectura empresarial aplicada (no teórica).',
+      'Metodología FORJA® paso a paso.',
+    ],
+    valueProp: 'Que las cosas pasen y se sostengan en el tiempo.',
+  },
+  {
+    number: 3,
+    name: 'CRECIMIENTO SOSTENIBLE',
+    intro: 'Escalar sin caos',
+    details: [
+      'Modelos de negocio preparados para crecer.',
+      'Digitalización con sentido (solo lo que genera impacto).',
+      'Indicadores, control y mejora continua.',
+    ],
+    valueProp: 'Crecimiento ordenado.',
+  },
+]
 
+export function ServicesSection() {
   return (
     <section className="py-16 md:py-24 bg-white border-t border-gray-200 shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset] relative overflow-hidden">
       {/* Decorative elements */}
@@ -247,7 +148,7 @@ export function ServicesSection() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-6 leading-tight"
           >
-            3 Frentes Estratégicos que <span className="text-brand-orange">Transforman tu PYME</span>
+            3 Pilares Estratégicos que <span className="text-brand-orange">Transforman tu PYME</span>
           </motion.h2>
           
           <motion.p
@@ -261,19 +162,10 @@ export function ServicesSection() {
           </motion.p>
         </div>
 
-        {/* Services Grid */}
+        {/* Pilares Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 mb-16 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              benefits={service.benefits}
-              link={service.link}
-              isFeatured={service.isFeatured}
-              disabled={isCategoryDisabled(service.categoryId)}
-            />
+          {PILARES.map((pillar) => (
+            <PillarCard key={pillar.number} pillar={pillar} />
           ))}
         </div>
 

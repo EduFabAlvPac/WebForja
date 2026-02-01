@@ -86,7 +86,7 @@ export default function LocaleHome({ params }: LocaleHomeProps) {
         <HeroSection />
       </div>
       
-      {/* 1. 3 Frentes Estratégicos */}
+      {/* 1. 3 Pilares Estratégicos */}
       <div id="services">
         <ServicesSection />
       </div>

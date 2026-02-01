@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Lock, Target } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getDigitalTransformationClaim, getHeroStats } from '@/lib/site-metrics'
+import { getHeroStats } from '@/lib/site-metrics'
 import { trackCTAClick } from '@/lib/analytics'
 import { useCountryOptional } from '@/context/CountryProvider'
 
@@ -16,7 +16,7 @@ const HERO_SLIDES = [
     headline: "¿Tu PYME Compite o Sobrevive?",
     subheadline: "Arquitectura Empresarial que Convierte tu Negocio en Líder de Mercado",
     tagline: "",
-    description: getDigitalTransformationClaim() + " Nosotros diseñamos el blueprint que integra tecnología, procesos y personas para resultados medibles.",
+    description: "El 73% de las PYMEs en Latinoamérica fracasan por falta de alineamiento de estrategia con sus procesos y tecnología. Diseñamos el blueprint que integra estrategia, tecnología, procesos y personas para resultados medibles.",
     ctaPrimary: "Descubre tu Madurez Digital - GRATIS",
     ctaPrimaryLink: "/contacto",
     ctaSecondary: "Ver Casos de Transformación Real",
@@ -35,7 +35,7 @@ const HERO_SLIDES = [
     id: 2,
     headline: "Arquitectos Empresariales",
     subheadline: "Especializados en PYMEs Latinoamericanas",
-    tagline: "Metodología Probada. Resultados Medibles. Inversión Inteligente (Trabajamos al Éxito).",
+    tagline: "Metodología Probada. Resultados Medibles. Inversión Inteligente.",
     description: "Mientras otros consultores venden software o servicios genéricos, nosotros construimos la arquitectura estratégica que alinea TODA tu organización hacia objetivos de crecimiento sostenible.",
     ctaPrimary: "Agenda tu Diagnóstico Estratégico",
     ctaPrimaryLink: "/contacto",
@@ -50,10 +50,20 @@ const HERO_SLIDES = [
   {
     id: 3,
     headline: "Metodología FORJA®",
-    subheadline: "El Sistema de 5 Fases que Elimina el Caos",
+    subheadline: null,
+    subheadlineJsx: (
+      <>
+        El Sistema de <span className="text-brand-orange font-bold">5 Fases</span> que Elimina el Caos
+      </>
+    ),
     tagline: "De la Estrategia a la Ejecución: Tu Roadmap Sin Improvisación",
-    description: "Fundamentar → Orientar → Rediseñar → Justificar → Acompañar. Un enfoque sistemático donde cada fase genera entregables concretos, métricas claras y decisiones basadas en datos, no en intuición.",
-    ctaPrimary: "Solicita tu Rayos-X Empresarial",
+    description: null,
+    descriptionJsx: (
+      <>
+        <strong>F</strong>ijar → <strong>O</strong>rientar → <strong>R</strong>ediseñar → <strong>J</strong>ustificar → <strong>A</strong>compañar. Un enfoque sistemático donde cada fase genera entregables concretos, métricas claras y decisiones basadas en datos, no en intuición.
+      </>
+    ),
+    ctaPrimary: "Solicita tu Evaluación de Madurez Empresarial",
     ctaPrimaryLink: "/contacto",
     ctaSecondary: "Descarga Guía: 5 Fases Explicadas",
     ctaSecondaryLink: "/contacto",
@@ -260,7 +270,7 @@ export function HeroSection() {
                   duration: prefersReducedMotion ? 0.01 : 0.5
                 }}
               >
-                {slide.subheadline}
+                {'subheadlineJsx' in slide && slide.subheadlineJsx ? slide.subheadlineJsx : slide.subheadline}
               </motion.h2>
 
               {/* Tagline */}
@@ -288,7 +298,7 @@ export function HeroSection() {
                   duration: prefersReducedMotion ? 0.01 : 0.5
                 }}
               >
-                {slide.description}
+                {'descriptionJsx' in slide && slide.descriptionJsx ? slide.descriptionJsx : slide.description}
               </motion.p>
 
                {/* CTA Buttons - Primario dominante, sin scroll en móvil */}
