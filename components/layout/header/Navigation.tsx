@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { MegaMenuNosotros } from './MegaMenuNosotros'
-// import { MegaMenuIndustrias } from './MegaMenuIndustrias' // TEMPORALMENTE OCULTO
 import { MegaMenuServicios } from './MegaMenuServicios'
 import { NAVIGATION_ITEMS } from '@/lib/constants/navigation'
 import { SUPPORTED_LOCALES } from '@/lib/country'

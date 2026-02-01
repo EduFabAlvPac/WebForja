@@ -129,7 +129,18 @@ Documentación técnica principal. Incluye:
 - `INSTALACION.md` - Instalación detallada
 - `DEPLOYMENT.md` - Guía de deployment
 - `PROYECTO-RESUMEN.md` - Resumen ejecutivo
+- `VARIABLES-ENTORNO.md` - Variables de entorno
+- `CONFIGURACION-RAPIDA.md` - Configuración rápida
 - `00-INDICE-DOCUMENTACION.md` - Este archivo
+
+### Documentación técnica (docs/)
+- `docs/COUNTRY_CONTEXT_USAGE.md` - CountryContext y widgets por país
+- `docs/DEPLOYMENT_QA.md` - Validación de deployment
+- `docs/DESIGN_TOKENS.md` - Tokens de diseño FORJA
+- `docs/SEO_MULTI_PAIS.md` - SEO multi-país
+- `docs/SERVICE_LAYOUT_TEMPLATE.md` - Plantilla de páginas de servicio
+- `docs/AUDITORIA_PROYECTO_FASE1.md` - Auditoría de código
+- `docs/AUDITORIA_REPORTE_FINAL_OPTIMIZACION.md` - Reporte de optimización
 
 ### Código Fuente
 - `app/` - Páginas y rutas (Next.js App Router)
@@ -212,5 +223,5 @@ Marca los documentos que ya leíste:
 
 ---
 
-*Última actualización: Noviembre 2024*
+*Última actualización: Febrero 2025*
 

@@ -63,7 +63,6 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
   const handleMessageSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Aquí puedes integrar con tu sistema de mensajería
-    console.log('Mensaje enviado:', messageData)
     alert('¡Mensaje enviado! Te contactaremos pronto.')
     setMessageData({ email: '', message: '' })
     handleBack()
