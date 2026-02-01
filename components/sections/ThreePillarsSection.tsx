@@ -117,7 +117,7 @@ export function ThreePillarsSection() {
   return (
     <section
       ref={ref}
-      className="py-16 md:py-24 bg-white"
+      className="py-16 md:py-24 bg-white border-t-2 border-slate-200 section-shadow"
       aria-labelledby="pillars-heading"
     >
       <div className="container-custom">

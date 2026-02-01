@@ -181,7 +181,7 @@ const CaseStudyCard = ({ caseStudy, index }: { caseStudy: CaseStudy; index: numb
 
 export function CaseStudiesSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-t-2 border-slate-200 section-shadow relative overflow-hidden">
       {/* Decorative background elements - Más sutiles */}
       <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-forja-teal/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-0 w-[400px] h-[400px] bg-forja-purple/5 rounded-full blur-3xl" />

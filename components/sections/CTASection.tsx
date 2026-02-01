@@ -61,7 +61,7 @@ const benefits = [
 
 export function CTASection() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white via-slate-50/50 to-slate-100 relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-white via-slate-50/50 to-slate-100 border-t-2 border-slate-200 section-shadow-alt relative overflow-hidden">
       {/* Decorative elements - más sutiles */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-forja-teal/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-forja-purple/5 rounded-full blur-3xl" />

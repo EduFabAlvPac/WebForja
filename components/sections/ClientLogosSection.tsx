@@ -69,7 +69,7 @@ export function ClientLogosSection() {
   return (
     <section
       ref={ref}
-      className="py-12 md:py-16 bg-slate-50 border-y border-slate-200"
+      className="py-12 md:py-16 bg-slate-50 border-t-2 border-slate-200 section-shadow-alt"
       aria-label="Clientes y partners que confían en FORJA Digital"
     >
       <div className="container-custom">

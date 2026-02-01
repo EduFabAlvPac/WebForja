@@ -32,19 +32,19 @@ export interface MetodologiaForjaProps {
 const phases: MetodologiaPhase[] = [
   {
     number: '01',
-    title: 'Fundamentar',
-    tagline: 'No Puedes Mejorar lo que No Mides',
+    title: 'Fijar',
+    tagline: 'Identificación situación actual y brechas contra el mercado',
     description: 'Realizamos un diagnóstico profundo de tu arquitectura actual: estrategia, procesos, tecnología, talento y finanzas. Identificamos brechas críticas y oportunidades de alto impacto.',
     details: [
-      'Matriz de Madurez (8 dimensiones)',
-      'Mapa de Procesos Críticos',
-      'Inventario Tecnológico & Stack Audit',
+      'Matriz de Madurez',
+      'Inventario Tecnológico',
+      'Mapa de procesos VSM',
       'Reporte de Brechas Estratégicas',
     ],
     deliverables: [
       'Matriz de Madurez',
-      'Mapa de Procesos Críticos',
       'Inventario Tecnológico',
+      'Mapa de procesos VSM',
       'Reporte de Brechas',
     ],
     duration: '2-3 semanas',
@@ -189,7 +189,7 @@ export function MetodologiaForja({ currentPhase, className }: MetodologiaForjaPr
           El Sistema de 5 Fases que Elimina el Caos Digital
         </p>
         <p className="text-sm text-slate-600 max-w-3xl mx-auto">
-          Más de <strong>200 empresas en 8 países</strong> han transformado su operación con este framework arquitectónico.
+          <strong>+150 empresas transformadas</strong> en <strong>2 países</strong> han transformado su operación con este framework arquitectónico.
           No improvisamos: cada fase tiene <strong>entregables concretos</strong>, métricas claras y decisiones basadas en datos.
         </p>
       </motion.div>

@@ -76,7 +76,7 @@ const timeline: TimelineEvent[] = [
 
 export function HistoriaSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white border-t-2 border-slate-200 section-shadow relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-turquoise/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl" />

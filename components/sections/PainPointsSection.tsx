@@ -100,7 +100,7 @@ export const PainPointsSection = () => {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50 border-t border-gray-200 shadow-[0_4px_12px_rgba(0,0,0,0.04)] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-slate-50 border-t-2 border-slate-200 section-shadow-alt relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       <div className="absolute top-20 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />

@@ -124,7 +124,7 @@ const PILARES: PillarData[] = [
 
 export function ServicesSection() {
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-gray-200 shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white border-t-2 border-slate-200 section-shadow relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-turquoise/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />

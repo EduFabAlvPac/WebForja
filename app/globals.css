@@ -374,6 +374,15 @@
     background: linear-gradient(to right, transparent, #cbd5e1, transparent);
     @apply h-px w-full;
   }
+
+  /* Separación visible entre secciones */
+  .section-shadow {
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .section-shadow-alt {
+    box-shadow: 0 6px 28px rgba(15, 23, 42, 0.1);
+  }
 }
 
 @layer utilities {

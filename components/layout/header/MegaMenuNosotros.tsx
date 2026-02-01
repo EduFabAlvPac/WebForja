@@ -81,13 +81,13 @@ export function MegaMenuNosotros({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="fixed left-0 right-0 top-[60px] md:top-[80px] z-[9999] bg-white shadow-2xl"
+          className="fixed left-0 right-0 top-[60px] md:top-[80px] z-[9999] bg-slate-50 border-t-2 border-slate-200 shadow-[0_20px_60px_rgba(15,23,42,0.15)]"
           style={{ height: 'auto' }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <div className="w-full bg-white">
-            <div className="container mx-auto px-8 py-16 max-w-5xl bg-white">
+          <div className="w-full bg-slate-50">
+            <div className="container mx-auto px-8 py-16 max-w-5xl bg-slate-50">
               {/* Grid horizontal de 3 items - Estilo como Servicios */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {NOSOTROS_ITEMS.map((item, index) => (
@@ -99,7 +99,7 @@ export function MegaMenuNosotros({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
                   >
                     <Link
                       href={getLocalizedHref(item.href)}
-                      className="group block p-6 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+                      className="group block p-6 rounded-xl hover:bg-slate-100 transition-colors duration-200"
                     >
                       {/* Ícono a la izquierda con texto a la derecha */}
                       <div className="flex items-start gap-4">

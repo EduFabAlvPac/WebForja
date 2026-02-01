@@ -50,13 +50,13 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="fixed left-0 right-0 top-[60px] md:top-[80px] z-[9999] bg-white shadow-2xl"
+          className="fixed left-0 right-0 top-[60px] md:top-[80px] z-[9999] bg-slate-50 border-t-2 border-slate-200 shadow-[0_20px_60px_rgba(15,23,42,0.15)]"
           style={{ height: 'auto' }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <div className="w-full bg-white">
-            <div className="container mx-auto px-8 py-12 max-w-6xl bg-white">
+          <div className="w-full bg-slate-50">
+            <div className="container mx-auto px-8 py-12 max-w-6xl bg-slate-50">
               {/* Grid de 3 columnas */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                 {SERVICIOS_MEGA_MENU.map((column, columnIndex) => {
