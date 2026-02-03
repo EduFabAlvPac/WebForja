@@ -24,7 +24,7 @@ export default function HistoriaPage() {
           >
             <Image
               src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
-              alt="Historia de FORJA Digital - Equipo fundador en sesión de planificación estratégica"
+              alt="Historia de FORJA CONSULTING - Equipo fundador en sesión de planificación estratégica"
               fill
               className="object-cover"
               quality={90}
@@ -55,7 +55,7 @@ export default function HistoriaPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-              Una frustración que se convirtió en <strong className="text-brand-orange">revolución</strong>
+              Una frustración que se convirtió en <strong className="text-brand-orange">Revolución</strong>
             </p>
           </motion.div>
         </div>
