@@ -114,7 +114,7 @@ export function MisionVisionValores() {
                  Acompañar de cerca a las PYMES latinoamericanas con{' '}
                 <strong className="text-brand-navy">consultoría estratégica práctica y accesible,</strong>, combinando experiencia 
                 real con herramientas innovadoras, para generar{' '}
-                <strong className="text-brand-turquoise">crecimiento sostenible, resultados medibles y la competitividad que merecen.
+                <strong className="text-brand-turquoise">crecimiento sostenible, resultados medibles y la competitividad que merecen.</strong>
               </p>
             </motion.div>
 
