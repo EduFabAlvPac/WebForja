@@ -131,25 +131,21 @@ export function HistoriaSection() {
 
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed flex-1">
                 <p>
-                Durante más de 15 años, trabajando codo a codo con proveedores en Latinoamérica, vimos de cerca cómo miles de PYMES —como la tuya— impulsan nuestra economía, pero luchan por sobrevivir.
-                ¿Te suena familiar? Empresas con productos brillantes que se estancan o desaparecen por falta de estrategia clara, procesos ágiles, equipos adaptables y una gestión financiera sólida. 
-                El capital se agota, los sueños se frustran y las consultorías genéricas, con fórmulas copiadas de grandes corporaciones, solo dejan inversiones perdidas y equipos desmotivados.
+                Durante más de 15 años, trabajando codo a codo con proveedores y PYMES en Latinoamérica, vimos cómo miles de empresas —como la tuya— impulsan nuestra economía, 
+                pero luchan por sobrevivir. Productos brillantes que se estancan o desaparecen por falta de estrategia clara, procesos ágiles, 
+                equipos adaptables y una gestión financiera sólida. Las consultorías genéricas, con fórmulas copiadas de grandes corporaciones, 
+                solo dejan inversiones perdidas y sueños frustrados. <strong className="text-red-600">¿Te suena familiar?</strong>.
                 </p>
 
                 <p>
-                ¡Nos negamos a ver más historias así! Por eso, un equipo de ejecutivos experimentados en transformación empresarial, estrategia, finanzas, cadena de suministros, 
-                servicio al cliente y desarrollo de talento nos unimos. Creamos una metodología a tu medida: accesible, práctica y probada para PYMES. 
-                No teorías lejanas, sino acompañamiento real que genera resultados sostenibles y te devuelve la pasión por crecer.
-                </p>
-
-                <p>
-                ¡Nos negamos a ver más historias así! Por eso, un equipo de ejecutivos experimentados en arquitectura empresarial, finanzas, cadena de suministros, servicio al cliente y desarrollo de talento nos unimos. 
-                Creamos una metodología <strong className="text-red-600">a tu medida:</strong>, accesible, práctica y probada para PYMES. No teorías lejanas, sino acompañamiento real que genera resultados sostenibles y te devuelve la pasión por crecer.
-                En ForjaConsulting, transformamos tu frustración en éxito.<strong className="text-red-600">¿Estás listo para forjar el futuro de tu empresa? Contáctanos hoy y empecemos juntos.</strong>.
+                ¡Nos negamos a que siga pasando! Por eso, un equipo de ejecutivos experimentados en arquitectura empresarial, finanzas, cadena de suministros, 
+                servicio al cliente y desarrollo de talento nos unimos para crear una metodología <strong className="text-red-600">a tu medida:</strong>, accesible, 
+                práctica y probada para PYMES. No teorías lejanas, sino acompañamiento real que genera resultados sostenibles y te devuelve la pasión por crecer.
                 </p>
 
                 <p className="text-xl font-bold text-brand-navy pt-4 border-t-2 border-brand-turquoise/30">
-                ¿Estás listo para forjar el futuro de tu empresa? Contáctanos hoy y empecemos juntos.
+                En ForjaConsulting, transformamos tu frustración en éxito.<strong className="text-red-600">¿Estás listo para forjar el futuro de tu empresa? 
+                  Contáctanos hoy y empecemos juntos.</strong>.
                 </p>
               </div>
             </div>
@@ -286,7 +282,7 @@ export function HistoriaSection() {
                 ¿Quieres ser parte de esta <span className="text-brand-orange">historia</span>?
               </h3>
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Únete a las empresas que están transformando su futuro con FORJA
+                Únete a las empresas que están transformando su futuro con FORJA CONSULTING
               </p>
 
               <motion.div
