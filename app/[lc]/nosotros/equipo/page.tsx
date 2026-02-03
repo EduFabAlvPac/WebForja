@@ -154,7 +154,7 @@ export default function EquipoLocalePage() {
               {
                 id: 2,
                 name: 'Eduard Fabian Alvarez Pacheco',
-                role: 'Director de Transformación Digital',
+                role: 'Transformación Digital',
                 specialty: 'Tecnología e Innovación',
                 bio: 'Arquitecto Empresarial Senior con +15 años de experiencia liderando la planeación estratégica de TI y telecomunicaciones, la transformación digital y el gobierno corporativo TI&T en organizaciones tanto del sector público como privado.',
                 image: '/images/team/foto-eduard.png',
@@ -164,9 +164,9 @@ export default function EquipoLocalePage() {
               {
                 id: 3,
                 name: 'Natalia Ardila Barreto',
-                role: 'Senior Product Owner',
+                role: 'Producto y operaciones digitales',
                 specialty: 'Product & Operations',
-                bio: 'Ejecutiva global con más de 16 años de experiencia en tecnología, e-commerce y fintech, liderando equipos multifuncionales. Ha ocupado posiciones estratégicas como Product Director, Ops Director y Fellow Associate, destacando por su capacidad de innovar y generar resultados tangibles.',
+                bio: 'Ejecutiva global con más de 16 años de experiencia en tecnología, e-commerce y fintech, liderando equipos multifuncionales. Ha ocupado posiciones estratégicas como Product Director, Ops Director y Fellow Associate, (Yape / Stori / Rappi / Mckinsey) destacando por su capacidad de innovar y generar resultados tangibles.',
                 image: '/images/team/foto-natalia.png',
                 linkedin: 'https://www.linkedin.com/in/natalia-ardila-barreto-98739063/',
                 email: null
