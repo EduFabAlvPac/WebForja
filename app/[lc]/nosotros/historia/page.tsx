@@ -77,8 +77,7 @@ export default function HistoriaLocalePage() {
       {/* Diferenciadores */}
       <DiferenciadoresSection />
 
-      {/* Compromiso y CTA */}
-      <OurCommitment />
+      
     </div>
   )
 }
