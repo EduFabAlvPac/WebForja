@@ -21,7 +21,6 @@ import { ORG } from '@/lib/org';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { PainPointsSection } from '@/components/sections/PainPointsSection';
 import { MetodologiaSection } from '@/components/sections/MetodologiaSection';
-import { StatsSection } from '@/components/sections/StatsSection';
 
 /**
  * Metadata para la homepage Internacional
@@ -80,11 +79,6 @@ export default function HomePage() {
       {/* 3. Metodología FORJA® */}
       <div id="metodologia">
         <MetodologiaSection />
-      </div>
-      
-      {/* 4. Números que Hablan por Sí Solos */}
-      <div id="stats">
-        <StatsSection />
       </div>
       
       {/* Botón Flotante de Notificaciones - Solo en Home */}
