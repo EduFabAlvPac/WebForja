@@ -17,7 +17,7 @@ export const faqData: FaqCategory[] = [
       },
       {
         q: "¿Qué tipos de proyectos realizan?",
-        a: "Diagnóstico 'Rayos-X', hoja de ruta digital, rediseño de procesos, automatización/IA, gobierno de datos, modernización de aplicaciones y habilitación de comercio/operación digital."
+        a: "Diagnóstico 'Evaluación de Madurez', hoja de ruta digital, rediseño de procesos, automatización/IA, gobierno de datos, modernización de aplicaciones y habilitación de comercio/operación digital."
       },
       {
         q: "¿Atienden solo PYMEs?",
@@ -31,7 +31,7 @@ export const faqData: FaqCategory[] = [
     items: [
       {
         q: "¿Cómo inicia el acompañamiento?",
-        a: "Con una sesión de comprensión y un 'Rayos-X' de 2–3 semanas. Entregamos mapa de capacidades, brechas y una hoja de ruta priorizada con quick wins."
+        a: "Con una sesión de comprensión y un 'Evaluación de Madurez' de 2–3 semanas. Entregamos mapa de capacidades, brechas y una hoja de ruta priorizada con quick wins."
       },
       {
         q: "¿Cuáles son las fases típicas?",
@@ -75,7 +75,7 @@ export const faqData: FaqCategory[] = [
       },
       {
         q: "¿Pueden empezar con un piloto pequeño?",
-        a: "Sí. Recomendamos iniciar con 'Rayos-X' y un quick win de alto ROI para validar la relación y el enfoque."
+        a: "Sí. Recomendamos iniciar con 'Evaluación de Madurez' y un quick win de alto ROI para validar la relación y el enfoque."
       },
       {
         q: "¿Ofrecen acuerdos de confidencialidad (NDA)?",
@@ -167,7 +167,7 @@ export const faqData: FaqCategory[] = [
       },
       {
         q: "¿Cómo programo una reunión?",
-        a: "Desde el CTA 'Rayos-X Empresarial Gratis', formulario de contacto o el botón flotante de WhatsApp."
+        a: "Desde el CTA 'Evaluación de Madurez Empresarial', formulario de contacto o el botón flotante de WhatsApp."
       },
       {
         q: "¿Puedo solicitar referencias?",

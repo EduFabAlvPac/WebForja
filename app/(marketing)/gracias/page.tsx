@@ -64,7 +64,7 @@ export default function GraciasPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-forja-navy">Diagnóstico gratuito</h3>
-                  <p className="text-slate-600 text-sm">Realizamos un Rayos-X inicial sin costo para entender tu situación.</p>
+                  <p className="text-slate-600 text-sm">Realizamos una Evaluación de Madurez inicial para entender tu situación.</p>
                 </div>
               </div>
             </div>

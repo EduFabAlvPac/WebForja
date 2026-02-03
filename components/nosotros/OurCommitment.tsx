@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -149,7 +149,7 @@ export function OurCommitment() {
                   </h3>
 
                   <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                    Solicita tu <strong>Rayos-X Empresarial Gratuito</strong> y descubre tu nivel de madurez digital
+                    Solicita tu <strong>Evaluación de Madurez Empresarial</strong> y descubre tu nivel de madurez digital
                   </p>
 
                   <Link

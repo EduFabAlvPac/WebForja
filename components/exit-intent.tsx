@@ -196,7 +196,7 @@ export function ExitIntentModal() {
               {/* Content */}
               <div className="p-6 md:p-8">
                 <p className="text-slate-700 text-center mb-6 leading-relaxed">
-                  Obtén un <span className="font-bold text-forja-navy">diagnóstico gratuito</span> de tu empresa con nuestro Evaluación de Madurez y descubre oportunidades de mejora.
+                  Obtén un <span className="font-bold text-forja-navy">diagnóstico</span> de tu empresa con nuestro Evaluación de Madurez y descubre oportunidades de mejora.
                 </p>
 
                 {/* Benefits */}
@@ -229,7 +229,7 @@ export function ExitIntentModal() {
                     asChild
                   >
                     <Link href="/contacto" className="inline-flex items-center justify-center gap-2">
-                      <span>Quiero mi Evaluación de Madurez Gratis</span>
+                      <span>Quiero mi Evaluación de Madurez</span>
                       <ArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>

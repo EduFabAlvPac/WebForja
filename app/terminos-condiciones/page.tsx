@@ -101,7 +101,7 @@ export default function TerminosCondicionesPage() {
                   <p className="text-sm text-gray-700">Modernización tecnológica y digital de procesos.</p>
                 </div>
                 <div className="bg-gradient-to-br from-brand-purple/10 to-brand-navy/10 p-4 rounded-lg">
-                  <h3 className="font-semibold text-brand-navy mb-2">🔬 Rayos-X Empresarial</h3>
+                  <h3 className="font-semibold text-brand-navy mb-2">🔬 Evaluación de Madurez Empresarial</h3>
                   <p className="text-sm text-gray-700">Diagnóstico gratuito de madurez empresarial.</p>
                 </div>
                 <div className="bg-gradient-to-br from-brand-coral/10 to-brand-orange/10 p-4 rounded-lg">
@@ -132,7 +132,7 @@ export default function TerminosCondicionesPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Realizar diagnósticos empresariales (Rayos-X)</span>
+                    <span>Realizar diagnósticos empresariales (Evaluación de Madurez)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
@@ -216,7 +216,7 @@ export default function TerminosCondicionesPage() {
                   </ul>
                   <div className="mt-4 bg-yellow-50 p-4 rounded">
                     <p className="text-sm text-gray-700">
-                      <strong>Descargo de responsabilidad:</strong> Nuestros servicios de diagnóstico (Rayos-X Empresarial) son herramientas de evaluación preliminar y no constituyen asesoría legal, financiera o contable profesional.
+                      <strong>Descargo de responsabilidad:</strong> Nuestros servicios de diagnóstico (Evaluación de Madurez Empresarial) son herramientas de evaluación preliminar y no constituyen asesoría legal, financiera o contable profesional.
                     </p>
                   </div>
                 </div>

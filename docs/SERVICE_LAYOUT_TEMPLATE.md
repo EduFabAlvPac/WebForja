@@ -67,7 +67,7 @@ interface ServiceLayoutProps {
 **Props**:
 ```typescript
 interface StickyCTAProps {
-  label?: string    // Default: "Rayos-X Empresarial Gratis"
+  label?: string    // Default: "Evaluación de Madurez Empresarial"
   href?: string     // Default: "/contacto"
   className?: string
 }

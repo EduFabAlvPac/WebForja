@@ -145,7 +145,7 @@ export default function ContactoPage() {
                   {/* Content */}
                   <div className="p-6">
                     <p className="text-slate-600 mb-6">
-                      Realiza nuestro diagnóstico <span className="font-semibold text-forja-navy">Rayos-X Empresarial</span> gratuito y obtén un reporte personalizado en minutos.
+                      Realiza nuestra <span className="font-semibold text-forja-navy">Evaluación de Madurez Empresarial</span> y obtén un reporte personalizado en minutos.
                     </p>
                     
                     {/* Benefits */}
@@ -171,12 +171,12 @@ export default function ContactoPage() {
                     </ul>
                     
                     <a
-                      href={`https://wa.me/${config.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Hola, me interesa el diagnóstico Rayos-X Empresarial gratuito.')}`}
+                      href={`https://wa.me/${config.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Hola, me interesa la Evaluación de Madurez Empresarial.')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-full bg-forja-fire hover:bg-forja-fire/90 text-white font-semibold py-3 px-6 rounded-xl transition-all hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-forja-fire focus-visible:ring-offset-2"
                     >
-                      Solicitar Rayos-X Gratuito
+                      Solicitar Evaluación de Madurez
                     </a>
                   </div>
                 </div>

@@ -62,7 +62,7 @@ export function StickyCTABar() {
                     <Gift className="w-6 h-6 text-white" />
                   </motion.div>
                   <p className="text-sm font-medium">
-                    <strong className="text-white">Rayos-X Empresarial Gratis:</strong>
+                    <strong className="text-white">Evaluación de Madurez Empresarial:</strong>
                     <span className="text-white/80"> Descubre tu madurez digital en {siteMetrics.rayosX.averageTime} min.</span>
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export function StickyCTABar() {
                       className="inline-flex items-center gap-2 px-5 py-2.5 bg-forja-fire hover:bg-forja-fire/90 text-white font-bold text-sm rounded-xl transition-all shadow-lg hover:shadow-xl group"
                     >
                       <ClipboardCheck className="w-5 h-5" />
-                      Rayos-X Gratis
+                      Evaluación de Madurez Empresarial
                     </Link>
                   </motion.div>
 

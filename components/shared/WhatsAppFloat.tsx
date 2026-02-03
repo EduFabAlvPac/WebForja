@@ -31,8 +31,8 @@ export function WhatsAppFloat() {
   useEffect(() => {
     const messages: Record<string, ContextualMessage> = {
       'hero': {
-        text: '¿Tienes dudas sobre el Rayos-X? Te ayudo 👋',
-        whatsappMessage: 'Hola, me interesa conocer más sobre el Rayos-X Empresarial',
+        text: '¿Tienes dudas sobre la Evaluación de Madurez? Te ayudo 👋',
+        whatsappMessage: 'Hola, me interesa conocer más sobre el Evaluación de Madurez Empresarial',
       },
       'pain-points': {
         text: '¿Te identificas con estos problemas? Hablemos',

@@ -18,8 +18,8 @@ interface QuickMessage {
 const quickMessages: QuickMessage[] = [
   {
     id: 'rayos-x',
-    text: 'Rayos-X Empresarial',
-    message: 'Hola, me interesa conocer más sobre el Rayos-X Empresarial gratuito',
+    text: 'Evaluación de Madurez Empresarial',
+    message: 'Hola, me interesa conocer más sobre el Evaluación de Madurez Empresarial',
     icon: Search
   },
   {

@@ -200,7 +200,7 @@ export function ServicesSection() {
                   className="inline-flex items-center gap-3 px-8 py-4 bg-white text-forja-navy font-bold text-lg rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl group"
                 >
                   <ClipboardCheck className="w-6 h-6 text-forja-fire" />
-                  Evaluación de Madurez Gratis
+                  Evaluación de Madurez
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </motion.div>

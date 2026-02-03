@@ -20,7 +20,7 @@ export const homeContentOverlay: Partial<HomeContent> = {
     subtitle: "Transformamos PYMEs colombianas mediante arquitectura empresarial y estrategia digital. Metodología FORJA® probada con +200 empresas.",
     cta: {
       primary: "Habla con un Forjador",
-      secondary: "Rayos X Empresarial",
+      secondary: "Evaluación de Madurez Empresarial",
     },
   },
   

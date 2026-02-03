@@ -508,8 +508,8 @@ export const excelenciaOperativaData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Lean Gratuito',
-      description: 'Solicita tu Evaluación de Madurez Gratis. Evaluamos tu operación y te mostramos dónde está la capacidad oculta.',
-      buttonText: 'Evaluación de Madurez Gratis',
+      description: 'Solicita tu Evaluación de Madurez. Evaluamos tu operación y te mostramos dónde está la capacidad oculta.',
+      buttonText: 'Evaluación de Madurez',
       buttonLink: '/contacto',
       icon: 'Search'
     },

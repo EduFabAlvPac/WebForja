@@ -316,8 +316,8 @@ export const talentoFinanzasCategoryData: CategoryPageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Gratuito Talento & Finanzas',
-      description: 'Solicita tu Rayos-X Empresarial Gratis. Evaluamos tu situación actual en ambas áreas y te entregamos un reporte con brechas críticas.',
-      buttonText: 'Rayos-X Empresarial Gratis',
+      description: 'Solicita tu Evaluación de Madurez Empresarial. Evaluamos tu situación actual en ambas áreas y te entregamos un reporte con brechas críticas.',
+      buttonText: 'Evaluación de Madurez Empresarial',
       buttonLink: '/contacto',
       icon: 'Search'
     },

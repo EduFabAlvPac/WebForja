@@ -425,7 +425,7 @@ export default function ExcelenciaOperativaPage() {
                 ✅ Garantía de Resultados
               </p>
               <p className="text-white/90 text-lg">
-                Garantizamos mínimo 20% de mejora en productividad o trabajamos gratis hasta lograrlo
+                Garantizamos mínimo 20% de mejora en productividad o trabajamos hasta lograrlo
               </p>
             </motion.div>
           </div>

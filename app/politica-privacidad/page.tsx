@@ -112,7 +112,7 @@ export default function PoliticaPrivacidadPage() {
                     <li>Cookies y tecnologías similares</li>
                   </ul>
 
-                  <h3 className="text-lg font-semibold mb-3 text-brand-navy">Datos Empresariales (Rayos-X):</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-brand-navy">Datos Empresariales (Evaluación de Madurez):</h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
                     <li>Información sobre la empresa (sector, tamaño, ubicación)</li>
                     <li>Desafíos y objetivos empresariales</li>

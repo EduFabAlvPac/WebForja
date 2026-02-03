@@ -428,8 +428,8 @@ export const arquitecturaEstrategicaData: ServicePageData = {
   cta: {
     primary: {
       title: '¿Listo para Diseñar tu Arquitectura?',
-      description: 'Solicita tu Rayos-X Empresarial Gratis y descubre las brechas críticas que frenan tu crecimiento.',
-      buttonText: 'Rayos-X Empresarial Gratis',
+      description: 'Solicita tu Evaluación de Madurez Empresarial y descubre las brechas críticas que frenan tu crecimiento.',
+      buttonText: 'Evaluación de Madurez Empresarial',
       buttonLink: '/contacto',
       icon: '🔍',
     },

@@ -616,8 +616,8 @@ export const gestionTalentoData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Gratuito de Gestión de Talento',
-      description: 'Solicita tu Rayos-X Empresarial Gratis. Identificamos tus brechas críticas en gestión de talento y te damos recomendaciones prácticas.',
-      buttonText: 'Rayos-X Empresarial Gratis',
+      description: 'Solicita tu Evaluación de Madurez Empresarial. Identificamos tus brechas críticas en gestión de talento y te damos recomendaciones prácticas.',
+      buttonText: 'Evaluación de Madurez Empresarial',
       buttonLink: '/contacto',
       icon: 'Search'
     },

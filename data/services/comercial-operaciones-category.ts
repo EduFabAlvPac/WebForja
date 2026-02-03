@@ -262,8 +262,8 @@ export const comercialOperacionesCategoryData: CategoryPageData = {
     intro: 'Si vendes bien pero no entregas consistentemente, o si operaciones es eficiente pero ventas no llena capacidad, es momento de integrar.',
     primary: {
       title: 'Diagnóstico Comercial-Operativo Gratuito',
-      description: 'Solicita tu Evaluación de Madurez Gratis. Evaluamos tu integración actual y te mostramos dónde están las desconexiones críticas.',
-      buttonText: 'Evaluación de Madurez Gratis',
+      description: 'Solicita tu Evaluación de Madurez. Evaluamos tu integración actual y te mostramos dónde están las desconexiones críticas.',
+      buttonText: 'Evaluación de Madurez',
       buttonLink: '/contacto',
       icon: 'Search'
     },

@@ -519,8 +519,8 @@ export const comercialServicioData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Comercial y Servicio Gratuito',
-      description: 'Solicita tu Rayos-X Empresarial Gratis. Evaluamos tu sistema comercial y de servicio al cliente.',
-      buttonText: 'Rayos-X Empresarial Gratis',
+      description: 'Solicita tu Evaluación de Madurez Empresarial. Evaluamos tu sistema comercial y de servicio al cliente.',
+      buttonText: 'Evaluación de Madurez Empresarial',
       buttonLink: '/contacto',
       icon: 'Search'
     },

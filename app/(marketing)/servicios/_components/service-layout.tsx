@@ -39,7 +39,7 @@ export function ServiceLayout({
   anchors = DEFAULT_ANCHORS,
   children,
   cta = {
-    label: 'Rayos-X Empresarial Gratis',
+    label: 'Evaluación de Madurez Empresarial',
     href: '/contacto',
   },
   className,

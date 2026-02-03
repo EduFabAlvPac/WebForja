@@ -60,7 +60,7 @@ export const baseHomeContent: HomeContent = {
     subtitle: "Transformamos PYMEs latinoamericanas mediante arquitectura empresarial y estrategia digital. Metodología FORJA® probada con +200 empresas en 8 países.",
     cta: {
       primary: "Habla con un Forjador",
-      secondary: "Rayos X Empresarial",
+      secondary: "Evaluación de Madurez Empresarial",
     },
   },
   

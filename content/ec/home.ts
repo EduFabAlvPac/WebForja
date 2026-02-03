@@ -20,7 +20,7 @@ export const homeContentOverlay: Partial<HomeContent> = {
     subtitle: "Transformamos PYMEs ecuatorianas mediante arquitectura empresarial y estrategia digital. Metodología FORJA® adaptada al mercado ecuatoriano.",
     cta: {
       primary: "Habla con un Forjador",
-      secondary: "Rayos X Empresarial",
+      secondary: "Evaluación de Madurez Empresarial",
     },
   },
   

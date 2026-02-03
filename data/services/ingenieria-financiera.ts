@@ -541,8 +541,8 @@ export const ingenieriaFinancieraData: ServicePageData = {
   cta: {
     primary: {
       title: 'Diagnóstico Financiero Gratuito',
-      description: 'Solicita tu Rayos-X Empresarial Gratis. Identificamos tus brechas críticas financieras y te damos recomendaciones prácticas.',
-      buttonText: 'Rayos-X Empresarial Gratis',
+      description: 'Solicita tu Evaluación de Madurez Empresarial. Identificamos tus brechas críticas financieras y te damos recomendaciones prácticas.',
+      buttonText: 'Evaluación de Madurez Empresarial',
       buttonLink: '/contacto',
       icon: 'Search'
     },

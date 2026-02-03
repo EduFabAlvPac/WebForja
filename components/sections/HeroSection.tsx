@@ -17,7 +17,7 @@ const HERO_SLIDES = [
     subheadline: "Arquitectura Empresarial que Convierte tu Negocio en Líder de Mercado",
     tagline: "",
     description: "El 73% de las PYMEs en Latinoamérica fracasan por falta de alineamiento de estrategia con sus procesos y tecnología. Diseñamos el blueprint que integra estrategia, tecnología, procesos y personas para resultados medibles.",
-    ctaPrimary: "Descubre tu Madurez Digital - GRATIS",
+    ctaPrimary: "Descubre tu Madurez Digital",
     ctaPrimaryLink: "/contacto",
     ctaSecondary: "Ver Casos de Transformación Real",
     ctaSecondaryLink: "/nosotros/testimonios",

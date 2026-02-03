@@ -374,7 +374,7 @@ export function getDigitalTransformationClaim(): string {
  * Obtiene el claim de CEOs para CTA Section
  */
 export function getCTAClaim(): string {
-  return `Más de ${siteMetrics.clients.ceosTrained} CEOs han comenzado su transformación con nuestro Evaluación de Madurez Gratis. En solo ${siteMetrics.rayosX.averageTime} minutos descubres:`
+  return `Más de ${siteMetrics.clients.ceosTrained} CEOs han comenzado su transformación con nuestro Evaluación de Madurez. En solo ${siteMetrics.rayosX.averageTime} minutos descubres:`
 }
 
 // ============================================

@@ -123,7 +123,7 @@ export function ServiceJsonLd({
           itemOffered: {
             '@type': 'Service',
             name: 'Diagnóstico Inicial',
-            description: 'Evaluación gratuita de la situación actual',
+            description: 'Evaluación de la situación actual',
           },
         },
         {

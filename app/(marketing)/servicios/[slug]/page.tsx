@@ -135,7 +135,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         breadcrumbs={breadcrumbs}
         anchors={ANCHORS}
         cta={{
-          label: ctaPrimary?.buttonText ?? 'Rayos-X Empresarial Gratis',
+          label: ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial',
           href: ctaPrimary?.buttonLink ?? '/contacto',
         }}
       >
@@ -240,7 +240,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               <Button variant="primary" size="lg" className="bg-white text-forja-navy hover:bg-slate-100" asChild>
                 <Link href={ctaPrimary?.buttonLink ?? '/contacto'} className="flex items-center gap-2">
                   <Phone className="w-5 h-5" />
-                  <span>{ctaPrimary?.buttonText ?? 'Rayos-X Empresarial Gratis'}</span>
+                  <span>{ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial'}</span>
                 </Link>
               </Button>
               {ctaSecondary && (

@@ -141,14 +141,14 @@ export function GlobalStickyCTA() {
                     ¿Listo para transformar tu empresa?
                   </p>
                   <p className="text-sm text-slate-500">
-                    Obtén tu diagnóstico Rayos-X gratuito
+                    Obtén tu Evaluación de Madurez
                   </p>
                 </div>
 
                 {/* Mobile text */}
                 <div className="md:hidden flex-1">
                   <p className="text-sm font-medium text-forja-navy">
-                    Rayos-X Empresarial Gratis
+                    Evaluación de Madurez Empresarial
                   </p>
                 </div>
 

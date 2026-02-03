@@ -73,7 +73,7 @@ export const legalContentOverlay: Partial<LegalContent> = {
           description: 'Modernización tecnológica y digital de procesos.',
         },
         {
-          title: 'Rayos-X Empresarial',
+          title: 'Evaluación de Madurez Empresarial',
           description: 'Diagnóstico gratuito de madurez empresarial.',
         },
         {

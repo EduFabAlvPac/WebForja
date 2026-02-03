@@ -74,7 +74,7 @@ export function StickyCTA({ label, href, className, showLegalNote = false }: Sti
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Sin compromiso · 100% Gratis</span>
+              <span>Sin compromiso · Sin costo</span>
             </div>
             
             {/* Microleyenda Legal */}

@@ -343,8 +343,8 @@ export const transformacionDigitalData: ServicePageData = {
   cta: {
     primary: {
       title: '¿Listo para Digitalizar tu Futuro?',
-      description: 'Nuestra Evaluación de Madurez Gratis es el primer paso. Identificamos tus brechas y te entregamos un plan de acción claro y priorizado.',
-      buttonText: 'Evaluación de Madurez Gratis',
+      description: 'Nuestra Evaluación de Madurez es el primer paso. Identificamos tus brechas y te entregamos un plan de acción claro y priorizado.',
+      buttonText: 'Evaluación de Madurez',
       buttonLink: '/contacto',
       icon: 'ClipboardCheck',
     },
