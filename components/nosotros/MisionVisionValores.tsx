@@ -111,11 +111,10 @@ export function MisionVisionValores() {
 
               {/* Description */}
               <p className="text-lg text-gray-700 leading-relaxed">
-                Acompañar empresas a través de{' '}
-                <strong className="text-brand-navy">consultoría estratégica de excelencia</strong>, combinando
-                metodologías probadas con innovación tecnológica para generar{' '}
-                <strong className="text-brand-turquoise">resultados sostenibles y medibles</strong> que impulsen
-                el crecimiento y la competitividad de nuestros clientes.
+                 Acompañar de cerca a las PYMES latinoamericanas con{' '}
+                <strong className="text-brand-navy">consultoría estratégica práctica y accesible,</strong>, combinando experiencia 
+                real con herramientas innovadoras, para generar{' '}
+                <strong className="text-brand-turquoise">crecimiento sostenible, resultados medibles y la competitividad que merecen.
               </p>
             </motion.div>
 
@@ -140,11 +139,11 @@ export function MisionVisionValores() {
 
               {/* Description */}
               <p className="text-lg text-gray-700 leading-relaxed">
-                Ser la firma de consultoría{' '}
-                <strong className="text-brand-navy">líder en América Latina</strong>, reconocida por nuestra
-                capacidad de transformar organizaciones y crear{' '}
-                <strong className="text-brand-orange">valor sostenible</strong> a través de la innovación, el
-                talento excepcional y un compromiso inquebrantable con la excelencia.
+                Ser el socio estratégico{' '}
+                <strong className="text-brand-navy">de referencia para las PYMES latinoamericanas</strong>, la firma que forja su crecimiento sostenible, 
+                genera{' '}
+                <strong className="text-brand-orange">valor real y duradero,</strong> y las impulsa a competir y prosperar en cualquier escenario, 
+                gracias a nuestra cercanía, innovación accesible y compromiso total con sus resultados.
               </p>
             </motion.div>
           </div>
