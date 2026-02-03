@@ -110,7 +110,7 @@ export function HistoriaSection() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl font-bold text-brand-turquoise"
           >
-            La Historia detrás de FORJA/STRATX
+            La historia de FORJAConsulting: Forjados en el corazón de las PYMES Latinoamericanas
           </motion.p>
         </div>
 
@@ -126,43 +126,30 @@ export function HistoriaSection() {
           >
             <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border-2 border-brand-turquoise/20 w-full flex flex-col">
               <h3 className="text-2xl md:text-3xl font-bold text-brand-navy mb-6">
-                La Historia detrás de <span className="text-brand-orange">FORJA/STRATX</span>
+                La Historia detrás de <span className="text-brand-orange">FORJA CONSULTING</span>
               </h3>
 
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed flex-1">
                 <p>
-                  Trabajando más de 14 años en compañías en la búsqueda de proveedores de productos y servicios,
-                  vimos cómo la economía latinoamericana se mueve a través de miles de empresas pequeñas y medianas.
+                Durante más de 15 años, trabajando codo a codo con proveedores en Latinoamérica, vimos de cerca cómo miles de PYMES —como la tuya— impulsan nuestra economía, pero luchan por sobrevivir.
+                ¿Te suena familiar? Empresas con productos brillantes que se estancan o desaparecen por falta de estrategia clara, procesos ágiles, equipos adaptables y una gestión financiera sólida. 
+                El capital se agota, los sueños se frustran y las consultorías genéricas, con fórmulas copiadas de grandes corporaciones, solo dejan inversiones perdidas y equipos desmotivados.
                 </p>
 
                 <p>
-                  Estas empresas no crecen o desaparecen por falta de claridad estratégica, procesos eficientes,
-                  cultura preparada para transformarse, y por la carencia o insuficiencia de capital de trabajo
-                  por errores en la gestión financiera.
+                ¡Nos negamos a ver más historias así! Por eso, un equipo de ejecutivos experimentados en transformación empresarial, estrategia, finanzas, cadena de suministros, 
+                servicio al cliente y desarrollo de talento nos unimos. Creamos una metodología a tu medida: accesible, práctica y probada para PYMES. 
+                No teorías lejanas, sino acompañamiento real que genera resultados sostenibles y te devuelve la pasión por crecer.
                 </p>
 
                 <p>
-                  Eso hace que rápidamente desaparezcan del mercado, independientemente de si tenían o no un buen
-                  producto o servicio.
-                </p>
-
-                <p>
-                  Desafortunadamente estas compañías son abordadas por consultorías genéricas con modelos copiados
-                  de otros sectores que nunca funcionaban.
-                </p>
-
-                <p>
-                  El resultado era siempre el mismo: <strong className="text-red-600">inversiones perdidas</strong>,
-                  dueños de empresas y colaboradores frustrados, y negocios brillantes que desaparecieron o no
-                  progresaron.
+                ¡Nos negamos a ver más historias así! Por eso, un equipo de ejecutivos experimentados en arquitectura empresarial, finanzas, cadena de suministros, servicio al cliente y desarrollo de talento nos unimos. 
+                Creamos una metodología <strong className="text-red-600">a tu medida:</strong>, accesible, práctica y probada para PYMES. No teorías lejanas, sino acompañamiento real que genera resultados sostenibles y te devuelve la pasión por crecer.
+                En ForjaConsulting, transformamos tu frustración en éxito.<strong className="text-red-600">¿Estás listo para forjar el futuro de tu empresa? Contáctanos hoy y empecemos juntos.</strong>.
                 </p>
 
                 <p className="text-xl font-bold text-brand-navy pt-4 border-t-2 border-brand-turquoise/30">
-                  Comprometidos en cambiar esta historia, nos reunimos un grupo de ejecutivos con experiencia en
-                  sector real de arquitectura empresarial, finanzas, cadena de abastecimiento, servicio al cliente
-                  y desarrollo de talento, para desarrollar una metodología de trabajo abordable y clara, alineada
-                  con la pequeña y mediana empresa que requieren acompañamiento para generar resultados reales y
-                  sostenibles.
+                ¿Estás listo para forjar el futuro de tu empresa? Contáctanos hoy y empecemos juntos.
                 </p>
               </div>
             </div>
