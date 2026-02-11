@@ -57,37 +57,39 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
         >
           <div className="w-full bg-slate-50">
             <div className="container mx-auto px-6 md:px-8 py-10 md:py-12 max-w-7xl bg-slate-50">
-              {/* Grid de 4 columnas: móvil 1, tablet 2, desktop 4 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 items-start">
+              {/* Grid de 4 columnas iguales: móvil 1, tablet 2, desktop 4 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-x-12 lg:gap-y-12 items-start">
                 {SERVICIOS_MEGA_MENU.map((column, columnIndex) => {
                   const categoryDisabled = isCategoryDisabled(column.id)
                   const noProxDark = categoryHidesProximamenteAndDarkTitle(column.id)
                   return (
-                    <div key={column.id} className="space-y-8">
-                      {/* Título de columna: Link o span si deshabilitado */}
-                      {categoryDisabled ? (
-                        <div className="group block">
-                          <h3 className={`text-lg font-extrabold text-center tracking-tight ${noProxDark ? 'text-gray-900 mb-10' : 'text-gray-400 mb-2'}`}>
-                            {column.title}
-                          </h3>
-                          {!noProxDark && (
-                            <p className="text-xs font-semibold text-gray-400 text-center mb-10">{PROXIMAMENTE_LABEL}</p>
-                          )}
-                        </div>
-                      ) : (
-                        <Link
-                          href={getLocalizedHref(`/servicios/${column.id}`)}
-                          className="group block"
-                        >
-                          <h3 className="text-lg font-extrabold text-gray-900 text-center mb-10 tracking-tight group-hover:text-brand-orange transition-colors duration-300">
-                            {column.title}
-                          </h3>
-                          <div className="w-1/2 h-0.5 bg-brand-orange mx-auto -mt-8 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
-                        </Link>
-                      )}
+                    <div key={column.id} className="flex flex-col min-w-0">
+                      {/* Título de columna: alineado arriba, altura uniforme */}
+                      <div className="min-h-[3.5rem] flex flex-col justify-start mb-8">
+                        {categoryDisabled ? (
+                          <div className="group block">
+                            <h3 className={`text-lg font-extrabold text-center tracking-tight ${noProxDark ? 'text-gray-900' : 'text-gray-400'}`}>
+                              {column.title}
+                            </h3>
+                            {!noProxDark && (
+                              <p className="text-xs font-semibold text-gray-400 text-center mt-1">{PROXIMAMENTE_LABEL}</p>
+                            )}
+                          </div>
+                        ) : (
+                          <Link
+                            href={getLocalizedHref(`/servicios/${column.id}`)}
+                            className="group block"
+                          >
+                            <h3 className="text-lg font-extrabold text-gray-900 text-center tracking-tight group-hover:text-brand-orange transition-colors duration-300">
+                              {column.title}
+                            </h3>
+                            <div className="w-1/2 h-0.5 bg-brand-orange mx-auto mt-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
+                          </Link>
+                        )}
+                      </div>
 
-                      {/* Lista de servicios */}
-                      <div className="space-y-10">
+                      {/* Lista de servicios: espaciado uniforme, tipografía consistente */}
+                      <div className="space-y-8">
                         {column.services.map((service, serviceIndex) => {
                           const IconComponent = LucideIcons[service.icon as keyof typeof LucideIcons] as any
                           const serviceDisabled = isServiceDisabled(service.id)

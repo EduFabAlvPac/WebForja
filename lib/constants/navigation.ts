@@ -158,21 +158,21 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
             description: 'Arquitectura Tecnológica, Tech Stack, Roadmap Digital',
             href: '/servicios/inteligencia-digital/estrategia-tecnologica',
             icon: 'Cpu',
-            iconBg: 'bg-indigo-100 text-indigo-600'
+            iconBg: 'bg-slate-100 text-slate-600'
           },
           {
             title: 'Inteligencia de Datos',
             description: 'BI, Analytics, Big Data, Integración de IA',
             href: '/servicios/inteligencia-digital/inteligencia-datos',
             icon: 'Database',
-            iconBg: 'bg-orange-100 text-orange-600'
+            iconBg: 'bg-sky-100 text-sky-600'
           },
           {
             title: 'Innovación y Agilidad',
             description: 'Transformación Digital, Metodologías Ágiles, Innovación',
             href: '/servicios/inteligencia-digital/innovacion-agilidad',
             icon: 'Rocket',
-            iconBg: 'bg-pink-100 text-pink-600'
+            iconBg: 'bg-amber-100 text-amber-600'
           }
         ]
       },
@@ -191,7 +191,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
             description: 'Ventas, CRM, Estrategia Comercial, Conversión',
             href: '/servicios/enfoque-cliente/comercial',
             icon: 'TrendingUp',
-            iconBg: 'bg-violet-100 text-violet-600'
+            iconBg: 'bg-fuchsia-100 text-fuchsia-600'
           }
         ]
       }
@@ -239,7 +239,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         href: '/servicios/adn-estrategico/estrategia',
         icon: 'Target',
         iconBg: 'bg-cyan-100',
-        iconColor: 'text-cyan-500',
+        iconColor: 'text-cyan-600',
       },
       {
         id: 'gobierno',
@@ -248,7 +248,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         href: '/servicios/adn-estrategico/gobierno',
         icon: 'Building2',
         iconBg: 'bg-blue-100',
-        iconColor: 'text-blue-500',
+        iconColor: 'text-blue-600',
       },
       {
         id: 'sostenibilidad',
@@ -257,7 +257,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         href: '/servicios/adn-estrategico/sostenibilidad',
         icon: 'Leaf',
         iconBg: 'bg-green-100',
-        iconColor: 'text-green-500',
+        iconColor: 'text-green-600',
       },
     ]
   },
@@ -272,7 +272,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         href: '/servicios/motor-operativo/operaciones',
         icon: 'Settings',
         iconBg: 'bg-red-100',
-        iconColor: 'text-red-500',
+        iconColor: 'text-red-600',
       },
       {
         id: 'finanzas',
@@ -281,7 +281,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         href: '/servicios/motor-operativo/finanzas',
         icon: 'DollarSign',
         iconBg: 'bg-teal-100',
-        iconColor: 'text-teal-500',
+        iconColor: 'text-teal-600',
       },
       {
         id: 'talento',
@@ -290,7 +290,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         href: '/servicios/motor-operativo/talento',
         icon: 'Users',
         iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-500',
+        iconColor: 'text-purple-600',
       },
     ]
   },
@@ -304,8 +304,8 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         description: 'Arquitectura tecnológica que potencia tu ventaja competitiva',
         href: '/servicios/inteligencia-digital/estrategia-tecnologica',
         icon: 'Cpu',
-        iconBg: 'bg-indigo-100',
-        iconColor: 'text-indigo-500',
+        iconBg: 'bg-slate-100',
+        iconColor: 'text-slate-600',
       },
       {
         id: 'inteligencia-datos',
@@ -313,8 +313,8 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         description: 'Convierte datos en decisiones estratégicas con BI e IA',
         href: '/servicios/inteligencia-digital/inteligencia-datos',
         icon: 'Database',
-        iconBg: 'bg-orange-100',
-        iconColor: 'text-orange-500',
+        iconBg: 'bg-sky-100',
+        iconColor: 'text-sky-600',
       },
       {
         id: 'innovacion-agilidad',
@@ -322,8 +322,8 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         description: 'Metodologías ágiles que aceleran la transformación digital',
         href: '/servicios/inteligencia-digital/innovacion-agilidad',
         icon: 'Rocket',
-        iconBg: 'bg-pink-100',
-        iconColor: 'text-pink-500',
+        iconBg: 'bg-amber-100',
+        iconColor: 'text-amber-600',
       },
     ]
   },
@@ -338,7 +338,7 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         href: '/servicios/enfoque-cliente/experiencia-cliente',
         icon: 'Heart',
         iconBg: 'bg-rose-100',
-        iconColor: 'text-rose-500',
+        iconColor: 'text-rose-600',
       },
       {
         id: 'comercial',
@@ -346,8 +346,8 @@ export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
         description: 'Sistemas comerciales integrados que convierten prospectos en clientes recurrentes',
         href: '/servicios/enfoque-cliente/comercial',
         icon: 'TrendingUp',
-        iconBg: 'bg-violet-100',
-        iconColor: 'text-violet-500',
+        iconBg: 'bg-fuchsia-100',
+        iconColor: 'text-fuchsia-600',
       },
     ]
   }
