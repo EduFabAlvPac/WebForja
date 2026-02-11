@@ -117,7 +117,7 @@ export default function ServiciosPage() {
                       <h2 className="text-2xl md:text-3xl font-bold mb-3">
                         {category.title}
                       </h2>
-                      <p className="text-white/90 text-lg">
+                      <p className="text-white/90 text-lg line-clamp-2">
                         {category.description}
                       </p>
                     </div>

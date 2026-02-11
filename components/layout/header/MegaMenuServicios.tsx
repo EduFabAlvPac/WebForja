@@ -77,10 +77,10 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
                           </div>
                         ) : (
                           <Link
-                            href={getLocalizedHref(`/servicios/${column.id}`)}
-                            className="group block"
-                          >
-                            <h3 className="text-lg font-extrabold text-gray-900 text-center tracking-tight group-hover:text-brand-orange transition-colors duration-300">
+                          href={getLocalizedHref(`/servicios/${column.id}`)}
+                          className="group block"
+                        >
+                            <h3 className="text-lg font-extrabold text-brand-navy text-center tracking-tight group-hover:text-brand-orange transition-colors duration-300">
                               {column.title}
                             </h3>
                             <div className="w-1/2 h-0.5 bg-brand-orange mx-auto mt-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
@@ -107,16 +107,16 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
                               {serviceDisabled ? (
                                 <div className="group block opacity-60 cursor-not-allowed relative">
                                   <div className="flex items-start gap-4">
-                                    <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${service.iconBg}`}>
+                                    <div className={`flex-shrink-0 w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full flex items-center justify-center ${service.iconBg}`}>
                                       {IconComponent && (
-                                        <IconComponent className={`w-6 h-6 ${service.iconColor}`} strokeWidth={2} />
+                                        <IconComponent className={`w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] flex-shrink-0 ${service.iconColor}`} strokeWidth={2} />
                                       )}
                                     </div>
                                     <div className="flex-1 min-w-0">
                                       <h4 className="text-base font-semibold text-gray-500 mb-1 leading-snug">
                                         {service.title}
                                       </h4>
-                                      <p className="text-sm text-gray-400 leading-relaxed font-normal">
+                                      <p className="text-sm text-gray-400 leading-relaxed font-normal line-clamp-2">
                                         {service.description}
                                       </p>
                                       <span className="inline-block mt-2 text-xs font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded">
@@ -128,16 +128,16 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
                               ) : (
                                 <Link href={getLocalizedHref(service.href)} className="group block">
                                   <div className="flex items-start gap-4">
-                                    <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${service.iconBg}`}>
+                                    <div className={`flex-shrink-0 w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${service.iconBg}`}>
                                       {IconComponent && (
-                                        <IconComponent className={`w-6 h-6 ${service.iconColor}`} strokeWidth={2} />
+                                        <IconComponent className={`w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] flex-shrink-0 ${service.iconColor}`} strokeWidth={2} />
                                       )}
                                     </div>
                                     <div className="flex-1 min-w-0">
                                       <h4 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-brand-orange transition-colors leading-snug">
                                         {service.title}
                                       </h4>
-                                      <p className="text-sm text-gray-600 leading-relaxed font-normal">
+                                      <p className="text-sm text-gray-600 leading-relaxed font-normal line-clamp-2">
                                         {service.description}
                                       </p>
                                     </div>

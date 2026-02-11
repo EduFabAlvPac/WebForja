@@ -80,11 +80,11 @@ export function MegaMenuServiciosMobile({ isOpen, onClose }: MegaMenuServiciosMo
                             onClick={onClose}
                             className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className={`w-12 h-12 rounded-full ${service.iconBg} flex items-center justify-center flex-shrink-0 shadow-sm`}>
+                            <div className={`flex-shrink-0 w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full flex items-center justify-center ${service.iconBg}`}>
                               {IconComponent && (
                                 <IconComponent 
-                                  className={`w-6 h-6 ${service.iconColor}`}
-                                  strokeWidth={2.5}
+                                  className={`w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] flex-shrink-0 ${service.iconColor}`}
+                                  strokeWidth={2}
                                 />
                               )}
                             </div>
@@ -92,7 +92,7 @@ export function MegaMenuServiciosMobile({ isOpen, onClose }: MegaMenuServiciosMo
                               <div className="font-bold text-sm text-brand-navy mb-0.5">
                                 {service.title}
                               </div>
-                              <div className="text-xs text-gray-500 leading-tight">
+                              <div className="text-xs text-gray-500 leading-tight line-clamp-2">
                                 {service.description}
                               </div>
                             </div>

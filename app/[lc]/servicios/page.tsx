@@ -145,7 +145,7 @@ export default function ServiciosLocalePage({ params }: PageProps) {
                     {category.title}
                   </h3>
 
-                  <p className="text-gray-600 mb-6">{category.description}</p>
+                  <p className="text-gray-600 mb-6 line-clamp-2">{category.description}</p>
 
                   <ul className="space-y-2 mb-6">
                     {category.services.map((service) => (
