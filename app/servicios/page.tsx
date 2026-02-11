@@ -2,50 +2,65 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
+import { ArrowRight, Target, Users, TrendingUp, Building2, Leaf, Settings, DollarSign, Cpu, Database, Rocket, Heart } from 'lucide-react'
 import { MetodologiaForja } from '@/components/ui/metodologia-forja'
 import { isCategoryDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 
 export const metadata: Metadata = {
   title: 'Servicios | Forja Digital - AE',
-  description: 'Servicios de transformación empresarial: Estrategia & Transformación, Talento & Finanzas, Comercial & Operaciones.',
+  description: 'Servicios de transformación empresarial: ADN Estratégico, Motor Operativo, Inteligencia Digital, Enfoque al Cliente.',
 }
 
 const SERVICE_CATEGORIES = [
   {
-    id: 'estrategia-transformacion',
-    title: 'Estrategia & Transformación',
-    description: 'Diseñamos el futuro de tu organización con arquitectura estratégica y transformación digital integral.',
+    id: 'adn-estrategico',
+    title: 'ADN Estratégico',
+    description: 'Arquitectura de Negocio: Definimos la esencia estratégica de tu organización para construir un futuro sostenible.',
     icon: Target,
     color: 'from-blue-500 to-cyan-500',
-    href: '/servicios/estrategia-transformacion',
+    href: '/servicios/adn-estrategico',
     services: [
-      'Arquitectura Estratégica',
-      'Transformación Digital'
+      'Estrategia',
+      'Gobierno',
+      'Sostenibilidad'
     ]
   },
   {
-    id: 'talento-finanzas',
-    title: 'Talento & Finanzas',
-    description: 'Gestionamos de forma integrada tu capital humano y recursos financieros para maximizar el valor.',
-    icon: Users,
+    id: 'motor-operativo',
+    title: 'Motor Operativo',
+    description: 'Arquitectura de Procesos: Optimizamos operaciones, finanzas y talento para maximizar la eficiencia y el rendimiento.',
+    icon: Settings,
     color: 'from-purple-500 to-pink-500',
-    href: '/servicios/talento-finanzas',
+    href: '/servicios/motor-operativo',
     services: [
-      'Gestión de Talento Estratégico',
-      'Gestión Financiera'
+      'Operaciones (Supply Chain)',
+      'Finanzas',
+      'Talento'
     ]
   },
   {
-    id: 'comercial-operaciones',
-    title: 'Comercial & Operaciones',
-    description: 'Optimizamos tus procesos comerciales y operativos para crecer de forma rentable y sostenible.',
-    icon: TrendingUp,
-    color: 'from-orange-500 to-red-500',
-    href: '/servicios/comercial-operaciones',
+    id: 'inteligencia-digital',
+    title: 'Inteligencia Digital',
+    description: 'Arquitectura de Capacidades Digitales: Potenciamos tu organización con tecnología, datos e innovación ágil.',
+    icon: Cpu,
+    color: 'from-indigo-500 to-purple-500',
+    href: '/servicios/inteligencia-digital',
     services: [
-      'Cadena de Suministros',
-      'Comercial y Servicio al Cliente'
+      'Estrategia Tecnológica',
+      'Inteligencia de Datos',
+      'Innovación y Agilidad'
+    ]
+  },
+  {
+    id: 'enfoque-cliente',
+    title: 'Enfoque al Cliente',
+    description: 'Arquitectura de Valor: Creamos experiencias excepcionales y estrategias comerciales que generan crecimiento sostenible.',
+    icon: Heart,
+    color: 'from-orange-500 to-red-500',
+    href: '/servicios/enfoque-cliente',
+    services: [
+      'Experiencia del Cliente (CX)',
+      'Comercial'
     ]
   }
 ]
@@ -83,7 +98,7 @@ export default function ServiciosPage() {
       {/* Service Categories Grid */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {SERVICE_CATEGORIES.map((category, index) => {
               const Icon = category.icon
               const disabled = isCategoryDisabled(category.id)

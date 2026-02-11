@@ -99,58 +99,98 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     label: 'Servicios',
     megaMenuColumns: [
       {
-        category: 'Estrategia & Transformación',
+        category: 'ADN Estratégico',
         items: [
           {
-            title: 'Arquitectura Estratégica',
-            description: 'Visión, Gobierno Corporativo, Modelo Financiero',
-            href: '/servicios/estrategia-transformacion/arquitectura-estrategica',
-            icon: 'Lightbulb',
+            title: 'Estrategia',
+            description: 'Visión, Planificación Estratégica, Modelo de Negocio',
+            href: '/servicios/adn-estrategico/estrategia',
+            icon: 'Target',
             iconBg: 'bg-cyan-100 text-cyan-600'
           },
           {
-            title: 'Transformación Digital',
-            description: 'Innovación, BI, Tech Stack, Integración de IA',
-            href: '/servicios/estrategia-transformacion/transformacion-digital',
-            icon: 'Smartphone',
-            iconBg: 'bg-orange-100 text-orange-600'
-          }
-        ]
-      },
-      {
-        category: 'Talento & Finanzas',
-        items: [
-          {
-            title: 'Gestión de Talento Estratégico',
-            description: 'Desarrollo, Capacitación, Cultura Organizacional',
-            href: '/servicios/talento-finanzas/gestion-talento-estrategico',
-            icon: 'Users',
-            iconBg: 'bg-purple-100 text-purple-600'
+            title: 'Gobierno',
+            description: 'Gobierno Corporativo, Estructura Organizacional, Compliance',
+            href: '/servicios/adn-estrategico/gobierno',
+            icon: 'Building2',
+            iconBg: 'bg-blue-100 text-blue-600'
           },
           {
-            title: 'Gestión Financiera',
-            description: 'Planeación, Análisis, Control de Impuestos, Pricing',
-            href: '/servicios/talento-finanzas/ingenieria-financiera',
-            icon: 'DollarSign',
-            iconBg: 'bg-teal-100 text-teal-600'
+            title: 'Sostenibilidad',
+            description: 'ESG, Responsabilidad Social, Impacto Ambiental',
+            href: '/servicios/adn-estrategico/sostenibilidad',
+            icon: 'Leaf',
+            iconBg: 'bg-green-100 text-green-600'
           }
         ]
       },
       {
-        category: 'Comercial & Operaciones',
+        category: 'Motor Operativo',
         items: [
           {
-            title: 'Cadena de Suministros',
-            description: 'BPM, Automatización, Mejora Continua',
-            href: '/servicios/comercial-operaciones/excelencia-operativa',
+            title: 'Operaciones (Supply Chain)',
+            description: 'BPM, Automatización, Mejora Continua, Cadena de Suministros',
+            href: '/servicios/motor-operativo/operaciones',
             icon: 'Settings',
             iconBg: 'bg-red-100 text-red-600'
           },
           {
-            title: 'Comercial y Servicio al Cliente',
-            description: 'Ventas, Atención al Cliente, Fidelización',
-            href: '/servicios/comercial-operaciones/comercial-cliente',
-            icon: 'Headphones',
+            title: 'Finanzas',
+            description: 'Planeación, Análisis, Control de Impuestos, Pricing',
+            href: '/servicios/motor-operativo/finanzas',
+            icon: 'DollarSign',
+            iconBg: 'bg-teal-100 text-teal-600'
+          },
+          {
+            title: 'Talento',
+            description: 'Desarrollo, Capacitación, Cultura Organizacional',
+            href: '/servicios/motor-operativo/talento',
+            icon: 'Users',
+            iconBg: 'bg-purple-100 text-purple-600'
+          }
+        ]
+      },
+      {
+        category: 'Inteligencia Digital',
+        items: [
+          {
+            title: 'Estrategia Tecnológica',
+            description: 'Arquitectura Tecnológica, Tech Stack, Roadmap Digital',
+            href: '/servicios/inteligencia-digital/estrategia-tecnologica',
+            icon: 'Cpu',
+            iconBg: 'bg-indigo-100 text-indigo-600'
+          },
+          {
+            title: 'Inteligencia de Datos',
+            description: 'BI, Analytics, Big Data, Integración de IA',
+            href: '/servicios/inteligencia-digital/inteligencia-datos',
+            icon: 'Database',
+            iconBg: 'bg-orange-100 text-orange-600'
+          },
+          {
+            title: 'Innovación y Agilidad',
+            description: 'Transformación Digital, Metodologías Ágiles, Innovación',
+            href: '/servicios/inteligencia-digital/innovacion-agilidad',
+            icon: 'Rocket',
+            iconBg: 'bg-pink-100 text-pink-600'
+          }
+        ]
+      },
+      {
+        category: 'Enfoque al Cliente',
+        items: [
+          {
+            title: 'Experiencia del Cliente (CX)',
+            description: 'Diseño de Experiencia, Journey Mapping, Fidelización',
+            href: '/servicios/enfoque-cliente/experiencia-cliente',
+            icon: 'Heart',
+            iconBg: 'bg-rose-100 text-rose-600'
+          },
+          {
+            title: 'Comercial',
+            description: 'Ventas, CRM, Estrategia Comercial, Conversión',
+            href: '/servicios/enfoque-cliente/comercial',
+            icon: 'TrendingUp',
             iconBg: 'bg-violet-100 text-violet-600'
           }
         ]
@@ -189,72 +229,123 @@ export interface CategoriaMegaMenu {
 // Datos del Mega Menú de Servicios con diseño del mockup
 export const SERVICIOS_MEGA_MENU: CategoriaMegaMenu[] = [
   {
-    id: 'estrategia-transformacion',
-    title: 'Estrategia & Transformación',
+    id: 'adn-estrategico',
+    title: 'ADN Estratégico',
     services: [
       {
-        id: 'estrategia-empresarial',
-        title: 'Arquitectura Estratégica',
+        id: 'estrategia',
+        title: 'Estrategia',
         description: 'Construimos el mapa desde dónde estás hasta dónde necesitas llegar',
-        href: '/servicios/estrategia-transformacion/arquitectura-estrategica',
-        icon: 'Lightbulb',
+        href: '/servicios/adn-estrategico/estrategia',
+        icon: 'Target',
         iconBg: 'bg-cyan-100',
         iconColor: 'text-cyan-500',
       },
       {
-        id: 'transformacion-digital',
-        title: 'Transformación Digital',
-        description: 'Convertimos la tecnología en ventaja competitiva medible',
-        href: '/servicios/estrategia-transformacion/transformacion-digital',
-        icon: 'Smartphone',
-        iconBg: 'bg-orange-100',
-        iconColor: 'text-orange-500',
+        id: 'gobierno',
+        title: 'Gobierno',
+        description: 'Estructura organizacional sólida que soporta el crecimiento sostenible',
+        href: '/servicios/adn-estrategico/gobierno',
+        icon: 'Building2',
+        iconBg: 'bg-blue-100',
+        iconColor: 'text-blue-500',
+      },
+      {
+        id: 'sostenibilidad',
+        title: 'Sostenibilidad',
+        description: 'Integramos propósito y rentabilidad para crear valor a largo plazo',
+        href: '/servicios/adn-estrategico/sostenibilidad',
+        icon: 'Leaf',
+        iconBg: 'bg-green-100',
+        iconColor: 'text-green-500',
       },
     ]
   },
   {
-    id: 'talento-finanzas',
-    title: 'Talento & Finanzas',
+    id: 'motor-operativo',
+    title: 'Motor Operativo',
     services: [
       {
-        id: 'gestion-talento-estrategico',
-        title: 'Gestión de Talento Estratégico',
-        description: 'Equipos alineados, productivos y comprometidos con la estrategia',
-        href: '/servicios/talento-finanzas/gestion-talento-estrategico',
-        icon: 'Users',
-        iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-500',
-      },
-      {
-        id: 'ingenieria-financiera',
-        title: 'Gestión Financiera',
-        description: 'Finanzas que financian el crecimiento, no que lo frenan',
-        href: '/servicios/talento-finanzas/ingenieria-financiera',
-        icon: 'DollarSign',
-        iconBg: 'bg-teal-100',
-        iconColor: 'text-teal-500',
-      },
-    ]
-  },
-  {
-    id: 'comercial-operaciones',
-    title: 'Comercial & Operaciones',
-    services: [
-      {
-        id: 'excelencia-operativa',
-        title: 'Cadena de Suministros',
+        id: 'operaciones',
+        title: 'Operaciones (Supply Chain)',
         description: 'Procesos eficientes que liberan recursos para crecer',
-        href: '/servicios/comercial-operaciones/excelencia-operativa',
+        href: '/servicios/motor-operativo/operaciones',
         icon: 'Settings',
         iconBg: 'bg-red-100',
         iconColor: 'text-red-500',
       },
       {
-        id: 'comercial-cliente',
-        title: 'Comercial y Servicio al Cliente',
-        description: 'Sistemas comerciales integrados con servicio que convierten prospectos en clientes recurrentes',
-        href: '/servicios/comercial-operaciones/comercial-cliente',
-        icon: 'Headphones',
+        id: 'finanzas',
+        title: 'Finanzas',
+        description: 'Finanzas que financian el crecimiento, no que lo frenan',
+        href: '/servicios/motor-operativo/finanzas',
+        icon: 'DollarSign',
+        iconBg: 'bg-teal-100',
+        iconColor: 'text-teal-500',
+      },
+      {
+        id: 'talento',
+        title: 'Talento',
+        description: 'Equipos alineados, productivos y comprometidos con la estrategia',
+        href: '/servicios/motor-operativo/talento',
+        icon: 'Users',
+        iconBg: 'bg-purple-100',
+        iconColor: 'text-purple-500',
+      },
+    ]
+  },
+  {
+    id: 'inteligencia-digital',
+    title: 'Inteligencia Digital',
+    services: [
+      {
+        id: 'estrategia-tecnologica',
+        title: 'Estrategia Tecnológica',
+        description: 'Arquitectura tecnológica que potencia tu ventaja competitiva',
+        href: '/servicios/inteligencia-digital/estrategia-tecnologica',
+        icon: 'Cpu',
+        iconBg: 'bg-indigo-100',
+        iconColor: 'text-indigo-500',
+      },
+      {
+        id: 'inteligencia-datos',
+        title: 'Inteligencia de Datos',
+        description: 'Convierte datos en decisiones estratégicas con BI e IA',
+        href: '/servicios/inteligencia-digital/inteligencia-datos',
+        icon: 'Database',
+        iconBg: 'bg-orange-100',
+        iconColor: 'text-orange-500',
+      },
+      {
+        id: 'innovacion-agilidad',
+        title: 'Innovación y Agilidad',
+        description: 'Metodologías ágiles que aceleran la transformación digital',
+        href: '/servicios/inteligencia-digital/innovacion-agilidad',
+        icon: 'Rocket',
+        iconBg: 'bg-pink-100',
+        iconColor: 'text-pink-500',
+      },
+    ]
+  },
+  {
+    id: 'enfoque-cliente',
+    title: 'Enfoque al Cliente',
+    services: [
+      {
+        id: 'experiencia-cliente',
+        title: 'Experiencia del Cliente (CX)',
+        description: 'Diseñamos experiencias que convierten clientes en embajadores',
+        href: '/servicios/enfoque-cliente/experiencia-cliente',
+        icon: 'Heart',
+        iconBg: 'bg-rose-100',
+        iconColor: 'text-rose-500',
+      },
+      {
+        id: 'comercial',
+        title: 'Comercial',
+        description: 'Sistemas comerciales integrados que convierten prospectos en clientes recurrentes',
+        href: '/servicios/enfoque-cliente/comercial',
+        icon: 'TrendingUp',
         iconBg: 'bg-violet-100',
         iconColor: 'text-violet-500',
       },
