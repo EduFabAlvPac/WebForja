@@ -32,20 +32,24 @@ const HERO_SLIDES = [
     ]
   },
   {
-    id: 2,
-    headline: "Arquitectos Empresariales",
-    subheadline: "Especializados en PYMEs Latinoamericanas",
-    tagline: "Metodología Probada. Resultados Medibles. Inversión Inteligente.",
-    description: "Mientras otros consultores venden software o servicios genéricos, nosotros construimos la arquitectura estratégica que alinea TODA tu organización hacia objetivos de crecimiento sostenible.",
-    ctaPrimary: "Agenda tu Diagnóstico Estratégico",
+    id: 4,
+    headline: "Arquitectura Empresarial",
+    subheadline: "que Multiplica tu Capacidad Competitiva",
+    tagline: "Integramos Estrategia + Procesos + Tecnología + Talento en un Sistema Coherente de Crecimiento",
+    description: "No vendemos 'soluciones' aisladas. Diseñamos ecosistemas empresariales donde cada decisión impulsa objetivos estratégicos y cada proceso potencia a tu equipo. El resultado: ventaja competitiva sostenible.",
+    ctaPrimary: "Evalúa tu Arquitectura Actual",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Conoce a tu Arquitecto Forjador",
-    ctaSecondaryLink: "/nosotros/equipo",
-    // Imagen profesional: Arquitectos empresariales trabajando con cliente
-    backgroundImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80",
-    backgroundAlt: "Arquitectos empresariales desarrollando estrategia con equipo PYME",
+    ctaSecondary: "Ver Casos: Antes y Después",
+    ctaSecondaryLink: "/nosotros/testimonios",
+    // Imagen moderna: Oficina tecnológica y profesional
+    backgroundImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80",
+    backgroundAlt: "Equipo profesional en oficina moderna con tecnología",
     isGif: false,
-    stats: getHeroStats()
+    stats: [
+      { value: "Estrategia", label: "Basada en Datos" },
+      { value: "Innovación", label: "con ROI Comprobado" },
+      { value: "Escalabilidad", label: "Sin Fricción" }
+    ]
   },
   {
     id: 3,
@@ -78,24 +82,20 @@ const HERO_SLIDES = [
     ]
   },
   {
-    id: 4,
-    headline: "Arquitectura Empresarial",
-    subheadline: "que Multiplica tu Capacidad Competitiva",
-    tagline: "Integramos Estrategia + Procesos + Tecnología + Talento en un Sistema Coherente de Crecimiento",
-    description: "No vendemos 'soluciones' aisladas. Diseñamos ecosistemas empresariales donde cada decisión impulsa objetivos estratégicos y cada proceso potencia a tu equipo. El resultado: ventaja competitiva sostenible.",
-    ctaPrimary: "Evalúa tu Arquitectura Actual",
+    id: 2,
+    headline: "Arquitectos Empresariales",
+    subheadline: "Especializados en PYMEs Latinoamericanas",
+    tagline: "Metodología Probada. Resultados Medibles. Inversión Inteligente.",
+    description: "Mientras otros consultores venden software o servicios genéricos, nosotros construimos la arquitectura estratégica que alinea TODA tu organización hacia objetivos de crecimiento sostenible.",
+    ctaPrimary: "Agenda tu Diagnóstico Estratégico",
     ctaPrimaryLink: "/contacto",
-    ctaSecondary: "Ver Casos: Antes y Después",
-    ctaSecondaryLink: "/nosotros/testimonios",
-    // Imagen moderna: Oficina tecnológica y profesional
-    backgroundImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80",
-    backgroundAlt: "Equipo profesional en oficina moderna con tecnología",
+    ctaSecondary: "Conoce a tu Arquitecto Forjador",
+    ctaSecondaryLink: "/nosotros/equipo",
+    // Imagen profesional: Arquitectos empresariales trabajando con cliente
+    backgroundImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80",
+    backgroundAlt: "Arquitectos empresariales desarrollando estrategia con equipo PYME",
     isGif: false,
-    stats: [
-      { value: "Estrategia", label: "Basada en Datos" },
-      { value: "Innovación", label: "con ROI Comprobado" },
-      { value: "Escalabilidad", label: "Sin Fricción" }
-    ]
+    stats: getHeroStats()
   }
 ]
 
