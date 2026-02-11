@@ -56,9 +56,9 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
           onMouseLeave={onMouseLeave}
         >
           <div className="w-full bg-slate-50">
-            <div className="container mx-auto px-8 py-12 max-w-6xl bg-slate-50">
-              {/* Grid de 3 columnas */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div className="container mx-auto px-6 md:px-8 py-10 md:py-12 max-w-7xl bg-slate-50">
+              {/* Grid de 4 columnas: móvil 1, tablet 2, desktop 4 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 items-start">
                 {SERVICIOS_MEGA_MENU.map((column, columnIndex) => {
                   const categoryDisabled = isCategoryDisabled(column.id)
                   const noProxDark = categoryHidesProximamenteAndDarkTitle(column.id)
