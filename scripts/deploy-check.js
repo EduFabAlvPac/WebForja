@@ -44,7 +44,14 @@ function main() {
   // Git
   const gitVersion = run(['--version']);
   if (!gitVersion) {
-    console.log('❌ Git no encontrado o no compatible. Usa PortableGit en Downloads o instala Git para tu Windows.');
+    const isMac = process.platform === 'darwin';
+    console.log('❌ Git no encontrado o no compatible.');
+    if (isMac) {
+      console.log('   En Mac: abre Terminal y ejecuta: xcode-select --install');
+      console.log('   O instala Git desde: https://git-scm.com/download/mac');
+    } else {
+      console.log('   Windows: usa PortableGit en Downloads o instala Git desde git-scm.com');
+    }
     ok = false;
   } else {
     console.log('✅ Git:', gitVersion.trim());

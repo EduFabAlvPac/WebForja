@@ -82,14 +82,6 @@ export function Navigation({ className }: NavigationProps) {
                           onMouseLeave={handleMouseLeave}
                         />
                       )}
-                      {/* TEMPORALMENTE OCULTO - INDUSTRIAS */}
-                      {/* {item.id === 'industrias' && (
-                        <MegaMenuIndustrias 
-                          isOpen={true}
-                          onMouseEnter={() => handleMouseEnter(item.id)}
-                          onMouseLeave={handleMouseLeave}
-                        />
-                      )} */}
                       {item.id === 'servicios' && (
                         <MegaMenuServicios 
                           isOpen={true}

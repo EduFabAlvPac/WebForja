@@ -21,7 +21,7 @@ Portal web de clase mundial para Forja Digital - AE, consultora líder en transf
 - Diseño responsive mobile-first
 
 🎯 **Funcionalidades Clave**
-- **Rayos X Empresarial:** Quiz interactivo para diagnóstico de madurez digital
+- **Recursos de interés:** Artículos y materiales descargables
 - **Mega Menús:** Navegación avanzada con categorías visuales
 - **WhatsApp Float Button:** Contacto directo contextual
 - **Metodología FORJA:** Timeline interactiva con fases detalladas
@@ -70,7 +70,7 @@ forja-digital-ae/
 │   ├── contacto/                # Página de contacto
 │   ├── servicios/               # Página de servicios
 │   ├── nosotros/                # Página sobre nosotros
-│   ├── rayos-x-empresarial/     # Quiz interactivo
+│   ├── interes/                 # Recursos de interés
 │   └── api/                     # API Routes
 ├── components/
 │   ├── ui/                      # Componentes de Shadcn/ui
@@ -100,18 +100,21 @@ forja-digital-ae/
 - **Headings:** Montserrat (Bold, SemiBold)
 - **Body:** Inter (Regular, Medium)
 
+## 📚 Documentación
+
+- **[INSTALACION.md](./INSTALACION.md)** — Instalación y configuración
+- **[GUIA-DESARROLLO-LOCAL.md](./GUIA-DESARROLLO-LOCAL.md)** — Flujo de trabajo local y validación antes de deploy
+- **[VARIABLES-ENTORNO.md](./VARIABLES-ENTORNO.md)** — Variables de entorno
+
 ## 🚀 Deployment
 
-### Vercel (Recomendado)
-
-1. Conectar el repositorio a Vercel
-2. Configurar variables de entorno
-3. Deploy automático en cada push
-
 ```bash
-# Deploy manual
-vercel --prod
+# Deploy: commit + push a GitHub → Vercel despliega automáticamente
+npm run deploy
+# o con mensaje: npm run deploy -- "feat: descripción"
 ```
+
+Repositorio conectado a Vercel. Ver `.cursor/rules/deploy-workflow.mdc` para el flujo completo.
 
 ## 📊 Performance Targets
 
