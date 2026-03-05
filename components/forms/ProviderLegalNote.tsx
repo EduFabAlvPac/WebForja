@@ -1,7 +1,7 @@
 /**
  * FORJA DIGITAL - Provider Legal Note
  * 
- * Leyenda legal que muestra información del proveedor (Forja Digital).
+ * Leyenda legal que muestra información del proveedor (ForjaConsulting).
  * Se usa en el pie de formularios para indicar exportación de servicios.
  * 
  * @module components/forms/ProviderLegalNote
@@ -25,7 +25,7 @@ export interface ProviderLegalNoteProps {
 /**
  * Leyenda legal del proveedor
  * 
- * Muestra información de Forja Digital como proveedor único:
+ * Muestra información de ForjaConsulting como proveedor único:
  * - Razón social
  * - NIT
  * - País de incorporación

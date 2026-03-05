@@ -48,7 +48,7 @@ export const interestEC: InterestItem[] = [
       src: '/images/interest/ec-rimpe.jpg',
       alt: 'RIMPE Ecuador'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 10,
   },
   {
@@ -84,7 +84,7 @@ export const interestEC: InterestItem[] = [
       src: '/images/interest/ec-proteccion-datos.jpg',
       alt: 'Protección de Datos Ecuador'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 9,
   },
 
@@ -223,7 +223,7 @@ export const interestEC: InterestItem[] = [
       src: '/images/interest/ec-ia-pymes.jpg',
       alt: 'Inteligencia Artificial PYMEs Ecuador'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 10,
   },
 
@@ -284,7 +284,7 @@ export const interestEC: InterestItem[] = [
       src: '/images/interest/ec-guia-constitucion.jpg',
       alt: 'Guía Constitución Empresa Ecuador'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
   {
     id: 'ec-checklist-obligaciones-sri',
@@ -301,7 +301,7 @@ export const interestEC: InterestItem[] = [
       src: '/images/interest/ec-checklist-sri.jpg',
       alt: 'Checklist Obligaciones SRI Ecuador'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
 ];
 

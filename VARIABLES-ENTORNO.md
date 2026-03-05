@@ -1,4 +1,4 @@
-# Variables de Entorno - Forja Digital
+# Variables de Entorno - ForjaConsulting
 
 Este archivo documenta todas las variables de entorno necesarias para el proyecto.
 

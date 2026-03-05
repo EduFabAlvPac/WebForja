@@ -11,7 +11,7 @@ export const ORG = {
   /**
    * Información Legal - Entidad colombiana única
    */
-  legalName: "Forja Digital AE SAS",
+  legalName: "ForjaConsulting SAS",
   nit: "NIT 900.XXX.XXX-1",
   countryOfIncorporation: "Colombia",
   city: "Bogotá D.C.",
@@ -36,7 +36,7 @@ export const ORG = {
   /**
    * Branding
    */
-  brandName: "Forja Digital - AE",
+  brandName: "ForjaConsulting",
   tagline: "Arquitectos del Crecimiento PYME",
   
   /**

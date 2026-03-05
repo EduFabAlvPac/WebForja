@@ -1,4 +1,4 @@
-# Widget Asistente Virtual - Forja Digital AE
+# Widget Asistente Virtual - ForjaConsulting
 
 ## 📋 Descripción
 

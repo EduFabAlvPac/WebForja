@@ -121,14 +121,14 @@ export function GlobeButton({ isOpen, onClick }: ButtonProps) {
       className={cn(
         'group flex items-center justify-center',
         'w-12 h-12 rounded-full',
-        'bg-[#1e3a5f] hover:bg-[#2a4a73]', // Azul marino del logotipo
+        'bg-brand-blue-anchor hover:bg-brand-blue-corp',
         'border-2 border-[#2a4a73] hover:border-[#3a5a83]',
         'text-white',
         'shadow-lg hover:shadow-xl',
         'transition-all duration-200 ease-out',
         'focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2',
         'active:scale-95',
-        isOpen && 'bg-[#2a4a73] border-brand-orange ring-2 ring-brand-orange/30'
+        isOpen && 'bg-brand-blue-corp border-brand-orange ring-2 ring-brand-orange/30'
       )}
       aria-label="Seleccionar país"
       aria-expanded={isOpen}

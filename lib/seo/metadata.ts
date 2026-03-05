@@ -39,7 +39,7 @@ export interface GenerateI18nMetadataParams {
  *   return generateI18nMetadata({
  *     lc: params.lc,
  *     pathname: '/servicios/arquitectura',
- *     title: 'Arquitectura Estratégica | Forja Digital',
+ *     title: 'Arquitectura Estratégica | ForjaConsulting',
  *     description: 'Diseño y optimización de estructuras empresariales.',
  *   });
  * }

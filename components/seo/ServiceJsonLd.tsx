@@ -48,7 +48,7 @@ export function ServiceJsonLd({
     provider: {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
-      name: 'Forja Digital - AE',
+      name: 'ForjaConsulting',
       url: SITE_URL,
       logo: `${SITE_URL}/logo-color.png`,
     },
@@ -144,7 +144,7 @@ export function ServiceJsonLd({
     '@type': 'WebPage',
     '@id': `${serviceUrl}/#webpage`,
     url: serviceUrl,
-    name: `${name} | Forja Digital - AE`,
+    name: `${name} | ForjaConsulting`,
     description,
     isPartOf: {
       '@id': `${SITE_URL}/#website`,

@@ -5,7 +5,7 @@
 
 export const config = {
   app: {
-    name: process.env.NEXT_PUBLIC_APP_NAME || 'Forja Digital - AE',
+    name: process.env.NEXT_PUBLIC_APP_NAME || 'ForjaConsulting',
     url: process.env.NEXT_PUBLIC_APP_URL || 'https://forjadigital.co',
     env: process.env.NODE_ENV || 'development',
   },

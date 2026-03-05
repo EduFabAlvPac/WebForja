@@ -30,12 +30,12 @@ import { LegalStamp } from '@/components/site/LegalStamp';
 
 export async function generateMetadata({ params }: { params: { lc: string } }): Promise<Metadata> {
   return {
-    title: 'Contratación y Facturación | Forja Digital',
+    title: 'Contratación y Facturación | ForjaConsulting',
     description: 'Información sobre contratación, facturación electrónica, medios de pago y cumplimiento legal para servicios de exportación desde Colombia.',
     keywords: 'contratación, facturación, exportación de servicios, DIAN, medios de pago, compliance, Ley 1581',
     robots: 'index, follow',
     openGraph: {
-      title: 'Contratación y Facturación | Forja Digital',
+      title: 'Contratación y Facturación | ForjaConsulting',
       description: 'Todo lo que necesitas saber sobre cómo contratar y facturar servicios de consultoría exportados desde Colombia.',
       type: 'website',
     },

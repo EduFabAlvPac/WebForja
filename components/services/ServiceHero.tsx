@@ -1,17 +1,31 @@
 'use client'
 
+import type { ElementType } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight, Lightbulb, Smartphone } from 'lucide-react'
+import { ChevronRight, Lightbulb, Smartphone, Cpu, Database, Rocket, Target, DollarSign, Users, Headphones, Settings } from 'lucide-react'
 import { ServiceHeroData } from '@/types/services'
 
 interface ServiceHeroProps {
   data: ServiceHeroData
 }
 
+const iconMap: Record<string, ElementType> = {
+  Lightbulb,
+  Smartphone,
+  Cpu,
+  Database,
+  Rocket,
+  Target,
+  DollarSign,
+  Users,
+  Headphones,
+  Settings,
+}
+
 export function ServiceHero({ data }: ServiceHeroProps) {
-  const Icon = data.icon === 'Lightbulb' ? Lightbulb : Smartphone
+  const Icon = iconMap[data.icon] || Lightbulb
   const hasBackgroundImage = !!data.backgroundImage
 
   return (
@@ -20,7 +34,7 @@ export function ServiceHero({ data }: ServiceHeroProps) {
         <>
           <div className="absolute inset-0">
             <motion.div
-              className="w-full h-full"
+              className="relative w-full h-full"
               initial={{ scale: 1 }}
               animate={{ scale: 1.05 }}
               transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
@@ -48,28 +62,39 @@ export function ServiceHero({ data }: ServiceHeroProps) {
       )}
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <motion.nav
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-2 text-sm mb-8"
-          aria-label="Breadcrumb"
-        >
-          {data.breadcrumbs.map((crumb, index) => (
-            <div key={index} className="flex items-center gap-2">
-              {index > 0 && <ChevronRight className={`w-3.5 h-3.5 ${hasBackgroundImage ? 'text-gray-400' : 'text-gray-400'}`} />}
-              {index === data.breadcrumbs.length - 1 ? (
-                <span className="text-brand-orange font-semibold">{crumb.label}</span>
-              ) : (
-                <Link
-                  href={crumb.href}
-                  className={`${hasBackgroundImage ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-brand-orange'} transition-colors font-medium`}
-                >
-                  {crumb.label}
-                </Link>
-              )}
-            </div>
-          ))}
-        </motion.nav>
+        {data.categoryBadge ? (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0, duration: 0.4 }}
+            className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold mb-8 ${hasBackgroundImage ? 'text-white/90 bg-white/10' : 'text-brand-navy bg-brand-orange/10'}`}
+          >
+            {data.categoryBadge}
+          </motion.div>
+        ) : (
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-2 text-sm mb-8"
+            aria-label="Breadcrumb"
+          >
+            {data.breadcrumbs.map((crumb, index) => (
+              <div key={index} className="flex items-center gap-2">
+                {index > 0 && <ChevronRight className="w-3.5 h-3.5 text-gray-400" />}
+                {index === data.breadcrumbs.length - 1 ? (
+                  <span className="text-brand-orange font-semibold">{crumb.label}</span>
+                ) : (
+                  <Link
+                    href={crumb.href}
+                    className={`${hasBackgroundImage ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-brand-orange'} transition-colors font-medium`}
+                  >
+                    {crumb.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </motion.nav>
+        )}
 
         <div className="max-w-5xl">
           <motion.div

@@ -12,8 +12,8 @@ import type { LegalContent } from '@/content/base/legal';
 export const legalContentOverlay: Partial<LegalContent> = {
   privacy: {
     intro: {
-      text: 'Forja Digital, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013 de Colombia.',
-      responsible: 'Responsable del tratamiento: Forja Digital S.A.S., con domicilio en Bogotá, Colombia. Email: info@forjadigital.com',
+      text: 'ForjaConsulting, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013 de Colombia.',
+      responsible: 'Responsable del tratamiento: ForjaConsulting SAS, con domicilio en Bogotá, Colombia. Email: info@forjadigital.com',
     },
     dataCollection: {
       identification: [
@@ -53,11 +53,11 @@ export const legalContentOverlay: Partial<LegalContent> = {
   },
   terms: {
     acceptance: {
-      text: 'Al acceder y utilizar el sitio web de Forja Digital (en adelante "el Sitio") y nuestros servicios, aceptas estar sujeto a estos Términos y Condiciones, nuestra Política de Protección de Datos conforme a la Ley 1581 de 2012.',
+      text: 'Al acceder y utilizar el sitio web de ForjaConsulting (en adelante "el Sitio") y nuestros servicios, aceptas estar sujeto a estos Términos y Condiciones, nuestra Política de Protección de Datos conforme a la Ley 1581 de 2012.',
       warning: 'Si no estás de acuerdo con estos términos, por favor no utilices nuestro sitio web ni servicios.',
     },
     services: {
-      description: 'Forja Digital ofrece servicios de consultoría empresarial desde Colombia, incluyendo pero no limitado a:',
+      description: 'ForjaConsulting ofrece servicios de consultoría empresarial desde Colombia, incluyendo pero no limitado a:',
       list: [
         {
           title: 'Arquitectura Estratégica',

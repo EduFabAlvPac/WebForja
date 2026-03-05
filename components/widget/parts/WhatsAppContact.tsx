@@ -31,7 +31,7 @@ const quickMessages: QuickMessage[] = [
   {
     id: 'consulta',
     text: 'Consulta General',
-    message: 'Hola, tengo algunas preguntas sobre Forja Digital',
+    message: 'Hola, tengo algunas preguntas sobre ForjaConsulting',
     icon: HelpCircle
   },
   {

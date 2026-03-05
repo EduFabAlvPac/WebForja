@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const country = getCountryByLocale(lc)
 
   return {
-    title: `Gracias por Contactarnos | Forja Digital ${country.name}`,
+    title: `Gracias por Contactarnos | ForjaConsulting ${country.name}`,
     description: 'Hemos recibido tu mensaje. Te contactaremos pronto para ayudarte a transformar tu empresa.',
     robots: 'noindex, nofollow',
   }

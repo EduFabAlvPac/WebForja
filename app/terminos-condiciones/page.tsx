@@ -3,13 +3,13 @@ import { FileText, Scale, AlertTriangle, CheckCircle, XCircle, Shield, Mail, Cal
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Términos y Condiciones | ForjaDigitalAE',
-  description: 'Términos y Condiciones de uso del sitio web y servicios de consultoría empresarial de ForjaDigitalAE. Conoce tus derechos y obligaciones.',
-  keywords: 'términos y condiciones, condiciones de uso, servicios de consultoría, ForjaDigitalAE, Colombia',
+  title: 'Términos y Condiciones | ForjaConsulting',
+  description: 'Términos y Condiciones de uso del sitio web y servicios de consultoría empresarial de ForjaConsulting. Conoce tus derechos y obligaciones.',
+  keywords: 'términos y condiciones, condiciones de uso, servicios de consultoría, ForjaConsulting, Colombia',
   robots: 'index, follow',
   openGraph: {
-    title: 'Términos y Condiciones | ForjaDigitalAE',
-    description: 'Términos y Condiciones de uso del sitio web y servicios de ForjaDigitalAE.',
+    title: 'Términos y Condiciones | ForjaConsulting',
+    description: 'Términos y Condiciones de uso del sitio web y servicios de ForjaConsulting.',
     type: 'website',
   },
 }
@@ -20,10 +20,10 @@ export default function TerminosCondicionesPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Términos y Condiciones',
-    description: 'Términos y Condiciones de uso del sitio web y servicios de ForjaDigitalAE',
+    description: 'Términos y Condiciones de uso del sitio web y servicios de ForjaConsulting',
     publisher: {
       '@type': 'Organization',
-      name: 'ForjaDigitalAE',
+      name: 'ForjaConsulting',
       url: 'https://forjadigitalae.com',
     },
     datePublished: '2025-11-24',
@@ -71,7 +71,7 @@ export default function TerminosCondicionesPage() {
                 <div>
                   <h2 className="text-2xl font-bold mb-4">1. Aceptación de los Términos</h2>
                   <p className="text-gray-700 mb-4">
-                    Al acceder y utilizar el sitio web de ForjaDigitalAE (en adelante &quot;el Sitio&quot;) y nuestros servicios, aceptas estar sujeto a estos Términos y Condiciones, nuestra Política de Privacidad y todas las leyes aplicables.
+                    Al acceder y utilizar el sitio web de ForjaConsulting (en adelante &quot;el Sitio&quot;) y nuestros servicios, aceptas estar sujeto a estos Términos y Condiciones, nuestra Política de Privacidad y todas las leyes aplicables.
                   </p>
                   <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
                     <p className="text-sm text-gray-700">
@@ -89,7 +89,7 @@ export default function TerminosCondicionesPage() {
             <div className="bg-white rounded-card shadow-card p-8 mb-8">
               <h2 className="text-2xl font-bold mb-4">2. Descripción de los Servicios</h2>
               <p className="text-gray-700 mb-4">
-                ForjaDigitalAE ofrece servicios de consultoría empresarial, incluyendo pero no limitado a:
+                ForjaConsulting ofrece servicios de consultoría empresarial, incluyendo pero no limitado a:
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-gradient-to-br from-brand-turquoise/10 to-brand-purple/10 p-4 rounded-lg">
@@ -185,11 +185,11 @@ export default function TerminosCondicionesPage() {
             <div className="bg-white rounded-card shadow-card p-8 mb-8">
               <h2 className="text-2xl font-bold mb-4">4. Propiedad Intelectual</h2>
               <p className="text-gray-700 mb-4">
-                Todo el contenido del Sitio, incluyendo pero no limitado a textos, gráficos, logos, iconos, imágenes, clips de audio, descargas digitales, compilaciones de datos y software, es propiedad de ForjaDigitalAE o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual de Colombia e internacionales.
+                Todo el contenido del Sitio, incluyendo pero no limitado a textos, gráficos, logos, iconos, imágenes, clips de audio, descargas digitales, compilaciones de datos y software, es propiedad de ForjaConsulting o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual de Colombia e internacionales.
               </p>
               <div className="bg-blue-50 border-l-4 border-brand-turquoise p-4 rounded">
                 <p className="text-sm text-gray-700">
-                  <strong>Marca registrada:</strong> ForjaDigitalAE®, el logo y otros elementos distintivos son marcas registradas. Su uso no autorizado está prohibido.
+                  <strong>Marca registrada:</strong> ForjaConsulting®, el logo y otros elementos distintivos son marcas registradas. Su uso no autorizado está prohibido.
                 </p>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function TerminosCondicionesPage() {
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold mb-4">5. Limitación de Responsabilidad</h2>
                   <p className="text-gray-700 mb-4">
-                    ForjaDigitalAE no será responsable por:
+                    ForjaConsulting no será responsable por:
                   </p>
                   <ul className="space-y-2 text-gray-700">
                     <li>• Daños directos, indirectos, incidentales o consecuentes derivados del uso del sitio</li>
@@ -248,7 +248,7 @@ export default function TerminosCondicionesPage() {
             <div className="bg-white rounded-card shadow-card p-8 mb-8">
               <h2 className="text-2xl font-bold mb-4">7. Indemnización</h2>
               <p className="text-gray-700">
-                Aceptas indemnizar y mantener indemne a ForjaDigitalAE, sus directores, empleados y socios de cualquier reclamación, daño, pérdida, responsabilidad y gasto (incluyendo honorarios legales) que surjan de:
+                Aceptas indemnizar y mantener indemne a ForjaConsulting, sus directores, empleados y socios de cualquier reclamación, daño, pérdida, responsabilidad y gasto (incluyendo honorarios legales) que surjan de:
               </p>
               <ul className="space-y-2 text-gray-700 mt-4">
                 <li>• Tu uso del sitio o servicios</li>
@@ -309,7 +309,7 @@ export default function TerminosCondicionesPage() {
             <div className="bg-white rounded-card shadow-card p-8 mb-8">
               <h2 className="text-2xl font-bold mb-4">11. Acuerdo Completo</h2>
               <p className="text-gray-700">
-                Estos Términos y Condiciones, junto con nuestra Política de Privacidad, constituyen el acuerdo completo entre tú y ForjaDigitalAE con respecto al uso del sitio y los servicios, y reemplazan todos los acuerdos anteriores o contemporáneos.
+                Estos Términos y Condiciones, junto con nuestra Política de Privacidad, constituyen el acuerdo completo entre tú y ForjaConsulting con respecto al uso del sitio y los servicios, y reemplazan todos los acuerdos anteriores o contemporáneos.
               </p>
             </div>
           </ScrollReveal>

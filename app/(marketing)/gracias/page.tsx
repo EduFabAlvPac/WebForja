@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import config from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: 'Gracias por Contactarnos | ForjaDigitalAE',
+  title: 'Gracias por Contactarnos | ForjaConsulting',
   description: 'Hemos recibido tu mensaje. Te contactaremos pronto para ayudarte a transformar tu empresa.',
   robots: 'noindex, nofollow', // No indexar página de agradecimiento
 }

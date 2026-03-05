@@ -28,7 +28,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/transformacion-digital.jpg',
       alt: 'Transformación digital para PYMEs'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 12,
   },
   {
@@ -45,7 +45,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/erp-vs-crm.jpg',
       alt: 'Comparación ERP vs CRM'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 8,
   },
 
@@ -67,7 +67,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/ia-atencion-cliente.jpg',
       alt: 'IA para atención al cliente'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 10,
   },
   {
@@ -84,7 +84,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/automatizacion-procesos.jpg',
       alt: 'Automatización de procesos empresariales'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 7,
   },
 
@@ -105,7 +105,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/ciberseguridad.jpg',
       alt: 'Ciberseguridad para PYMEs'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 9,
   },
   {
@@ -122,7 +122,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/backup-nube.jpg',
       alt: 'Backup en la nube'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 6,
   },
 
@@ -143,7 +143,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/gestion-inventarios.jpg',
       alt: 'Gestión de inventarios digital'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 11,
   },
 
@@ -165,7 +165,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/template-digitalizacion.jpg',
       alt: 'Template plan de digitalización'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
   {
     id: 'base-checklist-seguridad',
@@ -182,7 +182,7 @@ export const interestBase: InterestItem[] = [
       src: '/images/interest/checklist-seguridad.jpg',
       alt: 'Checklist de seguridad informática'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
 ];
 

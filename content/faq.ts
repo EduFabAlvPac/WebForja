@@ -12,7 +12,7 @@ export const faqData: FaqCategory[] = [
         a: "Es la disciplina que alinea estrategia, procesos, datos y tecnología para lograr objetivos de negocio medibles. Evita iniciativas sueltas y acelera el ROI digital al priorizar inversiones con mayor impacto."
       },
       {
-        q: "¿En qué se diferencia Forja Digital AE de otras consultoras?",
+        q: "¿En qué se diferencia ForjaConsulting de otras consultoras?",
         a: "Trabajamos con un framework propio basado en TOGAF+Zachman, métricas de éxito desde el día 1 y un delivery ágil. No vendemos software; diseñamos la arquitectura y operamos la ejecución con foco en resultados."
       },
       {
@@ -125,7 +125,7 @@ export const faqData: FaqCategory[] = [
     items: [
       {
         q: "¿Quién es la entidad legal que presta los servicios?",
-        a: "Todos los servicios son prestados por Forja Digital AE SAS, con NIT 900.XXX.XXX-1, domiciliada en Bogotá D.C., Colombia. Somos una única entidad legal que exporta servicios a toda Latinoamérica."
+        a: "Todos los servicios son prestados por ForjaConsulting, con NIT 900.XXX.XXX-1, domiciliada en Bogotá D.C., Colombia. Somos una única entidad legal que exporta servicios a toda Latinoamérica."
       },
       {
         q: "¿Cómo funciona la facturación desde Colombia?",

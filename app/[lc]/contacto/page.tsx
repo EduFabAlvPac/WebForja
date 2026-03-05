@@ -39,9 +39,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const countryName = country.name
 
   return {
-    title: `Contacto en ${countryName} | Forja Digital`,
+    title: `Contacto en ${countryName} | ForjaConsulting`,
     description: `Contáctanos en ${countryName} para transformar tu empresa. Nuestro equipo de Forjadores está listo para ayudarte.`,
-    keywords: `contacto, consultoría empresarial, transformación digital, ${countryName}, Forja Digital`,
+    keywords: `contacto, consultoría empresarial, transformación digital, ${countryName}, ForjaConsulting`,
     alternates: {
       canonical: `${ORG.baseUrl}/${lc}/contacto`,
       languages: {
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     },
     openGraph: {
-      title: `Contacto en ${countryName} | Forja Digital`,
+      title: `Contacto en ${countryName} | ForjaConsulting`,
       description: `Hablemos de la transformación de tu empresa en ${countryName}.`,
       type: 'website',
       url: `${ORG.baseUrl}/${lc}/contacto`,

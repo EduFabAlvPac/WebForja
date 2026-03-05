@@ -8,7 +8,7 @@ Allow: /
 Allow: /servicios/
 Allow: /nosotros/
 Allow: /contacto
-Allow: /interes
+Allow: /conocimiento
 
 # Páginas legales (importantes para compliance)
 Allow: /politica-privacidad

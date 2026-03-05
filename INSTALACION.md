@@ -1,4 +1,4 @@
-# 📦 Guía de Instalación - Forja Digital - AE
+# 📦 Guía de Instalación - ForjaConsulting
 
 ## Requisitos Previos
 
@@ -47,7 +47,7 @@ NEXT_PUBLIC_WHATSAPP_NUMBER=573001234567
 
 # Site Configuration
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_SITE_NAME=Forja Digital - AE
+NEXT_PUBLIC_SITE_NAME=ForjaConsulting
 
 # Email de contacto
 CONTACT_EMAIL_TO=info@forjadigital.co

@@ -48,7 +48,7 @@ export const interestPE: InterestItem[] = [
       src: '/images/interest/pe-rmt.jpg',
       alt: 'Régimen MYPE Tributario Perú'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 10,
   },
   {
@@ -84,7 +84,7 @@ export const interestPE: InterestItem[] = [
       src: '/images/interest/pe-proteccion-datos.jpg',
       alt: 'Protección de Datos Perú'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 9,
   },
 
@@ -223,7 +223,7 @@ export const interestPE: InterestItem[] = [
       src: '/images/interest/pe-ia-pymes.jpg',
       alt: 'Inteligencia Artificial PYMEs Perú'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 10,
   },
 
@@ -284,7 +284,7 @@ export const interestPE: InterestItem[] = [
       src: '/images/interest/pe-checklist-formalizacion.jpg',
       alt: 'Checklist Formalización Perú'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
 ];
 

@@ -10,12 +10,15 @@ export const DISABLED_CATEGORY_IDS = [
   'estrategia-transformacion',
   'talento-finanzas',
   'comercial-operaciones',
+  'enfoque-cliente',
 ] as const
 
 export const DISABLED_SERVICE_IDS = [
   'gestion-talento-estrategico',
   'ingenieria-financiera',
   'comercial-cliente',
+  'experiencia-cliente',
+  'comercial',
 ] as const
 
 export function isCategoryDisabled(id: string): boolean {
@@ -31,7 +34,9 @@ export function isServiceHrefDisabled(href: string): boolean {
   return (
     href.includes('gestion-talento-estrategico') ||
     href.includes('ingenieria-financiera') ||
-    href.includes('comercial-cliente')
+    href.includes('comercial-cliente') ||
+    href.includes('enfoque-cliente/experiencia-cliente') ||
+    href.includes('enfoque-cliente/comercial')
   )
 }
 

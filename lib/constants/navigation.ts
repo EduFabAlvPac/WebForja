@@ -198,9 +198,9 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     ]
   },
   {
-    id: 'interes',
-    label: 'Interés',
-    href: '/interes'
+    id: 'conocimiento',
+    label: 'Conocimiento',
+    href: '/conocimiento'
   },
   {
     id: 'contacto',

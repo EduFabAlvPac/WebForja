@@ -65,7 +65,7 @@ export default function TalentoFinanzasLocalePage() {
       <section className="bg-gradient-to-br from-brand-navy via-brand-purple to-brand-navy py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
-            className="w-full h-full"
+            className="relative w-full h-full"
             initial={{ scale: 1 }}
             animate={{ scale: 1.05 }}
             transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}

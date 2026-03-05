@@ -4,8 +4,8 @@ export function OrganizationStructuredData() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'ForjaDigitalAE',
-    alternateName: 'Forja Digital - AE',
+    name: 'ForjaConsulting',
+    alternateName: 'ForjaConsulting',
     url: 'https://forjadigitalae.com',
     logo: 'https://forjadigitalae.com/logo.png',
     description: 'Consultoría empresarial especializada en arquitectura estratégica y transformación digital para PYMEs latinoamericanas',
@@ -59,7 +59,7 @@ export function WebSiteStructuredData() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'ForjaDigitalAE',
+    name: 'ForjaConsulting',
     url: 'https://forjadigitalae.com',
     description: 'Arquitectos del Crecimiento PYME - Consultoría empresarial especializada',
     inLanguage: 'es-CO',
@@ -86,7 +86,7 @@ export function ServiceStructuredData({ service }: { service: string }) {
       serviceType: 'Arquitectura Estratégica Empresarial',
       provider: {
         '@type': 'Organization',
-        name: 'ForjaDigitalAE',
+        name: 'ForjaConsulting',
       },
       description: 'Diseño y optimización de la estructura empresarial para alinear estrategia, procesos y tecnología',
       areaServed: 'LATAM',
@@ -101,7 +101,7 @@ export function ServiceStructuredData({ service }: { service: string }) {
       serviceType: 'Transformación Digital',
       provider: {
         '@type': 'Organization',
-        name: 'ForjaDigitalAE',
+        name: 'ForjaConsulting',
       },
       description: 'Modernización integral de procesos, tecnología y cultura empresarial',
       areaServed: 'LATAM',

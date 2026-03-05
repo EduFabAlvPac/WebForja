@@ -67,7 +67,7 @@ export const interestCO: InterestItem[] = [
       src: '/images/interest/co-rut-actualizacion.jpg',
       alt: 'Actualización RUT Colombia'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 8,
   },
   {
@@ -225,7 +225,7 @@ export const interestCO: InterestItem[] = [
       src: '/images/interest/co-ia-pymes.jpg',
       alt: 'Inteligencia Artificial PYMEs Colombia'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 10,
   },
 
@@ -264,7 +264,7 @@ export const interestCO: InterestItem[] = [
       src: '/images/interest/co-webinar-ecommerce.jpg',
       alt: 'Webinar E-commerce Colombia'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -285,7 +285,7 @@ export const interestCO: InterestItem[] = [
       src: '/images/interest/co-checklist-formalizacion.jpg',
       alt: 'Checklist Formalización Colombia'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
 ];
 

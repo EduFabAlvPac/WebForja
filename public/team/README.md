@@ -1,6 +1,6 @@
 # Imágenes del Equipo
 
-Esta carpeta debe contener las fotos profesionales del equipo de Forja Digital AE.
+Esta carpeta debe contener las fotos profesionales del equipo de ForjaConsulting.
 
 ## 📸 Imágenes requeridas:
 
@@ -111,7 +111,7 @@ import Image from 'next/image'
 // Reemplazar con:
 <Image
   src="/team/equipo-completo.jpg"
-  alt="Equipo completo de Forja Digital AE"
+  alt="Equipo completo de ForjaConsulting"
   fill
   className="object-cover"
   sizes="(max-width: 1024px) 100vw, 50vw"

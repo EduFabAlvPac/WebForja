@@ -1,4 +1,4 @@
-# ⚡ Inicio Rápido - Forja Digital - AE
+# ⚡ Inicio Rápido - ForjaConsulting
 
 ## 🚀 Empezar en 5 Minutos
 

@@ -1,4 +1,4 @@
-# 📚 Índice de Documentación - Forja Digital - AE
+# 📚 Índice de Documentación - ForjaConsulting
 
 ## 🎯 Guías Principales
 
@@ -217,7 +217,7 @@ Marca los documentos que ya leíste:
 
 ---
 
-**¡Bienvenido al proyecto Forja Digital - AE! 🚀**
+**¡Bienvenido al proyecto ForjaConsulting! 🚀**
 
 *Un portal que transforma la consultoría digital en Colombia y Latinoamérica.*
 

@@ -84,7 +84,7 @@ export const baseHomeContent: HomeContent = {
   
   testimonials: {
     title: "Historias de éxito que inspiran",
-    subtitle: "Empresas que ya transformaron su futuro con Forja Digital",
+    subtitle: "Empresas que ya transformaron su futuro con ForjaConsulting",
   },
   
   cta: {

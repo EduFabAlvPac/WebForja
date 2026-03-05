@@ -40,7 +40,7 @@ export default function TestimoniosLocalePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <motion.div
-            className="w-full h-full"
+            className="relative w-full h-full"
             initial={{ scale: 1 }}
             animate={{ scale: 1.05 }}
             transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
@@ -149,7 +149,7 @@ export default function TestimoniosLocalePage() {
                 company: 'TechRetail Solutions',
                 industry: 'Retail',
                 rating: 5,
-                testimonial: '"Forja Digital transformó completamente nuestra operación. Su enfoque en transformación digital nos permitió aumentar nuestras ventas en un 45% en solo 8 meses. El equipo es excepcional y los resultados hablan por sí mismos."',
+                testimonial: '"ForjaConsulting transformó completamente nuestra operación. Su enfoque en transformación digital nos permitió aumentar nuestras ventas en un 45% en solo 8 meses. El equipo es excepcional y los resultados hablan por sí mismos."',
                 results: ['+45% en ventas', '-30% costos operativos'],
                 author: 'Roberto Sánchez',
                 role: 'CEO',
@@ -160,7 +160,7 @@ export default function TestimoniosLocalePage() {
                 company: 'Manufactura del Norte',
                 industry: 'Manufactura',
                 rating: 5,
-                testimonial: '"La implementación de excelencia operacional que realizó Forja Digital superó todas nuestras expectativas. Redujimos desperdicios en un 35% y mejoramos la productividad significativamente. Un equipo verdaderamente profesional."',
+                testimonial: '"La implementación de excelencia operacional que realizó ForjaConsulting superó todas nuestras expectativas. Redujimos desperdicios en un 35% y mejoramos la productividad significativamente. Un equipo verdaderamente profesional."',
                 results: ['+40% productividad', '-35% desperdicios'],
                 author: 'Carmen Delgado',
                 role: 'Directora de Operaciones',
@@ -171,7 +171,7 @@ export default function TestimoniosLocalePage() {
                 company: 'AgroTech Innovación',
                 industry: 'Agroindustria',
                 rating: 5,
-                testimonial: '"Gracias a la estrategia de transformación digital de Forja Digital, modernizamos toda nuestra cadena de suministro. Ahora tenemos trazabilidad completa y hemos reducido pérdidas en un 40%. Excelente inversión."',
+                testimonial: '"Gracias a la estrategia de transformación digital de ForjaConsulting, modernizamos toda nuestra cadena de suministro. Ahora tenemos trazabilidad completa y hemos reducido pérdidas en un 40%. Excelente inversión."',
                 results: ['-40% pérdidas', '+50% eficiencia logística'],
                 author: 'Miguel Ángel Torres',
                 role: 'Gerente General',

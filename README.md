@@ -1,6 +1,6 @@
-# Forja Digital - AE | Portal Web
+# ForjaConsulting | Portal Web
 
-Portal web de clase mundial para Forja Digital - AE, consultora líder en transformación digital y arquitectura empresarial para PYMEs en Colombia y Latinoamérica.
+Portal web de clase mundial para ForjaConsulting, consultora líder en transformación digital y arquitectura empresarial para PYMEs en Colombia y Latinoamérica.
 
 ## 🚀 Stack Tecnológico
 
@@ -150,13 +150,13 @@ NEXT_PUBLIC_WHATSAPP_NUMBER=573001234567
 
 ## 🤝 Contribución
 
-Este es un proyecto privado de Forja Digital - AE.
+Este es un proyecto privado de ForjaConsulting.
 
 ## 📄 Licencia
 
-© 2024 Forja Digital - AE. Todos los derechos reservados.
+© 2024 ForjaConsulting. Todos los derechos reservados.
 
 ---
 
-**Desarrollado con ❤️ por el equipo de Forja Digital - AE**
+**Desarrollado con ❤️ por el equipo de ForjaConsulting**
 

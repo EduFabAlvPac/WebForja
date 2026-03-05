@@ -1,4 +1,4 @@
-# 🚀 Guía de Deployment - Forja Digital - AE
+# 🚀 Guía de Deployment - ForjaConsulting
 
 ## Deploy automatizado (Git → GitHub → Vercel)
 

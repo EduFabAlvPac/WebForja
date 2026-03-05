@@ -45,7 +45,7 @@ export default function PoliticaCookiesPage() {
                   sobre cómo usas nuestro sitio.
                 </p>
                 <p>
-                  En <strong>Forja Digital - AE</strong>, utilizamos cookies y tecnologías similares para 
+                  En <strong>ForjaConsulting</strong>, utilizamos cookies y tecnologías similares para 
                   entender mejor cómo interactúas con nuestro sitio web, personalizar contenido y anuncios, 
                   proporcionar funciones de redes sociales y analizar nuestro tráfico.
                 </p>
@@ -162,7 +162,7 @@ export default function PoliticaCookiesPage() {
                 </p>
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <p className="text-gray-900 font-semibold mb-2">
-                    Forja Digital - AE
+                    ForjaConsulting
                   </p>
                   <p className="text-gray-600">
                     Email: <a href="mailto:info@forjadigital-ae.com" className="text-brand-orange hover:underline">info@forjadigital-ae.com</a>

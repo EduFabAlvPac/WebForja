@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Home, MessageCircle, HelpCircle, Newspaper, X, Send, Star, ChevronLeft, Search } from 'lucide-react'
+import { BrandName } from '@/components/shared/BrandName'
 
 interface FloatingActionWidgetProps {
   pagePath: string
@@ -157,7 +158,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
               </h2>
               <p className="text-white/90 text-base font-medium">
                 {currentView === 'menu' && '¿Cómo podemos ayudarte?'}
-                {currentView === 'inicio' && 'Bienvenido a Forja Digital'}
+                {currentView === 'inicio' && <>Bienvenido a <BrandName variant="dark" /></>}
                 {currentView === 'mensajes' && 'Envíanos un mensaje'}
                 {currentView === 'ayuda' && 'Preguntas frecuentes'}
                 {currentView === 'noticias' && 'Noticias empresariales'}

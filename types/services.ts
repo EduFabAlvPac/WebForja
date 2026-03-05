@@ -6,6 +6,8 @@ export interface ServiceHeroData {
   description: string
   category: string
   breadcrumbs: Breadcrumb[]
+  /** Si está definido, se muestra este badge en lugar del breadcrumb (ej. "Inteligencia Digital · Arquitectura de Capacidades Digitales") */
+  categoryBadge?: string
   backgroundImage?: string
   backgroundAlt?: string
 }

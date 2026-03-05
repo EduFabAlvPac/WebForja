@@ -12,8 +12,8 @@ import type { LegalContent } from '@/content/base/legal';
 export const legalContentOverlay: Partial<LegalContent> = {
   privacy: {
     intro: {
-      text: 'Forja Digital, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley 19.628 sobre Protección de la Vida Privada de Chile.',
-      responsible: 'Responsable del tratamiento: Forja Digital S.A.S. (Colombia), prestando servicios en Chile. Email: info@forjadigital.com',
+      text: 'ForjaConsulting, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley 19.628 sobre Protección de la Vida Privada de Chile.',
+      responsible: 'Responsable del tratamiento: ForjaConsulting SAS (Colombia), prestando servicios en Chile. Email: info@forjadigital.com',
     },
     dataCollection: {
       identification: [
@@ -58,11 +58,11 @@ export const legalContentOverlay: Partial<LegalContent> = {
   },
   terms: {
     acceptance: {
-      text: 'Al acceder y utilizar el sitio web de Forja Digital (en adelante "el Sitio") y nuestros servicios, aceptas estar sujeto a estos Términos y Condiciones y nuestra Política de Protección de Datos.',
+      text: 'Al acceder y utilizar el sitio web de ForjaConsulting (en adelante "el Sitio") y nuestros servicios, aceptas estar sujeto a estos Términos y Condiciones y nuestra Política de Protección de Datos.',
       warning: 'Si no estás de acuerdo con estos términos, por favor no utilices nuestro sitio web ni servicios.',
     },
     services: {
-      description: 'Forja Digital ofrece servicios de consultoría empresarial exportados desde Colombia para clientes en Chile, incluyendo pero no limitado a:',
+      description: 'ForjaConsulting ofrece servicios de consultoría empresarial exportados desde Colombia para clientes en Chile, incluyendo pero no limitado a:',
       list: [
         {
           title: 'Arquitectura Estratégica',

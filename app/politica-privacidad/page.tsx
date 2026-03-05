@@ -3,12 +3,12 @@ import { Shield, Lock, Eye, UserCheck, FileText, Mail, AlertCircle, Calendar, Se
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad | ForjaDigitalAE',
-  description: 'Política de Privacidad de ForjaDigitalAE. Conoce cómo protegemos tus datos personales conforme a la Ley 1581 de 2012 de Colombia y GDPR.',
-  keywords: 'política de privacidad, protección de datos, Ley 1581 de 2012, GDPR, datos personales, ForjaDigitalAE',
+  title: 'Política de Privacidad | ForjaConsulting',
+  description: 'Política de Privacidad de ForjaConsulting. Conoce cómo protegemos tus datos personales conforme a la Ley 1581 de 2012 de Colombia y GDPR.',
+  keywords: 'política de privacidad, protección de datos, Ley 1581 de 2012, GDPR, datos personales, ForjaConsulting',
   robots: 'index, follow',
   openGraph: {
-    title: 'Política de Privacidad | ForjaDigitalAE',
+    title: 'Política de Privacidad | ForjaConsulting',
     description: 'Conoce cómo protegemos tus datos personales conforme a la Ley 1581 de 2012 de Colombia.',
     type: 'website',
   },
@@ -20,10 +20,10 @@ export default function PoliticaPrivacidadPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Política de Privacidad',
-    description: 'Política de Privacidad de ForjaDigitalAE conforme a la Ley 1581 de 2012',
+    description: 'Política de Privacidad de ForjaConsulting conforme a la Ley 1581 de 2012',
     publisher: {
       '@type': 'Organization',
-      name: 'ForjaDigitalAE',
+      name: 'ForjaConsulting',
       url: 'https://forjadigitalae.com',
     },
     datePublished: '2025-11-24',
@@ -48,7 +48,7 @@ export default function PoliticaPrivacidadPage() {
             Política de Privacidad
           </h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            En ForjaDigitalAE protegemos tus datos personales conforme a la Ley 1581 de 2012
+            En ForjaConsulting protegemos tus datos personales conforme a la Ley 1581 de 2012
           </p>
           <p className="text-sm text-white/80 mt-4">
             <Calendar className="inline h-4 w-4 mr-2" />
@@ -71,13 +71,13 @@ export default function PoliticaPrivacidadPage() {
                 <div>
                   <h2 className="text-2xl font-bold mb-2">Introducción</h2>
                   <p className="text-gray-600">
-                    ForjaDigitalAE, en adelante &quot;nosotros&quot; o &quot;la empresa&quot;, es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios.
+                    ForjaConsulting, en adelante &quot;nosotros&quot; o &quot;la empresa&quot;, es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios.
                   </p>
                 </div>
               </div>
               <div className="bg-blue-50 border-l-4 border-brand-turquoise p-4 rounded">
                 <p className="text-sm text-gray-700">
-                  <strong>Responsable del tratamiento:</strong> ForjaDigitalAE<br />
+                  <strong>Responsable del tratamiento:</strong> ForjaConsulting<br />
                   <strong>Domicilio:</strong> Bogotá, Colombia<br />
                   <strong>Email:</strong> <a href="mailto:forjadigitalae@gmail.com" className="text-brand-orange hover:underline">forjadigitalae@gmail.com</a><br />
                   <strong>Teléfono:</strong> +57 300 123 4567

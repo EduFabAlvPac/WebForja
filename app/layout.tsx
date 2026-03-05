@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
-import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google'
+import { DM_Sans, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
@@ -10,6 +10,7 @@ import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import { AnalyticsTracker } from '@/components/analytics/AnalyticsTracker'
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
+import { DevConsoleGuard } from '@/components/analytics/DevConsoleGuard'
 import { OrganizationStructuredData, WebSiteStructuredData } from '@/components/seo/StructuredData'
 import config from '@/lib/config'
 import { ORG } from '@/lib/org'
@@ -55,21 +56,23 @@ const WidgetLauncher = dynamic(
   { ssr: false }
 )
 
-// FORJA Design Tokens - Tipografías
-// Headings: Plus Jakarta Sans (moderna, geométrica, profesional)
-const plusJakartaSans = Plus_Jakarta_Sans({ 
+// Sistema tipográfico corporativo ForjaConsulting
+// Display y titulares: DM Sans
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-heading',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  preload: true,
 })
 
-// Body: DM Sans (legible, versátil, humanista)
-const dmSans = DM_Sans({ 
+// Cuerpo y UI: Inter
+const inter = Inter({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
   variable: '--font-body',
   display: 'swap',
-  weight: ['400', '500', '700'],
+  preload: true,
 })
 
 // SEO Config - Usando constantes de ORG
@@ -156,7 +159,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${dmSans.variable} ${plusJakartaSans.variable}`}>
+    <html lang="es" className={`${dmSans.variable} ${inter.variable}`}>
       <head>
         {/* Preconnect para recursos externos críticos */}
         <link rel="preconnect" href="https://images.unsplash.com" />
@@ -169,7 +172,8 @@ export default function RootLayout({
         <OrganizationStructuredData />
         <WebSiteStructuredData />
       </head>
-      <body className="font-body antialiased bg-slate-50 text-slate-900">
+      <body className="font-body antialiased bg-white text-content-primary">
+        <DevConsoleGuard />
         <GoogleAnalytics gaId={config.analytics.gaId} />
         <AnalyticsProvider />
         <AnalyticsTracker />
@@ -190,9 +194,13 @@ export default function RootLayout({
         {/* <GlobalStickyCTA /> - Desactivado: redundante con campanita de alerta */}
         <WidgetLauncher />
         
-        {/* Analytics y Métricas */}
-        <Analytics />
-        <SpeedInsights />
+        {/* Analytics y Métricas: solo en producción para evitar ruido y conflictos en dev */}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
         <WebVitalsReporter />
       </body>
     </html>

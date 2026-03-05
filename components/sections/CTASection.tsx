@@ -37,10 +37,10 @@ const alternativeCTAs: AlternativeCTA[] = [
   },
   {
     icon: BookOpen,
-    title: 'Explora Recursos de Interés',
+    title: 'Explora el Centro de Conocimiento',
     description: 'Accede a guías, artículos y programas para impulsar tu transformación empresarial.',
     buttonText: 'Ver Recursos',
-    buttonLink: '/interes',
+    buttonLink: '/conocimiento',
     accentColor: 'from-forja-fire to-orange-400',
     hoverBg: 'hover:bg-forja-fire',
   },

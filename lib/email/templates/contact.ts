@@ -7,7 +7,7 @@ export function getContactEmailTemplate(data: ContactFormData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuevo Contacto - Forja Digital</title>
+  <title>Nuevo Contacto - ForjaConsulting</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 40px 0;">
@@ -21,7 +21,7 @@ export function getContactEmailTemplate(data: ContactFormData): string {
                 Nuevo Contacto
               </h1>
               <p style="color: #ffffff; margin: 10px 0 0 0; opacity: 0.9;">
-                Forja Digital - AE
+                ForjaConsulting
               </p>
             </td>
           </tr>
@@ -151,7 +151,7 @@ export function getContactConfirmationTemplate(nombre: string): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gracias por Contactarnos - Forja Digital</title>
+  <title>Gracias por Contactarnos - ForjaConsulting</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 40px 0;">
@@ -180,7 +180,7 @@ export function getContactConfirmationTemplate(nombre: string): string {
               </p>
               
               <p style="color: #666; line-height: 1.6; margin: 0 0 30px 0;">
-                En Forja Digital - AE estamos comprometidos con tu transformación digital y 
+                En ForjaConsulting estamos comprometidos con tu transformación digital y 
                 trabajaremos juntos para forjar el cambio que impulsa tu futuro.
               </p>
               
@@ -201,7 +201,7 @@ export function getContactConfirmationTemplate(nombre: string): string {
           <tr>
             <td style="background-color: #2B3E5C; padding: 30px; text-align: center; border-radius: 0 0 12px 12px;">
               <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">
-                Forja Digital - AE
+                ForjaConsulting
               </p>
               <p style="color: rgba(255,255,255,0.8); margin: 0 0 15px 0; font-size: 14px;">
                 Transformando PYMEs mediante Arquitectura Empresarial

@@ -67,7 +67,7 @@ export const interestCL: InterestItem[] = [
       src: '/images/interest/cl-estatuto-pyme.jpg',
       alt: 'Estatuto PYME Chile'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 10,
   },
   {
@@ -84,7 +84,7 @@ export const interestCL: InterestItem[] = [
       src: '/images/interest/cl-proteccion-datos.jpg',
       alt: 'Protección de Datos Chile'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 9,
   },
 
@@ -223,7 +223,7 @@ export const interestCL: InterestItem[] = [
       src: '/images/interest/cl-ia-pymes.jpg',
       alt: 'Inteligencia Artificial PYMEs Chile'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
     readMins: 11,
   },
 
@@ -284,7 +284,7 @@ export const interestCL: InterestItem[] = [
       src: '/images/interest/cl-guia-inicio-actividades.jpg',
       alt: 'Guía Inicio Actividades SII'
     },
-    author: 'Forja Digital',
+    author: 'ForjaConsulting',
   },
 ];
 

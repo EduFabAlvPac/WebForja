@@ -66,12 +66,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   return {
     title: data.hero.title,
-    description: data.hero.subtitle || `${data.hero.title} - Servicio de consultoría empresarial de Forja Digital`,
+    description: data.hero.subtitle || `${data.hero.title} - Servicio de consultoría empresarial de ForjaConsulting`,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${data.hero.title} | Forja Digital - AE`,
+      title: `${data.hero.title} | ForjaConsulting`,
       description: data.hero.subtitle || data.hero.title,
       url: canonicalUrl,
       type: 'website',

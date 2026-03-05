@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Clock, CheckCheck, Send, ShieldCheck } from 'lucide-react'
 import config from '@/lib/config'
+import { BrandName } from '@/components/shared/BrandName'
 import { useSectionInView } from '@/lib/hooks/useSectionInView'
 import { trackWhatsAppClick } from '@/lib/analytics'
 
@@ -42,7 +43,7 @@ const DEFAULT_HIDDEN_PATHS = ['/gracias']
 
 export function FloatingWhatsApp({
   phone,
-  message = 'Hola, me interesa conocer más sobre Forja Digital',
+  message = 'Hola, me interesa conocer más sobre ForjaConsulting',
   hiddenPaths = DEFAULT_HIDDEN_PATHS,
 }: FloatingWhatsAppProps) {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -218,8 +219,8 @@ export function FloatingWhatsApp({
                     <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-400 rounded-full border-2 border-white" />
                   </div>
                   <div>
-                    <h3 id="whatsapp-dialog-title" className="font-bold text-white text-base">
-                      Forja Digital
+                    <h3 id="whatsapp-dialog-title" className="font-bold text-base">
+                      <BrandName variant="dark" />
                     </h3>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />

@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   if (!item) {
     return {
-      title: 'Recurso no encontrado | Forja Digital',
+      title: 'Recurso no encontrado | ForjaConsulting',
       robots: { index: false, follow: false },
     };
   }
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Si es externo, no indexar esta página
   if (item.href) {
     return {
-      title: `${item.title} | Forja Digital`,
+      title: `${item.title} | ForjaConsulting`,
       description: item.summary,
       robots: { index: false, follow: true },
     };
@@ -84,7 +84,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : `${ORG.baseUrl}${item.image.src}`;
 
   return {
-    title: `${item.title} | Forja Digital`,
+    title: `${item.title} | ForjaConsulting`,
     description: item.summary,
     keywords: item.tags,
     authors: item.author ? [{ name: item.author }] : undefined,

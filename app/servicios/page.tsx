@@ -7,7 +7,7 @@ import { MetodologiaForja } from '@/components/ui/metodologia-forja'
 import { isCategoryDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 
 export const metadata: Metadata = {
-  title: 'Servicios | Forja Digital - AE',
+  title: 'Servicios | ForjaConsulting',
   description: 'Servicios de transformación empresarial: ADN Estratégico, Motor Operativo, Inteligencia Digital, Enfoque al Cliente.',
 }
 

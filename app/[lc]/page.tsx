@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: LocaleHomeProps): Promise<Met
   
   return {
     title: 'Inicio',
-    description: `Forja Digital - Arquitectos del Crecimiento PYME en ${country.name}. Transformación digital y arquitectura empresarial para PYMEs. Metodología FORJA® probada con +200 empresas.`,
+    description: `ForjaConsulting - Arquitectos del Crecimiento PYME en ${country.name}. Transformación digital y arquitectura empresarial para PYMEs. Metodología FORJA® probada con +200 empresas.`,
     alternates: {
       canonical: `${ORG.baseUrl}/${params.lc}`,
     },

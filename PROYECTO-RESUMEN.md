@@ -1,8 +1,8 @@
-# 📊 Resumen del Proyecto - Forja Digital - AE
+# 📊 Resumen del Proyecto - ForjaConsulting
 
 ## 🎯 Visión General
 
-Portal web de clase mundial para **Forja Digital - AE**, consultora líder en transformación digital y arquitectura empresarial, diseñado para convertir visitantes en clientes mediante una experiencia memorable e inmersiva.
+Portal web de clase mundial para **ForjaConsulting**, consultora líder en transformación digital y arquitectura empresarial, diseñado para convertir visitantes en clientes mediante una experiencia memorable e inmersiva.
 
 ---
 
@@ -395,7 +395,7 @@ vercel --prod       # Production deployment
 
 ## 📞 Información de Contacto del Proyecto
 
-- **Proyecto:** Forja Digital - AE Portal Web
+- **Proyecto:** ForjaConsulting Portal Web
 - **Tecnología:** Next.js 14 + TypeScript
 - **Repositorio:** [GitHub/GitLab URL]
 - **Staging:** [URL de staging]
@@ -412,7 +412,7 @@ vercel --prod       # Production deployment
 - Framer - Animation library
 
 **Diseñado para:**
-- Forja Digital - AE
+- ForjaConsulting
 - Transformación Digital de PYMEs en LATAM
 
 ---

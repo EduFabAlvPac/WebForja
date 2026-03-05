@@ -93,7 +93,7 @@ export function middleware(request: NextRequest) {
   // ========================================
   
   // Aplicar rate limiting solo a rutas API sensibles
-  if (pathname.startsWith('/api/contact') || pathname.startsWith('/api/rayos-x')) {
+  if (pathname.startsWith('/api/contact')) {
     const ip = request.headers.get('x-forwarded-for') || 
                 request.headers.get('x-real-ip') || 
                 'unknown'

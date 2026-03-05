@@ -1,4 +1,4 @@
-# 🚀 Deployment Guide — Forja Digital Multi-País
+# 🚀 Deployment Guide — ForjaConsulting Multi-País
 
 Checklist completo para despliegue a producción en Vercel con dominio `www.forjadigital.com`.
 
@@ -254,7 +254,7 @@ Abrir DevTools → Elements → `<head>`:
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Forja Digital AE",
+  "name": "ForjaConsulting",
   ...
 }
 </script>

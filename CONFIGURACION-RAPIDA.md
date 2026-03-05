@@ -1,4 +1,4 @@
-# ⚡ Configuración Rápida - Forja Digital AE
+# ⚡ Configuración Rápida - ForjaConsulting
 
 ## 🚀 Inicio Rápido (5 minutos)
 
@@ -270,7 +270,7 @@ Revisar `MEJORAS-IMPLEMENTADAS.md` para documentación completa.
 
 ---
 
-*Configuración Rápida - Forja Digital AE*  
+*Configuración Rápida - ForjaConsulting*  
 *Última actualización: Noviembre 2024*
 
 

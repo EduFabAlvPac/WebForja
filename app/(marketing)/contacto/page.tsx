@@ -6,11 +6,11 @@ import { ContactForm } from './_components/contact-form'
 import config from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: 'Contacto | ForjaDigitalAE',
+  title: 'Contacto | ForjaConsulting',
   description: 'Contáctanos para transformar tu empresa. Nuestro equipo de Forjadores está listo para ayudarte a alcanzar tus objetivos empresariales.',
-  keywords: 'contacto, consultoría empresarial, transformación digital, ForjaDigitalAE',
+  keywords: 'contacto, consultoría empresarial, transformación digital, ForjaConsulting',
   openGraph: {
-    title: 'Contacto | ForjaDigitalAE',
+    title: 'Contacto | ForjaConsulting',
     description: 'Hablemos de la transformación de tu empresa.',
     type: 'website',
   },

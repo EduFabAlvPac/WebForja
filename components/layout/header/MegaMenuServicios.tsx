@@ -105,11 +105,11 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
                               }}
                             >
                               {serviceDisabled ? (
-                                <div className="group block opacity-60 cursor-not-allowed relative">
+                                <div className="group block cursor-not-allowed relative">
                                   <div className="flex items-start gap-4">
-                                    <div className={`flex-shrink-0 w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full flex items-center justify-center ${service.iconBg}`}>
+                                    <div className="flex-shrink-0 w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full flex items-center justify-center bg-gray-200">
                                       {IconComponent && (
-                                        <IconComponent className={`w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] flex-shrink-0 ${service.iconColor}`} strokeWidth={2} />
+                                        <IconComponent className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] flex-shrink-0 text-gray-500" strokeWidth={2} />
                                       )}
                                     </div>
                                     <div className="flex-1 min-w-0">
@@ -119,7 +119,7 @@ export function MegaMenuServicios({ isOpen, onMouseEnter, onMouseLeave }: MegaMe
                                       <p className="text-sm text-gray-400 leading-relaxed font-normal line-clamp-2">
                                         {service.description}
                                       </p>
-                                      <span className="inline-block mt-2 text-xs font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded">
+                                      <span className="inline-block mt-2 text-xs font-semibold text-gray-500 bg-gray-200 px-2 py-0.5 rounded">
                                         {PROXIMAMENTE_LABEL}
                                       </span>
                                     </div>

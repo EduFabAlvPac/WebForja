@@ -427,6 +427,7 @@ export function ReadingLayout({
                 fill
                 className="object-cover"
                 priority
+                unoptimized={item.image.src.startsWith('/images/')}
               />
             </div>
           </div>

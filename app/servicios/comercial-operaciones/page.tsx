@@ -46,7 +46,7 @@ export default function ComercialOperacionesPage() {
         {data.hero.backgroundImage && (
           <div className="absolute inset-0">
             <motion.div
-              className="w-full h-full"
+              className="relative w-full h-full"
               initial={{ scale: 1 }}
               animate={{ scale: 1.05 }}
               transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}

@@ -1,6 +1,6 @@
 # Imágenes de la Historia
 
-Esta carpeta debe contener las imágenes para el timeline de la historia de Forja Digital AE.
+Esta carpeta debe contener las imágenes para el timeline de la historia de ForjaConsulting.
 
 ## 📸 Imágenes requeridas:
 
@@ -69,7 +69,7 @@ Una vez que las imágenes estén listas, abrir `app/nosotros/historia/page.tsx` 
 // Reemplazar con:
 <Image
   src="/historia/2015-comienzo.jpg"
-  alt="Inicio de Forja Digital AE en 2015"
+  alt="Inicio de ForjaConsulting en 2015"
   fill
   className="object-cover"
   sizes="(max-width: 1024px) 100vw, 50vw"

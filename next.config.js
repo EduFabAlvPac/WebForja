@@ -94,6 +94,16 @@ const nextConfig = {
     ]
   },
 
+  // Redirect: Interés → Conocimiento (menú y enlaces antiguos)
+  async redirects() {
+    return [
+      { source: '/interes', destination: '/conocimiento', permanent: true },
+      { source: '/interes/:path*', destination: '/conocimiento/:path*', permanent: true },
+      { source: '/:lc(co|cl|pe|ec)/interes', destination: '/:lc/conocimiento', permanent: true },
+      { source: '/:lc(co|cl|pe|ec)/interes/:path*', destination: '/:lc/conocimiento/:path*', permanent: true },
+    ]
+  },
+
   // Configuración experimental para mejor rendimiento
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],

@@ -16,12 +16,12 @@ import { ORG } from '@/lib/org';
 
 export async function generateMetadata({ params }: { params: { lc: string } }): Promise<Metadata> {
   return {
-    title: 'Términos y Condiciones | Forja Digital',
+    title: 'Términos y Condiciones | ForjaConsulting',
     description: `Términos y Condiciones de uso del sitio web y servicios de ${ORG.brandName}. Conoce tus derechos y obligaciones.`,
     keywords: 'términos y condiciones, condiciones de uso, servicios de consultoría',
     robots: 'index, follow',
     openGraph: {
-      title: 'Términos y Condiciones | Forja Digital',
+      title: 'Términos y Condiciones | ForjaConsulting',
       description: 'Condiciones de uso de nuestro sitio web y servicios de consultoría empresarial.',
       type: 'website',
     },

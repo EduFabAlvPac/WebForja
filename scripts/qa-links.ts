@@ -31,7 +31,7 @@ type Locale = typeof LOCALES[number]
 const ROUTES = [
   '/',
   '/contacto',
-  '/interes',
+  '/conocimiento',
   '/legal/contratacion-facturacion',
   '/legal/politica-datos',
   '/legal/terminos',

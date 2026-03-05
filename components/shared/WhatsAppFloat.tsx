@@ -16,7 +16,7 @@ export function WhatsAppFloat() {
   const [isExpanded, setIsExpanded] = useState(false)
   const [contextMessage, setContextMessage] = useState<ContextualMessage>({
     text: '¿En qué puedo ayudarte hoy?',
-    whatsappMessage: 'Hola, me interesa conocer más sobre Forja Digital',
+    whatsappMessage: 'Hola, me interesa conocer más sobre ForjaConsulting',
   })
   
   const whatsappNumber = config.contact.whatsapp
@@ -61,7 +61,7 @@ export function WhatsAppFloat() {
     } else {
       setContextMessage({
         text: '¿En qué puedo ayudarte hoy?',
-        whatsappMessage: 'Hola, me interesa conocer más sobre Forja Digital',
+        whatsappMessage: 'Hola, me interesa conocer más sobre ForjaConsulting',
       })
     }
   }, [activeSection])

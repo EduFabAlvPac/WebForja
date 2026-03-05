@@ -90,7 +90,7 @@ export function Header() {
             <Link href={homeUrl} className="relative z-10 flex items-center">
               <Image
                 src="/logo-color.png"
-                alt="Forja Digital AE"
+                alt="ForjaConsulting"
                 width={260}
                 height={87}
                 className="h-14 md:h-16 lg:h-18 w-auto object-contain"

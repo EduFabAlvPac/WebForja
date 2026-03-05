@@ -21,7 +21,7 @@ export default function NosotrosPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <motion.div
-            className="w-full h-full"
+            className="relative w-full h-full"
             initial={{ scale: 1 }}
             animate={{ scale: 1.05 }}
             transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
@@ -487,7 +487,7 @@ export default function NosotrosPage() {
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/30 rounded-full mb-8">
               <Star className="w-5 h-5 text-brand-orange" />
               <span className="text-white font-bold text-sm uppercase tracking-wider">
-                Manifiesto ForjaDigitalAE
+                Manifiesto ForjaConsulting
               </span>
             </div>
 

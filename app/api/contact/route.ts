@@ -86,7 +86,7 @@ ${data.mensaje}
     try {
       await emailService.send({
         to: data.email,
-        subject: 'Gracias por contactar a Forja Digital - AE',
+        subject: 'Gracias por contactar a ForjaConsulting',
         html: getContactConfirmationTemplate(data.nombre),
         text: `
 Hola ${data.nombre},
@@ -96,7 +96,7 @@ Gracias por contactarnos. Hemos recibido tu mensaje y nuestro equipo lo revisar�
 Nos pondremos en contacto contigo dentro de las próximas 24 horas hábiles.
 
 Saludos,
-Equipo Forja Digital - AE
+Equipo ForjaConsulting
         `.trim(),
       })
     } catch (emailError) {

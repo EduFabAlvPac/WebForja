@@ -425,7 +425,7 @@ export function DownloadDialog({
 
                   {/* Privacy note */}
                   <p className="text-xs text-slate-500">
-                    Al descargar, aceptas recibir información relevante de Forja Digital. 
+                    Al descargar, aceptas recibir información relevante de ForjaConsulting. 
                     Puedes darte de baja en cualquier momento.
                   </p>
 

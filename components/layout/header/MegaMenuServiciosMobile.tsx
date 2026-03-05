@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import * as LucideIcons from 'lucide-react'
 import { SERVICIOS_MEGA_MENU } from '@/lib/constants/navigation'
+import { isServiceDisabled, PROXIMAMENTE_LABEL } from '@/lib/constants/services-disabled'
 import { SUPPORTED_LOCALES } from '@/lib/country'
 
 interface MegaMenuServiciosMobileProps {
@@ -72,8 +73,34 @@ export function MegaMenuServiciosMobile({ isOpen, onClose }: MegaMenuServiciosMo
                     <div className="px-6 pb-4 space-y-3">
                       {column.services.map((service) => {
                         const IconComponent = LucideIcons[service.icon as keyof typeof LucideIcons] as any
+                        const serviceDisabled = isServiceDisabled(service.id)
 
-                        return (
+                        return serviceDisabled ? (
+                          <div
+                            key={service.id}
+                            className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 cursor-not-allowed"
+                          >
+                            <div className="flex-shrink-0 w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full flex items-center justify-center bg-gray-200">
+                              {IconComponent && (
+                                <IconComponent
+                                  className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] flex-shrink-0 text-gray-500"
+                                  strokeWidth={2}
+                                />
+                              )}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="font-bold text-sm text-gray-500 mb-0.5">
+                                {service.title}
+                              </div>
+                              <div className="text-xs text-gray-400 leading-tight line-clamp-2">
+                                {service.description}
+                              </div>
+                              <span className="inline-block mt-1.5 text-xs font-semibold text-gray-500 bg-gray-200 px-2 py-0.5 rounded">
+                                {PROXIMAMENTE_LABEL}
+                              </span>
+                            </div>
+                          </div>
+                        ) : (
                           <Link
                             key={service.id}
                             href={getLocalizedHref(service.href)}
@@ -82,7 +109,7 @@ export function MegaMenuServiciosMobile({ isOpen, onClose }: MegaMenuServiciosMo
                           >
                             <div className={`flex-shrink-0 w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full flex items-center justify-center ${service.iconBg}`}>
                               {IconComponent && (
-                                <IconComponent 
+                                <IconComponent
                                   className={`w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] flex-shrink-0 ${service.iconColor}`}
                                   strokeWidth={2}
                                 />

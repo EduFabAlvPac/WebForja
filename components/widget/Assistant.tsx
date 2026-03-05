@@ -9,6 +9,7 @@ import { HomeRate } from './parts/HomeRate'
 import { MessagesForm } from './parts/MessagesForm'
 import { NewsList } from './parts/NewsList'
 import { WidgetContainer } from './WidgetContainer'
+import { BrandName } from '@/components/shared/BrandName'
 import { faqData } from '@/content/faq'
 import { useCountryOptional } from '@/context/CountryProvider'
 
@@ -61,7 +62,7 @@ export function Assistant({ isOpen, onClose }: AssistantProps) {
               </div>
               <div>
                 <p className="text-[11px] uppercase tracking-[0.4em] text-white/80">
-                  Forja Digital AE
+                  <BrandName variant="dark" className="normal-case tracking-normal" />
                 </p>
                 <h2 id="widget-title" className="text-base font-heading font-semibold leading-tight">
                   {tabTitles[activeTab]}

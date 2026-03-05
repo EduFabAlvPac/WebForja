@@ -16,12 +16,12 @@ import { ORG } from '@/lib/org';
 
 export async function generateMetadata({ params }: { params: { lc: string } }): Promise<Metadata> {
   return {
-    title: 'Política de Protección de Datos | Forja Digital',
+    title: 'Política de Protección de Datos | ForjaConsulting',
     description: `Política de Protección de Datos Personales de ${ORG.brandName}. Conoce cómo protegemos tus datos conforme a la Ley 1581 de 2012 de Colombia.`,
     keywords: 'política de privacidad, protección de datos, Ley 1581 de 2012, datos personales, GDPR',
     robots: 'index, follow',
     openGraph: {
-      title: 'Política de Protección de Datos | Forja Digital',
+      title: 'Política de Protección de Datos | ForjaConsulting',
       description: 'Conoce cómo protegemos tus datos personales.',
       type: 'website',
     },

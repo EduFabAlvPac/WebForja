@@ -17,7 +17,7 @@ import { ORG } from '@/lib/org';
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const metadata: Metadata = {
-  title: 'Recursos de Interés para PYMEs | Forja Digital',
+  title: 'Recursos de Interés para PYMEs | ForjaConsulting',
   description: 'Artículos, guías, programas gubernamentales y recursos para impulsar la transformación digital de tu empresa en Latinoamérica.',
   keywords: [
     'recursos pymes',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Recursos de Interés para PYMEs | Forja Digital',
+    title: 'Recursos de Interés para PYMEs | ForjaConsulting',
     description: 'Artículos, guías, programas gubernamentales y recursos para impulsar la transformación digital de tu empresa.',
     url: `${ORG.baseUrl}/interes`,
     siteName: ORG.brandName,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Recursos de Interés para PYMEs | Forja Digital',
+    title: 'Recursos de Interés para PYMEs | ForjaConsulting',
     description: 'Artículos, guías y programas para impulsar la transformación digital de tu empresa.',
   },
 };

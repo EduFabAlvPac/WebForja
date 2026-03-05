@@ -15,8 +15,8 @@ export function HomeJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
-    name: 'Forja Digital - AE',
-    alternateName: 'ForjaDigitalAE',
+    name: 'ForjaConsulting',
+    alternateName: 'ForjaConsulting',
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
@@ -114,7 +114,7 @@ export function HomeJsonLd() {
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
     url: SITE_URL,
-    name: 'Forja Digital - AE',
+    name: 'ForjaConsulting',
     description: 'Arquitectos del Crecimiento PYME - Consultoría empresarial especializada en transformación digital',
     inLanguage: 'es-CO',
     publisher: {
@@ -136,7 +136,7 @@ export function HomeJsonLd() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: SITE_URL,
-    name: 'Forja Digital - AE | Transformación Digital y Arquitectura Empresarial',
+    name: 'ForjaConsulting | Transformación Digital y Arquitectura Empresarial',
     description: 'Consultora líder en transformación digital y arquitectura empresarial para PYMEs en Colombia y Latinoamérica.',
     isPartOf: {
       '@id': `${SITE_URL}/#website`,

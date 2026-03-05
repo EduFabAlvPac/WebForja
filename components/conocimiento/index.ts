@@ -1,0 +1,8 @@
+export { ConocimientoHero } from './ConocimientoHero'
+export { ArticuloDestacado } from './ArticuloDestacado'
+export { ArticulosGrid } from './ArticulosGrid'
+export { ArticuloCard } from './ArticuloCard'
+export { HerramientasDescargables } from './HerramientasDescargables'
+export { DescargaModal } from './DescargaModal'
+export { NewsletterSection } from './NewsletterSection'
+export { ConocimientoCTA } from './ConocimientoCTA'

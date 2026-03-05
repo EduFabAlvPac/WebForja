@@ -48,8 +48,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isInternational = locale === 'es';
   
   const title = isInternational
-    ? 'Recursos de Interés para PYMEs | Forja Digital'
-    : `Recursos de Interés para PYMEs en ${countryName} | Forja Digital`;
+    ? 'Recursos de Interés para PYMEs | ForjaConsulting'
+    : `Recursos de Interés para PYMEs en ${countryName} | ForjaConsulting`;
   
   const description = isInternational
     ? 'Artículos, guías, programas gubernamentales y recursos para impulsar la transformación digital de tu empresa en Latinoamérica.'

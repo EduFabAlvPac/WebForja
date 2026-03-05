@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: { lc: string } }): 
   return generateI18nMetadata({
     lc: params.lc,
     pathname: '/servicios',
-    title: 'Nuestros Servicios | Forja Digital',
+    title: 'Nuestros Servicios | ForjaConsulting',
     description: 'Servicios de consultoría empresarial para PYMEs.',
     keywords: 'consultoría, servicios, arquitectura empresarial',
   });
@@ -85,7 +85,7 @@ export async function generateMetadata({ params }: { params: { lc: string } }): 
 
 ### Concepto
 
-**Una sola organización** para todos los países: Forja Digital AE SAS (Colombia).
+**Una sola organización** para todos los países: ForjaConsulting SAS (Colombia).
 
 ### Uso
 
@@ -109,8 +109,8 @@ export default function Page() {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://www.forjadigital.com/#organization",
-  "name": "Forja Digital - AE",
-  "legalName": "Forja Digital AE SAS",
+  "name": "ForjaConsulting",
+  "legalName": "ForjaConsulting SAS",
   "url": "https://www.forjadigital.com",
   "logo": "https://www.forjadigital.com/logo.png",
   "email": "contacto@forjadigital.com",
@@ -188,8 +188,8 @@ export default function ServicePage({ params }: { params: { lc: string } }) {
   "provider": {
     "@type": "Organization",
     "@id": "https://www.forjadigital.com/#organization",
-    "name": "Forja Digital - AE",
-    "legalName": "Forja Digital AE SAS"
+    "name": "ForjaConsulting",
+    "legalName": "ForjaConsulting SAS"
   },
   "areaServed": {
     "@type": "Country",
@@ -306,7 +306,7 @@ export async function generateMetadata({ params }: { params: { lc: string } }): 
   return generateI18nMetadata({
     lc: params.lc,
     pathname: '/servicios/arquitectura',
-    title: 'Arquitectura Estratégica | Forja Digital',
+    title: 'Arquitectura Estratégica | ForjaConsulting',
     description: 'Diseño y optimización de estructuras empresariales para PYMEs.',
     keywords: 'arquitectura empresarial, consultoría estratégica',
   });
@@ -355,7 +355,7 @@ export async function generateMetadata({ params }: { params: { lc: string } }): 
   return generateI18nMetadata({
     lc: params.lc,
     pathname: '',
-    title: 'Forja Digital - Consultoría Empresarial',
+    title: 'ForjaConsulting - Consultoría Empresarial',
     description: 'Transformamos PYMEs latinoamericanas mediante arquitectura empresarial.',
   });
 }
@@ -366,7 +366,7 @@ export default function HomePage() {
       <SchemaOrganization />
       
       <div>
-        <h1>Bienvenido a Forja Digital</h1>
+        <h1>Bienvenido a ForjaConsulting</h1>
         {/* ... */}
       </div>
     </>

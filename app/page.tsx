@@ -27,7 +27,7 @@ import { MetodologiaSection } from '@/components/sections/MetodologiaSection';
  */
 export const metadata: Metadata = {
   title: 'Inicio',
-  description: 'Forja Digital - Arquitectos del Crecimiento PYME en América Latina. Transformación digital y arquitectura empresarial para PYMEs. Metodología FORJA® probada con +200 empresas.',
+  description: 'ForjaConsulting - Arquitectos del Crecimiento PYME en América Latina. Transformación digital y arquitectura empresarial para PYMEs. Metodología FORJA® probada con +200 empresas.',
   alternates: {
     canonical: ORG.baseUrl,
   },

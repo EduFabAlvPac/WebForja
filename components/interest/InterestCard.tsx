@@ -263,6 +263,7 @@ const FullCard = forwardRef<HTMLAnchorElement, InterestCardProps>(
               loading="lazy"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              unoptimized={item.image.src.startsWith('/images/')}
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
@@ -406,6 +407,7 @@ const HorizontalCard = forwardRef<HTMLAnchorElement, InterestCardProps>(
               priority={item.featured}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 320px"
+              unoptimized={item.image.src.startsWith('/images/')}
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">

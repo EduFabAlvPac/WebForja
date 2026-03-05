@@ -41,22 +41,8 @@ function getRating(name: MetricName, value: number): 'good' | 'needs-improvement
 }
 
 function reportMetric(metric: WebVitalMetric, page: string) {
-  // En desarrollo: log en consola
-  if (process.env.NODE_ENV !== 'production') {
-    const colors = {
-      good: 'color: #22c55e',
-      'needs-improvement': 'color: #eab308',
-      poor: 'color: #ef4444',
-    }
-    
-    console.log(
-      `%c[Web Vitals] ${metric.name}: ${metric.name === 'CLS' ? metric.value.toFixed(3) : Math.round(metric.value) + 'ms'} (${metric.rating})`,
-      colors[metric.rating],
-      { page, value: metric.value }
-    )
-  }
-
-  // Enviar a API (en producción)
+  // En desarrollo no hacemos log para no llenar la consola (los "errores" que ves suelen ser de extensiones de Chrome, no de la app)
+  // En producción enviamos a la API
   if (process.env.NODE_ENV === 'production' && typeof navigator !== 'undefined') {
     const body = JSON.stringify({
       ...metric,
@@ -72,6 +58,18 @@ function reportMetric(metric: WebVitalMetric, page: string) {
 
 export function WebVitalsReporter() {
   const pathname = usePathname()
+
+  // En dev: avisar una sola vez que los errores en rojo "message channel closed" son de extensiones, no de la app
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'development' || typeof window === 'undefined') return
+    const key = 'webvitals-extension-hint'
+    if (sessionStorage.getItem(key)) return
+    sessionStorage.setItem(key, '1')
+    console.info(
+      '%c[ForjaConsulting] Si ves muchos errores en rojo tipo "message channel closed": son de extensiones de Chrome (React DevTools, gestores de contraseñas, etc.), no de esta app. Abre la misma URL en ventana de incógnito (Ctrl+Shift+N) y verás 0 errores.',
+      'color: #64748b; font-size: 11px;'
+    )
+  }, [])
 
   useEffect(() => {
     // Usar PerformanceObserver para métricas

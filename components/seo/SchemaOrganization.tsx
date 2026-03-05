@@ -2,7 +2,7 @@
  * FORJA DIGITAL - Schema.org Organization
  * 
  * Componente para generar JSON-LD de tipo Organization.
- * Representa la entidad legal única (Forja Digital AE SAS, Colombia).
+ * Representa la entidad legal única (ForjaConsulting SAS, Colombia).
  * 
  * @module components/seo/SchemaOrganization
  */
