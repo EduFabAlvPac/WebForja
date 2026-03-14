@@ -13,7 +13,7 @@ export const legalContentOverlay: Partial<LegalContent> = {
   privacy: {
     intro: {
       text: 'ForjaConsulting, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley N° 29733, Ley de Protección de Datos Personales del Perú.',
-      responsible: 'Responsable del tratamiento: ForjaConsulting SAS (Colombia), prestando servicios en Perú. Email: info@forjadigital.com',
+      responsible: 'Responsable del tratamiento: ForjaConsulting SAS (Colombia), prestando servicios en Perú. Email: contacto@forjaconsulting.com',
     },
     dataCollection: {
       identification: [

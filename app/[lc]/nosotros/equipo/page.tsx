@@ -153,13 +153,13 @@ export default function EquipoLocalePage() {
               },
               {
                 id: 2,
-                name: 'Eduard Fabian Alvarez Pacheco',
+                name: 'Fabian Alvarez',
                 role: 'Transformación Digital',
                 specialty: 'Tecnología e Innovación',
                 bio: 'Arquitecto Empresarial Senior con +15 años de experiencia liderando la planeación estratégica de TI y telecomunicaciones, la transformación digital y el gobierno corporativo TI&T en organizaciones tanto del sector público como privado.',
-                image: '/images/team/foto-eduard.png',
+                image: '/images/team/foto-fabian-alvarez.png',
                 linkedin: 'https://www.linkedin.com/in/eduard-alvarez/',
-                email: 'carlos@forjadigital.com'
+                email: 'contacto@forjaconsulting.com'
               },
               {
                 id: 3,

@@ -49,9 +49,9 @@ SANITY_API_TOKEN=<token>
 # Email/Contact (si aplica)
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USER=contacto@forjadigital.com
+SMTP_USER=contacto@forjaconsulting.com
 SMTP_PASS=<app-password>
-CONTACT_EMAIL_TO=info@forjadigital.com
+CONTACT_EMAIL_TO=contacto@forjaconsulting.com
 ```
 
 #### **Preview (Staging)**

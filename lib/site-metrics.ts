@@ -231,9 +231,9 @@ export const siteMetrics = {
   // CONTACTO Y SOPORTE
   // ============================================
   contact: {
-    email: 'contacto@forjadigital.ae',
-    phone: '+57 300 123 4567',
-    whatsapp: '+57 300 123 4567',
+    email: 'contacto@forjaconsulting.com',
+    phone: '+57 312 2415413',
+    whatsapp: '+57 312 2415413',
     address: 'Medellín, Colombia',
     businessHours: 'Lunes a Viernes, 8:00 AM - 6:00 PM',
     responseTime: '48 horas',

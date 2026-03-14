@@ -11,6 +11,7 @@ import { MobileMenu } from './MobileMenu'
 import { Button } from '@/components/ui/button'
 import { CountrySwitcher } from '@/components/country/CountrySwitcher'
 import { SUPPORTED_LOCALES } from '@/lib/country'
+import config from '@/lib/config'
 
 export function Header() {
   const pathname = usePathname()
@@ -110,7 +111,7 @@ export function Header() {
                 asChild
               >
                 <a
-                  href="https://forjadigitalae.github.io/Evaluaci%C3%B3n_Madurez_PYMEs.html"
+                  href={config.evaluacionMadurez.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

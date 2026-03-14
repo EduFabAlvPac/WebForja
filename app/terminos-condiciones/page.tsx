@@ -327,8 +327,8 @@ export default function TerminosCondicionesPage() {
                     Si tienes dudas sobre estos Términos y Condiciones, contáctanos:
                   </p>
                   <div className="space-y-2 text-white/90">
-                    <p><strong>Email:</strong> <a href="mailto:forjadigitalae@gmail.com" className="text-brand-orange hover:underline">forjadigitalae@gmail.com</a></p>
-                    <p><strong>Teléfono:</strong> +57 300 123 4567</p>
+                    <p><strong>Email:</strong> <a href="mailto:contacto@forjaconsulting.com" className="text-brand-orange hover:underline">contacto@forjaconsulting.com</a></p>
+                    <p><strong>Teléfono:</strong> +57 312 2415413</p>
                     <p><strong>Dirección:</strong> Bogotá, Colombia</p>
                     <p><strong>Horario:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM (COT)</p>
                   </div>

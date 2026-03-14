@@ -50,7 +50,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_SITE_NAME=ForjaConsulting
 
 # Email de contacto
-CONTACT_EMAIL_TO=info@forjadigital.co
+CONTACT_EMAIL_TO=contacto@forjaconsulting.com
 ```
 
 ### 4. Ejecutar en Modo Desarrollo
@@ -240,7 +240,7 @@ npm run build
 ## 🆘 Soporte
 
 Para problemas o preguntas:
-- Email: dev@forjadigital.co
+- Email: contacto@forjaconsulting.com
 - Documentación interna del proyecto
 
 ---

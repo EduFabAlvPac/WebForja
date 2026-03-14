@@ -76,7 +76,7 @@ export function FloatingActionWidget({ pagePath }: FloatingActionWidgetProps) {
     },
     {
       question: '¿Cómo puedo agendar una consulta?',
-      answer: 'Puedes contactarnos a través del formulario de contacto o llamando al +57 300 123 4567.'
+      answer: 'Puedes contactarnos a través del formulario de contacto o llamando al +57 312 2415413.'
     },
     {
       question: '¿Cuánto tiempo toma un proyecto?',

@@ -113,7 +113,7 @@ export default function Page() {
   "legalName": "ForjaConsulting SAS",
   "url": "https://www.forjadigital.com",
   "logo": "https://www.forjadigital.com/logo.png",
-  "email": "contacto@forjadigital.com",
+  "email": "contacto@forjaconsulting.com",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "Colombia",

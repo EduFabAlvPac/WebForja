@@ -51,7 +51,7 @@ export default function GraciasLocalePage({ params }: PageProps) {
   }
 
   const country = getCountryByLocale(lc)
-  const whatsappNumber = country.whatsapp || '+573103350651'
+  const whatsappNumber = country.whatsapp || '573122415413'
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, acabo de enviar un formulario de contacto desde ${country.name} y me gustaría agendar una llamada.`)}`
 
   return (

@@ -6,6 +6,7 @@ import { X, Zap, ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import config from '@/lib/config'
 
 /**
  * ExitIntentModal - Modal de intención de salida (CRO)
@@ -154,7 +155,7 @@ export function ExitIntentModal() {
             aria-hidden="true"
           />
 
-          {/* Modal - Centrado y responsive para móvil */}
+          {/* Modal - Siempre centrado en pantalla (flex + centrado) */}
           <motion.div
             role="dialog"
             aria-modal="true"
@@ -163,9 +164,9 @@ export function ExitIntentModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: prefersReducedMotion ? 0 : 0.3, type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-4 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-[2001] sm:w-[calc(100%-2rem)] sm:max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto"
+            className="fixed inset-0 z-[2001] flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="bg-white rounded-2xl shadow-2xl border-2 border-forja-purple/20 overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-2xl border-2 border-forja-purple/20 overflow-hidden w-full max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto pointer-events-auto">
               {/* Header con gradiente mejorado */}
               <div className="relative px-6 py-8 bg-gradient-to-r from-forja-fire via-orange-500 to-forja-purple overflow-hidden">
                 {/* Decorative elements */}
@@ -228,10 +229,15 @@ export function ExitIntentModal() {
                     className="w-full bg-gradient-to-r from-forja-fire to-orange-600 hover:from-forja-fire/90 hover:to-orange-600/90 text-white shadow-lg hover:shadow-xl transition-all"
                     asChild
                   >
-                    <Link href="/contacto" className="inline-flex items-center justify-center gap-2">
+                    <a
+                      href={config.evaluacionMadurez.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2"
+                    >
                       <span>Quiero mi Evaluación de Madurez</span>
                       <ArrowRight className="h-5 w-5" />
-                    </Link>
+                    </a>
                   </Button>
                   
                   <button

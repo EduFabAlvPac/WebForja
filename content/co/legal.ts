@@ -13,7 +13,7 @@ export const legalContentOverlay: Partial<LegalContent> = {
   privacy: {
     intro: {
       text: 'ForjaConsulting, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013 de Colombia.',
-      responsible: 'Responsable del tratamiento: ForjaConsulting SAS, con domicilio en Bogotá, Colombia. Email: info@forjadigital.com',
+      responsible: 'Responsable del tratamiento: ForjaConsulting SAS, con domicilio en Bogotá, Colombia. Email: contacto@forjaconsulting.com',
     },
     dataCollection: {
       identification: [

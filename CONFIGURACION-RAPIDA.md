@@ -15,7 +15,7 @@ Crear archivo `.env.local` en la raíz del proyecto:
 ```env
 # CONFIGURACIÓN MÍNIMA PARA EMPEZAR
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_CONTACT_EMAIL=info@forjadigital.co
+NEXT_PUBLIC_CONTACT_EMAIL=contacto@forjaconsulting.com
 NEXT_PUBLIC_CONTACT_PHONE=+573001234567
 NEXT_PUBLIC_WHATSAPP_NUMBER=573001234567
 
@@ -64,7 +64,7 @@ RESEND_API_KEY=re_tuApiKeyAqui
 ```env
 EMAIL_SERVICE=SENDGRID
 SENDGRID_API_KEY=tu_api_key
-SENDGRID_FROM_EMAIL=info@forjadigital.co
+SENDGRID_FROM_EMAIL=contacto@forjaconsulting.com
 ```
 
 ### Opción C: SMTP (Gmail, Office365, etc)
@@ -166,7 +166,7 @@ git push origin main
 
 ```env
 NEXT_PUBLIC_APP_URL=https://forjadigital.co
-NEXT_PUBLIC_CONTACT_EMAIL=info@forjadigital.co
+NEXT_PUBLIC_CONTACT_EMAIL=contacto@forjaconsulting.com
 EMAIL_SERVICE=RESEND
 RESEND_API_KEY=tu_api_key_de_produccion
 ```

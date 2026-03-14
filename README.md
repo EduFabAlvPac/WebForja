@@ -131,7 +131,7 @@ NEXT_PUBLIC_SANITY_DATASET=production
 
 # Email (para formularios)
 EMAIL_SERVER=smtp.gmail.com
-EMAIL_FROM=info@forjadigital.co
+EMAIL_FROM=contacto@forjaconsulting.com
 
 # WhatsApp
 NEXT_PUBLIC_WHATSAPP_NUMBER=573001234567

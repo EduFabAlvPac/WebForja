@@ -10,9 +10,9 @@ export const config = {
     env: process.env.NODE_ENV || 'development',
   },
   contact: {
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@forjadigital.co',
-    phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+57 300 123 4567',
-    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '573001234567',
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contacto@forjaconsulting.com',
+    phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+57 312 2415413',
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '573122415413',
   },
   social: {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/company/forja-digital',
@@ -41,6 +41,16 @@ export const config = {
   analytics: {
     gaId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '',
     gtmId: process.env.NEXT_PUBLIC_GTM_ID || '',
+  },
+  /**
+   * URL de la herramienta de Evaluación de Madurez (carpeta TestMadurezEmpresarial).
+   * Por defecto abre la nueva herramienta en local (puerto 3001). En producción definir
+   * NEXT_PUBLIC_EVALUACION_MADUREZ_URL con la URL donde esté desplegada la herramienta.
+   */
+  evaluacionMadurez: {
+    url:
+      process.env.NEXT_PUBLIC_EVALUACION_MADUREZ_URL ||
+      'http://localhost:3001/evaluacion',
   },
   security: {
     rateLimit: {

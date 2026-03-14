@@ -20,8 +20,8 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 await resend.emails.send({
-  from: 'widget@forjadigital.co',
-  to: 'contacto@forjadigital.co',
+  from: 'widget@forjaconsulting.com',
+  to: 'contacto@forjaconsulting.com',
   subject: `Nuevo mensaje del widget - ${email}`,
   html: `
     <h2>Nuevo mensaje del widget</h2>
@@ -39,8 +39,8 @@ import sgMail from '@sendgrid/mail'
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 
 await sgMail.send({
-  to: 'contacto@forjadigital.co',
-  from: 'widget@forjadigital.co',
+  to: 'contacto@forjaconsulting.com',
+  from: 'widget@forjaconsulting.com',
   subject: `Nuevo mensaje del widget - ${email}`,
   text: message,
   html: `<p>${message}</p>`,
@@ -62,8 +62,8 @@ const transporter = nodemailer.createTransport({
 })
 
 await transporter.sendMail({
-  from: '"Widget Forja" <widget@forjadigital.co>',
-  to: 'contacto@forjadigital.co',
+  from: '"Widget Forja" <widget@forjaconsulting.com>',
+  to: 'contacto@forjaconsulting.com',
   subject: `Nuevo mensaje - ${email}`,
   text: message,
 })

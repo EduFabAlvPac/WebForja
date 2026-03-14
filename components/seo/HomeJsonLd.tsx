@@ -41,17 +41,17 @@ export function HomeJsonLd() {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+57-300-123-4567',
+        telephone: '+57-312-2415413',
         contactType: 'customer service',
-        email: 'forjadigitalae@gmail.com',
+        email: 'contacto@forjaconsulting.com',
         availableLanguage: ['es', 'en'],
         areaServed: ['CO', 'MX', 'PE', 'EC', 'CL', 'AR', 'PA', 'CR'],
       },
       {
         '@type': 'ContactPoint',
-        telephone: '+57-300-123-4567',
+        telephone: '+57-312-2415413',
         contactType: 'sales',
-        email: 'forjadigitalae@gmail.com',
+        email: 'contacto@forjaconsulting.com',
         availableLanguage: ['es'],
       },
     ],

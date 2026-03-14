@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useInView } from 'framer-motion'
 import Link from 'next/link'
 import { FileSearch, BarChart3, Lock, Zap, Shield, Check, X } from 'lucide-react'
+import config from '@/lib/config'
 import { Card, CardContent } from '@/components/ui/card'
 
 // ─── Contador animado (trigger whileInView) ───
@@ -149,13 +150,15 @@ export function ResultsCTASection() {
               <FileSearch className="w-5 h-5" />
               Solicitar Diagnóstico Estratégico
             </Link>
-            <Link
-              href="/contacto"
+            <a
+              href={config.evaluacionMadurez.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold border-2 border-white text-white bg-transparent hover:bg-white/10 transition-all w-full sm:w-auto"
             >
               <BarChart3 className="w-5 h-5" />
               Evaluación de Madurez Empresarial
-            </Link>
+            </a>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-white/90 text-sm">
             <span className="inline-flex items-center gap-2">

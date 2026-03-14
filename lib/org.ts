@@ -19,8 +19,8 @@ export const ORG = {
   /**
    * Datos de Contacto Principal
    */
-  email: "contacto@forjadigital.com",
-  phoneMain: "+57 XXX XXX XXXX",
+  email: "contacto@forjaconsulting.com",
+  phoneMain: "+57 312 2415413",
   
   /**
    * URLs y Dominios

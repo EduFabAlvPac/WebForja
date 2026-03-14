@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import { ServiceJsonLd } from '@/components/seo/ServiceJsonLd'
 import { comercialServicioData } from '@/data/services/comercial-servicio-cliente'
 import type { ServicePageData } from '@/types/services'
+import config from '@/lib/config'
 
 const SITE_URL = 'https://forjadigital.co'
 
@@ -136,7 +137,10 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         anchors={ANCHORS}
         cta={{
           label: ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial',
-          href: ctaPrimary?.buttonLink ?? '/contacto',
+          href:
+            (ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial') === 'Evaluación de Madurez Empresarial'
+              ? config.evaluacionMadurez.url
+              : (ctaPrimary?.buttonLink ?? '/contacto'),
         }}
       >
         {/* WHY SECTION */}
@@ -238,10 +242,22 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="primary" size="lg" className="bg-white text-forja-navy hover:bg-slate-100" asChild>
-                <Link href={ctaPrimary?.buttonLink ?? '/contacto'} className="flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  <span>{ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial'}</span>
-                </Link>
+                {(ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial') === 'Evaluación de Madurez Empresarial' ? (
+                  <a
+                    href={config.evaluacionMadurez.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span>{ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial'}</span>
+                  </a>
+                ) : (
+                  <Link href={ctaPrimary?.buttonLink ?? '/contacto'} className="flex items-center gap-2">
+                    <Phone className="w-5 h-5" />
+                    <span>{ctaPrimary?.buttonText ?? 'Evaluación de Madurez Empresarial'}</span>
+                  </Link>
+                )}
               </Button>
               {ctaSecondary && (
                 <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20" asChild>

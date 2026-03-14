@@ -79,8 +79,8 @@ export default function PoliticaPrivacidadPage() {
                 <p className="text-sm text-gray-700">
                   <strong>Responsable del tratamiento:</strong> ForjaConsulting<br />
                   <strong>Domicilio:</strong> Bogotá, Colombia<br />
-                  <strong>Email:</strong> <a href="mailto:forjadigitalae@gmail.com" className="text-brand-orange hover:underline">forjadigitalae@gmail.com</a><br />
-                  <strong>Teléfono:</strong> +57 300 123 4567
+                  <strong>Email:</strong> <a href="mailto:contacto@forjaconsulting.com" className="text-brand-orange hover:underline">contacto@forjaconsulting.com</a><br />
+                  <strong>Teléfono:</strong> +57 312 2415413
                 </p>
               </div>
             </div>
@@ -276,7 +276,7 @@ export default function PoliticaPrivacidadPage() {
               <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
                 <p className="text-sm text-gray-700">
                   <strong>¿Cómo ejercer tus derechos?</strong><br />
-                  Envía un correo a <a href="mailto:forjadigitalae@gmail.com" className="text-brand-orange hover:underline font-medium">forjadigitalae@gmail.com</a> con el asunto &quot;Ejercicio de Derechos - Protección de Datos&quot; indicando claramente tu solicitud.
+                  Envía un correo a <a href="mailto:contacto@forjaconsulting.com" className="text-brand-orange hover:underline font-medium">contacto@forjaconsulting.com</a> con el asunto &quot;Ejercicio de Derechos - Protección de Datos&quot; indicando claramente tu solicitud.
                 </p>
               </div>
             </div>
@@ -445,8 +445,8 @@ export default function PoliticaPrivacidadPage() {
                     Si tienes dudas sobre esta Política de Privacidad o deseas ejercer tus derechos, contáctanos:
                   </p>
                   <div className="space-y-2 text-white/90">
-                    <p><strong>Email:</strong> <a href="mailto:forjadigitalae@gmail.com" className="text-brand-orange hover:underline">forjadigitalae@gmail.com</a></p>
-                    <p><strong>Teléfono:</strong> +57 300 123 4567</p>
+                    <p><strong>Email:</strong> <a href="mailto:contacto@forjaconsulting.com" className="text-brand-orange hover:underline">contacto@forjaconsulting.com</a></p>
+                    <p><strong>Teléfono:</strong> +57 312 2415413</p>
                     <p><strong>Horario:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM (COT)</p>
                   </div>
                   <div className="mt-6 pt-6 border-t border-white/20">

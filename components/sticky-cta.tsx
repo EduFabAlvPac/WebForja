@@ -55,14 +55,27 @@ export function StickyCTA({ label, href, className, showLegalNote = false }: Sti
             className="w-full bg-white text-forja-navy hover:bg-slate-100 shadow-xl" 
             asChild
           >
-            <Link 
-              href={href} 
-              className="flex items-center justify-center gap-2"
-              onClick={handleCTAClick}
-            >
-              <span className="font-bold">{label}</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            {href.startsWith('http') ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+                onClick={handleCTAClick}
+              >
+                <span className="font-bold">{label}</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            ) : (
+              <Link 
+                href={href} 
+                className="flex items-center justify-center gap-2"
+                onClick={handleCTAClick}
+              >
+                <span className="font-bold">{label}</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            )}
           </Button>
 
           <div className="mt-4 pt-4 border-t border-white/20">
@@ -120,14 +133,27 @@ export function StickyCTA({ label, href, className, showLegalNote = false }: Sti
       >
         <div className="container-custom py-3">
           <Button variant="primary" size="lg" className="w-full shadow-lg" asChild>
-            <Link 
-              href={href} 
-              className="flex items-center justify-center gap-2"
-              onClick={handleCTAClick}
-            >
-              <Lock className="w-5 h-5" />
-              <span className="font-bold">{label}</span>
-            </Link>
+            {href.startsWith('http') ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+                onClick={handleCTAClick}
+              >
+                <Lock className="w-5 h-5" />
+                <span className="font-bold">{label}</span>
+              </a>
+            ) : (
+              <Link 
+                href={href} 
+                className="flex items-center justify-center gap-2"
+                onClick={handleCTAClick}
+              >
+                <Lock className="w-5 h-5" />
+                <span className="font-bold">{label}</span>
+              </Link>
+            )}
           </Button>
           
           {/* Microleyenda Legal móvil */}

@@ -65,9 +65,9 @@ export const baseHomeContent: HomeContent = {
   },
   
   contact: {
-    whatsapp: "+57 300 123 4567",
-    phone: "+57 (1) 123 4567",
-    email: "contacto@forjadigital.com",
+    whatsapp: "+57 312 2415413",
+    phone: "+57 312 2415413",
+    email: "contacto@forjaconsulting.com",
   },
   
   stats: {

@@ -7,7 +7,7 @@
 const HOJA_LEADS_NOMBRE = "Leads_Formulario";
 const HOJA_RESPUESTAS_NOMBRE = "Rt/:Madurez";
 const VERSION_POLITICA = "v1.0";
-const EMAIL_NOTIFICACION = "forjadigitalae@gmail.com";
+const EMAIL_NOTIFICACION = "contacto@forjaconsulting.com";
 const HEADER_ID_LEAD = "ID_Lead";
 const HEADER_FUENTE_LEAD = "Fuente_Lead";
 

@@ -13,7 +13,7 @@ export const legalContentOverlay: Partial<LegalContent> = {
   privacy: {
     intro: {
       text: 'ForjaConsulting, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley Orgánica de Protección de Datos Personales (LOPDP) de Ecuador.',
-      responsible: 'Responsable del tratamiento: ForjaConsulting SAS (Colombia), prestando servicios en Ecuador. Email: info@forjadigital.com',
+      responsible: 'Responsable del tratamiento: ForjaConsulting SAS (Colombia), prestando servicios en Ecuador. Email: contacto@forjaconsulting.com',
     },
     dataCollection: {
       identification: [

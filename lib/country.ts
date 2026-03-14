@@ -90,8 +90,8 @@ export const COUNTRIES: Record<LocaleCode, CountryConfig> = {
     currencySymbol: '$',
     taxLabelClient: 'ID Fiscal',
     taxLabelCompany: 'ID Fiscal',
-    whatsapp: '+57 300 123 4567', // Default Colombia
-    phone: '+57 300 123 4567',
+    whatsapp: '+57 312 2415413', // Default Colombia
+    phone: '+57 312 2415413',
     locale: 'es-419', // Español Latinoamericano
     dialCode: '+1',
     tax: {
@@ -113,8 +113,8 @@ export const COUNTRIES: Record<LocaleCode, CountryConfig> = {
     currencySymbol: '$',
     taxLabelClient: 'NIT',
     taxLabelCompany: 'NIT',
-    whatsapp: '+57 300 123 4567',
-    phone: '+57 (1) 123 4567',
+    whatsapp: '+57 312 2415413',
+    phone: '+57 312 2415413',
     locale: 'es-CO',
     dialCode: '+57',
     taxIdFormat: 'XXX.XXX.XXX-X',

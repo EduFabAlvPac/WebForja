@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { CheckCircle2, ArrowRight, Calendar, Sparkles, Lock, Rocket, Zap } from 'lucide-react'
+import config from '@/lib/config'
 
 interface Compromiso {
   titulo: string
@@ -48,13 +49,15 @@ export function OurCommitment() {
                     Solicita tu <strong>Evaluación de Madurez Empresarial</strong> y descubre tu nivel de madurez digital
                   </p>
 
-                  <Link
-                    href="/contacto"
+                  <a
+                    href={config.evaluacionMadurez.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-white text-brand-orange font-bold text-lg rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 group/button"
                   >
                     Comenzar Ahora
                     <ArrowRight className="w-6 h-6 group-hover/button:translate-x-2 transition-transform" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </motion.div>

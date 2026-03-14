@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Check, Phone, Target, BookOpen, Lock, Zap, Gift, BarChart3, ArrowRight, Shield, Clock, Sparkles } from 'lucide-react'
 import { trackCTAClick } from '@/lib/analytics'
 import { getCTAClaim, siteMetrics } from '@/lib/site-metrics'
+import config from '@/lib/config'
 
 interface AlternativeCTA {
   icon: React.ElementType
@@ -139,9 +140,11 @@ export function CTASection() {
                     whileTap={{ scale: 0.98 }}
                     className="inline-block"
                   >
-                    <Link
-                      href="/contacto"
-                      onClick={() => trackCTAClick('contacto_final', 'cta_section', '/contacto')}
+                    <a
+                      href={config.evaluacionMadurez.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackCTAClick('evaluacion_madurez', 'cta_section', config.evaluacionMadurez.url)}
                       className="group inline-flex flex-col items-center gap-2 px-12 py-6 bg-forja-fire hover:bg-forja-fire/90 text-white font-bold text-lg md:text-xl rounded-2xl transition-all shadow-2xl shadow-forja-fire/40 hover:shadow-forja-fire/60 relative overflow-hidden border-2 border-white/20"
                     >
                       {/* Shine effect */}
@@ -155,7 +158,7 @@ export function CTASection() {
                       <span className="text-sm font-medium text-white/90 relative">
                         {siteMetrics.guarantees.noCommitment} · Entrega en {siteMetrics.rayosX.deliveryTime} horas
                       </span>
-                    </Link>
+                    </a>
                   </motion.div>
                 </div>
 

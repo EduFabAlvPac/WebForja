@@ -165,10 +165,10 @@ export default function PoliticaCookiesPage() {
                     ForjaConsulting
                   </p>
                   <p className="text-gray-600">
-                    Email: <a href="mailto:info@forjadigital-ae.com" className="text-brand-orange hover:underline">info@forjadigital-ae.com</a>
+                    Email: <a href="mailto:contacto@forjaconsulting.com" className="text-brand-orange hover:underline">contacto@forjaconsulting.com</a>
                   </p>
                   <p className="text-gray-600">
-                    Teléfono: <a href="tel:+57123456789" className="text-brand-orange hover:underline">+57 123 456 789</a>
+                    Teléfono: <a href="tel:+573122415413" className="text-brand-orange hover:underline">+57 312 2415413</a>
                   </p>
                 </div>
                 <p className="text-sm text-gray-500">
@@ -197,8 +197,8 @@ export default function PoliticaCookiesPage() {
                 Si tienes alguna pregunta sobre nuestra Política de Cookies, no dudes en contactarnos:
               </p>
               <div className="space-y-2 text-gray-300">
-                <p><strong className="text-white">Email:</strong> <a href="mailto:forjadigitalae@gmail.com" className="text-brand-orange hover:underline">forjadigitalae@gmail.com</a></p>
-                <p><strong className="text-white">Teléfono:</strong> +57 300 123 4567</p>
+                <p><strong className="text-white">Email:</strong> <a href="mailto:contacto@forjaconsulting.com" className="text-brand-orange hover:underline">contacto@forjaconsulting.com</a></p>
+                <p><strong className="text-white">Teléfono:</strong> +57 312 2415413</p>
               </div>
             </div>
           </div>

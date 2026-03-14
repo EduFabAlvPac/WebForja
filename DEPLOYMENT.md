@@ -45,7 +45,7 @@ Vercel es la plataforma creada por el equipo de Next.js y ofrece la mejor experi
    ```
    NEXT_PUBLIC_WHATSAPP_NUMBER=573001234567
    NEXT_PUBLIC_SITE_URL=https://tudominio.com
-   CONTACT_EMAIL_TO=info@forjadigital.co
+   CONTACT_EMAIL_TO=contacto@forjaconsulting.com
    ```
 
 4. **Deploy**

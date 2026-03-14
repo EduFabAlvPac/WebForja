@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { getHeroStats } from '@/lib/site-metrics'
 import { trackCTAClick } from '@/lib/analytics'
 import { useCountryOptional } from '@/context/CountryProvider'
+import config from '@/lib/config'
 
 const HERO_SLIDES = [
   {
@@ -69,6 +70,7 @@ const HERO_SLIDES = [
     ),
     ctaPrimary: "Solicita tu Evaluación de Madurez Empresarial",
     ctaPrimaryLink: "/contacto",
+    ctaPrimaryIsEvaluacion: true,
     ctaSecondary: "Descarga Guía: 5 Fases Explicadas",
     ctaSecondaryLink: "/contacto",
     // Imagen: Equipo trabajando en planificación estratégica y proceso
@@ -311,21 +313,34 @@ export function HeroSection() {
                   duration: prefersReducedMotion ? 0.01 : 0.4
                 }}
               >
-                {/* CTA Primario - SIN wrapper motion.div para evitar esquinas negras */}
+                {/* CTA Primario - Evaluación abre herramienta externa; resto enlace interno */}
                 <Button
                   variant="primary"
                   size="lg"
                   className="w-full sm:w-auto text-base md:text-lg font-bold shadow-2xl"
                   asChild
                 >
-                  <Link 
-                    href={slide.ctaPrimaryLink} 
-                    className="flex items-center justify-center gap-2.5"
-                    onClick={() => handlePrimaryCtaClick(slide)}
-                  >
-                    <Lock className="w-5 h-5 md:w-6 md:h-6" />
-                    <span>{slide.ctaPrimary}</span>
-                  </Link>
+                  {'ctaPrimaryIsEvaluacion' in slide && slide.ctaPrimaryIsEvaluacion ? (
+                    <a
+                      href={config.evaluacionMadurez.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2.5"
+                      onClick={() => handlePrimaryCtaClick(slide)}
+                    >
+                      <Lock className="w-5 h-5 md:w-6 md:h-6" />
+                      <span>{slide.ctaPrimary}</span>
+                    </a>
+                  ) : (
+                    <Link 
+                      href={slide.ctaPrimaryLink} 
+                      className="flex items-center justify-center gap-2.5"
+                      onClick={() => handlePrimaryCtaClick(slide)}
+                    >
+                      <Lock className="w-5 h-5 md:w-6 md:h-6" />
+                      <span>{slide.ctaPrimary}</span>
+                    </Link>
+                  )}
                 </Button>
 
                 {/* CTA Secundario - Más sutil */}

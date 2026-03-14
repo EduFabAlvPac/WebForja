@@ -27,7 +27,7 @@ export const homeContentOverlay: Partial<HomeContent> = {
   contact: {
     whatsapp: "+56 9 1234 5678",
     phone: "+56 2 1234 5678",
-    email: "contacto@forjadigital.com",
+    email: "contacto@forjaconsulting.com",
   },
   
   stats: {

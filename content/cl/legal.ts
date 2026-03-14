@@ -13,7 +13,7 @@ export const legalContentOverlay: Partial<LegalContent> = {
   privacy: {
     intro: {
       text: 'ForjaConsulting, en adelante "nosotros" o "la empresa", es responsable del tratamiento de los datos personales que recopilamos a través de nuestro sitio web y servicios, conforme a la Ley 19.628 sobre Protección de la Vida Privada de Chile.',
-      responsible: 'Responsable del tratamiento: ForjaConsulting SAS (Colombia), prestando servicios en Chile. Email: info@forjadigital.com',
+      responsible: 'Responsable del tratamiento: ForjaConsulting SAS (Colombia), prestando servicios en Chile. Email: contacto@forjaconsulting.com',
     },
     dataCollection: {
       identification: [

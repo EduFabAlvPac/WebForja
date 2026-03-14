@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import config from '@/lib/config'
 
 /**
  * GlobalStickyCTA - Barra CTA global para páginas largas
@@ -152,14 +153,19 @@ export function GlobalStickyCTA() {
                   </p>
                 </div>
 
-                {/* CTA Button */}
+                {/* CTA Button - Abre la herramienta de Evaluación de Madurez (TestMadurezEmpresarial) */}
                 <div className="flex items-center gap-2">
                   <Button variant="primary" size="md" asChild>
-                    <Link href="/contacto" className="inline-flex items-center gap-2">
-                      <span className="hidden sm:inline">Solicitar Diagnóstico</span>
-                      <span className="sm:hidden">Solicitar</span>
+                    <a
+                      href={config.evaluacionMadurez.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2"
+                    >
+                      <span className="hidden sm:inline">Evaluación de Madurez Empresarial</span>
+                      <span className="sm:hidden">Evaluación</span>
                       <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    </a>
                   </Button>
 
                   {/* Dismiss button */}

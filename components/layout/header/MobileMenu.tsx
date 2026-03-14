@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import * as Icons from 'lucide-react'
 import { NAVIGATION_ITEMS } from '@/lib/constants/navigation'
+import config from '@/lib/config'
 import { Button } from '@/components/ui/button'
 import { MegaMenuServiciosMobile } from './MegaMenuServiciosMobile'
 import { CountrySwitcher } from '@/components/country/CountrySwitcher'
@@ -186,7 +187,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             asChild
           >
             <a
-              href="https://forjadigitalae.github.io/Evaluaci%C3%B3n_Madurez_PYMEs.html"
+              href={config.evaluacionMadurez.url}
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}

@@ -35,12 +35,12 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
 
 ```env
 # Información de contacto visible en el sitio
-NEXT_PUBLIC_CONTACT_EMAIL="info@forjadigital.co"
-NEXT_PUBLIC_CONTACT_PHONE="+57 300 123 4567"
+NEXT_PUBLIC_CONTACT_EMAIL="contacto@forjaconsulting.com"
+NEXT_PUBLIC_CONTACT_PHONE="+57 312 2415413"
 
 # Número de WhatsApp (solo dígitos, con código de país)
 # Formato: 57 (código) + número sin espacios ni guiones
-NEXT_PUBLIC_WHATSAPP_NUMBER="573001234567"
+NEXT_PUBLIC_WHATSAPP_NUMBER="573122415413"
 ```
 
 ---
@@ -141,7 +141,7 @@ Crea este archivo en la raíz del proyecto:
 # .env.local
 NEXT_PUBLIC_GA_MEASUREMENT_ID="G-ABC123XYZ"
 NEXT_PUBLIC_CONTACT_EMAIL="contacto@tuempresa.com"
-NEXT_PUBLIC_WHATSAPP_NUMBER="573001234567"
+NEXT_PUBLIC_WHATSAPP_NUMBER="573122415413"
 RESEND_API_KEY="re_tu_api_key_real_aqui"
 EMAIL_SERVICE="RESEND"
 ```

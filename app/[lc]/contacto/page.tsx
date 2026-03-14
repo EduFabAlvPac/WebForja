@@ -73,7 +73,7 @@ const CONTACT_INFO: Record<LocaleCode, {
   co: {
     location: 'Bogotá, Colombia',
     locationDetail: 'Atención en todo Colombia',
-    phone: '+57 310 335 0651',
+    phone: '+57 312 2415413',
     timezone: 'Lunes a Viernes: 8:00 AM - 6:00 PM',
     timezoneCode: 'COT (UTC-5)',
   },
@@ -101,7 +101,7 @@ const CONTACT_INFO: Record<LocaleCode, {
   es: {
     location: 'Bogotá, Colombia',
     locationDetail: 'Atención en toda Latinoamérica',
-    phone: '+57 310 335 0651',
+    phone: '+57 312 2415413',
     timezone: 'Lunes a Viernes: 8:00 AM - 6:00 PM',
     timezoneCode: 'COT (UTC-5)',
   },
@@ -117,7 +117,7 @@ export default function ContactoLocalePage({ params }: PageProps) {
 
   const country = getCountryByLocale(lc)
   const contactInfo = CONTACT_INFO[lc as LocaleCode] || CONTACT_INFO.co
-  const whatsappNumber = country.whatsapp || '+573103350651'
+  const whatsappNumber = country.whatsapp || '573122415413'
 
   return (
     <div className="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
@@ -227,10 +227,10 @@ export default function ContactoLocalePage({ params }: PageProps) {
                         <h3 className="font-semibold text-forja-navy mb-1">Email</h3>
                         <p className="text-slate-600">
                           <a 
-                            href="mailto:contacto@forjadigital.com" 
+                            href="mailto:contacto@forjaconsulting.com" 
                             className="hover:text-forja-fire transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-forja-fire focus-visible:ring-offset-2 rounded"
                           >
-                            contacto@forjadigital.com
+                            contacto@forjaconsulting.com
                           </a>
                         </p>
                       </div>

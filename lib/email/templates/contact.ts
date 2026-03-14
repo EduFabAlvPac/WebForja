@@ -207,7 +207,7 @@ export function getContactConfirmationTemplate(nombre: string): string {
                 Transformando PYMEs mediante Arquitectura Empresarial
               </p>
               <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 14px;">
-                📧 info@forjadigital.co | 📱 +57 300 123 4567
+                📧 contacto@forjaconsulting.com | 📱 +57 312 2415413
               </p>
             </td>
           </tr>

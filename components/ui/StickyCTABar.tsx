@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
 import { ClipboardCheck, Gift, X } from 'lucide-react'
+import config from '@/lib/config'
 import { useScrollProgress } from '@/lib/hooks/useScrollProgress'
 import { trackCTAClick } from '@/lib/analytics'
 import { siteMetrics } from '@/lib/site-metrics'
@@ -13,6 +14,7 @@ import { siteMetrics } from '@/lib/site-metrics'
  * Se oculta al llegar al final de la página o al ser descartada por el usuario.
  */
 export function StickyCTABar() {
+  const pathname = usePathname()
   const progress = useScrollProgress()
   const [isVisible, setIsVisible] = useState(false)
   const [isDismissed, setIsDismissed] = useState(() => {
@@ -22,12 +24,17 @@ export function StickyCTABar() {
     return false
   })
 
+  // No mostrar en el flujo de evaluación (evita confusión y doble CTA)
+  const isEvaluacionFlow = pathname?.startsWith('/evaluacion')
+
   useEffect(() => {
     // Mostrar después del 40% de scroll y ocultar después del 85%
-    if (!isDismissed) {
+    if (!isDismissed && !isEvaluacionFlow) {
       setIsVisible(progress > 40 && progress < 85)
+    } else {
+      setIsVisible(false)
     }
-  }, [progress, isDismissed])
+  }, [progress, isDismissed, isEvaluacionFlow])
 
   const handleDismiss = () => {
     setIsDismissed(true)
@@ -70,14 +77,16 @@ export function StickyCTABar() {
                 {/* Acciones */}
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                    <Link
-                      href="/contacto"
-                      onClick={() => trackCTAClick('contacto_sticky_bar', 'sticky_bar', '/contacto')}
+                    <a
+                      href={config.evaluacionMadurez.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackCTAClick('evaluacion_sticky_bar', 'sticky_bar', config.evaluacionMadurez.url)}
                       className="inline-flex items-center gap-2 px-5 py-2.5 bg-forja-fire hover:bg-forja-fire/90 text-white font-bold text-sm rounded-xl transition-all shadow-lg hover:shadow-xl group"
                     >
                       <ClipboardCheck className="w-5 h-5" />
                       Evaluación de Madurez Empresarial
-                    </Link>
+                    </a>
                   </motion.div>
 
                   <button
