@@ -43,14 +43,14 @@ export const config = {
     gtmId: process.env.NEXT_PUBLIC_GTM_ID || '',
   },
   /**
-   * URL de la herramienta de Evaluación de Madurez (carpeta TestMadurezEmpresarial).
-   * Por defecto abre la nueva herramienta en local (puerto 3001). En producción definir
-   * NEXT_PUBLIC_EVALUACION_MADUREZ_URL con la URL donde esté desplegada la herramienta.
+   * URL de la herramienta de Evaluación de Madurez (madurezempresarial.vercel.app).
+   * Por defecto: https://madurezempresarial.vercel.app/
+   * En local puedes definir NEXT_PUBLIC_EVALUACION_MADUREZ_URL para apuntar a otra URL (ej. localhost:3001).
    */
   evaluacionMadurez: {
     url:
       process.env.NEXT_PUBLIC_EVALUACION_MADUREZ_URL ||
-      'http://localhost:3001/evaluacion',
+      'https://madurezempresarial.vercel.app/',
   },
   security: {
     rateLimit: {
